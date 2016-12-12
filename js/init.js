@@ -18,13 +18,6 @@ function onLoad() {
 
 function initApp() {
 	
-	//checkconnection
-	try{
-		networkState = navigator.connection.type; 
-                checkConnection(); 
-	}catch(e){
-		error_('E INIT-26','ERROR CHECK CONNECTION', e);	
-	}
 
 	//controlam tipus dispositiu
 	try{
@@ -92,23 +85,6 @@ function initApp() {
 }
 
 
-//check connection
-function checkConnection() { 
-    var states = {}; 
-    states[Connection.UNKNOWN]  = 1; 
-    states[Connection.ETHERNET] = 2; 
-    states[Connection.WIFI]     = 3; 
-    states[Connection.CELL_2G]  = 4; 
-    states[Connection.CELL_3G]  = 5; 
-    states[Connection.CELL_4G]  = 6; 
-    states[Connection.CELL]     = 7; 
-    states[Connection.NONE]     = 8; 
-	
-	if ( states[networkState] == 8){
-		alert('No es té conexió a internet, sense internet no podeu accedir al llistat ni enviar una incidència');
-		//$('.no-sense-xarxa').css('display', 'none');
-	}
-}
 
 //####################//####################//####################
 //####################      PUSh         #########################
