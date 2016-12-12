@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+    xmlns:gap = "http://phonegap.com/ns/1.0"
+    id        = "com.inc_Capdepera.bitgrup"
+    version   = "0.0.1">
+	
+	
+	<name>Incidències</name>
+	<description>Incidències ajuntament de Capdepera</description>
+	<author href="http://bitgrup.com" email="info@bitgrup.com">BITGRUP</author>
+	
+	<!-- PREFERENCE -->
+	<preference name="phonegap-version" value="cli-5.2.0" /> 
+	<preference name="orientation" value="portrait" /> 
+	<preference name="stay-in-webview" value="false" />
+	<preference name="CameraUsesGeolocation" value="false" />
+	<preference name="ChildBrowser" value="disable"/>
+	<preference name="android-build-tool" value="gradle" /> 
+	<preference name="android-minSdkVersion" value="16" />
+	<preference name="deployment-target" value="7.0" />
+	<preference name="DisallowOverscroll" value="true" />
+	<preference name="UIWebViewBounce" value="false" />
+  
+	   
+	<!-- PLUGINS -->
+	<gap:plugin name="cordova-plugin-armsoft-googlemaps"  source="npm">
+		<param name="API_KEY_FOR_ANDROID" value="AIzaSyAbCsdbOZ31x79tk8PDVHsW3AL_zgNseGo" />
+		<param name="API_KEY_FOR_IOS" value="AIzaSyB7g2Ackb5PebwE30QwAqAzPMGo1r4HnFQ" />
+	</gap:plugin>
+	<gap:plugin name="org.apache.cordova.network-information" />
+	<plugin name="phonegap-plugin-push" spec="~1.2.3" source="npm" />
+	<gap:plugin name="org.apache.cordova.file-transfer" />
+	<gap:plugin name="org.apache.cordova.camera"/>
+	<gap:plugin name="cordova-plugin-whitelist" source="npm"/>
+	<gap:plugin name="com.badrit.macaddress"  source="pgb" />
+	<gap:plugin name="cordova-plugin-uniquedeviceid" source="npm" />
+	<gap:plugin name="cordova-plugin-device" source="npm" />
+	<gap:plugin name="org.apache.cordova.inappbrowser" />
+	
+
+  
+  	<feature name='Device'>
+            <param name='android-package' value='org.apache.cordova.device.Device' />
+            <param name='ios-package' value='Device'/>
+        </feature> 
+	<feature name="http://api.phonegap.com/1.0/geolocation"/>
+	<feature name="http://api.phonegap.com/1.0/file"/>
+	
+	
+	<gap:platform name="ios" />
+	<gap:platform name="android" />
+	
+	
+	<access origin="*://*.googleapis.com/*" subdomains="true" />
+	<access origin="*://*.gstatic.com/*" subdomains="true" />
+	<access origin="*://*.google.com/*" subdomains="true" />
+	<access origin="*://*.googleusercontent.com/*" subdomains="true" />
+        <access origin="*://*.arta.cat/*" subdomains="true" />
+	<allow-navigation href="*" />
+        <allow-intent href="*" />
+        <access origin="*" />
+
+	<key>ExternalHosts</key>
+	<array><string>*</string></array>
+	
+
+	<!-- iPhone / iPod Touch  -->	
+	<!--
+	<icon src="res/icons/ios/icon-57.png" platform="ios" width="57" height="57" />
+	<icon src="res/icons/ios/icon-57-2x.png" gap:platform="ios" width="114" height="114" />
+	
+    <icon src="res/icons/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
+    <icon src="res/icons/ios/icon-72-2x.png" gap:platform="ios" width="144" height="144" />
+    -->
+	
+	
+    <!-- IOS 7 -->
+    <!-- iPhone / iPod Touch  -->
+    <icon src="icons/icon-60.png" gap:platform="ios" width="60" height="60" />
+    <icon src="icons/icon-60@2x.png" gap:platform="ios" width="120" height="120" />
+	
+    <!-- iPad -->
+    <icon src="icons/icon-76.png" gap:platform="ios" width="76" height="76" />
+    <icon src="icons/icon-76@2x.png" gap:platform="ios" width="152" height="152" />
+	
+    <!-- Settings Icon -->
+    <icon src="icons/icon-small.png" gap:platform="ios" width="29" height="29" />
+    <icon src="icons/icon-small@2x.png" gap:platform="ios" width="58" height="58" />
+	
+    <!-- Spotlight Icon -->
+    <icon src="icons/icon-40.png" gap:platform="ios" width="40" height="40" />
+    <icon src="icons/icon-40@2x.png" gap:platform="ios" width="80" height="80" />
+	
+	
+	
+    <!-- IOS 6.1 -->
+    <!-- iPhone / iPod Touch -->
+    <icon src="icons/icon.png" gap:platform="ios" width="57" height="57" />
+    <icon src="icons/icon@2x.png" gap:platform="ios" width="114" height="114" />
+	
+    <!-- iPad -->
+    <icon src="icons/icon-72.png" gap:platform="ios" width="72" height="72" />
+    <icon src="icons/icon-72@2x.png" gap:platform="ios" width="144" height="144" />
+	
+    <!-- iPhone Spotlight and Settings Icon -->
+    <icon src="icons/icon-small.png" gap:platform="ios" width="29" height="29" />
+    <icon src="icons/icon-small@2x.png" gap:platform="ios" width="58" height="58" />
+	
+    <!-- iPad Spotlight and Settings Icon -->
+    <icon src="icons/icon-50.png" gap:platform="ios" width="50" height="50" />
+    <icon src="icons/icon-50@2x.png" gap:platform="ios" width="100" height="100" />
+
+
+	
+	
+    <gap:splash src="splash/ios/Default.png" width="320" height="480" />
+    <gap:splash src="splash/ios/Default-Landscape.png" width="480" height="320" />
+    <gap:splash src="splash/ios/Default_new_iphone5.png" width="320" height="568" />
+    <gap:splash src="splash/ios/Default_new_iphone5-Landscape.png" width="568" height="320" /> 
+    <gap:splash src="splash/ios/Default_at_2x.png" width="640" height="960" /> 
+    <gap:splash src="splash/ios/Default_at_2x-Landscape.png"  width="960" height="640" />  
+    <gap:splash src="splash/ios/Default_iphone5.png" width="640" height="1136" /> 
+    <gap:splash src="splash/ios/Default-Landscape.png" width="1024" height="768" />   
+    <gap:splash src="splash/ios/Default-Portrait.png" width="768" height="1024" />
+    <gap:splash src="splash/ios/Default-Landscape_at_2x.png" width="2048" height="1496" />
+    <gap:splash src="splash/ios/Default-Portrait_at_2x.png" width="1536" height="2008" />
+    <gap:splash src="splash/ios/Default-Portrait_750_1334.png" width="750" height="1334" />
+    <gap:splash src="splash/ios/Default-Portrait_1334_750.png" width="1334" height="750" />
+    <gap:splash src="splash/ios/Default-Portrait_1242_2208.png" width="1242" height="2208" />
+    <gap:splash src="splash/ios/Default-Portrait_2208_1242.png" width="2208" height="1242" />
+    
+    
+    
+	
+    <!-- default  -->	
+    <icon src="icons/icon-60.png" />
+	
+
+</widget>
+

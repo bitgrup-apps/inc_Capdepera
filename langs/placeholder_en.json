@@ -1,0 +1,13 @@
+{"plh_nom_ap": "Name and Surname *",
+"plh_f_nac": "Date of birth *",
+"plh_dir": "Adress *",
+"plh_provi": "Province *",
+"plh_pais": "Land *",
+"plh_dni": "Passport *",
+"plh_dir_mall": "Adress in Mallorca *",
+"plh_vuelo": "Flight number *",
+"plh_aeroport": "Departure airport *",
+"plh_enviar": "SEND",
+"plh_buscar_coches": "Search rental cars",
+"plh_tel": "Telephone number"
+}

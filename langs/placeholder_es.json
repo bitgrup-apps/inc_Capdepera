@@ -1,0 +1,13 @@
+{"plh_nom_ap": "Nombre y apellidos *",
+"plh_f_nac": "Fecha de nacimiento *",
+"plh_dir": "Dirección *",
+"plh_provi": "Provincia *",
+"plh_pais": "País *",
+"plh_dni": "DNI o pasaporte *",
+"plh_dir_mall": "Dirección en Mallorca *",
+"plh_vuelo": "Nº de vuelo *",
+"plh_aeroport": "Aeropuerto de origen *",
+"plh_enviar": "ENVIAR",
+"plh_buscar_coches": "Buscar coches de alquiler",
+"plh_tel": "Teléfono de contacto"
+}
