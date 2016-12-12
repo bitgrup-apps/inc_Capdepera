@@ -29,12 +29,12 @@
 	</gap:plugin>
 	<plugin name="phonegap-plugin-push" spec="~1.2.3" source="npm" />
 	<gap:plugin name="cordova-plugin-file-transfer" source="npm" />
-	<gap:plugin name="org.apache.cordova.camera"/>
+	<gap:plugin name="cordova-plugin-camera"  source="npm"/>
 	<gap:plugin name="cordova-plugin-whitelist" source="npm"/>
 	<gap:plugin name="com.badrit.macaddress"  source="pgb" />
 	<gap:plugin name="cordova-plugin-uniquedeviceid" source="npm" />
 	<gap:plugin name="cordova-plugin-device" source="npm" />
-	<gap:plugin name="org.apache.cordova.inappbrowser" />
+	<gap:plugin name="cordova-plugin-inappbrowser" source="npm" />
 	
 
   
