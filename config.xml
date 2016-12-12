@@ -28,7 +28,7 @@
 		<param name="API_KEY_FOR_IOS" value="AIzaSyB7g2Ackb5PebwE30QwAqAzPMGo1r4HnFQ" />
 	</gap:plugin>
 	<plugin name="phonegap-plugin-push" spec="~1.2.3" source="npm" />
-	<gap:plugin name="org.apache.cordova.file-transfer" />
+	<gap:plugin name="cordova-plugin-file-transfer" source="npm" />
 	<gap:plugin name="org.apache.cordova.camera"/>
 	<gap:plugin name="cordova-plugin-whitelist" source="npm"/>
 	<gap:plugin name="com.badrit.macaddress"  source="pgb" />
