@@ -26,7 +26,7 @@ function carregaLlistaInOperaris() {
 
         //#####################     INCIDENCIES CORRESPONENTS AL GRUP       ##########################
         $.ajax({
-            url: 'http://www.arta.cat:82/App/incidencies.php', type: 'POST', data: formData,
+            url: 'http://bitgrup.es/webtest/clickincidencies/App/incidencies.php', type: 'POST', data: formData,
             cache: false, contentType: false, processData: false, async: false, dataType: "xml", beforeSend: function () {},
             success: function (data) {
                 xml = data;
@@ -46,7 +46,7 @@ function carregaLlistaInOperaris() {
              '<p>Incidència creada el ' + $(this).find('fecha').text() + '</p>' +
              '<p>' + $(this).find('titol').text() + '</p>' +
              '</a>' +
-             '<div class="col-xs-4 img" style="background-image:url(\'http://www.arta.cat:82/panel/aplicacions/incidencies/img/incidencies/' + $(this).find('img').text() + '\');"></div>' +
+             '<div class="col-xs-4 img" style="background-image:url(\'http://bitgrup.es/webtest/clickincidencies/panel/aplicacions/incidencies/img/incidencies/' + $(this).find('img').text() + '\');"></div>' +
              '</div>';
 
 
@@ -67,7 +67,7 @@ function carregaLlistaInOperaris() {
             formData_v.append("idU", readCookie('idU'));
             formData_v.append("idP", readCookie('idP'));
             $.ajax({
-                url: 'http://www.arta.cat:82/App/incidencies.php', type: 'POST', data: formData_v,
+                url: 'http://bitgrup.es/webtest/clickincidencies/App/incidencies.php', type: 'POST', data: formData_v,
                 cache: false, contentType: false, processData: false, async: false, dataType: "xml", beforeSend: function () {},
                 success: function (data) {
                     xml = data;
@@ -87,7 +87,7 @@ function carregaLlistaInOperaris() {
                  '<p>Incidència creada el ' + $(this).find('fecha').text() + '</p>' +
                  '<p>' + $(this).find('titol').text() + '</p>' +
                  '</a>' +
-                 '<div class="col-xs-4 img" style="background-image:url(\'http://www.arta.cat:82/panel/aplicacions/incidencies/img/incidencies/' + $(this).find('img').text() + '\');"></div>' +
+                 '<div class="col-xs-4 img" style="background-image:url(\'http://bitgrup.es/webtest/clickincidencies/panel/aplicacions/incidencies/img/incidencies/' + $(this).find('img').text() + '\');"></div>' +
                  '</div>';
 
 
@@ -117,7 +117,7 @@ function mostraIncidenciaOperari() {
     formData.append("idP", readCookie('idP'));
 
     $.ajax({
-        url: 'http://www.arta.cat:82/App/incidencies.php', type: 'POST', data: formData,
+        url: 'http://bitgrup.es/webtest/clickincidencies/App/incidencies.php', type: 'POST', data: formData,
         cache: false, contentType: false, processData: false, async: false, dataType: "xml", beforeSend: function () {},
         success: function (data) {
             xml = data;
@@ -140,7 +140,7 @@ function mostraIncidenciaOperari() {
         $('#verificaIncidencia').data('incidencia',$(xml).find('Id').text());
         //GET IMG 1
         if ($(xml).find('img').text() != '') {
-            $('#imgIncidenciaZOperari').attr('src', 'http://www.arta.cat:82/panel/aplicacions/incidencies/img/incidencies/' + $(xml).find('img').text());
+            $('#imgIncidenciaZOperari').attr('src', 'http://bitgrup.es/webtest/clickincidencies/panel/aplicacions/incidencies/img/incidencies/' + $(xml).find('img').text());
         } else {
             $('#imgIncidenciaZOperari').attr('src', 'images/no-img-incid.png');
         }
@@ -180,7 +180,7 @@ function enviarActualitzacioIncidencia() {
         formData.append("TOKEN", 'LAIDSD88347ERJKADKFGKAHPF8YA9DF8Y');
         formData.append("idInc", window.idInc);
         $.ajax({
-            url: 'http://www.arta.cat:82/App/incidencies.php', type: 'POST', data: formData,
+            url: 'http://bitgrup.es/webtest/clickincidencies/App/incidencies.php', type: 'POST', data: formData,
             cache: false, contentType: false, processData: false, async: false, beforeSend: function () {},
             success: function (data) {
                 $('#loading').css('display', 'none');
@@ -233,7 +233,7 @@ function verfificarIncidencia() {
         formData.append("funcio", 'verificaIncidencies');
 
         $.ajax({
-            url: 'http://www.arta.cat:82/App/incidencies.php', type: 'POST', data: formData,
+            url: 'http://bitgrup.es/webtest/clickincidencies/App/incidencies.php', type: 'POST', data: formData,
             cache: false, contentType: false, processData: false, async: false, beforeSend: function () {},
             success: function (data) {
                 $('#loading').css('display', 'none');

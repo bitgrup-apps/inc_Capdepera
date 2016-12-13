@@ -46,7 +46,7 @@ function iniciaSessio() {
         formData.append("funcio", 'loginOperari');
         formData.append("TOKEN", 'LAIDSD88347ERJKADKFGKAHPF8YA9DF8Y');
         $.ajax({
-            url: 'http://www.arta.cat:82/App/incidencies.php', type: 'POST', data: formData,
+            url: 'http://bitgrup.es/webtest/clickincidencies/App/incidencies.php', type: 'POST', data: formData,
             cache: false, contentType: false, processData: false, async: false, beforeSend: function () {},
             success: function (data) {
                 $('#loading').css('display', 'none');

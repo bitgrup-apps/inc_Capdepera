@@ -18,7 +18,7 @@ function carregaLlistaIn(xml_in) {
          '<p>Incidència creada el ' + $(this).find('fecha').text() + '</p>' +
         // '<p>' + $(this).find('titol').text() + '</p>' +
          '</a>' +
-         '<div class="col-xs-4 img" style="background-image:url(\'http://www.arta.cat:82/panel/aplicacions/incidencies/img/incidencies/' + $(this).find('img').text() + '\');"></div>' +
+         '<div class="col-xs-4 img" style="background-image:url(\'http://bitgrup.es/webtest/clickincidencies/panel/aplicacions/incidencies/img/incidencies/' + $(this).find('img').text() + '\');"></div>' +
          '</div>';
         
         
@@ -108,7 +108,7 @@ function llistatAjax() {
     formData.append("funcio", "getIncidencies");
     formData.append("TOKEN", 'LAIDSD88347ERJKADKFGKAHPF8YA9DF8Y');
     $.ajax({
-        url: 'http://www.arta.cat:82/App/incidencies.php', type: 'POST', data: formData,
+        url: 'http://bitgrup.es/webtest/clickincidencies/App/incidencies.php', type: 'POST', data: formData,
         cache: false, contentType: false, processData: false, async: false, dataType: "xml", beforeSend: function () {},
         success: function (data) {
             xml = data;
@@ -144,7 +144,7 @@ function mostraIncidencia() {
     formData.append("id", Incide);
     formData.append("TOKEN", 'LAIDSD88347ERJKADKFGKAHPF8YA9DF8Y');
     $.ajax({
-        url: 'http://www.arta.cat:82/App/incidencies.php', type: 'POST', data: formData,
+        url: 'http://bitgrup.es/webtest/clickincidencies/App/incidencies.php', type: 'POST', data: formData,
         cache: false, contentType: false, processData: false, async: false, dataType: "xml", beforeSend: function () {},
         success: function (data) {
             xml = data;
@@ -161,21 +161,21 @@ function mostraIncidencia() {
         $('#verificaIncidencia').data('incidencia',$(xml).find('Id').text());
         //GET IMG 1
         if ($(xml).find('img').text() != '') {
-            $('#imgIncidenciaZ').attr('src', 'http://www.arta.cat:82/panel/aplicacions/incidencies/img/incidencies/' + $(xml).find('img').text());
+            $('#imgIncidenciaZ').attr('src', 'http://bitgrup.es/webtest/clickincidencies/panel/aplicacions/incidencies/img/incidencies/' + $(xml).find('img').text());
         } else {
             $('#imgIncidenciaZ').attr('src', 'images/no-img-incid.png');
         }
 
         //GET IMG 2
         if ($(xml).find('img2').text() != '') {
-            $('#imgIncidenciaY').attr('src', 'http://www.arta.cat:82/panel/aplicacions/incidencies/img/incidencies/' + $(xml).find('img2').text());
+            $('#imgIncidenciaY').attr('src', 'http://bitgrup.es/webtest/clickincidencies/panel/aplicacions/incidencies/img/incidencies/' + $(xml).find('img2').text());
         } else {
             $('#imgIncidenciaY').attr('src', 'images/no-img-incid.png');
         }
 
         //GET IMG 3
         if ($(xml).find('img3').text() != '') {
-            $('#imgIncidenciaX').attr('src', 'http://www.arta.cat:82/panel/aplicacions/incidencies/img/incidencies/' + $(xml).find('img3').text());
+            $('#imgIncidenciaX').attr('src', 'http://bitgrup.es/webtest/clickincidencies/panel/aplicacions/incidencies/img/incidencies/' + $(xml).find('img3').text());
         } else {
             $('#imgIncidenciaX').attr('src', 'images/no-img-incid.png');
         }
@@ -283,7 +283,7 @@ function removeImg(i) {
 
 function guardaTokenPush(token) {
     if (window.okPush) {
-        $.post('http://www.arta.cat:82/App/incidencies.php',
+        $.post('http://bitgrup.es/webtest/clickincidencies/App/incidencies.php',
          {funcio: 'guardaToken', userToken: token, TOKEN: 'LAIDSD88347ERJKADKFGKAHPF8YA9DF8Y', os: window.platform},
          function (data) {
              try {
@@ -340,7 +340,7 @@ function actualitzaServidorPush(guardaToken) {
     else
         var funcio = 'eliminaToken';
     var ok = true;
-    $.post('http://www.arta.cat:82/App/incidencies.php',
+    $.post('http://bitgrup.es/webtest/clickincidencies/App/incidencies.php',
      {funcio: funcio, userToken: window.tokenPush, TOKEN: 'LAIDSD88347ERJKADKFGKAHPF8YA9DF8Y', os: window.platform},
      function (data) {
          try {
