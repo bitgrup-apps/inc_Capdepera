@@ -6,7 +6,7 @@
 	
 	
 	<name>Incidències</name>
-	<description>Incidències ajuntament de Capdepera</description>
+	<description>Incidències</description>
 	<author href="http://bitgrup.com" email="info@bitgrup.com">BITGRUP</author>
 	
 	<!-- PREFERENCE -->
@@ -75,39 +75,24 @@
 	
     <!-- IOS 7 -->
     <!-- iPhone / iPod Touch  -->
-    <icon src="icons/icon-60.png" gap:platform="ios" width="60" height="60" />
-    <icon src="icons/icon-60@2x.png" gap:platform="ios" width="120" height="120" />
-	
-    <!-- iPad -->
-    <icon src="icons/icon-76.png" gap:platform="ios" width="76" height="76" />
-    <icon src="icons/icon-76@2x.png" gap:platform="ios" width="152" height="152" />
-	
-    <!-- Settings Icon -->
-    <icon src="icons/icon-small.png" gap:platform="ios" width="29" height="29" />
-    <icon src="icons/icon-small@2x.png" gap:platform="ios" width="58" height="58" />
-	
-    <!-- Spotlight Icon -->
-    <icon src="icons/icon-40.png" gap:platform="ios" width="40" height="40" />
-    <icon src="icons/icon-40@2x.png" gap:platform="ios" width="80" height="80" />
-	
-	
-	
-    <!-- IOS 6.1 -->
-    <!-- iPhone / iPod Touch -->
-    <icon src="icons/icon.png" gap:platform="ios" width="57" height="57" />
-    <icon src="icons/icon@2x.png" gap:platform="ios" width="114" height="114" />
-	
-    <!-- iPad -->
-    <icon src="icons/icon-72.png" gap:platform="ios" width="72" height="72" />
-    <icon src="icons/icon-72@2x.png" gap:platform="ios" width="144" height="144" />
-	
-    <!-- iPhone Spotlight and Settings Icon -->
-    <icon src="icons/icon-small.png" gap:platform="ios" width="29" height="29" />
-    <icon src="icons/icon-small@2x.png" gap:platform="ios" width="58" height="58" />
-	
-    <!-- iPad Spotlight and Settings Icon -->
-    <icon src="icons/icon-50.png" gap:platform="ios" width="50" height="50" />
-    <icon src="icons/icon-50@2x.png" gap:platform="ios" width="100" height="100" />
+    <icon src="icons/iphone-notification-20pt@2x.png" gap:platform="ios" width="40" height="40" />
+    <icon src="icons/iphone-notification-20pt@3x.png" gap:platform="ios" width="60" height="60" />
+    <icon src="icons/iphone-spotlight-settings-29pt@2x.png" gap:platform="ios" width="58" height="58" />
+    <icon src="icons/iphone-spotlight-settings-29pt@3x.png" gap:platform="ios" width="87" height="87" />
+    <icon src="icons/iphone-spotlight-40pt@2x.png" gap:platform="ios" width="80" height="80" />
+    <icon src="icons/iphone-spotlight-40pt@3x.png" gap:platform="ios" width="120" height="120" />
+    <icon src="icons/iphone-app-60pt@2x.png" gap:platform="ios" width="120" height="120" />
+    <icon src="icons/iphone-app-60pt@3x.png" gap:platform="ios" width="180" height="180" />
+    <icon src="icons/ipad-notifications-20pt@1x.png" gap:platform="ios" width="20" height="20" />
+    <icon src="icons/ipad-notifications-20pt@2x.png" gap:platform="ios" width="40" height="40" />
+    <icon src="icons/ipad-settings-29pt@1x.png" gap:platform="ios" width="29" height="29" />
+    <icon src="icons/ipad-settings-29pt@2x.png" gap:platform="ios" width="58" height="58" />
+    <icon src="icons/ipad-spotlight-40pt@1x.png" gap:platform="ios" width="40" height="40" />
+    <icon src="icons/ipad-spotlight-40pt@2x.png" gap:platform="ios" width="80" height="80" />
+    <icon src="icons/ipad-app-76pt@1x.png" gap:platform="ios" width="76" height="76" />
+    <icon src="icons/ipad-app-76pt@2x.png" gap:platform="ios" width="152" height="152" />
+    <icon src="icons/ipad-pro-app-83.5pt@2x.png" gap:platform="ios" width="167" height="167" />
+
 
 
 	
