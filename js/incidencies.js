@@ -18,7 +18,7 @@ function carregaLlistaIn(xml_in) {
          '<p>Incidència creada el ' + $(this).find('fecha').text() + '</p>' +
         // '<p>' + $(this).find('titol').text() + '</p>' +
          '</a>' +
-         '<div class="col-xs-4 img" style="background-image:url(\'http://bitgrup.es/webtest/clickincidencies/panel/aplicacions/incidencies/img/incidencies/' + $(this).find('img').text() + '\');"></div>' +
+         '<div class="col-xs-4 img" style="background-image:url(\'http://bitgrup.es/webtest/clickincidencies/img/incidencies/' + $(this).find('img').text() + '\');"></div>' +
          '</div>';
         
         

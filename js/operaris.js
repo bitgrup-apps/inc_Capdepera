@@ -46,7 +46,7 @@ function carregaLlistaInOperaris() {
              '<p>Incidència creada el ' + $(this).find('fecha').text() + '</p>' +
              '<p>' + $(this).find('titol').text() + '</p>' +
              '</a>' +
-             '<div class="col-xs-4 img" style="background-image:url(\'http://bitgrup.es/webtest/clickincidencies/panel/aplicacions/incidencies/img/incidencies/' + $(this).find('img').text() + '\');"></div>' +
+             '<div class="col-xs-4 img" style="background-image:url(\'http://bitgrup.es/webtest/clickincidencies/img/incidencies/' + $(this).find('img').text() + '\');"></div>' +
              '</div>';
 
 
@@ -87,7 +87,7 @@ function carregaLlistaInOperaris() {
                  '<p>Incidència creada el ' + $(this).find('fecha').text() + '</p>' +
                  '<p>' + $(this).find('titol').text() + '</p>' +
                  '</a>' +
-                 '<div class="col-xs-4 img" style="background-image:url(\'http://bitgrup.es/webtest/clickincidencies/panel/aplicacions/incidencies/img/incidencies/' + $(this).find('img').text() + '\');"></div>' +
+                 '<div class="col-xs-4 img" style="background-image:url(\'http://bitgrup.es/webtest/clickincidencies/img/incidencies/' + $(this).find('img').text() + '\');"></div>' +
                  '</div>';
 
 
@@ -140,7 +140,7 @@ function mostraIncidenciaOperari() {
         $('#verificaIncidencia').data('incidencia',$(xml).find('Id').text());
         //GET IMG 1
         if ($(xml).find('img').text() != '') {
-            $('#imgIncidenciaZOperari').attr('src', 'http://bitgrup.es/webtest/clickincidencies/panel/aplicacions/incidencies/img/incidencies/' + $(xml).find('img').text());
+            $('#imgIncidenciaZOperari').attr('src', 'http://bitgrup.es/webtest/clickincidencies/img/incidencies/' + $(xml).find('img').text());
         } else {
             $('#imgIncidenciaZOperari').attr('src', 'images/no-img-incid.png');
         }
