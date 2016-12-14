@@ -161,21 +161,21 @@ function mostraIncidencia() {
         $('#verificaIncidencia').data('incidencia',$(xml).find('Id').text());
         //GET IMG 1
         if ($(xml).find('img').text() != '') {
-            $('#imgIncidenciaZ').attr('src', 'http://bitgrup.es/webtest/clickincidencies/panel/aplicacions/incidencies/img/incidencies/' + $(xml).find('img').text());
+            $('#imgIncidenciaZ').attr('src', 'http://bitgrup.es/webtest/clickincidencies/img/incidencies/' + $(xml).find('img').text());
         } else {
             $('#imgIncidenciaZ').attr('src', 'images/no-img-incid.png');
         }
 
         //GET IMG 2
         if ($(xml).find('img2').text() != '') {
-            $('#imgIncidenciaY').attr('src', 'http://bitgrup.es/webtest/clickincidencies/panel/aplicacions/incidencies/img/incidencies/' + $(xml).find('img2').text());
+            $('#imgIncidenciaY').attr('src', 'http://bitgrup.es/webtest/clickincidencies/img/incidencies/' + $(xml).find('img2').text());
         } else {
             $('#imgIncidenciaY').attr('src', 'images/no-img-incid.png');
         }
 
         //GET IMG 3
         if ($(xml).find('img3').text() != '') {
-            $('#imgIncidenciaX').attr('src', 'http://bitgrup.es/webtest/clickincidencies/panel/aplicacions/incidencies/img/incidencies/' + $(xml).find('img3').text());
+            $('#imgIncidenciaX').attr('src', 'http://bitgrup.es/webtest/clickincidencies/img/incidencies/' + $(xml).find('img3').text());
         } else {
             $('#imgIncidenciaX').attr('src', 'images/no-img-incid.png');
         }
