@@ -23,15 +23,12 @@
   
 	   
 	<!-- PLUGINS -->
-	<gap:plugin name="cordova-plugin-armsoft-googlemaps"  source="npm">
-		<param name="API_KEY_FOR_ANDROID" value="AIzaSyAbCsdbOZ31x79tk8PDVHsW3AL_zgNseGo" />
-		<param name="API_KEY_FOR_IOS" value="AIzaSyB7g2Ackb5PebwE30QwAqAzPMGo1r4HnFQ" />
-	</gap:plugin>
-	<gap:plugin name="phonegap-plugin-push"  source="npm" />
-	<gap:plugin name="cordova-plugin-file-transfer" source="npm" />
-	<gap:plugin name="cordova-plugin-camera"  source="npm"/>
-	<gap:plugin name="cordova-plugin-whitelist" source="npm"/>
-
+	
+        
+	<gap:plugin name="com-badrit-macaddress"  source="npm" />
+	<gap:plugin name="cordova-plugin-uniquedeviceid" source="npm" />
+	<gap:plugin name="cordova-plugin-device" source="npm" />
+	<gap:plugin name="cordova-plugin-inappbrowser" source="npm" />
 	
 
   
