@@ -82,7 +82,7 @@
     <icon src="icons/icon.png" gap:platform="ios" width="57" height="57" />
     <icon src="icons/iphone-notification-20pt@3x.png" gap:platform="ios" width="60" height="60" />
     <icon src="icons/iphone-spotlight-settings-29pt@2x.png" gap:platform="ios" width="58" height="58" />
-    <icon src="icons/b-icon-small@3x.png" gap:platform="ios" width="87" height="87" />
+    <!--icon src="icons/b-icon-small@3x.png" gap:platform="ios" width="87" height="87" /-->
     <icon src="icons/iphone-spotlight-40pt@2x.png" gap:platform="ios" width="80" height="80" />
     <icon src="icons/iphone-spotlight-40pt@3x.png" gap:platform="ios" width="120" height="120" />
     <icon src="icons/iphone-app-60pt@2x.png" gap:platform="ios" width="120" height="120" />
