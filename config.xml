@@ -2,7 +2,7 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
     xmlns:gap = "http://phonegap.com/ns/1.0"
     id        = "com.incCapdepera.bitgrup"
-    version   = "1.0.16">
+    version   = "1.0.17">
 	
 	
 	<name>Incidències</name>
@@ -23,17 +23,14 @@
   
 	   
 	<!-- PLUGINS -->
-	<gap:plugin name="cordova-plugin-armsoft-googlemaps" version="1.3.0" source="npm">
+	<gap:plugin name="cordova-plugin-armsoft-googlemaps" version="1.2.0" source="npm">
 		<param name="API_KEY_FOR_ANDROID" value="AIzaSyAbCsdbOZ31x79tk8PDVHsW3AL_zgNseGo" />
 		<param name="API_KEY_FOR_IOS" value="AIzaSyB7g2Ackb5PebwE30QwAqAzPMGo1r4HnFQ" />
 	</gap:plugin>
 	<gap:plugin name="phonegap-plugin-push" version="1.9.2" source="npm" />
-	<gap:plugin name="cordova-plugin-file-transfer" version="1.6.1" source="npm" />
-        
+	<gap:plugin name="cordova-plugin-file-transfer" version="1.6.1" source="npm" />        
 	<gap:plugin name="cordova-plugin-camera"  source="npm" version="2.3.0"/>
         <gap:plugin name="cordova-plugin-whitelist" source="npm" version="1.3.0"/>
-        
-        
 	<gap:plugin name="com-badrit-macaddress" version="0.2.0" source="npm" />
 	<gap:plugin name="cordova-plugin-uniquedeviceid" version="1.3.2" source="npm" />
 	<gap:plugin name="cordova-plugin-device" version="1.1.4" source="npm" />
