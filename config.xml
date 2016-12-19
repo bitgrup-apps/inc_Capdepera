@@ -10,7 +10,7 @@
 	<author href="http://bitgrup.com" email="info@bitgrup.com">BITGRUP</author>
 	
 	<!-- PREFERENCE -->
-	<preference name="phonegap-version" value="cli-6.2.0" /> 
+	<preference name="phonegap-version" value="cli-6.3.0" /> 
 	<preference name="orientation" value="portrait" /> 
 	<preference name="stay-in-webview" value="false" />
 	<preference name="CameraUsesGeolocation" value="false" /> 
