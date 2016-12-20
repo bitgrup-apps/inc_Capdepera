@@ -102,7 +102,6 @@
     <icon src="icons/ipad-spotlight-40pt@2x.png" gap:platform="ios" width="80" height="80" />
     <icon src="icons/ipad-app-76pt@1x.png" gap:platform="ios" width="76" height="76" />
     <icon src="icons/ipad-app-76pt@2x.png" gap:platform="ios" width="152" height="152" />
-    <icon src="icons/icon-83.5@2x.png" gap:platform="ios" width="167" height="167" />
 
 
 
