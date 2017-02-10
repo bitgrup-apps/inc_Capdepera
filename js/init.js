@@ -243,14 +243,15 @@ function onMapInit() {
 //NOVA LOCALITZACIÓ AL MAPA
 function novaLocalitzacio(posicio) {
 
+
     var request = {
         'position': posicio
     };
-    
-    plugin.google.maps.Geocoder.geocode(request, function (results, status) {
-;
-        if (status == google.maps.GeocoderStatus.OK) {
-            alert(results);
+
+    plugin.google.maps.Geocoder.geocode(request, function (results) {
+        ;
+        if (results.length) {
+
             var result = results[0];
             var position = result.position;
 
@@ -278,8 +279,20 @@ function novaLocalitzacio(posicio) {
             $('#adresaIncidencia').val(result.thoroughfare);
             $('#poblacioIncidencia').val(result.locality);
         } else {
-            alert("No es pot aconseguir la vostra ubicació");
-            alert(google.maps.GeocoderStatus);
+            if (posicio){
+                window.mapa.addMarker({
+                    'position': posicio,
+                    'title': ''
+                }, function (marker) {
+                    marker.showInfoWindow();
+                    window.mapa.addEventListenerOnce("MARKER_REMOVE", function () {
+                        marker.remove();
+                    });
+                });
+            }else{
+                 alert("No es pot aconseguir la vostra ubicació");
+            }
+           
         }
     });
 
