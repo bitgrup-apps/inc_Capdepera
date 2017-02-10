@@ -590,7 +590,7 @@ $(document).on("pagebeforeshow", "#incidenciaPasa2", function (event, data) { //
 });
 
 function comprovaPosicio(lat, long) {
-
+    return true;
     var ok = true;
     //limits regions artà
     if (lat > 39.769914  || lat < 39.630348 || long < 3.379006 || long > 3.473944)

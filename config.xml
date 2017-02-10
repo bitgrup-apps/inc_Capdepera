@@ -39,7 +39,7 @@
         <param name="API_KEY_FOR_ANDROID" value="AIzaSyAbCsdbOZ31x79tk8PDVHsW3AL_zgNseGo" />
         <param name="API_KEY_FOR_IOS" value="AIzaSyB7g2Ackb5PebwE30QwAqAzPMGo1r4HnFQ" />
     </gap:plugin>
-    <!--gap:plugin name="phonegap-plugin-push"  source="npm"/-->
+    <gap:plugin name="phonegap-plugin-push"  source="npm" version="1.9.2"/>
     <gap:plugin name="cordova-plugin-file-transfer"   source="npm" />    
     <gap:plugin name="cordova-plugin-camera"  source="npm" />
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
