@@ -237,11 +237,12 @@ function onMapInit() {
 
 //NOVA LOCALITZACIÓ AL MAPA
 function novaLocalitzacio(posicio){
-	
+                        alert(posicio);
 			var request = {
 			  'position': posicio
 			};
 			plugin.google.maps.Geocoder.geocode(request, function(results) {
+                            alert(results);
 			  if (results.length) {
 				  
 				var result = results[0];
