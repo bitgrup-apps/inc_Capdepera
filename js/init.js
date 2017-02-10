@@ -282,7 +282,6 @@ function novaLocalitzacio(posicio) {
             if (posicio){
                 window.mapa.addMarker({
                     'position': posicio,
-                    'title': ''
                 }, function (marker) {
                     marker.showInfoWindow();
                     window.mapa.addEventListenerOnce("MARKER_REMOVE", function () {
