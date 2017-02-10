@@ -597,7 +597,7 @@ function comprovaPosicio(lat, long) {
     return ok;
 }
 function errorMapa() {
-    alert('No es pot aconseguir la vostra localització, indicau una localització al mapa');
+    //alert('No es pot aconseguir la vostra localització, indicau una localització al mapa');
     try {
         window.mapa.animateCamera({
             target: {

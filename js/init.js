@@ -246,10 +246,11 @@ function novaLocalitzacio(posicio) {
     var request = {
         'position': posicio
     };
-    plugin.google.maps.Geocoder.geocode(request, function (results) {
-
-        //if (results.length) {
-
+    
+    plugin.google.maps.Geocoder.geocode(request, function (results, status) {
+;
+        if (status == google.maps.GeocoderStatus.OK) {
+            alert(results);
             var result = results[0];
             var position = result.position;
 
@@ -258,7 +259,7 @@ function novaLocalitzacio(posicio) {
                 result.locality || "",
                 result.postalCode || ""].join(", ");
             window.mapa.addMarker({
-                'position': posicio,
+                'position': position,
                 'title': address
             }, function (marker) {
                 marker.showInfoWindow();
@@ -276,9 +277,10 @@ function novaLocalitzacio(posicio) {
             });
             $('#adresaIncidencia').val(result.thoroughfare);
             $('#poblacioIncidencia').val(result.locality);
-       /* } else {
+        } else {
             alert("No es pot aconseguir la vostra ubicació");
-        }*/
+            alert(google.maps.GeocoderStatus);
+        }
     });
 
 }
