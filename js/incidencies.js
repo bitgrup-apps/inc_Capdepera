@@ -19,7 +19,7 @@ function carregaLlistaIn(xml_in) {
          '<a class="col-xs-8" href="#veureIncidencia" onClick="idInc = ' + $(this).find('Id').text() + ';" data-transition="slide" data-role="none" >' +
          '<b>' + getTipusIncidencia($(this).find('tipus').text()) + '</b>' +
          '<p>Incidència creada el ' + $(this).find('fecha').text() + '</p>' +
-         '<div class="col-xs-4 assignada estat-inc ' + assignada + ' "><span>Assignada</span></div><div class="col-xs-4 tramit estat-inc ' + tramit + ' "><span>Tràmit</span></div><div class="col-xs-4 finalitzada estat-inc ' + finalitzada + ' "><span>Finalitzada</span></div>' +
+         '<div class="col-xs-4 assignada estat-inc ' + assignada + ' "><span>Assignada</span></div><div class="col-xs-4 tramit estat-inc ' + tramit + ' "><span>Tràmit</span></div><div class="col-xs-4 finalitzada estat-inc ' + finalitzada + ' "><span>Tramitada</span></div>' +
          '<div class="col-xs-12"><p class="desc">' + $(this).find('descripcio').text() + '</p></div>' +
          '</a>' +
          '<div class="col-xs-4 img" style="background-image:url(\'http://gestcap.com/gestio/img/incidencies/' + $(this).find('img').text() + '\');"></div>' +
@@ -172,7 +172,7 @@ function mostraIncidencia() {
             $('#estatIncP2').removeClass('finalitzada');
             $('#estatIncP2').addClass('tramit');
         }else if ($(xml).find('estat').text() == 3){
-            estat = 'Finalitzada';
+            estat = 'Tramitada';
             $('#estatIncP2').removeClass('assignada');
             $('#estatIncP2').removeClass('tramit');
             $('#estatIncP2').addClass('finalitzada');
