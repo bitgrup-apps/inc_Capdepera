@@ -187,7 +187,7 @@ function htmlEntities(str) {
 }
 
 function error_(codi, json, error) {
-    $.post('http://bitgrup.es/webtest/clickincidencies/App/incidencies.php', {funcio: 'appError', TOKEN: 'LAIDSD88347ERJKADKFGKAHPF8YA9DF8Y', codi: codi, json: json, error: error}, function (data) {});
+    $.post('http://gestcap.com/gestio/App/incidencies.php', {funcio: 'appError', TOKEN: 'LAIDSD88347ERJKADKFGKAHPF8YA9DF8Y', codi: codi, json: json, error: error}, function (data) {});
 }
 
 //#############################################################
@@ -397,7 +397,7 @@ function enviaIncidencia() {
 
     if (window.numImatges == 0) {
         $.ajax({
-            url: 'http://bitgrup.es/webtest/clickincidencies/App/incidencies.php', type: 'POST', data: parametros,
+            url: 'http://gestcap.com/gestio/App/incidencies.php', type: 'POST', data: parametros,
             cache: false,  async: false,  beforeSend: function () {},
             success: function (data) {
                 try {
@@ -433,7 +433,7 @@ function enviaIncidencia() {
         ft.onprogress = function (progressEvent) {
             $('#loading').css('display', 'table');
         };
-        ft.upload(imageURI, encodeURI("http://bitgrup.es/webtest/clickincidencies/App/incidencies.php"), win, fail, options);
+        ft.upload(imageURI, encodeURI("http://gestcap.com/gestio/App/incidencies.php"), win, fail, options);
     }
 
     return false;
@@ -492,7 +492,7 @@ function enviaSegonaImatge(id) {
     ft.onprogress = function (progressEvent) {
         $('#loading').css('display', 'table');
     };
-    ft.upload(imageURI, encodeURI("http://bitgrup.es/webtest/clickincidencies/App/incidencies.php"), win2, fail2, options);
+    ft.upload(imageURI, encodeURI("http://gestcap.com/gestio/App/incidencies.php"), win2, fail2, options);
 }
 
 function win2(data) {
@@ -542,7 +542,7 @@ function enviaTerceraImatge(id) {
     ft.onprogress = function (progressEvent) {
         $('#loading').css('display', 'table');
     };
-    ft.upload(imageURI, encodeURI("http://bitgrup.es/webtest/clickincidencies/App/incidencies.php"), win3, fail2, options);
+    ft.upload(imageURI, encodeURI("http://gestcap.com/gestio/App/incidencies.php"), win3, fail2, options);
 }
 
 function win3(data) {

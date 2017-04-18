@@ -17,7 +17,7 @@ function carregaLlistaInOperaris() {
         //carregam les incidencies de l'operari
         var xml = '';
         var formData = new FormData();
-        formData.append("funcio", "getIncidenciesOperari");
+        formData.append("funcio", "getIncidencies");
         formData.append("TOKEN", 'LAIDSD88347ERJKADKFGKAHPF8YA9DF8Y');
         formData.append("macAddress", window.MACadress);
         formData.append("idU", readCookie('idU'));
@@ -26,7 +26,7 @@ function carregaLlistaInOperaris() {
 
         //#####################     INCIDENCIES CORRESPONENTS AL GRUP       ##########################
         $.ajax({
-            url: 'http://bitgrup.es/webtest/clickincidencies/App/incidencies.php', type: 'POST', data: formData,
+            url: 'http://gestcap.com/gestio/App/incidencies.php', type: 'POST', data: formData,
             cache: false, contentType: false, processData: false, async: false, dataType: "xml", beforeSend: function () {},
             success: function (data) {
                 xml = data;
@@ -40,13 +40,17 @@ function carregaLlistaInOperaris() {
         //LES POSAM AL DIV
         var inc = '';
         $(xml).find('incidencia').each(function (index, element) {
+            var assignada = ($(this).find('estat').text() == '1') ? 'actiu' : '';
+            var tramit = ($(this).find('estat').text() == '2') ? 'actiu' : '';
+            var finalitzada = ($(this).find('estat').text() == '3') ? 'actiu' : '';
             inc = inc + '<div class="col-xs-12 incidencia prioritat_' + $(this).find('prioritat').text() + '" data-role="collapsible" data-filtertext="' + $(this).find('titol').text() + '">' +
              '<a class="col-xs-8" href="#veureIncidenciaOperari" onClick="idInc = ' + $(this).find('Id').text() + ';" data-transition="slide" data-role="none" >' +
              '<b>' + getTipusIncidencia($(this).find('tipus').text()) + '</b>' +
              '<p>Incidència creada el ' + $(this).find('fecha').text() + '</p>' +
-             '<p>' + $(this).find('titol').text() + '</p>' +
+             '<div class="col-xs-4 assignada estat-inc ' + assignada + ' "><span>Assignada</span></div><div class="col-xs-4 tramit estat-inc ' + tramit + ' "><span>Tràmit</span></div><div class="col-xs-4 finalitzada estat-inc ' + finalitzada + ' "><span>Finalitzada</span></div>' +
+             '<div class="col-xs-12"><p class="desc">' + $(this).find('descripcio').text() + '</p></div>' +
              '</a>' +
-             '<div class="col-xs-4 img" style="background-image:url(\'http://bitgrup.es/webtest/clickincidencies/img/incidencies/' + $(this).find('img').text() + '\');"></div>' +
+             '<div class="col-xs-4 img" style="background-image:url(\'http://gestcap.com/gestio/img/incidencies/' + $(this).find('img').text() + '\');"></div>' +
              '</div>';
 
 
@@ -67,7 +71,7 @@ function carregaLlistaInOperaris() {
             formData_v.append("idU", readCookie('idU'));
             formData_v.append("idP", readCookie('idP'));
             $.ajax({
-                url: 'http://bitgrup.es/webtest/clickincidencies/App/incidencies.php', type: 'POST', data: formData_v,
+                url: 'http://gestcap.com/gestio/App/incidencies.php', type: 'POST', data: formData_v,
                 cache: false, contentType: false, processData: false, async: false, dataType: "xml", beforeSend: function () {},
                 success: function (data) {
                     xml = data;
@@ -87,7 +91,7 @@ function carregaLlistaInOperaris() {
                  '<p>Incidència creada el ' + $(this).find('fecha').text() + '</p>' +
                  '<p>' + $(this).find('titol').text() + '</p>' +
                  '</a>' +
-                 '<div class="col-xs-4 img" style="background-image:url(\'http://bitgrup.es/webtest/clickincidencies/img/incidencies/' + $(this).find('img').text() + '\');"></div>' +
+                 '<div class="col-xs-4 img" style="background-image:url(\'http://gestcap.com/gestio/img/incidencies/' + $(this).find('img').text() + '\');"></div>' +
                  '</div>';
 
 
@@ -117,7 +121,7 @@ function mostraIncidenciaOperari() {
     formData.append("idP", readCookie('idP'));
 
     $.ajax({
-        url: 'http://bitgrup.es/webtest/clickincidencies/App/incidencies.php', type: 'POST', data: formData,
+        url: 'http://gestcap.com/gestio/App/incidencies.php', type: 'POST', data: formData,
         cache: false, contentType: false, processData: false, async: false, dataType: "xml", beforeSend: function () {},
         success: function (data) {
             xml = data;
@@ -140,7 +144,7 @@ function mostraIncidenciaOperari() {
         $('#verificaIncidencia').data('incidencia',$(xml).find('Id').text());
         //GET IMG 1
         if ($(xml).find('img').text() != '') {
-            $('#imgIncidenciaZOperari').attr('src', 'http://bitgrup.es/webtest/clickincidencies/img/incidencies/' + $(xml).find('img').text());
+            $('#imgIncidenciaZOperari').attr('src', 'http://gestcap.com/gestio/img/incidencies/' + $(xml).find('img').text());
         } else {
             $('#imgIncidenciaZOperari').attr('src', 'images/no-img-incid.png');
         }
@@ -180,7 +184,7 @@ function enviarActualitzacioIncidencia() {
         formData.append("TOKEN", 'LAIDSD88347ERJKADKFGKAHPF8YA9DF8Y');
         formData.append("idInc", window.idInc);
         $.ajax({
-            url: 'http://bitgrup.es/webtest/clickincidencies/App/incidencies.php', type: 'POST', data: formData,
+            url: 'http://gestcap.com/gestio/App/incidencies.php', type: 'POST', data: formData,
             cache: false, contentType: false, processData: false, async: false, beforeSend: function () {},
             success: function (data) {
                 $('#loading').css('display', 'none');
@@ -233,7 +237,7 @@ function verfificarIncidencia() {
         formData.append("funcio", 'verificaIncidencies');
 
         $.ajax({
-            url: 'http://bitgrup.es/webtest/clickincidencies/App/incidencies.php', type: 'POST', data: formData,
+            url: 'http://gestcap.com/gestio/App/incidencies.php', type: 'POST', data: formData,
             cache: false, contentType: false, processData: false, async: false, beforeSend: function () {},
             success: function (data) {
                 $('#loading').css('display', 'none');
