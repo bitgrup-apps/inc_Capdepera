@@ -91,7 +91,7 @@
     <icon src="icons/icon-72@2x.png" gap:platform="ios" width="144" height="144" />
     
 	
-    <gap:splash src="splash/ios/Default.png" width="320" height="480" />
+    <!--gap:splash src="splash/ios/Default.png" width="320" height="480" />
     <gap:splash src="splash/ios/Default-Landscape.png" width="480" height="320" />
     <gap:splash src="splash/ios/Default_new_iphone5.png" width="320" height="568" />
     <gap:splash src="splash/ios/Default_new_iphone5-Landscape.png" width="568" height="320" /> 
@@ -105,7 +105,7 @@
     <gap:splash src="splash/ios/Default-Portrait_750_1334.png" width="750" height="1334" />
     <gap:splash src="splash/ios/Default-Portrait_1334_750.png" width="1334" height="750" />
     <gap:splash src="splash/ios/Default-Portrait_1242_2208.png" width="1242" height="2208" />
-    <gap:splash src="splash/ios/Default-Portrait_2208_1242.png" width="2208" height="1242" />
+    <gap:splash src="splash/ios/Default-Portrait_2208_1242.png" width="2208" height="1242" /-->
     
     <!-- ANDROID -->
     <platform name="android">
