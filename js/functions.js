@@ -345,7 +345,16 @@ function getFecha() {
     var mes = fecha.getMonth() + 1;
     if (mes < 10)
         mes = '0' + mes;
-    return dia + '/' + mes + '/' + fecha.getFullYear() + ' ' + fecha.getHours() + ':' + fecha.getMinutes()
+    var hora = fecha.getHours();
+    if (hora < 10)
+        hora = '0' + hora;
+    var min = fecha.getMinutes();
+    if (min < 10)
+        min = '0' + min;
+    
+    
+    
+    return dia + '/' + mes + '/' + fecha.getFullYear() + ' ' + hora + ':' + min;
 }
 $(document).on("pagebeforeshow", "#darreresIncidencies", function () { // When entering pagetwo 
     try {

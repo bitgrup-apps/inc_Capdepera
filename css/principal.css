@@ -1,6 +1,6 @@
 /* CSS Document */
 @import url(fonts/roboto/roboto.css);
-@import url(fonts/opensand/quicksand.css);
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
 @import url(fonts/montserrat/montserrat.css);
 @import url(fonts/calibri/calibri.css);
 @import url(fonts/material-design/material-design.css);
@@ -17,14 +17,14 @@ img{width:100%;}
 .vcenter-bottom{ display: inline-block;    vertical-align:bottom;    float: none; }
 
 /*###### GENERAL #########*/
-body{height:100%;font-family: 'Quicksand'; }
+body{height:100%;font-family: 'Quicksand', sans-serif; }
 .header.ui-header{ height:12%; background-image: url('../images/fondo-header.png'); border:none;}
 .ui-content{height:88%;-webkit-overflow-scrolling: touch; }
 .footer.ui-footer{height:12%; border:none; overflow:hidden; background-color:transparent;}
 .ui-page-theme-a .back.ui-btn{background:url('../icons/enrera.png'); background-size:11px auto; background-position:center center; background-repeat:no-repeat; border:none; position:absolute; left:5%; top:70%; margin-top:-8px; box-shadow:none; width:27px; height:18px;}
 .seguent.ui-btn-right{background:url('../icons/endavant-ico.png'); background-size:19px auto; background-position:center center; background-repeat:no-repeat; border:none; position:absolute; right:2em; top:70%; margin-top:-8px; box-shadow:none; width:27px; height:18px;}
 .final.ui-btn-right{  background:url('../icons/endavant-ico.png'); background-size:19px auto; background-position:center center; background-repeat:no-repeat; border:none; position:absolute; right:2em; top:70%; margin-top:-8px; box-shadow:none; width:27px; height:18px;}
-.ui-mobile-viewport{font-family: 'Quicksand'; font-weight:300;  background:none !important; background-color:transparent !important;}
+.ui-mobile-viewport{font-family: 'Quicksand', sans-serif; font-weight:300;  background:none !important; background-color:transparent !important;}
 .ui-mobile .ui-page{background:url('../images/fondo.png');background-size:100% 100%; height:100%;}
 .ui-page-theme-a{background:transparent;}
 .text-avis{padding:2em 5px 0; font-style: italic; font-size: 12px; color: RGB(153, 153, 153)}
@@ -33,7 +33,7 @@ a:hover{text-decoration:none;}
 a:active, a:focus{opacity:0.6; text-decoration:none;}
 ::-webkit-input-placeholder{color:#999;}:-moz-placeholder{color:#999; opacity: 1;}::-moz-placeholder {color:#999;opacity: 1;}:-ms-input-placeholder { color:#999;}
 
-#loading{position:fixed; z-index:10; display:none; width:100%; height:100%; background-image:url('../icons/loading.gif'); background-color:rgba(256,256,256,0.7); background-size:16vw auto; background-position:center center; background-repeat:no-repeat;}
+#loading{position:fixed; z-index:10; display:none; width:100%; height:100%; background-image:url('../icons/loading.gif'); background-color:rgba(256,256,256,0.7); background-size:34vw auto; background-position:center center; background-repeat:no-repeat;}
 
 
 
@@ -62,7 +62,7 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #home .header{display:none;}
 #home .ui-content{ height:100%; }
 #home .icon-config{width:37px; height:37px; background:transparent url('../icons/config.png') no-repeat center center; background-size:35px auto; margin:1em; float:right; }
-#home .btn-home{width:220px; padding:40px 10px; color:#fff; font-size:12px; font-family: 'Quicksand'; text-transform: uppercase; text-align: center; border:3px solid #fff; display: inline-block; text-shadow:none; margin-bottom: 10px; border-radius: 3px; font-weight: 400; background:rgba(256,256,256,0.5);transition:all 0.3s ease-in-out;}
+#home .btn-home{width:220px; padding:40px 10px; color:#fff; font-size:12px; font-family: 'Quicksand', sans-serif; text-transform: uppercase; text-align: center; border:3px solid #fff; display: inline-block; text-shadow:none; margin-bottom: 10px; border-radius: 3px; font-weight: 400; background:rgba(256,256,256,0.5);transition:all 0.3s ease-in-out;}
 #home .ui-content .col-xs-12{text-align: center;}
 #home .btn-home:hover, #home .btn-home:focus{background:rgba(256,256,256,0.2);}
 
@@ -70,7 +70,7 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #afegirIncidencia .header{background:url('../images/logo2.png'); background-position:center 60% ; background-size:40% auto; background-repeat:no-repeat;}
 #afegirIncidencia .ui-content{height:88%;}
 #afegirIncidencia .t-incidencies{margin-top:10%;}
-#afegirIncidencia .t-incidencia{padding:10px; background:rgba(256,256,256,0.5); margin:4px; width:106px;height: 122px; transition:all 0.3s ease-in-out;}
+#afegirIncidencia .t-incidencia{padding:10px; background:rgba(256,256,256,0.5); margin:5px 0; width:100%;height: 122px; transition:all 0.3s ease-in-out;}
 #afegirIncidencia .t-incidencia:hover, #afegirIncidencia .t-incidencia:focus{background:rgba(256,256,256,0.2);}
 #afegirIncidencia .t-incidencia img{padding:15px 15px 0;height: 70px;width: auto;}
 #afegirIncidencia .t-incidencia span.neteja{padding-top: 0;}
@@ -125,7 +125,7 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 
 /*######## AFEGIR INCIDENCIA PASO 2 B  #############*/
 #incidenciaPasa2B .ui-content{padding:20% 2em 10%;margin:0; width:100%;}
-#incidenciaPasa2B input{background:none; padding:10px 0 3px; margin:-11px 0 35px 0; font-family: 'Quicksand'; font-size: 16px; color:#818080; font-weight: 700;}
+#incidenciaPasa2B input{background:none; padding:10px 0 3px; margin:-11px 0 35px 0; font-family: 'Quicksand', sans-serif; font-size: 16px; color:#818080; font-weight: 700;}
 .ui-checkbox label.ui-btn{border:none; background:transparent;  color:#a7a7a7; font-weight:normal;font-family: 'Calibri';font-size: 15px; font-weight: 300; margin: 7vh 10% 7vh; padding-left: 47px;}
 .ui-btn.ui-checkbox-off::after {border:2px solid #999; border-radius: 0; background: transparent;}
 .ui-page-theme-a .ui-btn:hover{color:#a7a7a7;}
@@ -140,11 +140,12 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #incidenciaPasa3.nova-incidencia .ui-content{background:transparent;}
 #incidenciaPasa3 .quadre{padding:5% 12% 7%;}
 #incidenciaPasa3 b{color:#fff; font-size: 16px;  display:inline-block;font-weight: 400;text-shadow: none;}
-#incidenciaPasa3 p{margin-bottom: 0; color:#fff; text-shadow: none;padding-top: 10px;text-align: center; font-family: 'Quicksand'; font-size: 14px; font-weight: 700; }
+#incidenciaPasa3 p{margin-bottom: 0; color:#fff; text-shadow: none;padding-top: 10px;text-align: left; font-family: 'Quicksand', sans-serif; font-size: 14px; font-weight: 700; padding-bottom: 10px;}
 #incidenciaPasa3 .row-dates{padding:15px; background:#508a87}
+#incidenciaPasa3 .row-dates > p{text-align: center;}
 #incidenciaPasa3 .ui-content{padding:0%;}
 #incidenciaPasa3 .img-petita{padding-bottom: 10px;}
-#incidenciaPasa3 .finalIncid{position:absolute; bottom: 4%; right: 4%; width:70px; height:70px; cursor:pointer;}
+#incidenciaPasa3 .finalIncid{ width:70px; height:70px; cursor:pointer;float: right;margin-right: 12%;margin-bottom: 5%;margin-top: -100px;}
 #incidenciaPasa3 .finalIncid:hover, #incidenciaPasa3 .finalIncid:focus{opacity:0.6;}
 
 /*######## AFEGIR INCIDENCIA PASO 4   #############*/
@@ -155,8 +156,8 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #incidenciaPasa3 .imgIncidencia{height:auto; overflow:hidden; }
 #incidenciaPasa4 .tornaInici{position:absolute; bottom: 4%; right: 4%; width:70px; height:70px; cursor:pointer;}
 #incidenciaPasa4 .tornaInici:hover, #incidenciaPasa3 .finalIncid:focus{opacity:0.6;}
-#incidenciaPasa4 h1{font-family: 'Quicksand'; font-size: 30px; font-weight: 400; margin: 50% 5% 20px;}
-#incidenciaPasa4 h3{font-family: 'Quicksand'; font-size: 14px; font-weight: 700; }
+#incidenciaPasa4 h1{font-family: 'Quicksand', sans-serif; font-size: 30px; font-weight: 400; margin: 50% 5% 20px;}
+#incidenciaPasa4 h3{font-family: 'Quicksand', sans-serif; font-size: 14px; font-weight: 700; }
 
 
 /*######## LLISTA INCIDENCIES   #############*/
