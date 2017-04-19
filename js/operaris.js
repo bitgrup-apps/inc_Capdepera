@@ -47,7 +47,7 @@ function carregaLlistaInOperaris() {
              '<a class="col-xs-8" href="#veureIncidenciaOperari" onClick="idInc = ' + $(this).find('Id').text() + ';" data-transition="slide" data-role="none" >' +
              '<b>' + getTipusIncidencia($(this).find('tipus').text()) + '</b>' +
              '<p>Incidència creada el ' + $(this).find('fecha').text() + '</p>' +
-             '<div class="col-xs-4 assignada estat-inc ' + assignada + ' "><span>Assignada</span></div><div class="col-xs-4 tramit estat-inc ' + tramit + ' "><span>Tràmit</span></div><div class="col-xs-4 finalitzada estat-inc ' + finalitzada + ' "><span>Tramitada</span></div>' +
+             '<div class="col-xs-4 assignada estat-inc ' + assignada + ' "><span>Pendent</span></div><div class="col-xs-4 tramit estat-inc ' + tramit + ' "><span>En procés</span></div><div class="col-xs-4 finalitzada estat-inc ' + finalitzada + ' "><span>Finalitzada</span></div>' +
              '<div class="col-xs-12"><p class="desc">' + $(this).find('descripcio').text() + '</p></div>' +
              '</a>' +
              '<div class="col-xs-4 img" style="background-image:url(\'http://gestcap.com/gestio/img/incidencies/' + $(this).find('img').text() + '\');"></div>' +

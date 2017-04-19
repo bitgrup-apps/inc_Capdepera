@@ -62,21 +62,30 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #home .header{display:none;}
 #home .ui-content{ height:100%; }
 #home .icon-config{width:37px; height:37px; background:transparent url('../icons/config.png') no-repeat center center; background-size:35px auto; margin:1em; float:right; }
-#home .btn-home{width:220px; padding:40px 10px; color:#fff; font-size:12px; font-family: 'Quicksand', sans-serif; text-transform: uppercase; text-align: center; border:3px solid #fff; display: inline-block; text-shadow:none; margin-bottom: 10px; border-radius: 3px; font-weight: 400; background:rgba(256,256,256,0.5);transition:all 0.3s ease-in-out;}
+#home .btn-home{width:220px; padding:40px 10px; color:#fff; font-size:12px; font-family: 'Quicksand', sans-serif; text-transform: uppercase; text-align: center; border:3px solid #fff; display: inline-block; text-shadow:none; margin-bottom: 10px; border-radius: 3px; font-weight: 400; background:rgba(256,256,256,0.1);transition:all 0.3s ease-in-out;}
 #home .ui-content .col-xs-12{text-align: center;}
 #home .btn-home:hover, #home .btn-home:focus{background:rgba(256,256,256,0.2);}
 
 /*######## AFEGIR INCIDENCIA #############*/
+#afegirIncidencia h2{margin-bottom:20px;}
 #afegirIncidencia .header{background:url('../images/logo2.png'); background-position:center 60% ; background-size:40% auto; background-repeat:no-repeat;}
 #afegirIncidencia .ui-content{height:88%;}
 #afegirIncidencia .t-incidencies{margin-top:10%;}
-#afegirIncidencia .t-incidencia{padding:10px; background:rgba(256,256,256,0.5); margin:5px 0; width:100%;height: 122px; transition:all 0.3s ease-in-out;}
+#afegirIncidencia .t-incidencia{padding:10px; background:rgba(256,256,256,0.5); margin:5px 0; width:100%;height: 135px; transition:all 0.3s ease-in-out; text-align: center;}
+#afegirIncidencia .t-incidencia.xarxa {background:rgba(256,256,256,0.15);}
+#afegirIncidencia .t-incidencia.parcs {background:rgba(256,256,256,0.12);}
+#afegirIncidencia .t-incidencia.neteja {background:rgba(256,256,256,0.1);}
+#afegirIncidencia .t-incidencia.enllumenat {background:rgba(256,256,256,0.08);}
+#afegirIncidencia .t-incidencia.mobiliari {background:rgba(256,256,256,0.05);}
+#afegirIncidencia .t-incidencia.medi {background:rgba(256,256,256,0.03);}
+#afegirIncidencia .t-incidencia.altres {background:rgba(256,256,256,0.02);}
 #afegirIncidencia .t-incidencia:hover, #afegirIncidencia .t-incidencia:focus{background:rgba(256,256,256,0.2);}
-#afegirIncidencia .t-incidencia img{padding:15px 15px 0;height: 70px;width: auto;}
+#afegirIncidencia .t-incidencia img{padding:15px 0 0;height: 70px;width: auto;}
 #afegirIncidencia .t-incidencia span.neteja{padding-top: 0;}
-#afegirIncidencia .t-incidencia span{font-size: 12px; padding-top: 15px;line-height: 15px;}
+#afegirIncidencia .t-incidencia span{font-size: 12px; padding-top: 15px;line-height: 15px; font-weight: 700;}
 #afegirIncidencia .footer{display:none;}
 #afegirIncidencia .imgIncidencia{height:292px; background:#EBEBEB;}
+#afegirIncidencia .btns-incidencies{max-width: 500px;margin: auto;}
 
 /*######## AFEGIR INCIDENCIA PASO 1  #############*/
 .nova-incidencia .ui-content{margin-left: -1em;margin-right: -1em;width: calc(100% + 2em);background:#fff;}

@@ -81,10 +81,10 @@
             <div data-role="content" >
                 <h2>Gestiona la teva incidència</h2>
                 <div class="container-fluid t-incidencies">
-                    <div class="row">
+                    <div class="row btns-incidencies">
                         <a data-role="none" href="#incidenciaPasa1" data-transition="slide" onClick="$('#tipusIncidencia').val(1);">
                             <div class="col-xs-4">
-                                <div class="t-incidencia">
+                                <div class="t-incidencia xarxa">
                                     <img src="icons/in-aigua.png" alt="CLICKINCIDENCIES"  id="tipus-incidencia-1" title="Xarxa d'aigua">
                                     <span>Xarxa d'aigua</span>
                                 </div>
@@ -92,7 +92,7 @@
                         </a>
                         <a data-role="none" href="#incidenciaPasa1" data-transition="slide" onClick="$('#tipusIncidencia').val(2);">
                             <div class="col-xs-4">
-                                <div class="t-incidencia">
+                                <div class="t-incidencia parcs">
                                     <img src="icons/in-banc.png" alt="CLICKINCIDENCIES" id="tipus-incidencia-2" title="Parcs infantils i mobiliari urbà">
                                     <span>Parcs i jardins</span>
                                 </div>
@@ -100,7 +100,7 @@
                         </a>
                         <a data-role="none" href="#incidenciaPasa1" data-transition="slide" onClick="$('#tipusIncidencia').val(3);">
                             <div class="col-xs-4">
-                                <div class="t-incidencia">
+                                <div class="t-incidencia neteja">
                                     <img src="icons/in-papelera.png" alt="CLICKINCIDENCIES" id="tipus-incidencia-3" title="Neteja i gestió de residus" >
                                     <span class="neteja">Neteja i gestió de residus</span>
                                 </div>
@@ -108,7 +108,7 @@
                         </a>
                         <a data-role="none" href="#incidenciaPasa1" data-transition="slide" onClick="$('#tipusIncidencia').val(4);">
                             <div class="col-xs-4">
-                                <div class="t-incidencia">
+                                <div class="t-incidencia enllumenat">
                                     <img src="icons/in-farola.png" alt="CLICKINCIDENCIES" id="tipus-incidencia-4" title="Enllumenat">
                                     <span>Enllumenat</span>
                                 </div>
@@ -117,15 +117,23 @@
 
                         <a data-role="none" href="#incidenciaPasa1" data-transition="slide" id="tipus-incidencia-5"  onClick="$('#tipusIncidencia').val(5);">
                             <div class="col-xs-4">
-                                <div class="t-incidencia">
+                                <div class="t-incidencia mobiliari">
                                     <img src="icons/in-urba.png" alt="CLICKINCIDENCIES" title="Altres">
                                     <span>Mobiliari urbà</span>
                                 </div>
                             </div>
                         </a>
-                        <a data-role="none" href="#incidenciaPasa1" data-transition="slide" onClick="$('#tipusIncidencia').val(6);">
+                        <a data-role="none" href="#incidenciaPasa1" data-transition="slide" id="tipus-incidencia-6"  onClick="$('#tipusIncidencia').val(6);">
                             <div class="col-xs-4">
-                                <div class="t-incidencia">
+                                <div class="t-incidencia medi">
+                                    <img src="icons/in-medi.png" alt="CLICKINCIDENCIES" title="Altres">
+                                    <span class="neteja">Medi ambient i<br>platges</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a data-role="none" href="#incidenciaPasa1" data-transition="slide" onClick="$('#tipusIncidencia').val(7);">
+                            <div class="col-xs-4 col-xs-offset-4">
+                                <div class="t-incidencia altres">
                                     <img src="icons/in-cono.png" alt="CLICKINCIDENCIES" id="tipus-incidencia-6" title="Suggeriments">
                                     <span>altres</span>
                                 </div>
@@ -266,11 +274,11 @@
                 <input type="text" name="nom_usuari" id="nom_usuari" placeholder="Nom" maxlength="150">
                 <input type="text" name="llinatges_usuari" id="llinatges_usuari" placeholder="Llinatges" maxlength="150">
                 <!--input type="checkbox" name="incidenciaNoVisible" id="incidenciaNoVisible" value="1"><label for="incidenciaNoVisible"><b>No</b> vull que aquesta incidència sigui visible per a les persones usuàries de l’aplicació</label-->
-                <input type="checkbox" name="rebreNotificacio" id="rebreNotificacio" value="1"><label for="rebreNotificacio">Vull rebre una notificació quan s'hagi resolt la incidència</label>
+                <!--input type="checkbox" name="rebreNotificacio" id="rebreNotificacio" value="1"><label for="rebreNotificacio">Vull rebre una notificació quan s'hagi resolt la incidència</label>
                 <div id="rebreNotificacioInfo">
                     <input type="email" name="email_usuari" id="email_usuari" placeholder="Per correu electrònic" maxlength="150">
                     <input type="tel" name="tel_usuari" id="tel_usuari" placeholder="Per via telefònica" maxlength="20" style="display:none;"> 
-                </div>
+                </div-->
             </div>
 
             <!--div data-role="footer" class="footer">
@@ -398,7 +406,7 @@
                     <div class="col-xs-12 info">
                         <b>Tipus d'incidència</b> 
                         <p id="tipusIncidenciaP2"></p> 
-                        <div id="estatIncP2" class="col-xs-12"></div>
+                        <!--div id="estatIncP2" class="col-xs-12"></div-->
                         <p id="dataIncidenciaP2" class="col-xs-12"></p>
                         <div class="imgIncidencia" ><img src="images/no-img-incid.png" id="imgIncidenciaZ" alt="CLICKINCIDENCIES" title="Incidència"></div>
                         <div class="col-xs-12">
