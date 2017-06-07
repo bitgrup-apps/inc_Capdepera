@@ -18,7 +18,7 @@ img{width:100%;}
 
 /*###### GENERAL #########*/
 body{height:100%;font-family: 'Quicksand', sans-serif; }
-.header.ui-header{ height:12%; background-image: url('../images/fondo-header.png'); border:none;}
+.header.ui-header{ height:12%; background-image: url('../images/fondo-header.png'); border:none;min-height: 17vw;}
 .ui-content{height:88%;-webkit-overflow-scrolling: touch; }
 .footer.ui-footer{height:12%; border:none; overflow:hidden; background-color:transparent;}
 .ui-page-theme-a .back.ui-btn{background:url('../icons/enrera.png'); background-size:11px auto; background-position:center center; background-repeat:no-repeat; border:none; position:absolute; left:5%; top:70%; margin-top:-8px; box-shadow:none; width:27px; height:18px;}
