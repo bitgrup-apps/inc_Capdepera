@@ -422,7 +422,11 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #esdeveniments-fitxa.fitxa h4{color:#d1c167;}
 #esdeveniments-fitxa.fitxa h2{text-align: left;margin-bottom: 2vh;}
 #esdeveniments-fitxa.fitxa h3{font-size: 4vw;}
-#esdeveniments-fitxa.fitxa p{padding: 1vh 0 0.5vw;}
+#esdeveniments-fitxa.fitxa p{padding: 3vh 0 0.5vw;}
+#esdeveniments-fitxa.fitxa p.data-hora{padding: 0.5vw 0px 0.5vw 6vw;position: relative;}
+#esdeveniments-fitxa.fitxa p.data-hora::before{content:" "; position:absolute; left:0; top:0; width: 5vw; height: 5vw; background-image: url(../icons/sprite_info_turisme.svg); background-size: 80vw; }
+#esdeveniments-fitxa.fitxa p.data-hora.fecha::before{background-position: -8vw -58.5vw;}
+#esdeveniments-fitxa.fitxa p.data-hora.hora::before{background-position: -1.4vw -56.3vw; background-size: 29vw;}
 
 /*######## NOTICIES #############*/
 .noticies .ui-header{background:#708e9a}
