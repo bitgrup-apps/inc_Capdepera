@@ -32,7 +32,13 @@ var init = {
                     $('#m-rutes').html(resp.rutes);
 
                     $('.menu').click(function () {
-                        $(this).find('.sub-menu').slideToggle('slow');
+                        if($(this).find('.sub-menu').is(":visible")){
+                            var that = this;
+                            $(this).find('.sub-menu').slideToggle('slow',function(){$(that).removeClass('open');});
+                        }else{
+                            $(this).addClass('open');
+                            $(this).find('.sub-menu').slideToggle('slow');
+                        }
                     });
                     init.onCapdepera.menuOk = true;
                 }
