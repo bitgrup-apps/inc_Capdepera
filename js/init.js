@@ -17,7 +17,8 @@ function onLoad() {
 }
 
 function initApp() {
-
+    
+    
 
     //controlam tipus dispositiu
     try {
@@ -59,21 +60,12 @@ function initApp() {
 
     //MAC ADDRESS
     try {
-        /*var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" 
-         : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" 
-         : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : "null";
-         if (deviceType == 'Android'){
-         getMacAddress();
-         }else{
-         window.plugins.uniqueDeviceID.get(successUUID, failUUID);
-         }*/
         window.MACadress = device.uuid;
         iniciaSessioInici();
 
     } catch (e) {
         error_('E INIT-75', 'MAC ADDRESS', e);
     }
-
 
     //MAPA
     try {
@@ -83,7 +75,7 @@ function initApp() {
         error_('E INIT-84', 'ERROR INIT MAPA', e);
     }
 
-
+    init.initApp();
 
 }
 

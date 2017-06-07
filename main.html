@@ -25,17 +25,13 @@
         <script src="phonegap.js" charset="utf-8" type="text/javascript"></script>
         <script src="cordova.js"></script>
         <script type="text/javascript" charset="utf-8" src="cordova_plugins.js"></script>
-        <script type="text/javascript" charset="utf-8" src="plugins/cordova-plugin-armsoft-googlemaps/www/googlemaps-cdv-plugin.js"></script>
-        <script type="text/javascript" charset="utf-8" src="plugins/org.apache.cordova.network-information/www/Connection.js"></script>
-        <script type="text/javascript" charset="utf-8" src="plugins/org.apache.cordova.network-information/www/network.js"></script>
-        <script type="text/javascript" charset="utf-8" src="plugins/org.apache.cordova.camera/www/Camera.js"></script>
-        <script type="text/javascript" charset="utf-8" src="plugins/org.apache.cordova.file-transfer/www/FileTransfer.js"></script>
 
 
 
         <!-- APP -->
         <script src="js/md5.js" type="text/javascript"></script>
         <script type="application/javascript" src="http://l2.io/ip.js?var=myip"></script>
+        <script src="js/info.js" type="text/javascript"></script>
         <script src="js/init.js" type="text/javascript"></script>
         <script src="js/session.js" type="text/javascript"></script>
         <script src="js/operaris.js" type="text/javascript"></script>
@@ -47,16 +43,50 @@
     </head> 
     <body onLoad="onLoad();"> 
         <div id="loading"></div>
-
-
+        
+        
         <!--////////////////////    HOME  ///////////////////////////////-->
+
+        <div data-role="page"  id="home-nou">
+            <div data-role="content" class=" " >
+                <a href="#loggin-home" data-role="none" data-transition="slide"></a>
+                <div class="col-xs-12 logo"><h1>BENVINGUTS</h1></div>
+                <div class="col-xs-12">
+                    <a href="#" class="pastilla oncpd" data-role="none" onclick="init.onCapdepera.init();">Capdepera</a>
+                </div>
+                <div class="col-xs-12">
+                    <a href="#" class="pastilla esdevn" data-role="none" onclick="init.esdeveniments.getEsdeveniments();">Esdeveniments</a>
+                </div>
+                <div class="col-xs-12">
+                    <a href="#" class="pastilla sprts" data-role="none" onclick="init.esports.init();">Esports</a>
+                </div>
+                <div class="col-xs-12">
+                    <a href="#noticies-home" class="pastilla notc" data-role="none" data-transition="slide">Notícies</a>
+                </div>
+                <div class="col-xs-12">
+                    <a href="#radio-home" class="pastilla rdio" data-role="none" data-transition="slide">Ràdio</a>
+                </div>
+            </div>
+
+        </div>
+        
+        
+        
+
+        <!--################################################################################-->
+        <!--######################          INCIDENCIES     ###############################-->
+        <!--################################################################################-->
+        
+        
+        <!--////////////////////    HOME INCIDENCIES  ///////////////////////////////-->
 
         <div data-role="page"  id="home">
 
             <div data-role="header" class="header"></div>
 
             <div data-role="content" class=" " >
-                <a href="#loginPage" data-role="none" data-transition="slide"><div class="icon-config no-sense-xarxa"></div></a>
+                <!--a href="#loginPage" data-role="none" data-transition="slide"><div class="icon-config no-sense-xarxa"></div></a-->
+                <div onclick="init.home();"></div>
                 <div class="col-xs-12 logo"><img src="images/logo.svg" alt="Ajuntament de Capdepera" title="Ajuntament de Capdepera"></div>
                 <div class="col-xs-12">
                     <a href="#darreresIncidencies" class="btn-home" data-role="none" data-transition="slide">Veure incidències</a>
@@ -67,6 +97,8 @@
             </div>
 
         </div>
+        
+        
 
 
 
@@ -595,9 +627,519 @@
             </div>
 
         </div>
+        
+        
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+        <!--###################               ONCAPDEPERA            ###########################-->
+        <!--####################################################################################-->
+        <!--####################################################################################-->
 
 
+        <!--////////////////////    HOME  ///////////////////////////////-->
 
+        <div data-role="page" class="oncapdepera pagina info-turisme"  id="oncapdepera-home">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_1">Oncapdepera</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-on-home" class=" " >
+                <div class="col-xs-12 menu doble">
+                    <div class="icono-menu"><span class="icon visites"></span></div>
+                    <span><span class="literal" data-literal="msg_on_men_1">Visites</span><br><span class="literal" data-literal="msg_on_men_1b">turístiques</span></span>
+                    <ul class="sub-menu" id="m-visites">
+                    </ul>
+                </div>
+                <div class="col-xs-12 menu doble">
+                    <div class="icono-menu"><span class="icon festes"></span></div>
+                    <span><span class="literal" data-literal="msg_on_men_2">Festes</span><br><span class="literal" data-literal="msg_on_men_2b">populars</span></span>
+                    <ul class="sub-menu" id="m-festes">
+                    </ul>
+                </div>
+                <a data-role="none" data-transition="slide" href="#oncapdepera-serveis">
+                    <div class="col-xs-12 menu">
+                        <div class="icono-menu"><span class="icon serveis"></span></div>
+                        <span class="literal" data-literal="msg_on_men_3">Serveis</span>
+                    </div>
+                </a> 
+                <div class="col-xs-12 menu doble">
+                    <div class="icono-menu"><span class="icon nuclis"></span></div>
+                    <span><span class="literal" data-literal="msg_on_men_4">Nuclis</span><br><span class="literal" data-literal="msg_on_men_4b">urbans</span></span>
+                    <ul class="sub-menu" id="m-nuclis">
+                    </ul>
+                </div>
+                <div class="col-xs-12 menu doble">
+                    <div class="icono-menu"><span class="icon rutes"></span></div>
+                    <span><span class="literal" data-literal="msg_on_men_5">Rutes de</span><br><span class="literal" data-literal="msg_on_men_5b">Senderisme</span></span>
+                    <ul class="sub-menu" id="m-rutes">
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+
+
+        <!--////////////////////    FITXA  ///////////////////////////////-->
+
+        <div data-role="page" class="oncapdepera pagina info-turisme"  id="oncapdepera-fitxa">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_1">Oncapdepera</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" class=""  id="oncpd-html">
+                
+            </div>
+        </div>
+        
+        
+        
+
+        <!--////////////////////    SERVEIS  ///////////////////////////////-->
+
+        <div data-role="page" class="oncapdepera pagina info-turisme"  id="oncapdepera-serveis">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_1">Oncapdepera</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-on-serveis" class="" >
+                <ul class="row serveis-menu nav nav-tabs">
+                    <li class="col-xs-4 active">
+                        <a data-toggle="tab" href="#page-transport">
+                            <i class="icon ico-transport"></i>
+                            <span class="literal" data-literal="msg_on_menu1">Transport</span>
+                        </a>
+                    </li>
+                    <li class="col-xs-4">
+                        <a data-toggle="tab" href="#page-salut">
+                            <i class="icon ico-salut"></i>
+                            <span class="literal" data-literal="msg_on_menu2">Health</span>
+                        </a>
+                    </li>
+                    <li class="col-xs-4">
+                        <a data-toggle="tab" href="#page-turistica">
+                            <i class="icon ico-info"></i>
+                            <span class="literal" data-literal="msg_on_menu3">Tourist information</span>
+                        </a>
+                    </li>
+                    <li class="col-xs-4 mercat">
+                        <a data-toggle="tab" href="#page-mercats">
+                            <i class="icon ico-mercats"></i>
+                            <span class="literal" data-literal="msg_on_menu4">Markets</span>
+                        </a>
+                    </li>
+                    <li class="col-xs-4">
+                        <a data-toggle="tab" href="#page-seguretat">
+                            <i class="icon ico-seguretat"></i>
+                            <span class="literal" data-literal="msg_on_menu5">Security</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="row servei-contingut tab-pane fade in active" id="page-transport">
+                        <div class="col-xs-12">
+                            <span class="literal" data-literal="msg_on_servei1">Taxis</span>
+                            <span><a href="tel:971565656">971 56 56 56</a></span>
+                            <span>Plaça dels Pins, S/N Cala Ratjada</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span class="literal" data-literal="msg_on_servei2">Mini Train</span>
+                            <span data-toggle="modal" data-target="#horarisTren" class="literal" data-literal="msg_on_servei2b">Timetable</span>
+                        </div>
+                    </div>
+
+                    <div class="row servei-contingut tab-pane fade" id="page-salut">
+                        <div class="col-xs-12">
+                            <span>Pac Cala Rajada</span>
+                            <span><a href="tel:971566550">971 566 550</a></span>
+                            <span>C/Juan Sebastian Elcano 47 - Cala Ratjada</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span>PAC CAPDEPERA</span>
+                            <span><a href="tel:971563006">971 563 006</a></span>
+                            <span>Carrer Nou, 12 - Capdepera</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><span class="literal" data-literal="msg_on_hospital">Hospital</span> de Manacor</span>
+                            <span><a href="tel:971847001">971 847 001</a></span>
+                            <span>Ctra. Manacor - Alcudia S/N - Manacor</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><span class="literal" data-literal="msg_on_hospital">Hospital</span> de llevant</span>
+                            <span><a href="tel:971822401">971 822 401</a></span>
+                            <span>Escamarlà, 6 - Porto Cristo</span>
+                        </div>
+                        <!-- ----->
+                        <div class="col-xs-12">
+                            <span><span class="literal" data-literal="msg_on_farmacia">Pharmacy</span> CARLOS ANTICH</span>
+                            <span><a href="tel:971563396">971 563 396</a></span>
+                            <span>Leonor Servera, 51 - Cala Rajada</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><span class="literal" data-literal="msg_on_farmacia">Pharmacy</span> CONCHA PARTERA</span>
+                            <span><a href="tel:971563062">971 563 062</a></span>
+                            <span>Via Mallorca, 29 - Cala Rajada</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><span class="literal" data-literal="msg_on_farmacia">Pharmacy</span> SONIA GARCÍA</span>
+                            <span><a href="tel:971564302">971 564 302</a></span>
+                            <span>Cala Agulla, 96 - Cala Ratjada</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><span class="literal" data-literal="msg_on_farmacia">Pharmacy</span> SIRER</span>
+                            <span><a href="tel:971819914">971 819 914</a></span>
+                            <span>Juan Carlos I, 111 - Cala Ratjada</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><span class="literal" data-literal="msg_on_farmacia">Pharmacy</span> FORNARIS</span>
+                            <span><a href="tel:971 563 135">971 563 135</a></span>
+                            <span>Llum, 18 - Capdepera</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><span class="literal" data-literal="msg_on_farmacia">Pharmacy</span> CRISTINA ANTICH</span>
+                            <span><a href="tel:971841114">971 841 114</a></span>
+                            <span>Nuredduna, 23 - Canyamel</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><span class="literal" data-literal="msg_on_farmacia">Pharmacy</span> CALA MESQUIDA</span>
+                            <span><a href="tel:674882008">674 882 008</a></span>
+                            <span>Cala Mesquida</span>
+                        </div>
+                    </div>
+
+                    <div class="row servei-contingut tab-pane fade" id="page-turistica">
+                        <div class="col-xs-12">
+                            <span>CAPDEPERA</span>
+                            <span><a href="tel:971556479">971 556 479</a></span>
+                            <span>C/ Centre, 9 Edifici Can Melis - Capdepera</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span>CAP VERMELL</span>
+                            <span><a href="tel:971818467">971 818 467</a></span>
+                            <span>C/ Agulla, 50 Edifici Cap Vermell - Cala Rajada</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span>PLAÇA DELS PINS</span>
+                            <span><a href="tel:971819467">971 819 467</a></span>
+                            <span>Plaça dels pins, S/N - Cala Rajada</span>
+                        </div>
+                    </div>
+
+                    <div class="row servei-contingut tab-pane fade" id="page-mercats">
+                        <div class="col-xs-12">
+                            <span>CAPDEPERA</span>
+                            <span class="literal" data-literal="msg_cada_dimecres">Every Wednesday</span>
+                            <span>Plaça de l'Orient - Capdepera</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span>CALA RATJADA</span>
+                            <span class="literal" data-literal="msg_cada_dissabte">Every Saturday</span>
+                            <span>Plaça dels pins - Cala Rajada</span>
+                        </div>
+                    </div>
+
+                    <div class="row servei-contingut tab-pane fade" id="page-seguretat">
+                        <div class="col-xs-12">
+                            <span>GUARDIA CIVIL CALA RATJADA</span>
+                            <span><a href="tel:971565673">971 565 673</a></span>
+                            <span>Explanada des moll - Cala Rajada</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span>POLICIA LOCAL CAPDEPERA</span>
+                            <span><a href="tel:971565463">971 565 463</a></span>
+                            <span>C/ Roses s/n - Capdepera</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span>POLICIA LOCAL CALA RATJADA</span>
+                            <span><a href="tel:971818467">971 818 467</a></span>
+                            <span>C/ Agulla, 50 Edificio Cap Vermell - Cala Rajada</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="horarisTren">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <img src="http://oncapdepera.com/images/horari_tren_turistic.jpg"/>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary literal" data-dismiss="modal" data-literal="msg_close">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+        <!--###################                 ESPORTS              ###########################-->
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+
+
+        <!--////////////////////    HOME  ///////////////////////////////-->
+
+        <div data-role="page" class="esports pagina info-turisme"  id="esports-home">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_2">Esports</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-esports-home" class=" " >
+                <div class="row" id="llista-esports">
+                    <div class="col-xs-12" onclick="init.esports.getFitxa();">
+                        <div class="col-xs-3">01</div>
+                        <div class="col-xs-9">
+                            <p><b>FUTBOL</b> ALEVINS</p>
+                            <p><i class="icon-tur ico-map"></i>Es Figueral <i class="icon-tur ico-clock"></i> 17h</p>
+                            <p>CD Escolar - CD Cardassar</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12" onclick="init.esports.getFitxa();">
+                        <div class="col-xs-3">02</div>
+                        <div class="col-xs-9">
+                            <p><b>FUTBOL</b> ALEVINS</p>
+                            <p><i class="icon-tur ico-map"></i>Es Figueral <i class="icon-tur ico-clock"></i> 17h</p>
+                            <p>CD Escolar - CD Cardassar</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12" onclick="init.esports.getFitxa();">
+                        <div class="col-xs-3">03</div>
+                        <div class="col-xs-9">
+                            <p><b>FUTBOL</b> ALEVINS</p>
+                            <p><i class="icon-tur ico-map"></i>Es Figueral <i class="icon-tur ico-clock"></i> 17h</p>
+                            <p>CD Escolar - CD Cardassar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--////////////////////    fitxa  ///////////////////////////////-->
+
+        <div data-role="page" class="esports pagina info-turisme fitxa"  id="esports-fitxa">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_2">Esports</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-esports-fitxa" class=" " >
+                <div class="row">
+                    <div class="col-xs-12 img" style="background-image:url(https://roams.es/c/wp-content/uploads/2016/07/futbol-2000x1218.jpg)"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h4>Futbol</h4>
+                        <h2>Capdepera VS Bunyola</h2>
+                        <h3>Es Figueral</h3>
+                        <p class="data-hora">Divendres, 16 de juny 2017</p>
+                        <p class="data-hora">Hora: 20:00h</p>
+                        <p>Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.Ipsum essimplemente Ipsum es simplemente el texto de relleno.</p>
+                        <p class="no-padding"><b>Durada: 90min</b></p>
+                        <p class="no-padding"><b>Entrades: Gratuïta</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+        <!--###################                 ESDEVENIMENT           ###########################-->
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+
+
+        <!--////////////////////    HOME  ///////////////////////////////-->
+
+        <div data-role="page" class="esdeveniments pagina info-turisme"  id="esdeveniments-home">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_2">Esdeveniments</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-esdeveniments-home" class=" " >
+                <div class="row" id="llista-esdeveniments"></div>
+            </div>
+        </div>
+        
+        <!--////////////////////    fitxa  ///////////////////////////////-->
+
+        <div data-role="page" class="esdeveniments pagina info-turisme fitxa"  id="esdeveniments-fitxa">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_2">Esdeveniments</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-esdeveniments-fitxa" class=" " >
+                <div class="row">
+                    <div class="col-xs-12 img" id="img_esdev"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12" id="desc_esdev"></div>
+                </div>
+            </div>
+        </div>
+
+        
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+        <!--###################                 NOTICIES             ###########################-->
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+
+
+        <!--////////////////////    HOME  ///////////////////////////////-->
+
+        <div data-role="page" class="noticies pagina info-turisme"  id="noticies-home">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_2">Notícies</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-noticies-home" class=" " >
+                <div class="row" id="llista-noticies">
+                    <div class="col-xs-12" onclick="init.noticies.getFitxa();">
+                        <div class="col-xs-12 img" style="background-image: url(http://esphoto980x880noname.mnstatic.com/5d3f3834c1d070714265acdadb254b50);" ></div>
+                        <div class="col-xs-12"><p>Notícies secondàries est qui dolorem ipsum eque porro quisquam est qui dolorem ipsum </p></div>
+                    </div>
+                    <div class="col-xs-12" onclick="init.noticies.getFitxa();">
+                        <div class="col-xs-12 img" style="background-image: url(http://esphoto980x880noname.mnstatic.com/5d3f3834c1d070714265acdadb254b50);" ></div>
+                        <div class="col-xs-12"><p>Notícies secondàries est qui dolorem ipsum eque porro quisquam est qui dolorem ipsum </p></div>
+                    </div>
+                    <div class="col-xs-12" onclick="init.noticies.getFitxa();">
+                        <div class="col-xs-12 img" style="background-image: url(http://esphoto980x880noname.mnstatic.com/5d3f3834c1d070714265acdadb254b50);" ></div>
+                        <div class="col-xs-12"><p>Notícies secondàries est qui dolorem ipsum eque porro quisquam est qui dolorem ipsum </p></div>
+                    </div>
+                    <div class="col-xs-12" onclick="init.noticies.getFitxa();">
+                        <div class="col-xs-12 img" style="background-image: url(http://esphoto980x880noname.mnstatic.com/5d3f3834c1d070714265acdadb254b50);" ></div>
+                        <div class="col-xs-12"><p>Notícies secondàries est qui dolorem ipsum eque porro quisquam est qui dolorem ipsum </p></div>
+                    </div>
+                    <div class="col-xs-12" onclick="init.noticies.getFitxa();">
+                        <div class="col-xs-12 img" style="background-image: url(http://esphoto980x880noname.mnstatic.com/5d3f3834c1d070714265acdadb254b50);" ></div>
+                        <div class="col-xs-12"><p>Notícies secondàries est qui dolorem ipsum eque porro quisquam est qui dolorem ipsum </p></div>
+                    </div>
+                    <div class="col-xs-12" onclick="init.noticies.getFitxa();">
+                        <div class="col-xs-12 img" style="background-image: url(http://esphoto980x880noname.mnstatic.com/5d3f3834c1d070714265acdadb254b50);" ></div>
+                        <div class="col-xs-12"><p>Notícies secondàries est qui dolorem ipsum eque porro quisquam est qui dolorem ipsum </p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--////////////////////    fitxa  ///////////////////////////////-->
+
+        <div data-role="page" class="noticies pagina info-turisme fitxa"  id="noticies-fitxa">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_2">Notícies</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-esdeveniments-fitxa" class=" " >
+                <div class="row">
+                    <div class="col-xs-12 img" style="background-image:url(https://roams.es/c/wp-content/uploads/2017/01/139179.jpg)"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <small>06 JUN 2917</small>
+                        <h5>Notícia principal eque porro quisquam est qui dolorem ipsum eque porro est qui dolorem ipsum </h5>
+                        <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias </p>
+                        <p>Archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 150Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum  las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 15000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+        <!--###################                   RADIO              ###########################-->
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+
+
+        <!--////////////////////    HOME  ///////////////////////////////-->
+
+        <div data-role="page" class="radio_ pagina info-turisme"  id="radio-home">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_2">Ràdio</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content">
+                <div class="row">
+                    <div class="img" style="background-image: url(http://www.balearsculturaltour.net/imagenes/ruta/visor/castelldecaptepera.jpg)"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12"><i class="icon-tur ico-radio"></i></div>
+                    <div class="col-xs-12"><h3>Ràdio Capdepera</h3></div>
+                    <div class="col-xs-12"><button onclick="init.openRadio()">Entra-hi!</button></div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+        <!--###################                   LOGIN              ###########################-->
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+
+
+        <!--////////////////////    HOME  ///////////////////////////////-->
+
+        <div data-role="page" class="login pagina info-turisme"  id="loggin-home">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_2">ACCÉS RESTRINGIT</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content">
+                <div class="row">
+                    <div class="col-xs-12 img" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Capdepera_von_der_Festung.JPG/1200px-Capdepera_von_der_Festung.JPG);"></div>
+                </div>
+                <div class="row">
+                    <div id="login-form">
+                        <label>Usuari</label>
+                        <input type="text" id="usuari-login" name="usuari-login" maxlength="50">
+                        <label>Contrasenya</label>
+                        <input type="password" id="pass-login" name="pass-login" maxlength="50">
+                    </div>
+                    <button onclick="init.session.login();">Entra-hi</button>
+                    <div id="login-form-out">
+                        <button onclick="init.session.logOut();">Log-Out</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
@@ -613,7 +1155,7 @@
             <div data-role="content">
                 <h3 class="sure-1"><img src="icons/alert2.png" ></h3>
                 <p class="sure-2"></p>
-                <a href="#" class="botoLink" onclick="openDeviceBrowser('http://bitgrup.es')">Més info</a>
+                <!--a href="#" class="botoLink" onclick="openDeviceBrowser('http://bitgrup.es')">Més info</a-->
                 <a href="#" class="sure-do" data-role="button" data-theme="b" data-rel="back">Acceptar</a>
                 <!--a href="#" data-role="button" data-theme="c" data-rel="back">No</a-->
             </div>

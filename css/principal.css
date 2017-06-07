@@ -33,7 +33,7 @@ a:hover{text-decoration:none;}
 a:active, a:focus{opacity:0.6; text-decoration:none;}
 ::-webkit-input-placeholder{color:#999;}:-moz-placeholder{color:#999; opacity: 1;}::-moz-placeholder {color:#999;opacity: 1;}:-ms-input-placeholder { color:#999;}
 
-#loading{position:fixed; z-index:10; display:none; width:100%; height:100%; background-image:url('../icons/loading.gif'); background-color:rgba(256,256,256,0.7); background-size:34vw auto; background-position:center center; background-repeat:no-repeat;}
+#loading{position:fixed; z-index:10; display:none; width:100%; height:100%; background-image:url('../icons/loading.gif'); background-color:rgba(256,256,256,0.7); background-size:19vw auto; background-position:center center; background-repeat:no-repeat;}
 
 
 
@@ -50,10 +50,29 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 .ui-header.ui-header .plus{background-image:url('../icons/plus.png'); right:20%; margin-top:9px;} 
 .ui-header.ui-header .refresh{background-image:url('../icons/refresh.png'); right:12%; margin-top:9px;}
 
+
+
+
 /*######## MAPA ###################*/
 
 
-/*######## HEADER ###################*/
+/*######## HOME - NOU ###################*/
+#home-nou .ui-content{background-image: url(../images/fondo-3.jpg); background-size: cover; background-position: center; height: 100vh;}
+#home-nou h1{margin:8vh 0 4vh; text-align: center; font-size: 10vw; font-family: 'Montserrat';}
+#home-nou .pastilla{margin: 1.5vh 7%; padding: 5vw 0 5vw 18vw; font-size: 6vw; color:#fff; font-weight: 700; text-shadow:none;display: inline-block; width: 86%; text-transform: uppercase;}
+#home-nou .pastilla::before{position:absolute; width:15vw; height: 15vw; background-image: url(../icons/sprite_info_turisme.svg); background-size: 132vw; content: " ";top: 4.5vw;left: 8vw;}
+#home-nou .pastilla.oncpd{background-color: #779174; padding-left: 28.4vw;}
+#home-nou .pastilla.oncpd::before{background-position:-101vw -39vw;width: 30vw;}
+#home-nou .pastilla.esdevn{background-color: #c5b141;}
+#home-nou .pastilla.esdevn::before{background-position:-104vw -70vw;}
+#home-nou .pastilla.sprts{background-color: #985d61;}
+#home-nou .pastilla.sprts::before{background-position:-104vw -85.5vw;}
+#home-nou .pastilla.notc{background-color: #708e9a;}
+#home-nou .pastilla.notc::before{background-position:-104vw -100vw;}
+#home-nou .pastilla.rdio{background-color: #d4df86;}
+#home-nou .pastilla.rdio::before{background-position:-104vw -115vw;}
+#home-nou .ui-content > a:first-child{position:absolute; right: 20px; top: 20px; width:10vw; height: 10vw; background-image: url(../icons/sprite_info_turisme.svg); background-size: 115vw; background-position: -91vw -115.5vw;z-index: 99;}
+
 
 
 /*######## HOME #############*/
@@ -65,6 +84,7 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #home .btn-home{width:220px; padding:40px 10px; color:#fff; font-size:12px; font-family: 'Quicksand', sans-serif; text-transform: uppercase; text-align: center; border:3px solid #fff; display: inline-block; text-shadow:none; margin-bottom: 10px; border-radius: 3px; font-weight: 400; background:rgba(256,256,256,0.1);transition:all 0.3s ease-in-out;}
 #home .ui-content .col-xs-12{text-align: center;}
 #home .btn-home:hover, #home .btn-home:focus{background:rgba(256,256,256,0.2);}
+#home .ui-content > div:first-child{background-image: url('../icons/home.png');background-size: 7.5vw;background-position: right center;background-repeat: no-repeat;height: 8.75vw;}
 
 /*######## AFEGIR INCIDENCIA #############*/
 #afegirIncidencia h2{margin-bottom:20px;}
@@ -243,6 +263,7 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #loginPage .notificacions div:nth-child(2){padding:2.2% 2em 0 0; text-align:right;}
 #loginPage .swraper.light{border-radius:12px;}
 #loginPage .link-legal{padding: 0 0 3% 30px; display:inline-block;color: rgb(234, 170, 46);}
+#login-form-out{display: none;}
 
 .pagina .swraper.light .stoggler .sblob{width:19px !important; height:19px !important; top:47%; }
 .pagina .swraper .stoggler{height:20px;}
@@ -257,6 +278,8 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 /*########### OPERARIS ##########*/
 .operaris{display:none;}
 .operaris.actiu{display:block;}
+
+
 /*######## LLISTA INCIDENCIES OPERARIS   #############*/
 #containerListaOperari{margin-top:1px;}
 #containerListaOperari .img{background-size:cover; background-position:center center; background-repeat:no-repeat;height:110px;}
@@ -280,6 +303,167 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #veureIncidenciaOperari .footer{display:none;}
 #veureIncidenciaOperari textarea{background:#F0F1F1; border:1px solid rgb(64, 129, 128); padding:10px; }
 #veureIncidenciaOperari.pagina button{margin-top:20px;}
+
+
+
+
+/*######## INFO #############*/
+.info-turisme{font-family: 'Montserrat';}
+.info-turisme .header{background:#49805d;padding-top: 6vw;}
+.info-turisme .img {background-size: cover;background-position: center;background-repeat: no-repeat;width: 100%;height: 20vw; max-height: 40vh;}
+.info-turisme .header.ui-header > div > div:nth-child(2) {font-size: 6vw; text-transform: uppercase;color: #fff;text-align: center;font-weight: 400;padding-top: 0.5vw;}
+.info-turisme .header.ui-header > div > div:last-child { background-image: url('../icons/home.png'); background-size: 7.5vw;background-position: center; background-repeat: no-repeat; height: 8.75vw;}
+.info-turisme .header.ui-header > div > div:first-child > a { background-image: url('../icons/back.png'); width: 5vw; height: 5vw; background-repeat: no-repeat; background-position: center; display: inline-block; background-size: 4.25vw;  margin-top: 2.25vw;}
+.info-turisme .header.ui-header > div > div:first-child { text-align: center;}
+.info-turisme .ui-content{background:#fff;}
+
+/*icons*/
+.icon-tur{width: 10vw;height: 10vw;background-repeat: no-repeat;display: inline-block; background-size: 80vw; background-image: url('../icons/sprite_info_turisme.svg');margin-bottom: -0.8vw;}
+.icon-tur.ico-clock{background-position: -8.5vw -73.6vw; width: 5vw; height: 5vw;}
+.icon-tur.ico-map{background-position: -8.5vw -89.5vw; width: 5vw; height: 5vw;}
+.icon-tur.ico-cine{background-position: -5.5vw -1.5vw;}
+.icon-tur.ico-teatre{background-position: -5.5vw -13.4vw;}
+.icon-tur.ico-radio{background-position: -37.5vw -122vw;background-size: 130vw;width: 16vw;height: 15vw;}
+
+/*######## ONCAPDEPERA #############*/
+.oncapdepera h2{text-align: left;font-size: 6.25vw;text-transform: uppercase;color: #040700;margin: 30px 5% 15px;padding: 0;font-family: 'Lato', sans-serif;font-weight: 300;}
+.oncapdepera p {font-size: 4.5vw;margin: 18px 5%; padding: 0; color: #040700;font-family: 'Lato', sans-serif; font-weight: 300; line-height: 5.75vw;}
+.oncapdepera h1{color: #040700;}
+.oncapdepera .ui-content{padding: 0;}
+
+.oncapdepera .icon{background-image:url('../icons/spriteoncapdepera.svg');background-size: auto 11.5vw;float:left; top:initial;display: inline-block; position:relative;}
+
+/*home*/
+#oncapdepera-home .ui-content{background:#444242;}
+#oncapdepera-home{background:#444242;}
+#oncapdepera-home .menu{padding:5vw 5vw 5vw 20vw; border-bottom: 1px solid #fff; height: auto;transition:all 0.8s ease-in-out; position:relative;}
+#oncapdepera-home .icono-menu{position: absolute;left: 3.25vw;top: 4vw; height: 99%; width: 18vw;}
+#oncapdepera-home .menu .sub-menu{display: none;float: left; padding-left: 5.75vw;width: 100%;}
+#oncapdepera-home .menu .icono-menu span{border-radius: 10vw; width: 100%; height: calc(100% - 7vw);;}
+#oncapdepera-home .menu > span:nth-child(2){font-size: 6.5vw; color:#fff; text-shadow:none;padding:4vw 0 1.5vw 3vw; float: left;text-align: left;}
+#oncapdepera-home .visites{background-color: #008841; background-position: 0.25px 2.5vw;}
+#oncapdepera-home .festes{background-color: #95a543; background-position: -16vw 2.5vw;}
+#oncapdepera-home .serveis{background-color: #789130; background-position: -31.75vw 2vw;}
+#oncapdepera-home .nuclis{background-color: #ced424; background-position: -48vw 2.5vw;}
+#oncapdepera-home .rutes{background-color: #bcc57d; background-position: -64vw 2vw;}
+#oncapdepera-home .informa{background-color: #6b9572; background-position: -84.25vw 2.5vw;}
+#oncapdepera-home .menu.doble{min-height: 99px;padding: 3vw 5vw 3vw 20vw;}
+#oncapdepera-home .menu.doble > span:nth-child(2){padding-top: 0;padding-bottom: 0;}
+#oncapdepera-home .menu .sub-menu li{list-style: none; text-shadow:none; color:#aeadb3; font-size: 22px; padding:15px 0;font-weight: 400; background-image: url('../icons/li-menu.png'); background-size: 1.75vw auto; background-position: right center; background-repeat: no-repeat;}
+
+
+/*fitxa*/
+#oncapdepera-fitxa{background:#fff;}
+#oncapdepera-fitxa .galeria{margin-top:10vh; margin-bottom: 10vw;}
+#oncapdepera-fitxa .galeria > div{padding:3px;}
+
+
+/*serveis*/
+#oncapdepera-serveis .ui-content{background:#fff;}
+#oncapdepera-serveis .serveis-menu{margin:10vw auto; max-width: none; border: none;}
+#oncapdepera-serveis .serveis-menu > div{text-align: center;}
+#oncapdepera-serveis .icon{width: 25vw; margin:0 auto 10px; height: 25vw; border-radius: 15vw; float:none; background-image: url('../icons/spriteserveis.svg'); background-size: 100vw;}
+#oncapdepera-serveis .icon.ico-transport{background-color:#6b9572; background-position: 1.75vw 3.5vw;}
+#oncapdepera-serveis .icon.ico-salut{background-color:#95a543; background-position: -37.5vw 3.5vw;}
+#oncapdepera-serveis .icon.ico-mercats{background-color:#789130; background-position: -78vw 3.5vw;}
+#oncapdepera-serveis .icon.ico-info{background-color:#ced424; background-position: -17.75vw 3.5vw;}
+#oncapdepera-serveis .icon.ico-seguretat{background-color:#bcc57d; background-position: -57.5vw 3.5vw;}
+#oncapdepera-serveis .serveis-menu span{font-size: 4vw; color:#60605d; width: 100%; display: inline-block; text-align: center; margin-bottom: 5vh; text-transform: uppercase;}
+#oncapdepera-serveis .mercat{margin-left: 12.5vw;}
+#oncapdepera-serveis .servei-contingut > div{background:#f1f1f1; padding:5vw 5vw 2.5vw 5vw; border-top:1px solid #ccc; }
+#oncapdepera-serveis .servei-contingut > div:last-child{padding-bottom: 12.5vw;}
+#oncapdepera-serveis .servei-contingut span{padding-bottom: 2.5vw; width: 100%; display: inline-block;}
+#oncapdepera-serveis .servei-contingut span:first-child{font-size:4.5vw; color:#49805d; text-transform: uppercase;}
+#oncapdepera-serveis .servei-contingut span:nth-child(2), #oncapdepera-serveis .servei-contingut span:nth-child(2) > a{font-size:5vw; color:#bcc57d; padding:0;}
+#oncapdepera-serveis .servei-contingut span:nth-child(3){font-size:4vw; color:#727176;padding: 2.5vw 0;background-image: url(../icons/marker.svg);background-repeat: no-repeat;background-size: 5vw;background-position: right center; padding-right: 5vw;}
+#oncapdepera-serveis .nav-tabs > li > a{background:transparent; border: none; margin:0; border-radius: 0; padding: 0; text-align: center;opacity: 0.5;}
+#oncapdepera-serveis .nav-tabs > li.active > a{opacity: 1;}
+
+
+/*######## ESPORTS #############*/
+.info-turisme.esports .header{background:#e40d0d;}
+.info-turisme.esports .ui-content{background:#fff; padding: 0;}
+
+/*home*/
+#esports-home #llista-esports > div{margin-bottom: 4px;}
+#esports-home #llista-esports > div > div{height: 25vw;}
+#esports-home #llista-esports > div > div:first-child{margin-right:2px;background-color: #d9d9d9; padding:20px 5px; color:#e40d0d; text-align:center; font-size:13vw; line-height: 15vw; font-weight:700;text-shadow: none; width: calc(25% - 2px);}
+#esports-home #llista-esports > div > div:nth-child(2){background-color: #7f7f7f; padding:20px 10px; color:#fff; text-align:left; font-size:4vw; line-height: 5vw; font-weight:300;text-shadow: none; }
+#esports-home #llista-esports > div > div:nth-child(2)::after{content:"+"; position: absolute; right: 6vw; top:calc(50% - 3vw); width:6vw; height: 6vw; color:#fff; font-size: 9vw; text-align: center; font-weight: 700;}
+#esports-home #llista-esports > div > div:nth-child(2) p{margin: 0;padding: 0;}
+#esports-home #llista-esports > div > div:nth-child(2) b{font-weight: 400;}
+
+/*fitxa*/
+.info-turisme.fitxa .img{height: 58vw;max-height: 40vh; max-width: none;}
+.info-turisme.fitxa .ui-content > .row:last-child{padding: 30px 20px 40px;}
+.info-turisme.fitxa h4{font-weight: 300; font-size: 6vw; text-transform: uppercase; color:#985d61; text-decoration: underline; margin-bottom: 4vh;}
+.info-turisme.fitxa h3{margin:0; text-align: left; color:#7f7f7f; text-transform: uppercase; font-weight: 300;font-size: 6vw;}
+.info-turisme.fitxa h2{font-weight: 700; font-size: 7vw; color:#5b5b5f;margin-bottom: 5vh;}
+.info-turisme.fitxa p{color:#5b5b5f; font-size: 3.4vw;padding: 3vh 0;}
+.info-turisme.fitxa .no-padding{margin:0; padding: 0;}
+.info-turisme.fitxa .data-hora{margin:0; padding: 0;}
+
+
+
+
+/*######## ESDEVENIMENTS #############*/
+.esdeveniments .ui-header{background:#c5b141;}
+.esdeveniments .ui-content{padding: 0;}
+
+/*llista*/
+#esdeveniments-home .ui-content{background:#3f3f3e}
+#llista-esdeveniments > div{padding: 8vw 20px 8vw 19vw; color:#fff; font-size:5vw; font-weight: 700; border-bottom: 2px solid #fff; text-shadow:none;}
+#llista-esdeveniments > div::before{position:absolute; left: 2vw; top: 4.5vw; width:14vw; height: 14vw; content: " "; background-image: url(../icons/sprite_info_turisme.svg); background-size: 100vw; }
+#llista-esdeveniments > div.cine::before{background-position: -6.5vw -1.5vw;}
+#llista-esdeveniments > div.teatre::before{background-position: -6.5vw -16.4vw;}
+
+/*fitxa*/
+#esdeveniments-fitxa.fitxa h1{font-size: 6vw;}
+#esdeveniments-fitxa.fitxa h4{color:#d1c167;}
+#esdeveniments-fitxa.fitxa h2{text-align: left;margin-bottom: 2vh;}
+#esdeveniments-fitxa.fitxa h3{font-size: 4vw;}
+#esdeveniments-fitxa.fitxa p{padding: 1vh 0 0.5vw;}
+
+/*######## NOTICIES #############*/
+.noticies .ui-header{background:#708e9a}
+
+/*home*/
+#noticies-home p{font-size: 3.5vw; text-shadow:none; line-height: 3.9vw; padding: 5px 0 20px; font-weight: 400;}
+#noticies-home .ui-content{padding:30px;}
+/*fitxa*/
+#noticies-fitxa .ui-content{padding:0 0 40px;}
+#noticies-fitxa .ui-content > div:last-child{padding:10px 20px 10px;}
+#noticies-fitxa small{float:right; color:#708e9a;}
+#noticies-fitxa h5{font-weight: 400; font-size: 5vw; margin:2vh 0; padding: 5vh 0 1vh;}
+#noticies-fitxa p{margin:0 ; padding: 1vh 0 2vh;}
+
+
+
+/*######## RADIO #############*/
+.radio_ .ui-header{background:#d4df86}
+.radio_ .img{height: 52vh; max-height: none;}
+.radio_ .ui-content{padding: 0;}
+.radio_ .ui-content > .row:last-child{margin-top: -7vw;}
+.radio_ .ui-content > .row:last-child > div{text-align: center;}
+.radio_ h3{color:#5b5b5f;font-size: 6vw;}
+.radio_ .ico-tur.ico-radio{background-position: -40vw -126.8vw;background-size: 135vw;width: 15vw;height: 15vw;}
+.radio_.ui-page-theme-a button{width: 60vw;margin: 3vh auto;border-radius: 0;border: 1px solid #d4df86;background-color: #d4df86;color: #5b5b5f;text-shadow: none;font-size: 6vw;padding: 3vw 1vw;}
+.radio_.ui-page-theme-a button:hover, .radio_.ui-page-theme-a button:active, .radio_.ui-page-theme-a button:focus{background-color: #fff; }
+
+
+/*######## LOGIN #############*/
+.login .ui-header{background:#a2c037}
+.login .ui-content{padding: 0;}
+.login.info-turisme .img { height: 40vw;}
+.login.ui-page-theme-a button{width: 60vw;margin:7vh auto 3vh;border-radius: 0;border: 1px solid #d4df86;background-color: #a2c037;color: #fff;text-shadow: none;font-size: 6vw;padding: 4vw 1vw;}
+.login.ui-page-theme-a button:hover, .login.ui-page-theme-a button:active, .login.ui-page-theme-a button:focus{background-color: #fff;color: #5b5b5f; }
+.login .img{margin-bottom: 7vh;}
+.login label{margin:1vh 20px; color: #211915; font-size: 6vw; font-weight: 300;}
+.login input{ box-shadow: none; border-radius: 0; border:1px solid #5b5b5f; font-size: 6vw; padding: 2vw 20px;}
+.login.ui-page-theme-a .ui-body-inherit{border:none; box-shadow: none;margin:1vh 20px 0;}
+
+
+
 /*########### DIALOG ##########*/
 #sure{ background-image: url('../images/fondo.png') !important;font-size:15px;}
 #sure .sure-1 img{padding-right:10px; width:87px;}
@@ -287,15 +471,5 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #sure .sure-2{padding:20px; text-align:center;  text-shadow:none; color:#000; opacity:0.6;}
 #sure .ui-content{margin-top:10%; color:#fff !important; background:#fff; border-radius:0px; height:auto; text-align:center;}
 #sure .botoLink{ display: inline-block;width: 100%;padding-bottom: 20px;font-weight: 400;text-shadow: none; color:#fff; display:inline-block; width:100%; text-align:center; color:#EDB60B;}
-#sure .sure-do.ui-link{
-	background: rgba(230,165,0,1);
-	background: -moz-linear-gradient(left, rgba(230,165,0,1) 0%, rgba(240,188,15,1) 23%, rgba(240,188,15,1) 79%, rgba(230,165,0,1) 100%);
-	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(230,165,0,1)), color-stop(23%, rgba(240,188,15,1)), color-stop(79%, rgba(240,188,15,1)), color-stop(100%, rgba(230,165,0,1)));
-	background: -webkit-linear-gradient(left, rgba(230,165,0,1) 0%, rgba(240,188,15,1) 23%, rgba(240,188,15,1) 79%, rgba(230,165,0,1) 100%);
-	background: -o-linear-gradient(left, rgba(230,165,0,1) 0%, rgba(240,188,15,1) 23%, rgba(240,188,15,1) 79%, rgba(230,165,0,1) 100%);
-	background: -ms-linear-gradient(left, rgba(230,165,0,1) 0%, rgba(240,188,15,1) 23%, rgba(240,188,15,1) 79%, rgba(230,165,0,1) 100%);
-	background: linear-gradient(to right, rgba(230,165,0,1) 0%, rgba(240,188,15,1) 23%, rgba(240,188,15,1) 79%, rgba(230,165,0,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6a500', endColorstr='#e6a500', GradientType=1 );
-	display:inline-block; 	border:none;	border-radius:0;	text-shadow:none;font-weight:400;padding:7px 25px;
-}
+#sure .sure-do.ui-link{display:inline-block; border:none;border-radius:0; text-shadow:none;font-weight:400;padding:7px 25px; background:#288973; }
 #sure .sure-do.ui-link:focus{box-shadow: 0 0 12px rgba(0,0,0,0.6);}
