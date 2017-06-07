@@ -339,9 +339,9 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #oncapdepera-home .menu{padding:5vw 5vw 5vw 20vw; border-bottom: 1px solid #fff; height: auto;transition:all 0.8s ease-in-out; position:relative;}
 #oncapdepera-home .icono-menu{position: absolute;left: 3.25vw;top: 4vw; height: 99%; width: 18vw;}
 #oncapdepera-home .menu .sub-menu{display: none;float: left; padding-left: 5.75vw;width: 100%;}
-#oncapdepera-home .menu .icono-menu span{border-radius: 10vw; width: 100%; height: calc(100% - 7vw);;}
+#oncapdepera-home .menu .icono-menu span{border-radius: 10vw; width: 18vw;height: 18vw;}
 #oncapdepera-home .menu > span:nth-child(2){font-size: 6.5vw; color:#fff; text-shadow:none;padding:4vw 0 1.5vw 3vw; float: left;text-align: left;}
-#oncapdepera-home .visites{background-color: #008841; background-position: 0.25px 2.5vw;}
+#oncapdepera-home .visites{background-color: #008841; background-position: 2.25px 2.5vw;}
 #oncapdepera-home .festes{background-color: #95a543; background-position: -16vw 2.5vw;}
 #oncapdepera-home .serveis{background-color: #789130; background-position: -31.75vw 2vw;}
 #oncapdepera-home .nuclis{background-color: #ced424; background-position: -48vw 2.5vw;}
