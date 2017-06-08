@@ -2,5 +2,11 @@
   font-family: 'Helena';
   font-style: normal;
   font-weight: 400;
-  src: local('Helena'), local('Helena'), url(Helena.ttf) format('truetype');
+  src: url("Helena.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Helena';
+  font-style: normal;
+  font-weight: 400;
+  src: url("Helena.otf") format("opentype");
 }

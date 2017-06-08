@@ -311,7 +311,7 @@ var init = {
         var ref = window.open(url, '_system', 'location=yes');
     },
     openRadio: function () {
-        init.carregaPagExt('http://tunein.com/radio/Radio-Capdepera-1075-s113101/');
+        init.carregaPagExt('http://capdeperaradio.com/radioendirecte/');
     },
     areYouSure: function (text2, button, callback, back_) {
         $("#sure .sure-2").text(text2);
