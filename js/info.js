@@ -256,7 +256,7 @@ var init = {
 
                 if (ok) {
                     var formData = new FormData();
-                    formData.append('userLogin', $('#usuari-login').val());
+                    formData.append('userLogin', $('#usuari-login').val()); 
                     formData.append('passwordLogin', $('#pass-login').val());
                     formData.append("macAddress", window.MACadress);
                     formData.append("funcio", 'loginOperari');
