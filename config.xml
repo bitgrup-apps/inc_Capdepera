@@ -5,8 +5,8 @@
         version   = "2.0.0">
 	
 	
-    <name>Gestcap</name>
-    <description>Incidències del municipi de Capdepera</description>
+    <name>OnCapdepera</name>
+    <description>OnCapdepera</description>
     <author href="http://bitgrup.com" email="info@bitgrup.com">BITGRUP</author>
     
     <platform name="ios">
