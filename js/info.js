@@ -205,6 +205,9 @@ var init = {
                 setTimeout("$('#loading').css('display', 'none')", 300);
             },
             success: function (resposta) {
+                if( (typeof resposta) === 'string'){
+                    resposta = JSON.parse(resposta);
+                }
                 try {
                     if (resposta.error == 1) {
                         init.error_('E BIT-80', '', resposta.str);
@@ -260,8 +263,8 @@ var init = {
                     formData.append("TOKEN", 'LAIDSD88347ERJKADKFGKAHPF8YA9DF8Y');
                     var antigaUrl = init.urlFunctions;
                     init.urlFunctions = 'http://gestcap.com/gestio/App/incidencies.php';
-                    var resposta = JSON.parse(init.sendAjax(formData, '', true));
-                    var intResp = parseInt(resposta.error);
+                    var resposta = init.sendAjax(formData, '', true);
+                    var intResp = parseInt(resposta.login_code);
                     if (intResp === 99) {//LOGIN OK
                         window.user = $('#usuari-login').val();
                         window.pass = md5($('#pass-login').val());

@@ -57,22 +57,25 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 
 
 /*######## HOME - NOU ###################*/
-#home-nou .ui-content{background-image: url(../images/fondo-3.jpg); background-size: cover; background-position: center; height: 100vh;}
-#home-nou h1{margin:8vh 0 2vh; text-align: center; font-size: 10vw; font-family: 'Montserrat';}
-#home-nou .pastilla{margin: 1vh 7%; padding: 5vw 0 5vw 18vw; font-size: 6vw; color:#fff; font-weight: 700; text-shadow:none;display: inline-block; width: 86%; text-transform: uppercase;}
-#home-nou .pastilla::before{position:absolute; width:15vw; height: 15vw; background-image: url(../icons/sprite_info_turisme.svg); background-size: 132vw; content: " ";top: 4.5vw;left: 8vw;}
-#home-nou .pastilla.oncpd{background-color: #779174; padding-left: 28.4vw;}
-#home-nou .pastilla.oncpd::before{background-position:-101vw -40.5vw;width: 30vw;}
+#home-nou .ui-content{background-image: url(../images/fondo-3.jpg); background-size: cover; background-position: center; height: 100vh;padding: 1vw 10vw;}
+#home-nou h1{  margin:12vh 0 7vh; text-align: center; font-size: 12vw; font-family: 'Helena';}
+#home-nou .pastilla{margin: 0.1vw; padding: 25vw 2vw 5vw 2vw; text-align: center; font-size: 4vw; color:#fff; font-weight: 700; text-shadow:none;display: inline-block; width: 100%; text-transform: uppercase;}
+#home-nou .pastilla::before{position:absolute; width:15vw; height: 15vw; background-image: url(../icons/sprite_info_turisme.svg); background-size: 200vw; content: " ";top: 7.5vw;left: 12.5vw;}
+#home-nou .pastilla.oncpd{background-color: #779174; }
+#home-nou .pastilla.oncpd::before{background-position:-157vw -62vw;}
 #home-nou .pastilla.esdevn{background-color: #c5b141;}
-#home-nou .pastilla.esdevn::before{background-position:-104vw -70vw;}
+#home-nou .pastilla.esdevn::before{background-position:-161.5vw -108vw;}
 #home-nou .pastilla.sprts{background-color: #985d61;}
-#home-nou .pastilla.sprts::before{background-position:-104vw -85.5vw;}
+#home-nou .pastilla.sprts::before{background-position:-161.5vw -133vw;}
 #home-nou .pastilla.notc{background-color: #708e9a;}
-#home-nou .pastilla.notc::before{background-position:-104vw -100vw;}
+#home-nou .pastilla.notc::before{background-position:-161.5vw -155vw;}
 #home-nou .pastilla.rdio{background-color: #d4df86;}
-#home-nou .pastilla.rdio::before{background-position:-104vw -115vw;}
+/*#home-nou .pastilla.rdio::before{background-position:-161.5vw -108vw;}*/
 #home-nou .ui-content > a:first-child{position:absolute; right: 20px; top: 20px; width:10vw; height: 10vw; background-image: url(../icons/sprite_info_turisme.svg); background-size: 115vw; background-position: -91vw -115.5vw;z-index: 99;}
-
+#home-nou .ui-content > .col-xs-6{padding: 0.5vw;}
+#home-nou .radio_pastilla{float: right; margin-top: 8vh; width: 24vw;}
+#home-nou .radio_pastilla > a{ font-size: 3.5vw; border-radius: 12vw;padding: 14vw 0 0;height: 23vw; }
+#home-nou .radio_pastilla > a::before{background-size: 115vw;background-position: -93vw -101vw;top: 3vw;left: 7.5vw;width: 10vw;height: 10vw;}
 
 
 /*######## HOME #############*/
