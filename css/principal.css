@@ -335,7 +335,7 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 .oncapdepera h1{color: #040700;}
 .oncapdepera .ui-content{padding: 0;}
 
-.oncapdepera .icon{background-image:url('../icons/spriteoncapdepera.svg');background-size: auto 12vw;float:left; top:initial;display: inline-block; position:relative;}
+.oncapdepera .icon{background-image:url('../icons/spriteoncapdepera.svg');background-size: 99.5vw;float:left; top:initial;display: inline-block; position:relative;}
 
 /*home*/
 #oncapdepera-home .ui-content{background:#444242;}
