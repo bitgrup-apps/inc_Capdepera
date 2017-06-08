@@ -115,13 +115,13 @@
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>    
-    <icon src="icons/icoapp/Android/drawable/icon.png" platform="android"/>
-    <icon src="icons/icoapp/Android/drawable-ldpi/icon.png" platform="android" qualifier="ldpi" />
-    <icon src="icons/icoapp/Android/drawable-mdpi/icon.png" platform="android" qualifier="mdpi" />
-    <icon src="icons/icoapp/Android/drawable-hdpi/icon.png" platform="android" qualifier="hdpi" />
-    <icon src="icons/icoapp/Android/drawable-xhdpi/icon.png" platform="android" qualifier="xhdpi" />
-    <icon src="icons/icoapp/Android/drawable-xxhdpi/icon.png" platform="android" qualifier="xxhdpi" />
-    <icon src="icons/icoapp/Android/drawable-xxxhdpi/icon.png" platform="android" qualifier="fr-xxhdpi" />
+    <icon src="icons/icoapp/Android/res/drawable/icon.png" platform="android"/>
+    <icon src="icons/icoapp/Android/res/drawable-ldpi/icon.png" platform="android" qualifier="ldpi" />
+    <icon src="icons/icoapp/Android/res/drawable-mdpi/icon.png" platform="android" qualifier="mdpi" />
+    <icon src="icons/icoapp/Android/res/drawable-hdpi/icon.png" platform="android" qualifier="hdpi" />
+    <icon src="icons/icoapp/Android/res/drawable-xhdpi/icon.png" platform="android" qualifier="xhdpi" />
+    <icon src="icons/icoapp/Android/res/drawable-xxhdpi/icon.png" platform="android" qualifier="xxhdpi" />
+    <icon src="icons/icoapp/Android/res/drawable-xxxhdpi/icon.png" platform="android" qualifier="fr-xxhdpi" />
     
     <gap:splash  src="icons/icoapp/Android/res/drawable/screen.png" platform="android" qualifier="" />
     <gap:splash  src="icons/icoapp/Android/res/drawable-hdpi/screen.png" platform="android" qualifier="hdpi" />
@@ -140,7 +140,7 @@
     
 	
     <!-- default  -->	
-    <icon src="icons/icoapp/Android/drawable/icon.png" />
+    <icon src="icons/icoapp/Android/res/drawable/icon.png" />
 	
 
 </widget>
