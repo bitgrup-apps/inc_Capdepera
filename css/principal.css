@@ -62,7 +62,7 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #home-nou .pastilla{margin: 1vh 7%; padding: 5vw 0 5vw 18vw; font-size: 6vw; color:#fff; font-weight: 700; text-shadow:none;display: inline-block; width: 86%; text-transform: uppercase;}
 #home-nou .pastilla::before{position:absolute; width:15vw; height: 15vw; background-image: url(../icons/sprite_info_turisme.svg); background-size: 132vw; content: " ";top: 4.5vw;left: 8vw;}
 #home-nou .pastilla.oncpd{background-color: #779174; padding-left: 28.4vw;}
-#home-nou .pastilla.oncpd::before{background-position:-101vw -39vw;width: 30vw;}
+#home-nou .pastilla.oncpd::before{background-position:-101vw -40.5vw;width: 30vw;}
 #home-nou .pastilla.esdevn{background-color: #c5b141;}
 #home-nou .pastilla.esdevn::before{background-position:-104vw -70vw;}
 #home-nou .pastilla.sprts{background-color: #985d61;}
@@ -340,7 +340,7 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #oncapdepera-home .menu.open{height: auto;}
 #oncapdepera-home .icono-menu{position: absolute;left: 3.25vw;top: 4vw; height: 99%; width: 18vw;}
 #oncapdepera-home .menu .sub-menu{display: none;float: left; padding-left: 5.75vw;width: 100%;}
-#oncapdepera-home .menu .icono-menu span{border-radius: 10vw; width: 18vw;height: calc(100% - 9vw);}
+#oncapdepera-home .menu .icono-menu span{border-radius: 10vw; width: 18vw;height: calc(100% - 10vw);}
 #oncapdepera-home .menu > span:nth-child(2){font-size: 6.5vw; color:#fff; text-shadow:none;padding:4vw 0 1.5vw 3vw; float: left;text-align: left;}
 #oncapdepera-home .visites{background-color: #008841; background-position: 2.25px 2.5vw;}
 #oncapdepera-home .festes{background-color: #95a543; background-position: -16vw 2.5vw;}

@@ -32,10 +32,12 @@ var init = {
                     $('#m-rutes').html(resp.rutes);
 
                     $('.menu').click(function () {
-                        if($(this).find('.sub-menu').is(":visible")){
+                        if ($(this).find('.sub-menu').is(":visible")) {
                             var that = this;
-                            $(this).find('.sub-menu').slideToggle('slow',function(){$(that).removeClass('open');});
-                        }else{
+                            $(this).find('.sub-menu').slideToggle('slow', function () {
+                                $(that).removeClass('open');
+                            });
+                        } else {
                             $(this).addClass('open');
                             $(this).find('.sub-menu').slideToggle('slow');
                         }
@@ -66,85 +68,59 @@ var init = {
             init.esports.menu();
         },
         menu: function () {
-            /*
-             if (!init.onCapdepera.menuOk) {
-             var file = init.onCapdepera.file;
-             var formData = new FormData();
-             formData.append('funcio', 'getMenu');
-             formData.append('lang', init.lang);
-             var resp = init.sendAjax(formData, file, true);
-             if (resp.error == 0) {
-             //carrega sub-menus
-             $('#m-visites').html(resp.visites);
-             $('#m-festes').html(resp.festes);
-             $('#m-nuclis').html(resp.nuclis);
-             $('#m-rutes').html(resp.rutes);
-             
-             $('.menu').click(function () {
-             $(this).find('.sub-menu').slideToggle('slow');
-             });
-             init.onCapdepera.menuOk = true;
-             }
-             }*/
-            $.mobile.changePage("#esports-home", {transition: "slide"});
+            var file = init.esports.file;
+            var formData = new FormData();
+            formData.append('funcio', 'getEsdeveniments');
+            formData.append('lang', init.lang);
+            var resp = init.sendAjax(formData, file, true);
+            if (resp.error == 0) {
+                $('#llista-esports').html(resp.str);
+                $.mobile.changePage("#esports-home", {transition: "slide"});
+            }
         },
-        getFitxa: function (id, tipus) {
-            /*var file = init.onCapdepera.file;
-             var formData = new FormData();
-             formData.append('funcio', 'getFitxa');
-             formData.append('tipus', tipus);
-             formData.append('id', id);
-             formData.append('lang', init.lang);
-             var resp = init.sendAjax(formData, file, true);
-             if (resp.error == 0) {
-             $('#oncpd-html').html(resp.str);
-             $.mobile.changePage("#oncapdepera-fitxa", {transition: "slide"});
-             }*/
-            $.mobile.changePage("#esports-fitxa", {transition: "slide"});
+        getFitxa: function (id) {
+            var file = init.esports.file;
+            var formData = new FormData();
+            formData.append('funcio', 'getEsdeveniment');
+            formData.append('id', id);
+            formData.append('lang', init.lang);
+            var resp = init.sendAjax(formData, file, true);
+            if (resp.error == 0) {
+                $('#img-esport').css('background-image', 'url(' + resp.img + ')');
+                $('#fitxa-esportiva').html(resp.str);
+                $.mobile.changePage("#esports-fitxa", {transition: "slide"});
+            }
         }
     },
     noticies: {
         menuOk: false,
-        file: 'noticies.class.php',
+        file: 'notis.class.php',
         init: function () {
-            init.esports.menu();
+            init.noticies.menu();
         },
         menu: function () {
-            /*
-             if (!init.onCapdepera.menuOk) {
-             var file = init.onCapdepera.file;
-             var formData = new FormData();
-             formData.append('funcio', 'getMenu');
-             formData.append('lang', init.lang);
-             var resp = init.sendAjax(formData, file, true);
-             if (resp.error == 0) {
-             //carrega sub-menus
-             $('#m-visites').html(resp.visites);
-             $('#m-festes').html(resp.festes);
-             $('#m-nuclis').html(resp.nuclis);
-             $('#m-rutes').html(resp.rutes);
-             
-             $('.menu').click(function () {
-             $(this).find('.sub-menu').slideToggle('slow');
-             });
-             init.onCapdepera.menuOk = true;
-             }
-             }*/
-            $.mobile.changePage("#noticies-home", {transition: "slide"});
+            var file = init.noticies.file;
+            var formData = new FormData();
+            formData.append('funcio', 'getAll');
+            formData.append('lang', init.lang);
+            var resp = init.sendAjax(formData, file, true);
+            if (resp.error == 0) {
+                $('#llista-noticies').html(resp.str);
+                $.mobile.changePage("#noticies-home", {transition: "slide"});
+            }
         },
-        getFitxa: function (id, tipus) {
-            /*var file = init.onCapdepera.file;
-             var formData = new FormData();
-             formData.append('funcio', 'getFitxa');
-             formData.append('tipus', tipus);
-             formData.append('id', id);
-             formData.append('lang', init.lang);
-             var resp = init.sendAjax(formData, file, true);
-             if (resp.error == 0) {
-             $('#oncpd-html').html(resp.str);
-             $.mobile.changePage("#oncapdepera-fitxa", {transition: "slide"});
-             }*/
-            $.mobile.changePage("#noticies-fitxa", {transition: "slide"});
+        getFitxa: function (id) {
+            var file = init.noticies.file;
+            var formData = new FormData();
+            formData.append('funcio', 'getId');
+            formData.append('id', id);
+            formData.append('lang', init.lang);
+            var resp = init.sendAjax(formData, file, true);
+            if (resp.error == 0) {
+                $('#img-noticia').css('background-image', 'url(' + resp.img + ')');
+                $('#desc-noticia').html(resp.str);
+                $.mobile.changePage("#noticies-fitxa", {transition: "slide"});
+            }
         }
     },
     esdeveniments: {
@@ -153,25 +129,25 @@ var init = {
 
         getEsdeveniments: function () {
             var formData = new FormData();
-             formData.append('funcio', 'getEsdeveniments');
-             formData.append('lang', init.lang);
-             var resp = init.sendAjax(formData, init.esdeveniments.file, true);
-             if (resp.error == 0) {
-             $('#llista-esdeveniments').html(resp.str);
-             $.mobile.changePage("#esdeveniments-home", {transition: "slide"});
-             }
+            formData.append('funcio', 'getEsdeveniments');
+            formData.append('lang', init.lang);
+            var resp = init.sendAjax(formData, init.esdeveniments.file, true);
+            if (resp.error == 0) {
+                $('#llista-esdeveniments').html(resp.str);
+                $.mobile.changePage("#esdeveniments-home", {transition: "slide"});
+            }
         },
         getFitxa: function (id) {
-             var formData = new FormData();
-             formData.append('funcio', 'getEsdeveniment');
-             formData.append('lang', init.lang);
-             formData.append('id', id);
-             var resp = init.sendAjax(formData, init.esdeveniments.file, true);
-             if (resp.error == 0) {
+            var formData = new FormData();
+            formData.append('funcio', 'getEsdeveniment');
+            formData.append('lang', init.lang);
+            formData.append('id', id);
+            var resp = init.sendAjax(formData, init.esdeveniments.file, true);
+            if (resp.error == 0) {
                 $('#desc_esdev').html(resp.str);
                 $('#img_esdev').css('background-image', 'url(http://www.oncapdepera.com/panel/img/eventos/' + resp.img + ')');
                 $.mobile.changePage("#esdeveniments-fitxa", {transition: "slide"});
-             }
+            }
         }
     },
     initLangs: function () {
@@ -229,12 +205,13 @@ var init = {
                 setTimeout("$('#loading').css('display', 'none')", 300);
             },
             success: function (resposta) {
-                
                 try {
                     if (resposta.error == 1) {
                         init.error_('E BIT-80', '', resposta.str);
-                    } else {
+                    } else if (resposta.error == 0) {
                         json = resposta;
+                    } else {
+                        init.error_('E BIT-81', '', resposta);
                     }
                 } catch (e) {
                     init.error_('E BIT-80', '', e);
@@ -249,10 +226,10 @@ var init = {
         return json;
     },
     session: {
-        initSession: function(){
-            if (init.session.getSession()){
+        initSession: function () {
+            if (init.session.getSession()) {
                 init.session.motraAmagaLogin(false);
-            }else{
+            } else {
                 init.session.motraAmagaLogin(true);
             }
         },
@@ -330,7 +307,7 @@ var init = {
     carregaPagExt: function (url) {
         var ref = window.open(url, '_system', 'location=yes');
     },
-    openRadio: function(){
+    openRadio: function () {
         init.carregaPagExt('http://tunein.com/radio/Radio-Capdepera-1075-s113101/');
     },
     areYouSure: function (text2, button, callback, back_) {

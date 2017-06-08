@@ -61,7 +61,7 @@
                     <a href="#" class="pastilla sprts" data-role="none" onclick="init.esports.init();">Esports</a>
                 </div>
                 <div class="col-xs-12">
-                    <a href="#noticies-home" class="pastilla notc" data-role="none" data-transition="slide">Notícies</a>
+                    <a href="#" class="pastilla notc" data-role="none"  onclick="init.noticies.init();">Notícies</a>
                 </div>
                 <div class="col-xs-12">
                     <a href="#radio-home" class="pastilla rdio" data-role="none" data-transition="slide">Ràdio</a>
@@ -899,32 +899,7 @@
                 </div>
             </div>
             <div data-role="content" id="content-esports-home" class=" " >
-                <div class="row" id="llista-esports">
-                    <div class="col-xs-12" onclick="init.esports.getFitxa();">
-                        <div class="col-xs-3">01</div>
-                        <div class="col-xs-9">
-                            <p><b>FUTBOL</b> ALEVINS</p>
-                            <p><i class="icon-tur ico-map"></i>Es Figueral <i class="icon-tur ico-clock"></i> 17h</p>
-                            <p>CD Escolar - CD Cardassar</p>
-                        </div>
-                    </div>
-                    <div class="col-xs-12" onclick="init.esports.getFitxa();">
-                        <div class="col-xs-3">02</div>
-                        <div class="col-xs-9">
-                            <p><b>FUTBOL</b> ALEVINS</p>
-                            <p><i class="icon-tur ico-map"></i>Es Figueral <i class="icon-tur ico-clock"></i> 17h</p>
-                            <p>CD Escolar - CD Cardassar</p>
-                        </div>
-                    </div>
-                    <div class="col-xs-12" onclick="init.esports.getFitxa();">
-                        <div class="col-xs-3">03</div>
-                        <div class="col-xs-9">
-                            <p><b>FUTBOL</b> ALEVINS</p>
-                            <p><i class="icon-tur ico-map"></i>Es Figueral <i class="icon-tur ico-clock"></i> 17h</p>
-                            <p>CD Escolar - CD Cardassar</p>
-                        </div>
-                    </div>
-                </div>
+                <div class="row" id="llista-esports"></div>
             </div>
         </div>
         
@@ -940,19 +915,10 @@
             </div>
             <div data-role="content" id="content-esports-fitxa" class=" " >
                 <div class="row">
-                    <div class="col-xs-12 img" style="background-image:url(https://roams.es/c/wp-content/uploads/2016/07/futbol-2000x1218.jpg)"></div>
+                    <div class="col-xs-12 img" id="img-esport"></div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12">
-                        <h4>Futbol</h4>
-                        <h2>Capdepera VS Bunyola</h2>
-                        <h3>Es Figueral</h3>
-                        <p class="data-hora">Divendres, 16 de juny 2017</p>
-                        <p class="data-hora">Hora: 20:00h</p>
-                        <p>Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.Ipsum essimplemente Ipsum es simplemente el texto de relleno.</p>
-                        <p class="no-padding"><b>Durada: 90min</b></p>
-                        <p class="no-padding"><b>Entrades: Gratuïta</b></p>
-                    </div>
+                    <div class="col-xs-12" id="fitxa-esportiva"></div>
                 </div>
             </div>
         </div>
@@ -1019,32 +985,7 @@
                 </div>
             </div>
             <div data-role="content" id="content-noticies-home" class=" " >
-                <div class="row" id="llista-noticies">
-                    <div class="col-xs-12" onclick="init.noticies.getFitxa();">
-                        <div class="col-xs-12 img" style="background-image: url(http://esphoto980x880noname.mnstatic.com/5d3f3834c1d070714265acdadb254b50);" ></div>
-                        <div class="col-xs-12"><p>Notícies secondàries est qui dolorem ipsum eque porro quisquam est qui dolorem ipsum </p></div>
-                    </div>
-                    <div class="col-xs-12" onclick="init.noticies.getFitxa();">
-                        <div class="col-xs-12 img" style="background-image: url(http://esphoto980x880noname.mnstatic.com/5d3f3834c1d070714265acdadb254b50);" ></div>
-                        <div class="col-xs-12"><p>Notícies secondàries est qui dolorem ipsum eque porro quisquam est qui dolorem ipsum </p></div>
-                    </div>
-                    <div class="col-xs-12" onclick="init.noticies.getFitxa();">
-                        <div class="col-xs-12 img" style="background-image: url(http://esphoto980x880noname.mnstatic.com/5d3f3834c1d070714265acdadb254b50);" ></div>
-                        <div class="col-xs-12"><p>Notícies secondàries est qui dolorem ipsum eque porro quisquam est qui dolorem ipsum </p></div>
-                    </div>
-                    <div class="col-xs-12" onclick="init.noticies.getFitxa();">
-                        <div class="col-xs-12 img" style="background-image: url(http://esphoto980x880noname.mnstatic.com/5d3f3834c1d070714265acdadb254b50);" ></div>
-                        <div class="col-xs-12"><p>Notícies secondàries est qui dolorem ipsum eque porro quisquam est qui dolorem ipsum </p></div>
-                    </div>
-                    <div class="col-xs-12" onclick="init.noticies.getFitxa();">
-                        <div class="col-xs-12 img" style="background-image: url(http://esphoto980x880noname.mnstatic.com/5d3f3834c1d070714265acdadb254b50);" ></div>
-                        <div class="col-xs-12"><p>Notícies secondàries est qui dolorem ipsum eque porro quisquam est qui dolorem ipsum </p></div>
-                    </div>
-                    <div class="col-xs-12" onclick="init.noticies.getFitxa();">
-                        <div class="col-xs-12 img" style="background-image: url(http://esphoto980x880noname.mnstatic.com/5d3f3834c1d070714265acdadb254b50);" ></div>
-                        <div class="col-xs-12"><p>Notícies secondàries est qui dolorem ipsum eque porro quisquam est qui dolorem ipsum </p></div>
-                    </div>
-                </div>
+                <div class="row" id="llista-noticies"></div>
             </div>
         </div>
         
@@ -1060,15 +1001,10 @@
             </div>
             <div data-role="content" id="content-esdeveniments-fitxa" class=" " >
                 <div class="row">
-                    <div class="col-xs-12 img" style="background-image:url(https://roams.es/c/wp-content/uploads/2017/01/139179.jpg)"></div>
+                    <div class="col-xs-12 img" id="img-noticia"></div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12">
-                        <small>06 JUN 2917</small>
-                        <h5>Notícia principal eque porro quisquam est qui dolorem ipsum eque porro est qui dolorem ipsum </h5>
-                        <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias </p>
-                        <p>Archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 150Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum  las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 15000</p>
-                    </div>
+                    <div class="col-xs-12" id="desc-noticia"></div>
                 </div>
             </div>
         </div>
