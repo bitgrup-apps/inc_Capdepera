@@ -201,8 +201,8 @@ function onMapInit() {
             });
 
         } else {
-            errorMapa();
-            error_('E INIT-229', 'ERROR ON MAP INI', e);
+            //errorMapa();
+            //error_('E INIT-229', 'ERROR ON MAP INI', '');
         }
 
     };

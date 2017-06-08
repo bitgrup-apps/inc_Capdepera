@@ -57,10 +57,10 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 
 
 /*######## HOME - NOU ###################*/
-#home-nou .ui-content{background-image: url(../images/fondo-3.jpg); background-size: cover; background-position: center; height: 100vh;padding: 1vw 10vw;}
+#home-nou .ui-content{background-image: url(../images/fondo-3.jpg); background-size: cover; background-position: center; height: 100vh;padding: 1vw 12vw;}
 #home-nou h1{  margin:12vh 0 7vh; text-align: center; font-size: 12vw; font-family: 'Helena';}
-#home-nou .pastilla{margin: 0.1vw; padding: 25vw 2vw 5vw 2vw; text-align: center; font-size: 4vw; color:#fff; font-weight: 700; text-shadow:none;display: inline-block; width: 100%; text-transform: uppercase;}
-#home-nou .pastilla::before{position:absolute; width:15vw; height: 15vw; background-image: url(../icons/sprite_info_turisme.svg); background-size: 200vw; content: " ";top: 7.5vw;left: 12.5vw;}
+#home-nou .pastilla{margin: 0.1vw; padding: 22vw 2vw 5vw 2vw; text-align: center; font-size: 4vw; color:#fff; font-weight: 700; text-shadow:none;display: inline-block; width: 100%; text-transform: uppercase;}
+#home-nou .pastilla::before{position:absolute; width:15vw; height: 15vw; background-image: url(../icons/sprite_info_turisme.svg); background-size: 200vw; content: " ";top: 5.5vw;left: 11.5vw;}
 #home-nou .pastilla.oncpd{background-color: #779174; }
 #home-nou .pastilla.oncpd::before{background-position:-157vw -62vw;}
 #home-nou .pastilla.esdevn{background-color: #c5b141;}
