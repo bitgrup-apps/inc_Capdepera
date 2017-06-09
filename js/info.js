@@ -6,6 +6,7 @@ var init = {
     lang: 'es',
 
     initApp: function () {
+        init.initLangs();
         init.session.initSession();
     },
     home: function () {
