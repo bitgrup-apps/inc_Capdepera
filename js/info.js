@@ -182,6 +182,7 @@ var init = {
             }
             lang = lang.substr(0, 2);
         }
+        //init.lang = 'en';
         init.lang = lang;
     },
     setLiterals: function () {
