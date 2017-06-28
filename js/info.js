@@ -188,7 +188,7 @@ var init = {
         var literal = null;
         $('.literal').each(function () {
             literal = $(this).data('literal');
-            $(this).text(jQuery.i18n.prop(literal));
+            $(this).html(jQuery.i18n.prop(literal));
         });
     },
     sendAjax: function (formData, file, loading_gif) {
