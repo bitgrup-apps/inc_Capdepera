@@ -229,7 +229,7 @@ function onMapInit() {
         }
     });
     //ACTUALITZAM LLISTA DE INCIDENCIES
-    iniciaLlistatIncidencies();
+    //iniciaLlistatIncidencies();
 
 }
 

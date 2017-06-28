@@ -277,6 +277,7 @@ var init = {
                         } else {
                             localStorage.setItem('verificador', 0);
                         }
+                        iniciaLlistatIncidencies();
                         $.mobile.changePage("#home", {transition: "slide", changeHash: true});
                         init.session.motraAmagaLogin(false);
                     } else if (intResp === 2) {
@@ -287,6 +288,7 @@ var init = {
                     init.urlFunctions = antigaUrl;
                 }
             } else {
+                iniciaLlistatIncidencies();
                 $.mobile.changePage("#home", {transition: "slide", changeHash: true});
             }
             return false;
