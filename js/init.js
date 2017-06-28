@@ -72,7 +72,7 @@ function initApp() {
         initMap();
     } catch (e) {
         errorMapa();
-        error_('E INIT-84', 'ERROR INIT MAPA', e);
+        console.log('E INIT-84', 'ERROR INIT MAPA', e);
     }
 
     init.initApp();
@@ -134,7 +134,10 @@ function initMap() {
                     'backgroundColor': '#FFFFFF',
                     'mapType': plugin.google.maps.MapTypeId.ROADMAP,
                     'controls': {'compass': true, 'myLocationButton': true, 'indoorPicker': true, 'zoom': true},
-                    'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true}
+                    'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true},
+                    'camera': {
+                      'zoom': 18
+                    }
                 });
                 window.mapa = map;
 
@@ -143,7 +146,7 @@ function initMap() {
                 window.mapa.on(plugin.google.maps.event.MAP_READY, onMapInit);
 
             } else {
-                console.log(message);
+                console.log('E-149: ' + message);
                 errorMapa();
             }
         });
@@ -196,6 +199,7 @@ function onMapInit() {
                     $('#adresaIncidencia').val(result.thoroughfare);
                     $('#poblacioIncidencia').val(result.locality);
                 } else {
+                    console.log('E-202: NOT LENGHT MAPA');
                     errorMapa();
                 }
             });
@@ -209,7 +213,7 @@ function onMapInit() {
 
     var onError = function (msg) {
         errorMapa();
-        error_('E INIT-235', 'ERROR ON MAP INI', e);
+        console.log('E INIT-235', 'ERROR ON MAP INI', e);
     };
 
     //AGAFAM LA LOCALITZACIÓ
