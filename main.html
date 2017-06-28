@@ -648,6 +648,12 @@
                 </div>
             </div>
             <div data-role="content" id="content-on-home" class=" " >
+                <a data-role="none" data-transition="slide" href="#oncapdepera-incidencia">
+                    <div class="col-xs-12 menu doble">
+                        <div class="icono-menu"><span class="icon informa"></span></div>
+                        <span><span class="literal" data-literal="msg_on_men_6">Informa</span><br><span class="literal" data-literal="msg_on_men_6b">d'incidències</span></span>
+                    </div>
+                </a>
                 <div class="col-xs-12 menu doble">
                     <div class="icono-menu"><span class="icon visites"></span></div>
                     <span><span class="literal" data-literal="msg_on_men_1">Visites</span><br><span class="literal" data-literal="msg_on_men_1b">turístiques</span></span>
@@ -695,6 +701,75 @@
             </div>
             <div data-role="content" class=""  id="oncpd-html">
                 
+            </div>
+        </div>
+        
+        <!--////////////////////    oncapdepera-incidencia  ///////////////////////////////-->
+
+        <div data-role="page" class="oncapdepera  pagina info-turisme"  id="oncapdepera-incidencia">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8">Oncapdepera</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" class=""  id="oncpd-html">
+                <div class="row">
+                    <form id="form-incidenciaOnCap">
+                        <h2><span class="literal" data-literal="msg_on_men_6">Informa de</span> <span class="literal" data-literal="msg_on_men_6b">una incidència</span></h2>
+                        <div class="col-xs-12">
+                            <label>E-mail</label><input type="email" id="emailOnCap" name="email" value="">
+                        </div>
+                        <div class="col-xs-12">
+                            <label class="literal" data-literal="msg_form_1">Assumpte</label><input type="text" id="assumpteOnCap" name="assumpte" value="">
+                        </div>
+                        <div class="col-xs-12">
+                            <label class="literal" data-literal="msg_form_2">Descripció</label>
+                        </div>
+                        <div class="col-xs-12">
+                            <textarea name="descripcio" id="descripcioOnCap" maxlength="200"></textarea>
+                        </div>
+                        <div class="col-xs-12">
+                            <label class="literal" data-literal="msg_form_3">Imatge</label>
+                        </div>
+                        <div class="col-xs-2 col-xs-offset-8"><div class="getImg" onClick="init.img.getImg();"><img src="icons/img-camera.png" id="" alt="CLICKINCIDENCIES" title="Afegir Imatge"></div></div>
+                        <div class="col-xs-2"> <div class="getImg-gallery" onClick="init.img.getImgLibrary();"><img src="icons/img-gallery.png" id="" alt="CLICKINCIDENCIES" title="Afegir Imatge"></div> </div>
+                        <div class="col-xs-12">    
+                            <img id="imgIncidenciaOnCap" src="images/no-img-2.jpg">
+                        </div>
+                        <div class="col-xs-12">
+                            <label class="literal" data-literal="msg_form_4">Ubicació</label>
+                            <a href="#" data-role="none" onclick="init.mapa.mapaUbicacio();" >Indicar una altre ubicació al mapa</a>
+                        </div>
+                        <div class="col-xs-12">
+                            <label class="literal" data-literal="msg_form_5">Adressa</label><input  id="adresaIncidenciaOnCap" name="adresaIncidenciaOnCap" value="">
+                            <label class="literal" data-literal="msg_form_6">Població</label><input  id="poblacioIncidenciaOnCap" name="poblacioIncidenciaOnCap" value="">
+                        </div>
+                        <div class="col-xs-12">
+                            <button type="button" onclick="init.incidencia.enviaIncidencia();" class="boto">Enviar</button>
+                        </div>
+                        <input type="hidden" id="latitutIncidencia" name="latitutIncidenciaOnCap" value="">
+                        <input type="hidden" id="longitutIncidencia" name="longitutIncidenciaOnCap" value="">
+                        <input type="hidden" id="funcio" name="funcio" value="novaIncidenciaOnCap">
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!--////////////////////    MAPA  ///////////////////////////////-->
+
+        <div data-role="page" class="oncapdepera  pagina info-turisme"  id="oncapdepera-ubicacio">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_6">Mapa</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" class=""  id="oncpd-html">
+                <div id="mapa"></div>
             </div>
         </div>
         

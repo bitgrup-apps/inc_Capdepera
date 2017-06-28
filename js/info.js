@@ -182,7 +182,6 @@ var init = {
             }
             lang = lang.substr(0, 2);
         }
-        //init.lang = 'en';
         init.lang = lang;
     },
     setLiterals: function () {
@@ -308,7 +307,109 @@ var init = {
             init.session.motraAmagaLogin(true);
         }
     },
+    mapa: {
+        mapaUbicacio: function(){
+            try {
+                var div = document.getElementById('mapa');
+                console.log(div);
+                window.mapa.setDiv(div);
+                $.mobile.changePage("#oncapdepera-ubicacio", {transition: "slide"});
+            } catch (e) {
+                 error_('E INCID-316','carregaMapa', e);
+            }
+        }
+    },
+    incidencia: {
+        file: 'oncapdepera.class.php',
+        enviaIncidencia: function () {
 
+            var imageURI = document.getElementById('imgIncidenciaOnCap').getAttribute("src");
+            if (imageURI === 'images/no-img-2.jpg') {
+                var formData = new FormData($('#form-incidenciaOnCap')[0]);
+                formData.append('lang', init.lang);
+                var resp = init.sendAjax(formData, init.incidencia.file, true);
+                if (resp.error == 0) {
+                    alert('INCIDÈNCIA ENVIADA CORRECTAMENT');
+                    $.mobile.changePage("#home", {transition: "slide", changeHash: false});
+                }
+            } else {
+                try {
+                    var parametros = {
+                        adresaIncidencia: document.getElementById("adresaIncidenciaOnCap").value,
+                        poblacioIncidencia: document.getElementById("poblacioIncidenciaOnCap").value,
+                        assumpte: document.getElementById("assumpteOnCap").value,
+                        descripcio: document.getElementById("descripcioOnCap").value,
+                        longitutIncidencia: document.getElementById("longitutIncidenciaOnCap").value,
+                        latitutIncidencia: document.getElementById("latitutIncidenciaOnCap").value,
+                        email: document.getElementById("emailOnCap").value,
+                        name: 'imgIncidenciaOnCap',
+                        funcio: 'novaIncidenciaOnCap'
+                    };
+                    var options = new FileUploadOptions();
+                    options.fileKey = "imgIncidenciaOnCap";
+                    options.fileName = 'imgIncidenciaOnCap';
+                    options.mimeType = "image/jpeg";
+                    options.chunkedMode = false;
+                    options.params = parametros;
+                    var ft = new FileTransfer();
+                    console.log(options);
+                    ft.onprogress = function (progressEvent) {
+                        $('#loading_body').css('display', 'table');
+                    };
+                    ft.upload(imageURI, encodeURI(init.urlFunctions + init.incidencia.file), init.incidencia.win, init.incidencia.onFail, options);
+                } catch (e) {
+                    $('#loading_body').css('display', 'none');
+                    init.error_('E 395', 'ERROR ENVIANT INCIDENCIA', e);
+                }
+            }
+
+            return false;
+        },
+        onFail: function (message) {
+            $('#loading_body').css('display', 'none');
+            init.error_('E 611', 'ERROR ENVIANT INCIDENCIA', message);
+        },
+        win: function (data) {
+            $('#loading_body').css('display', 'none');
+            try {
+                console.log(data);
+                var resposta = JSON.parse(data.response);
+                if (resposta.error == '1') {
+                    init.error_('E FUNCTIONS-405', data.response, resposta.str);
+                } else {
+                    alert('INCIDÈNCIA ENVIADA CORRECTAMENT');
+                    $.mobile.changePage("#home", {transition: "slide", changeHash: false});
+                }
+            } catch (e) {
+                init.error_('E 416', data, e);
+            }
+        }
+    },
+    img: {
+        getImg: function () {
+            navigator.camera.getPicture(init.img.onSuccess, init.img.onFail, {
+                quality: 50,
+                destinationType: Camera.DestinationType.FILE_URI,
+                correctOrientation: true
+            });
+        },
+        getImgLibrary: function () {
+            navigator.camera.getPicture(init.img.onSuccess, init.img.onFail, {
+                quality: 50,
+                destinationType: Camera.DestinationType.FILE_URI,
+                sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY,
+                correctOrientation: true
+            });
+        },
+        onSuccess: function (imageData) {
+            var id = 'imgIncidenciaOnCap';
+            var image = document.getElementById(id);
+            image.src = imageData;
+        },
+        onFail: function (message) {
+            //init.error_('E INCID-235','ERROR GET IMATGE', message);
+        }
+    },
     carregaPagExt: function (url) {
         var ref = window.open(url, '_system', 'location=yes');
     },

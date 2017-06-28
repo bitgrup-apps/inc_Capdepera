@@ -60,15 +60,15 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 /*######## HOME - NOU ###################*/
 #home-nou .ui-content{background-image: url(../images/fondo-3.jpg); background-size: cover; background-position: center; height: 100vh;padding: 1vw 12vw;}
 #home-nou h1{  margin:12vh 0 7vh; text-align: center; font-size: 12vw; font-family: 'Helena';}
-#home-nou .pastilla{margin: 0.1vw; padding: 22vw 2vw 5vw 2vw; text-align: center; font-size: 4vw; color:#fff; font-weight: 700; text-shadow:none;display: inline-block; width: 100%; text-transform: uppercase;}
+#home-nou .pastilla{margin: 0.1vw; padding: 22vw 2vw 5vw 2vw; text-align: center; font-size: 4vw; color:#fff; font-weight: 700; text-shadow:none;display: inline-block; width: 100%; text-transform: uppercase;background-size: cover; background-position: center; background-repeat: no-repeat;}
 #home-nou .pastilla::before{position:absolute; width:15vw; height: 15vw; background-image: url(../icons/sprite_info_turisme.svg); background-size: 200vw; content: " ";top: 5.5vw;left: 11.5vw;}
-#home-nou .pastilla.oncpd{background-color: #779174; }
+#home-nou .pastilla.oncpd{background-image:url('../icons/bot1.png'); }
 #home-nou .pastilla.oncpd::before{background-position:-157vw -62vw;}
-#home-nou .pastilla.esdevn{background-color: #c5b141;}
+#home-nou .pastilla.esdevn{background-image:url('../icons/bot2.png'); }
 #home-nou .pastilla.esdevn::before{background-position:-161.5vw -108vw;}
-#home-nou .pastilla.sprts{background-color: #985d61;}
+#home-nou .pastilla.sprts{background-image:url('../icons/bot3.png'); }
 #home-nou .pastilla.sprts::before{background-position:-161.5vw -133vw;}
-#home-nou .pastilla.notc{background-color: #708e9a;}
+#home-nou .pastilla.notc{background-image:url('../icons/bot4.png'); }
 #home-nou .pastilla.notc::before{background-position:-161.5vw -155vw;}
 #home-nou .pastilla.rdio{background-color: #d4df86;}
 /*#home-nou .pastilla.rdio::before{background-position:-161.5vw -108vw;}*/
@@ -330,7 +330,7 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 .icon-tur.ico-radio{background-position: -37.5vw -122vw;background-size: 130vw;width: 16vw;height: 15vw;}
 
 /*######## ONCAPDEPERA #############*/
-.oncapdepera h2{text-align: left;font-size: 6.25vw;text-transform: uppercase;color: #040700;margin: 30px 5% 15px;padding: 0;font-family: 'Lato', sans-serif;font-weight: 300;}
+.oncapdepera h2{text-align: left;font-size: 5.7vw;text-transform: uppercase;color: #040700;margin: 30px 5% 15px;padding: 0;font-family: 'Lato', sans-serif;font-weight: 300;}
 .oncapdepera p {font-size: 4.5vw;margin: 18px 5%; padding: 0; color: #040700;font-family: 'Lato', sans-serif; font-weight: 300; line-height: 5.75vw;}
 .oncapdepera h1{color: #040700;}
 .oncapdepera .ui-content{padding: 0;}
@@ -345,7 +345,8 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #oncapdepera-home .icono-menu{position: absolute;left: 3.25vw;top: 4vw; height: 99%; width: 18vw;}
 #oncapdepera-home .menu .sub-menu{display: none;float: left; padding-left: 5.75vw;width: 100%;}
 #oncapdepera-home .menu .icono-menu span{border-radius: 10vw; width: 18vw;height: calc(100% - 10vw);}
-#oncapdepera-home .menu > span:nth-child(2){font-size: 6.5vw; color:#fff; text-shadow:none;padding:4vw 0 1.5vw 3vw; float: left;text-align: left;}
+#oncapdepera-home .menu > span:nth-child(2){padding:4vw 0 1.5vw 3vw; float: left;}
+#oncapdepera-home .menu span{font-size: 6.5vw; color:#fff; text-shadow:none;text-align: left;}
 #oncapdepera-home .visites{background-color: #008841; background-position: 2.25px 2.5vw;}
 #oncapdepera-home .festes{background-color: #95a543; background-position: -16vw 2.5vw;}
 #oncapdepera-home .serveis{background-color: #789130; background-position: -31.75vw 2vw;}
@@ -361,6 +362,18 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #oncapdepera-fitxa{background:#fff;}
 #oncapdepera-fitxa .galeria{margin-top:10vh; margin-bottom: 10vw;}
 #oncapdepera-fitxa .galeria > div{padding:3px;}
+
+/*incidencia*/
+#oncapdepera-incidencia {    background: #f9f9f9;}
+#mapa{height: 100%; width: 100%; min-height: 200px;}
+#oncapdepera-incidencia .ui-content{padding:4%;}
+#oncapdepera-incidencia h2{color:#333;margin-bottom: 30px;}
+#oncapdepera-incidencia label{margin: 15px 0 0;}
+#oncapdepera-incidencia img{margin-top:10px;}
+#oncapdepera-incidencia textarea{height: 100px !important;}
+#oncapdepera-incidencia .ui-btn{padding: 10px 20px; background:#49805D; color:#fff; font-size: 20px; border-color:#49805D;font-family: 'Lato', sans-serif;font-weight: 400;text-shadow: none;margin-top: 30px;}
+#oncapdepera-incidencia .ui-btn:hover{background:#fff; color:#49805D; }
+#oncapdepera-incidencia{background-color:#f9f9f9;}
 
 
 /*serveis*/
@@ -417,10 +430,15 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 
 /*llista*/
 #esdeveniments-home .ui-content{background:#3f3f3e}
-#llista-esdeveniments > div{padding: 8vw 20px 8vw 19vw; color:#fff; font-size:5vw; font-weight: 700; border-bottom: 2px solid #fff; text-shadow:none;}
+#llista-esdeveniments > div{padding: 0vw 0px 0vw 19vw; color:#fff; font-size:5vw; font-weight: 700; border-bottom: 2px solid #fff; text-shadow:none;height: 24vw;}
 #llista-esdeveniments > div::before{position:absolute; left: 2vw; top: 4.5vw; width:14vw; height: 14vw; content: " "; background-image: url(../icons/sprite_info_turisme.svg); background-size: 100vw; }
 #llista-esdeveniments > div.cine::before{background-position: -6.5vw -1.5vw;}
 #llista-esdeveniments > div.teatre::before{background-position: -6.5vw -16.4vw;}
+#llista-esdeveniments > div > div:first-child{padding-top:8vw; padding-bottom: 8vw;}
+#llista-esdeveniments > div > div:last-child{background:#656565;height: 100%; text-align: center;}
+#llista-esdeveniments .span-esd{width:100%; display: inline-block;}
+#llista-esdeveniments .span-esd.mes-esd{font-weight: 400;font-size: 3.5vw;padding-top: 3vw;}
+#llista-esdeveniments .span-esd.dia-esd{font-weight: 700;font-size: 9vw;line-height: 9vw;}
 
 /*fitxa*/
 #esdeveniments-fitxa.fitxa h1{font-size: 6vw;}

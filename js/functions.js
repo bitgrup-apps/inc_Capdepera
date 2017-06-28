@@ -38,8 +38,8 @@ $(document).ready(function () {
 
     if (lang != 'es' && lang != 'en' && lang != 'de')
         lang = 'en';
-    
-    
+
+
     //###################################################################################
     //////////////// TORNADA ENRERA ///////////////////////////
     //###################################################################################
@@ -183,10 +183,17 @@ function comprovaPasa1b() {
     if ($('#descIncidencia').val() == '') {
         $('#descIncidencia').addClass('obligatori');
         ok = false;
-    } else
+    } else {
         $('#descIncidencia').removeClass('obligatori');
+    }
 
-
+    try {
+        var div = document.getElementById('mapaIncidencia');
+        window.mapa.setDiv(div);
+    } catch (e) {
+        error_('E INCID-323', 'carregaMapa', e);
+    }
+    
     return ok;
 }
 
@@ -267,7 +274,7 @@ $(document).on("pagebeforeshow", "#afegirIncidencia", function () {
     $('#llinatges_usuari').val(localStorage.getItem("llinatges_usuari"));
     $('#email_usuari').val(localStorage.getItem("email_usuari"));
     $('#tel_usuari').val(localStorage.getItem("tel_usuari"));
-    $('#incidenciaNoVisible').prop( "checked", false );
+    $('#incidenciaNoVisible').prop("checked", false);
 
     //imatges
     removeImg(3);
@@ -291,9 +298,9 @@ function getFecha() {
     var min = fecha.getMinutes();
     if (min < 10)
         min = '0' + min;
-    
-    
-    
+
+
+
     return dia + '/' + mes + '/' + fecha.getFullYear() + ' ' + hora + ':' + min;
 }
 $(document).on("pagebeforeshow", "#darreresIncidencies", function () { // When entering pagetwo 
@@ -317,7 +324,7 @@ $(document).on("pagebeforeshow", "#darreresIncidencies", function () { // When e
 //#############################################################
 function enviaIncidencia() {
     var incidenciaNoVisible = 0;
-    if ($('#incidenciaNoVisible').is(':checked')){
+    if ($('#incidenciaNoVisible').is(':checked')) {
         incidenciaNoVisible = 1;
     }
     var parametros = {
@@ -349,7 +356,7 @@ function enviaIncidencia() {
     if (window.numImatges == 0) {
         $.ajax({
             url: 'http://gestcap.com/gestio/App/incidencies.php', type: 'POST', data: parametros,
-            cache: false,  async: false,  beforeSend: function () {},
+            cache: false, async: false, beforeSend: function () {},
             success: function (data) {
                 try {
                     var resposta = JSON.parse(data);
@@ -543,7 +550,7 @@ $(document).on("pagebeforeshow", "#incidenciaPasa2", function (event, data) { //
 function comprovaPosicio(lat, long) {
     var ok = true;
     //limits regions artà
-    if (lat > 39.769914  || lat < 39.630348 || long < 3.379006 || long > 3.473944)
+    if (lat > 39.769914 || lat < 39.630348 || long < 3.379006 || long > 3.473944)
         ok = false;
     return ok;
 }

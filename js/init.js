@@ -270,6 +270,11 @@ function novaLocalitzacio(posicio) {
             });
             $('#adresaIncidencia').val(result.thoroughfare);
             $('#poblacioIncidencia').val(result.locality);
+            //ONCAPDEPERA
+            $('#adresaIncidenciaOnCap').val(result.thoroughfare);
+            $('#poblacioIncidenciaOnCap').val(result.locality);
+            $('#latitutIncidenciaOnCap').val(position.lat);
+            $('#longitutIncidenciaOnCap').val(position.lng);
         } else {
             if (posicio){
                 window.mapa.addMarker({
