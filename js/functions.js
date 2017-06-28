@@ -555,6 +555,7 @@ function comprovaPosicio(lat, long) {
     return ok;
 }
 function errorMapa() {
+    /*
     //alert('No es pot aconseguir la vostra localització, indicau una localització al mapa');
     try {
         window.mapa.animateCamera({
@@ -567,7 +568,8 @@ function errorMapa() {
         });
     } catch (e) {
         error_('E FUNCTIONS-564', 'animateCamara', e);
-    }
+    }*/
+
 }
 //#############################################################
 //#############################################################

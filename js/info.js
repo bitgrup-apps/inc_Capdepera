@@ -352,13 +352,12 @@ var init = {
                     options.chunkedMode = false;
                     options.params = parametros;
                     var ft = new FileTransfer();
-                    console.log(options);
                     ft.onprogress = function (progressEvent) {
-                        $('#loading_body').css('display', 'table');
+                        $('#loading').css('display', 'table');
                     };
                     ft.upload(imageURI, encodeURI(init.urlFunctions + init.incidencia.file), init.incidencia.win, init.incidencia.onFail, options);
                 } catch (e) {
-                    $('#loading_body').css('display', 'none');
+                    $('#loading').css('display', 'none');
                     init.error_('E 395', 'ERROR ENVIANT INCIDENCIA', e);
                 }
             }
@@ -366,19 +365,18 @@ var init = {
             return false;
         },
         onFail: function (message) {
-            $('#loading_body').css('display', 'none');
+            $('#loading').css('display', 'none');
             init.error_('E 611', 'ERROR ENVIANT INCIDENCIA', message);
         },
         win: function (data) {
-            $('#loading_body').css('display', 'none');
+            $('#loading').css('display', 'none');
             try {
-                console.log(data);
                 var resposta = JSON.parse(data.response);
                 if (resposta.error == '1') {
                     init.error_('E FUNCTIONS-405', data.response, resposta.str);
                 } else {
                     alert('INCIDÈNCIA ENVIADA CORRECTAMENT');
-                    $.mobile.changePage("#home", {transition: "slide", changeHash: false});
+                    $.mobile.changePage("#home-nou", {transition: "slide", changeHash: false});
                 }
             } catch (e) {
                 init.error_('E 416', data, e);
