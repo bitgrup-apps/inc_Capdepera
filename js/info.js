@@ -120,10 +120,23 @@ var init = {
             if (resp.error == 0) {
                 $('#img-noticia').css('background-image', 'url(' + resp.img + ')');
                 $('#desc-noticia').html(resp.str);
+                init.noticies.arreglaLinks();
                 $.mobile.changePage("#noticies-fitxa", {transition: "slide"});
             }
+        },
+        arreglaLinks: function () {
+            //canviam els links per window.load
+            $('#desc-noticia a').not('.notLink').each(function () {
+                var href = $(this).attr('href');
+                $(this).attr('href', '#');
+                $(this).click(function () {
+                    window.open(href, '_system');
+                });
+            });
         }
+        
     },
+    
     esdeveniments: {
 
         file: 'esdeveniments.class.php',
@@ -181,6 +194,9 @@ var init = {
                 lang = navigator.userLanguage;
             }
             lang = lang.substr(0, 2);
+        }
+        if(lang != 'es' && lang != 'ca'){
+            lang = 'es';
         }
         init.lang = lang;
     },
@@ -319,6 +335,32 @@ var init = {
             } catch (e) {
                  error_('E INCID-316','carregaMapa', e);
             }
+        },
+        puntAlMapa: function(lat, long, text){
+            var position_ = new plugin.google.maps.LatLng(lat, long);
+            var request = {'position': position_};
+            plugin.google.maps.Geocoder.geocode(request, function (results) {
+                    if (position_) {
+                        window.mapa.addMarker({
+                            'position': position_,
+                            'title': text
+                        }, function (marker) {
+                            marker.showInfoWindow();
+                            window.mapa.addEventListenerOnce("MARKER_REMOVE", function () {
+                                marker.remove();
+                            });
+                        });
+                        window.mapa.animateCamera({
+                            target: {
+                                lat: lat,
+                                lng: long
+                            },
+                            'duration': 1,
+                            zoom: 18
+                        });
+                    } 
+            });
+            $.mobile.changePage("#oncapdepera-ubicacio");
         }
     },
     incidencia: {
@@ -440,3 +482,4 @@ var init = {
 }
 
 
+//$(document).ready(function(){init.initApp();});

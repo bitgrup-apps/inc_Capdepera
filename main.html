@@ -56,7 +56,7 @@
                     <a href="#" class="pastilla oncpd" data-role="none" onclick="init.onCapdepera.init();">Oncapdepera</a>
                 </div>
                 <div class="col-xs-6">
-                    <a href="#" class="pastilla esdevn literal" data-literal="msg_menu_2" data-role="none" onclick="init.esdeveniments.getEsdeveniments();">Esdeveniments</a>
+                    <a href="#" class="pastilla esdevn literal" data-literal="msg_menu_2" data-role="none" onclick="init.esdeveniments.getEsdeveniments();">Agenda</a>
                 </div>
                 <div class="col-xs-6">
                     <a href="#" class="pastilla sprts literal" data-literal="msg_menu_3" data-role="none" onclick="init.esports.init();">Esports</a>
@@ -64,9 +64,15 @@
                 <div class="col-xs-6">
                     <a href="#" class="pastilla notc literal" data-literal="msg_menu_4" data-role="none"  onclick="init.noticies.init();">Notícies</a>
                 </div>
-                <div class="col-xs-6 radio_pastilla">
-                    <a href="#radio-home" class="pastilla rdio literal" data-literal="msg_menu_5" data-role="none" data-transition="slide">Ràdio</a>
+                <div class="col-xs-6">
+                    <a href="#oncapdepera-incidencia" class="pastilla incd literal" data-literal="msg_menu_6" data-role="none">Incidència</a>
                 </div>
+                <div class="col-xs-6">
+                    <a href="#radio-home" class="pastilla rdio literal" data-literal="msg_menu_5" data-role="none" >Ràdio</a>
+                </div>
+                <!--div class="col-xs-6 radio_pastilla">
+                    <a href="#radio-home" class="pastilla rdio literal" data-literal="msg_menu_5" data-role="none" data-transition="slide">Ràdio</a>
+                </div-->
             </div>
 
         </div>
@@ -648,12 +654,12 @@
                 </div>
             </div>
             <div data-role="content" id="content-on-home" class=" " >
-                <a data-role="none" data-transition="slide" href="#oncapdepera-incidencia">
+                <!--a data-role="none" data-transition="slide" href="#oncapdepera-incidencia">
                     <div class="col-xs-12 menu doble">
                         <div class="icono-menu"><span class="icon informa"></span></div>
                         <span><span class="literal" data-literal="msg_on_men_6">Informa</span><br><span class="literal" data-literal="msg_on_men_6b">d'incidències</span></span>
                     </div>
-                </a>
+                </a-->
                 <div class="col-xs-12 menu doble">
                     <div class="icono-menu"><span class="icon visites"></span></div>
                     <span><span class="literal" data-literal="msg_on_men_1">Visites</span><br><span class="literal" data-literal="msg_on_men_1b">turístiques</span></span>
@@ -710,7 +716,7 @@
             <div data-role="header" class="header">
                 <div class="row">
                     <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
-                    <div class="col-xs-8">Oncapdepera</div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_6">Incidència</div>
                     <div class="col-xs-2" onclick="init.home();"></div>
                 </div>
             </div>
@@ -733,10 +739,10 @@
                         <div class="col-xs-12">
                             <label class="literal" data-literal="msg_form_3">Imatge</label>
                         </div>
-                        <div class="col-xs-2 col-xs-offset-8"><div class="getImg" onClick="init.img.getImg();"><img src="icons/img-camera.png" id="" alt="CLICKINCIDENCIES" title="Afegir Imatge"></div></div>
-                        <div class="col-xs-2"> <div class="getImg-gallery" onClick="init.img.getImgLibrary();"><img src="icons/img-gallery.png" id="" alt="CLICKINCIDENCIES" title="Afegir Imatge"></div> </div>
+                        <div class="col-xs-2 col-xs-offset-8"><div class="getImg" onClick="init.img.getImg();"><img src="icons/img-camera-blau.png" id="" alt="CLICKINCIDENCIES" title="Afegir Imatge"></div></div>
+                        <div class="col-xs-2"> <div class="getImg-gallery" onClick="init.img.getImgLibrary();"><img src="icons/img-gallery-blau.png" id="" alt="CLICKINCIDENCIES" title="Afegir Imatge"></div> </div>
                         <div class="col-xs-12">    
-                            <img id="imgIncidenciaOnCap" src="images/no-img-2.jpg">
+                            <img id="imgIncidenciaOnCap" src="images/no-img-3.jpg">
                         </div>
                         <div class="col-xs-12">
                             <label class="literal" data-literal="msg_form_4">Ubicació</label>
@@ -764,7 +770,7 @@
             <div data-role="header" class="header">
                 <div class="row">
                     <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
-                    <div class="col-xs-8">OnCapdepera</div>
+                    <div class="col-xs-8 literal"  data-literal="msg_menu_6">Incidència</div>
                     <div class="col-xs-2" onclick="init.home();"></div>
                 </div>
             </div>
@@ -824,7 +830,7 @@
                     <div class="row servei-contingut tab-pane fade in active" id="page-transport">
                         <div class="col-xs-12">
                             <span class="literal" data-literal="msg_on_servei1">Taxis</span>
-                            <span><a href="tel:971565656">971 56 56 56</a></span>
+                            <span><a href="tel:971826969">971 82 69 69 </a></span>
                             <span>Plaça dels Pins, S/N Cala Ratjada</span>
                         </div>
                         <div class="col-xs-12">
@@ -835,7 +841,7 @@
 
                     <div class="row servei-contingut tab-pane fade" id="page-salut">
                         <div class="col-xs-12">
-                            <span>Pac Cala Rajada</span>
+                            <span>Pac Cala Ratjada</span>
                             <span><a href="tel:971566550">971 566 550</a></span>
                             <span>C/Juan Sebastian Elcano 47 - Cala Ratjada</span>
                         </div>
@@ -858,12 +864,12 @@
                         <div class="col-xs-12">
                             <span><span class="literal" data-literal="msg_on_farmacia">Pharmacy</span> CARLOS ANTICH</span>
                             <span><a href="tel:971563396">971 563 396</a></span>
-                            <span>Leonor Servera, 51 - Cala Rajada</span>
+                            <span>Leonor Servera, 51 - Cala Ratjada</span>
                         </div>
                         <div class="col-xs-12">
                             <span><span class="literal" data-literal="msg_on_farmacia">Pharmacy</span> CONCHA PARTERA</span>
                             <span><a href="tel:971563062">971 563 062</a></span>
-                            <span>Via Mallorca, 29 - Cala Rajada</span>
+                            <span>Via Mallorca, 29 - Cala Ratjada</span>
                         </div>
                         <div class="col-xs-12">
                             <span><span class="literal" data-literal="msg_on_farmacia">Pharmacy</span> SONIA GARCÍA</span>
@@ -894,32 +900,77 @@
 
                     <div class="row servei-contingut tab-pane fade" id="page-turistica">
                         <div class="col-xs-12">
-                            <span>CAPDEPERA</span>
-                            <span><a href="tel:971556479">971 556 479</a></span>
-                            <span>C/ Centre, 9 Edifici Can Melis - Capdepera</span>
+                            <span>Manacor</span>
+                            <span class="literal" data-literal="msg_cada_dilluns">Every Monday</span>
+                            <span>Plaça Ramón Llull - Manacor</span>
                         </div>
                         <div class="col-xs-12">
-                            <span>CAP VERMELL</span>
-                            <span><a href="tel:971818467">971 818 467</a></span>
-                            <span>C/ Agulla, 50 Edifici Cap Vermell - Cala Rajada</span>
+                            <span>Artà</span>
+                            <span class="literal" data-literal="msg_cada_dimarts">Every Tuesday</span>
+                            <span>Plaça del conqueridor - Artà</span>
                         </div>
                         <div class="col-xs-12">
-                            <span>PLAÇA DELS PINS</span>
-                            <span><a href="tel:971819467">971 819 467</a></span>
-                            <span>Plaça dels pins, S/N - Cala Rajada</span>
+                            <span><b>CAPDEPERA</b></span>
+                            <span class="literal" data-literal="msg_cada_dimecres">Every wednesday</span>
+                            <span>Plaça de l'Orient - Capdepera</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span>Inca</span>
+                            <span class="literal" data-literal="msg_cada_dijous">Every Thursday</span>
+                            <span>C/ D'es Born - Inca</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span>Son Servera</span>
+                            <span class="literal" data-literal="msg_cada_divendres">Every Friday</span>
+                            <span>Plaça Sant Joan - Son Servera</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><b>CALA RATJADA</b></span>
+                            <span class="literal" data-literal="msg_cada_dissabte">Every Saturday</span>
+                            <span>Plaça dels pins - Cala Ratjada</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span>Sa Pobla</span>
+                            <span class="literal" data-literal="msg_cada_diumenge">Every Sunday</span>
+                            <span>Plaça Constitució - Sa Pobla</span>
                         </div>
                     </div>
 
                     <div class="row servei-contingut tab-pane fade" id="page-mercats">
                         <div class="col-xs-12">
-                            <span>CAPDEPERA</span>
-                            <span class="literal" data-literal="msg_cada_dimecres">Every Wednesday</span>
-                            <span>Plaça de l'Orient - Capdepera</span>
+                            <span>Manacor</span>
+                            <span class="literal" data-literal="msg_cada_dilluns">Every Monday</span>
+                            <span onclick="init.mapa.puntAlMapa(39.566719, 3.211743,'Plaça Ramón Llull - Manacor');">Plaça Ramón Llull - Manacor</span>
                         </div>
                         <div class="col-xs-12">
-                            <span>CALA RATJADA</span>
+                            <span>Artà</span>
+                            <span class="literal" data-literal="msg_cada_dimarts">Every Tuesday</span>
+                            <span onclick="init.mapa.puntAlMapa(39.693224, 3.349408,'Plaça del conqueridor - Artà');">Plaça del conqueridor - Artà</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><b>CAPDEPERA</b></span>
+                            <span class="literal" data-literal="msg_cada_dimecres">Every wednesday</span>
+                            <span onclick="init.mapa.puntAlMapa(39.702253, 3.433891,'Plaça de l\'Orient - Capdepera');">Plaça de l'Orient - Capdepera</span>
+                        </div>
+                        <div class="col-xs-12"> 
+                            <span>Inca</span>
+                            <span class="literal" data-literal="msg_cada_dijous">Every Thursday</span>
+                            <span onclick="init.mapa.puntAlMapa(39.720713, 2.910901,'C/ D\'es Born - Inca');">C/ D'es Born - Inca</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span>Son Servera</span>
+                            <span class="literal" data-literal="msg_cada_divendres">Every Friday</span>
+                            <span onclick="init.mapa.puntAlMapa(39.620522, 3.360138,'Plaça Sant Joan - Son Servera');">Plaça Sant Joan - Son Servera</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><b>CALA RATJADA</b></span>
                             <span class="literal" data-literal="msg_cada_dissabte">Every Saturday</span>
-                            <span>Plaça dels pins - Cala Rajada</span>
+                            <span onclick="init.mapa.puntAlMapa(39.710727, 3.460120,'Plaça dels pins - Cala Ratjada');">Plaça dels pins - Cala Ratjada</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span>Sa Pobla</span>
+                            <span class="literal" data-literal="msg_cada_diumenge">Every Sunday</span>
+                            <span onclick="init.mapa.puntAlMapa(39.769855, 3.024938,'Plaça Constitució - Sa Pobla');">Plaça Constitució - Sa Pobla</span>
                         </div>
                     </div>
 
@@ -927,7 +978,7 @@
                         <div class="col-xs-12">
                             <span>GUARDIA CIVIL CALA RATJADA</span>
                             <span><a href="tel:971565673">971 565 673</a></span>
-                            <span>Explanada des moll - Cala Rajada</span>
+                            <span>Explanada des moll - Cala Ratjada</span>
                         </div>
                         <div class="col-xs-12">
                             <span>POLICIA LOCAL CAPDEPERA</span>
@@ -937,7 +988,7 @@
                         <div class="col-xs-12">
                             <span>POLICIA LOCAL CALA RATJADA</span>
                             <span><a href="tel:971818467">971 818 467</a></span>
-                            <span>C/ Agulla, 50 Edificio Cap Vermell - Cala Rajada</span>
+                            <span>C/ Agulla, 50 Edificio Cap Vermell - Cala Ratjada</span>
                         </div>
                     </div>
                 </div>

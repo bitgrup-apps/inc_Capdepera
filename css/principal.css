@@ -70,8 +70,10 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #home-nou .pastilla.sprts::before{background-position:-161.5vw -133vw;}
 #home-nou .pastilla.notc{background-image:url('../icons/bot4.png'); }
 #home-nou .pastilla.notc::before{background-position:-161.5vw -155vw;}
+#home-nou .pastilla.incd{background-image:url('../icons/bot5.png'); }
+#home-nou .pastilla.incd::before{background-position:-126.5vw -182vw; background-size: 160vw;}
 #home-nou .pastilla.rdio{background-color: #d4df86;}
-/*#home-nou .pastilla.rdio::before{background-position:-161.5vw -108vw;}*/
+#home-nou .pastilla.rdio::before{background-position:-162vw -177vw;}
 #home-nou .ui-content > a:first-child{position:absolute; right: 20px; top: 30px; width:10vw; height: 10vw; background-image: url(../icons/sprite_info_turisme.svg); background-size: 115vw; background-position: -91vw -115.5vw;z-index: 99;}
 #home-nou .ui-content > .col-xs-6{padding: 0.5vw;}
 #home-nou .radio_pastilla{float: right; margin-top: 8vh; width: 24vw;}
@@ -365,14 +367,15 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 
 /*incidencia*/
 #oncapdepera-incidencia {    background: #f9f9f9;}
+#oncapdepera-incidencia .header, #oncapdepera-ubicacio .header{background:#384981;}
 #mapa{height: 100%; width: 100%; min-height: 200px;}
 #oncapdepera-incidencia .ui-content{padding:4%;}
 #oncapdepera-incidencia h2{color:#333;margin-bottom: 30px;}
 #oncapdepera-incidencia label{margin: 15px 0 0;}
 #oncapdepera-incidencia img{margin-top:10px;}
 #oncapdepera-incidencia textarea{height: 100px !important;}
-#oncapdepera-incidencia .ui-btn{padding: 10px 20px; background:#49805D; color:#fff; font-size: 20px; border-color:#49805D;font-family: 'Lato', sans-serif;font-weight: 400;text-shadow: none;margin-top: 30px;}
-#oncapdepera-incidencia .ui-btn:hover{background:#fff; color:#49805D; }
+#oncapdepera-incidencia .ui-btn{padding: 10px 20px; background:#384981; color:#fff; font-size: 20px; border-color:#49805D;font-family: 'Lato', sans-serif;font-weight: 400;text-shadow: none;margin-top: 30px;}
+#oncapdepera-incidencia .ui-btn:hover{background:#fff; color:#384981; }
 #oncapdepera-incidencia{background-color:#f9f9f9;}
 #oncapdepera-ubicacio.ui-page{background:none;}
 
@@ -393,10 +396,11 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #oncapdepera-serveis .servei-contingut span{padding-bottom: 2.5vw; width: 100%; display: inline-block;}
 #oncapdepera-serveis .servei-contingut span:first-child{font-size:4.5vw; color:#49805d; text-transform: uppercase;}
 #oncapdepera-serveis .servei-contingut span:nth-child(2), #oncapdepera-serveis .servei-contingut span:nth-child(2) > a{font-size:5vw; color:#bcc57d; padding:0;}
-#oncapdepera-serveis .servei-contingut span:nth-child(3){font-size:4vw; color:#727176;padding: 2.5vw 0;background-image: url(../icons/marker.svg);background-repeat: no-repeat;background-size: 5vw;background-position: right center; padding-right: 5vw;}
+#oncapdepera-serveis .servei-contingut span:nth-child(3){font-size:4vw; color:#727176;padding: 2.5vw 0;/*background-image: url(../icons/marker.svg);*/background-repeat: no-repeat;background-size: 5vw;background-position: right center; padding-right: 5vw;}
+#oncapdepera-serveis #page-mercats.servei-contingut span:nth-child(3){background-image: url(../icons/marker.svg);}
 #oncapdepera-serveis .nav-tabs > li > a{background:transparent; border: none; margin:0; border-radius: 0; padding: 0; text-align: center;opacity: 0.5;}
 #oncapdepera-serveis .nav-tabs > li.active > a{opacity: 1;}
-
+#oncapdepera-serveis #page-mercats.servei-contingut span{text-transform: none;}
 
 /*######## ESPORTS #############*/
 .info-turisme.esports .header{background:#c33538;}
