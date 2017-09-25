@@ -44,6 +44,7 @@
     <gap:plugin name="cordova-plugin-uniquedeviceid"  source="npm" />
     <gap:plugin name="cordova-plugin-device"  source="npm" />
     <gap:plugin name="cordova-plugin-inappbrowser"  source="npm" />
+    <gap:plugin name="org.apache.cordova.media"/>
 	
 
   
@@ -63,7 +64,7 @@
     <access origin="*://*.gstatic.com/*" subdomains="true" />
     <access origin="*://*.google.com/*" subdomains="true" />
     <access origin="*://*.googleusercontent.com/*" subdomains="true" />
-    <access origin="*://*.arta.cat/*" subdomains="true" />
+    <access origin="*://*.91.121.156.27/*" subdomains="true" />
     <allow-navigation href="*" />
     <allow-intent href="*" />
     <access origin="*" />
