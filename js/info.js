@@ -456,9 +456,7 @@ var init = {
         var ref = window.open(url, '_system', 'location=yes');
     },
     openRadio: function () {
-        var audioElement = document.createElement('audio');
-        audioElement.setAttribute('src', 'http://91.121.156.27:8010/stream');
-        audioElement.setAttribute('autoplay', 'autoplay');
+        init.carregaPagExt('http://91.121.156.27:8010/stream');
     },
     areYouSure: function (text2, button, callback, back_) {
         $("#sure .sure-2").text(text2);
