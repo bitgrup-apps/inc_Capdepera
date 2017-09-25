@@ -407,14 +407,15 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 .info-turisme.esports .ui-content{background:#fff; padding: 0;}
 
 /*home*/
-#esports-home #llista-esports > div.canvia_dia{margin-top: 4px;}
-#esports-home #llista-esports > div > div{height: 25vw;}
-#esports-home #llista-esports > div > div:first-child{margin-right:2px;background-color: #d9d9d9; padding:5px 5px; color:#e40d0d; text-align:center;  font-weight:700;text-shadow: none; width: calc(25% - 2px);}
+#llista-esports{background-color: #d9d9d9;}
+#esports-home #llista-esports > div.canvia_dia{/*margin-top: 4px;*/border-top: 1px solid #fff;}
+#esports-home #llista-esports > div > div{/*height: 25vw;*/}
+#esports-home #llista-esports > div > div:first-child{margin-right:2px; padding:5px 5px; color:#e40d0d; text-align:center;  font-weight:700;text-shadow: none; width: calc(25% - 2px);}
 #esports-home #llista-esports span:first-child{font-size: 5vw; line-height: 5vw;height: 3vw;display: inline-block;width: 100%;}
 #esports-home #llista-esports span:last-child{font-size: 13vw; line-height: 13vw;}
-#esports-home #llista-esports > div > div:nth-child(2){background-color: #7f7f7f; padding:20px 10px; color:#fff; text-align:left; font-size:4vw; line-height: 5vw; font-weight:300;text-shadow: none; }
-#esports-home #llista-esports > div > div:nth-child(2)::after{content:"+"; position: absolute; right: 6vw; top:calc(50% - 3vw); width:6vw; height: 6vw; color:#fff; font-size: 9vw; text-align: center; font-weight: 700;}
-#esports-home #llista-esports > div > div:nth-child(2) p{margin: 0;padding: 0;}
+#esports-home #llista-esports > div > div:nth-child(2){border-bottom: 1px solid #fff;background-color: #7f7f7f; padding:10px 10vw 10px 20px; color:#fff; text-align:left; font-size:4vw; line-height: 5vw; font-weight:300;text-shadow: none; }
+#esports-home #llista-esports > div > div:nth-child(2)::after{content:"+"; position: absolute; right: 4vw; top:calc(50% - 3vw); width:6vw; height: 6vw; color:#fff; font-size: 9vw; text-align: center; font-weight: 700;}
+#esports-home #llista-esports > div > div:nth-child(2) p{margin: 0;padding: 2px 0;line-height: 6vw;}
 #esports-home #llista-esports > div > div:nth-child(2) b{font-weight: 400;}
 
 /*fitxa*/

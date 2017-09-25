@@ -368,7 +368,7 @@ var init = {
         enviaIncidencia: function () {
 
             var imageURI = document.getElementById('imgIncidenciaOnCap').getAttribute("src");
-            if (imageURI === 'images/no-img-2.jpg') {
+            if (imageURI === 'images/no-img-3.jpg') {
                 var formData = new FormData($('#form-incidenciaOnCap')[0]);
                 formData.append('lang', init.lang);
                 var resp = init.sendAjax(formData, init.incidencia.file, true);
@@ -456,7 +456,8 @@ var init = {
         var ref = window.open(url, '_system', 'location=yes');
     },
     openRadio: function () {
-        init.carregaPagExt('http://capdeperaradio.com/radioendirecte/');
+        //init.carregaPagExt('http://capdeperaradio.com/radioendirecte/');
+        window.open('http://91.121.156.27:8010/stream', '_self', 'location=yes');
     },
     areYouSure: function (text2, button, callback, back_) {
         $("#sure .sure-2").text(text2);
