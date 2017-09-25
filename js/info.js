@@ -134,9 +134,9 @@ var init = {
                 });
             });
         }
-        
+
     },
-    
+
     esdeveniments: {
 
         file: 'esdeveniments.class.php',
@@ -195,7 +195,7 @@ var init = {
             }
             lang = lang.substr(0, 2);
         }
-        if(lang != 'es' && lang != 'ca'){
+        if (lang != 'es' && lang != 'ca') {
             lang = 'es';
         }
         init.lang = lang;
@@ -222,7 +222,7 @@ var init = {
                 setTimeout("$('#loading').css('display', 'none')", 300);
             },
             success: function (resposta) {
-                if( (typeof resposta) === 'string'){
+                if ((typeof resposta) === 'string') {
                     resposta = JSON.parse(resposta);
                 }
                 try {
@@ -273,7 +273,7 @@ var init = {
 
                 if (ok) {
                     var formData = new FormData();
-                    formData.append('userLogin', $('#usuari-login').val()); 
+                    formData.append('userLogin', $('#usuari-login').val());
                     formData.append('passwordLogin', $('#pass-login').val());
                     formData.append("macAddress", window.MACadress);
                     formData.append("funcio", 'loginOperari');
@@ -326,39 +326,39 @@ var init = {
         }
     },
     mapa: {
-        mapaUbicacio: function(){
+        mapaUbicacio: function () {
             try {
                 var div = document.getElementById('mapa');
                 console.log(div);
                 window.mapa.setDiv(div);
                 $.mobile.changePage("#oncapdepera-ubicacio", {transition: "slide"});
             } catch (e) {
-                 error_('E INCID-316','carregaMapa', e);
+                error_('E INCID-316', 'carregaMapa', e);
             }
         },
-        puntAlMapa: function(lat, long, text){
+        puntAlMapa: function (lat, long, text) {
             var position_ = new plugin.google.maps.LatLng(lat, long);
             var request = {'position': position_};
             plugin.google.maps.Geocoder.geocode(request, function (results) {
-                    if (position_) {
-                        window.mapa.addMarker({
-                            'position': position_,
-                            'title': text
-                        }, function (marker) {
-                            marker.showInfoWindow();
-                            window.mapa.addEventListenerOnce("MARKER_REMOVE", function () {
-                                marker.remove();
-                            });
+                if (position_) {
+                    window.mapa.addMarker({
+                        'position': position_,
+                        'title': text
+                    }, function (marker) {
+                        marker.showInfoWindow();
+                        window.mapa.addEventListenerOnce("MARKER_REMOVE", function () {
+                            marker.remove();
                         });
-                        window.mapa.animateCamera({
-                            target: {
-                                lat: lat,
-                                lng: long
-                            },
-                            'duration': 1,
-                            zoom: 18
-                        });
-                    } 
+                    });
+                    window.mapa.animateCamera({
+                        target: {
+                            lat: lat,
+                            lng: long
+                        },
+                        'duration': 1,
+                        zoom: 18
+                    });
+                }
             });
             $.mobile.changePage("#oncapdepera-ubicacio");
         }
@@ -456,16 +456,9 @@ var init = {
         var ref = window.open(url, '_system', 'location=yes');
     },
     openRadio: function () {
-        var audioElement = document.getElementById('successSound');
-        var url = audioElement.getAttribute('src');
-        var my_media = new Media(url,
-                // success callback
-                 function () { console.log("playAudio():Audio Success"); },
-                // error callback
-                 function (err) { console.log("playAudio():Audio Error: " + err); }
-        );
-               // Play audio
-        my_media.play();
+        var audioElement = document.createElement('audio');
+        audioElement.setAttribute('src', 'http://91.121.156.27:8010/stream');
+        audioElement.setAttribute('autoplay', 'autoplay');
     },
     areYouSure: function (text2, button, callback, back_) {
         $("#sure .sure-2").text(text2);
