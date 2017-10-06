@@ -453,7 +453,7 @@ var init = {
         }
     },
     carregaPagExt: function (url) {
-        var ref = window.open(url, '_system', 'location=yes');
+        var ref = window.open(url, '_system', 'location=no');
     },
     openRadio: function () {
         init.carregaPagExt('http://91.121.156.27:8010/stream');
