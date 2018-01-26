@@ -75,6 +75,11 @@ function initApp() {
         console.log('E INIT-84', 'ERROR INIT MAPA', e);
     }
 
+    cordova.plugins.backgroundMode.enable();
+    cordova.plugins.backgroundMode.onactivate = function () {
+        console.log('Background Mode');
+    }
+
     init.initApp();
 
 }
@@ -304,10 +309,10 @@ function novaLocalitzacio(posicio) {
 function getMacAddress() {
     try {
         window.MacAddress.getMacAddress(
-         function (macAddress) {
-             window.MACadress = macAddress;
-             iniciaSessioInici();
-         }, function (fail) {
+                function (macAddress) {
+                    window.MACadress = macAddress;
+                    iniciaSessioInici();
+                }, function (fail) {
             error_('E INIT-313', 'ERROR GET MAC ADDRESS', fail);
         }
         );
