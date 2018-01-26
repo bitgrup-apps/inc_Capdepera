@@ -16,11 +16,14 @@
         <config-file parent="NSBluetoothPeripheralUsageDescription" platform="ios" target="*-Info.plist">
             <string>Advertisement would like to use bluetooth.</string> 
         </config-file>
-        <config-file parent="UIBackgroundModes" overwrite="true">
-            <string>audio</string>
-        </config-file>
     </platform>
-    
+    <config-file platform="ios" parent="UIBackgroundModes" overwrite="true">
+        <array>
+            <string>audio</string>
+        </array>
+    </config-file>
+
+
     
 	
     <!-- PREFERENCE -->
