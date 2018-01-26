@@ -17,6 +17,7 @@ var init = {
         file: 'oncapdepera.class.php',
         init: function () {
             init.onCapdepera.menu();
+            init.sendEstadistica('oncapdepera');
         },
         menu: function () {
             if (!init.onCapdepera.menuOk) {
@@ -67,6 +68,7 @@ var init = {
         file: 'esports.class.php',
         init: function () {
             init.esports.menu();
+            init.sendEstadistica('esports');
         },
         menu: function () {
             var file = init.esports.file;
@@ -98,6 +100,7 @@ var init = {
         file: 'musica.class.php',
         init: function () {
             init.musica.menu();
+            init.sendEstadistica('musica');
         },
         menu: function () {
             var file = init.musica.file;
@@ -129,6 +132,7 @@ var init = {
         file: 'notis.class.php',
         init: function () {
             init.noticies.menu();
+            init.sendEstadistica('noticies');
         },
         menu: function () {
             var file = init.noticies.file;
@@ -181,6 +185,7 @@ var init = {
                 $('#llista-esdeveniments').html(resp.str);
                 $.mobile.changePage("#esdeveniments-home", {transition: "slide"});
             }
+            init.sendEstadistica('agenda');
         },
         getFitxa: function (id) {
             var formData = new FormData();
@@ -528,6 +533,11 @@ var init = {
     },
     openDeviceBrowser: function (externalLinkToOpen) {
         window.open(externalLinkToOpen, '_system', 'location=no');
+    },
+    sendEstadistica: function(pagina){
+      var formData = new FormData();
+      formData.append('funcio', 'putEstadistica');
+      formData.append('pagina', pagina);
     },
     error_: function (codi, json, error) {
         //$.post('', {funcio: 'appError', TOKEN: 'LAIDSD88347ERJKADKFGKAHPF8YA9DF8Y', codi: codi, json: json, error: error}, function (data) {});
