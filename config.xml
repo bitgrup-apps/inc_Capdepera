@@ -17,9 +17,7 @@
             <string>Advertisement would like to use bluetooth.</string> 
         </config-file>
         <config-file parent="UIBackgroundModes" target="*-Info.plist">
-            <array>
-                <string>audio</string> 
-            </array>
+            <string>audio</string> 
         </config-file>
     </platform>
 
