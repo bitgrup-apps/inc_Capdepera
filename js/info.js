@@ -93,6 +93,37 @@ var init = {
             }
         }
     },
+    musica: {
+        menuOk: false,
+        file: 'musica.class.php',
+        init: function () {
+            init.musica.menu();
+        },
+        menu: function () {
+            var file = init.musica.file;
+            var formData = new FormData();
+            formData.append('funcio', 'getEsdeveniments');
+            formData.append('lang', init.lang);
+            var resp = init.sendAjax(formData, file, true);
+            if (resp.error == 0) {
+                $('#llista-musica').html(resp.str);
+                $.mobile.changePage("#musica-home", {transition: "slide"});
+            }
+        },
+        getFitxa: function (id) {
+            var file = init.musica.file;
+            var formData = new FormData();
+            formData.append('funcio', 'getEsdeveniment');
+            formData.append('id', id);
+            formData.append('lang', init.lang);
+            var resp = init.sendAjax(formData, file, true);
+            if (resp.error == 0) {
+                $('#img-musica').css('background-image', 'url(' + resp.img + ')');
+                $('#fitxa-musica').html(resp.str);
+                $.mobile.changePage("#musica-fitxa", {transition: "slide"});
+            }
+        }
+    },
     noticies: {
         menuOk: false,
         file: 'notis.class.php',
@@ -455,9 +486,35 @@ var init = {
     carregaPagExt: function (url) {
         var ref = window.open(url, '_system', 'location=no');
     },
-    openRadio: function () {
-        init.carregaPagExt('http://91.121.156.27:8010/stream');
+    radio:{
+        status:0,
+        playStop: function () {
+            //init.carregaPagExt('http://91.121.156.27:8010/stream');
+            if(init.radio.status == 0){
+                init.radio.play();
+            }else{
+                init.radio.stop();
+            }
+        },
+        play: function(){
+            $('#playStop i').addClass('ico-stop');
+            $('#sound').show();
+            init.radio.status = 1;
+            var mediaElement = document.getElementById("radio_capdepera");
+            mediaElement.pause();
+            mediaElement.src = "http://91.121.156.27:8010/stream";
+            mediaElement.play();
+        },
+        stop: function(){
+            $('#playStop i').removeClass('ico-stop');
+            $('#sound').hide();
+            init.radio.status = 0;
+            var mediaElement = document.getElementById("radio_capdepera");
+            mediaElement.pause();
+            mediaElement.src = "";
+        }
     },
+    
     areYouSure: function (text2, button, callback, back_) {
         $("#sure .sure-2").text(text2);
         $("#sure .sure-do").text(button).on("click.sure", function () {

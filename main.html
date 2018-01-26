@@ -62,12 +62,15 @@
                     <a href="#" class="pastilla sprts literal" data-literal="msg_menu_3" data-role="none" onclick="init.esports.init();">Esports</a>
                 </div>
                 <div class="col-xs-6">
+                    <a href="#" class="pastilla sprts literal" data-literal="msg_menu_3b" data-role="none" onclick="init.musica.init();">Música</a>
+                </div>
+                <div class="col-xs-6">
                     <a href="#" class="pastilla notc literal" data-literal="msg_menu_4" data-role="none"  onclick="init.noticies.init();">Notícies</a>
                 </div>
                 <div class="col-xs-6">
                     <a href="#oncapdepera-incidencia" class="pastilla incd literal" data-literal="msg_menu_6" data-role="none">Incidència</a>
                 </div>
-                <div class="col-xs-6">
+                <div class="col-xs-12">
                     <a href="#radio-home" class="pastilla rdio literal" data-literal="msg_menu_5" data-role="none" >Ràdio</a>
                 </div>
                 <!--div class="col-xs-6 radio_pastilla">
@@ -214,25 +217,27 @@
                         <div class="col-xs-6 imgIncidencia">
                             <div class="pasa1-img">
                                 <img src="images/no-img-2.jpg" id="imgIncidencia" onClick="getImg();" alt="CLICKINCIDENCIES" title="Afegir Imatge">
-                                <div class="removeImg" onClick="removeImg(1);"><img src="icons/img-remove.png" id="" alt="CLICKINCIDENCIES" title="Eliminar Imatge"></div> 
+                                <div class="removeImg" onClick="removeImg(1);">
+                                    <img src="icons/img-remove.png"  alt="CLICKINCIDENCIES" title="Eliminar Imatge"/>
+                                </div> 
                             </div>
 
                         </div>
                         <div class="col-xs-6 imgIncidencia">
                             <div class="pasa1-img">
                                 <img src="images/no-img-2.jpg" id="imgIncidenciaB"  alt="CLICKINCIDENCIES" title="Afegir Imatge">
-                                <div class="removeImg" onClick="removeImg(2);"><img src="icons/img-remove.png" id="" alt="CLICKINCIDENCIES" title="Eliminar Imatge"></div>
+                                <div class="removeImg" onClick="removeImg(2);"><img src="icons/img-remove.png"  alt="CLICKINCIDENCIES" title="Eliminar Imatge"/></div>
                             </div>   
                         </div>
                         <div class="col-xs-6 imgIncidencia">
                             <div class="pasa1-img">
                                 <img src="images/no-img-2.jpg" id="imgIncidenciaC"  alt="CLICKINCIDENCIES" title="Afegir Imatge">
-                                <div class="removeImg" onClick="removeImg(3);"><img src="icons/img-remove.png" id="" alt="CLICKINCIDENCIES" title="Eliminar Imatge"></div> 
+                                <div class="removeImg" onClick="removeImg(3);"><img src="icons/img-remove.png" alt="CLICKINCIDENCIES" title="Eliminar Imatge"/></div> 
                             </div> 
                         </div>
                         <div class="col-xs-6 btn-afg-img">
-                            <div class="col-xs-6"><div class="getImg" onClick="getImg();"><img src="icons/img-camera.png" id="" alt="CLICKINCIDENCIES" title="Afegir Imatge"></div></div>
-                            <div class="col-xs-6"> <div class="getImg-gallery" onClick="getImgLibrary();"><img src="icons/img-gallery.png" id="" alt="CLICKINCIDENCIES" title="Afegir Imatge"></div> </div>
+                            <div class="col-xs-6"><div class="getImg" onClick="getImg();"><img src="icons/img-camera.png"  alt="CLICKINCIDENCIES" title="Afegir Imatge"/></div></div>
+                            <div class="col-xs-6"> <div class="getImg-gallery" onClick="getImgLibrary();"><img src="icons/img-gallery.png"  alt="CLICKINCIDENCIES" title="Afegir Imatge"/></div> </div>
                         </div>
                     </div>
                 </div>
@@ -289,8 +294,8 @@
                 </div-->
                 <input type="hidden" id="latitutIncidencia" name="latitutIncidencia" >
                 <input type="hidden" id="longitutIncidencia" name="longitutIncidencia">
-                <input type="hidden" maxlength="100" id="adresaIncidencia"  name="adresaIncidencia">
-                <input type="hidden" maxlength="100" id="poblacioIncidencia"  name="poblacioIncidencia">
+                <input type="hidden" id="adresaIncidencia"  name="adresaIncidencia">
+                <input type="hidden" id="poblacioIncidencia"  name="poblacioIncidencia">
             </div>
 
             <!--div data-role="footer" class="footer">
@@ -357,7 +362,7 @@
                         <div class="col-xs-6 img-petita"><img src="images/no-img-incid.png" id="imgIncidencia4" alt="CLICKINCIDENCIES" title="Incidència"></div>
                     </div>
                 </div>
-                <div class="finalIncid" onClick="enviaIncidencia();"><img src="icons/img-fi.png" id="" alt="CLICKINCIDENCIES" title="Enviar"></div>
+                <div class="finalIncid" onClick="enviaIncidencia();"><img src="icons/img-fi.png" alt="CLICKINCIDENCIES" title="Enviar"/></div>
             </div>
 
             <!--div data-role="footer" class="footer">
@@ -380,8 +385,6 @@
                 <h3>Gràcies per col·laborar a millorar el poble.</h3>
             </div>
             <div class="tornaInici"><a href="#" onClick="refrescarTot();"><img src="icons/endavant.png" alt="CLICKINCIDENCIES" title="Seguir"></a></div>
-            </div>
-
         </div>
 
 
@@ -739,8 +742,12 @@
                         <div class="col-xs-12">
                             <label class="literal" data-literal="msg_form_3">Imatge</label>
                         </div>
-                        <div class="col-xs-2 col-xs-offset-8"><div class="getImg" onClick="init.img.getImg();"><img src="icons/img-camera-blau.png" id="" alt="CLICKINCIDENCIES" title="Afegir Imatge"></div></div>
-                        <div class="col-xs-2"> <div class="getImg-gallery" onClick="init.img.getImgLibrary();"><img src="icons/img-gallery-blau.png" id="" alt="CLICKINCIDENCIES" title="Afegir Imatge"></div> </div>
+                        <div class="col-xs-2 col-xs-offset-8"><div class="getImg" onClick="init.img.getImg();">
+                                <img src="icons/img-camera-blau.png"  alt="CLICKINCIDENCIES" title="Afegir Imatge"/></div>
+                        </div>
+                        <div class="col-xs-2"> <div class="getImg-gallery" onClick="init.img.getImgLibrary();">
+                                <img src="icons/img-gallery-blau.png"  alt="CLICKINCIDENCIES" title="Afegir Imatge"/></div> 
+                        </div>
                         <div class="col-xs-12">    
                             <img id="imgIncidenciaOnCap" src="images/no-img-3.jpg">
                         </div>
@@ -1009,9 +1016,7 @@
         
         
         <!--####################################################################################-->
-        <!--####################################################################################-->
         <!--###################                 ESPORTS              ###########################-->
-        <!--####################################################################################-->
         <!--####################################################################################-->
 
 
@@ -1026,7 +1031,7 @@
                 </div>
             </div>
             <div data-role="content" id="content-esports-home" class=" " >
-                <div class="row" id="llista-esports"></div>
+                <div class="row llista-esports" id="llista-esports" ></div>
             </div>
         </div>
         
@@ -1050,11 +1055,48 @@
             </div>
         </div>
         
+        <!--####################################################################################-->
+        <!--###################                 MUSICA              ###########################-->
+        <!--####################################################################################-->
+
+
+        <!--////////////////////    HOME  ///////////////////////////////-->
+
+        <div data-role="page" class="esports pagina info-turisme musica"  id="musica-home">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_3b">Música</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-musica-home" class=" " >
+                <div class="row llista-esports" id="llista-musica"></div>
+            </div>
+        </div>
+        
+        <!--////////////////////    fitxa  ///////////////////////////////-->
+
+        <div data-role="page" class="esports pagina info-turisme fitxa musica"  id="musica-fitxa">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_3b">Música</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-musica-fitxa" class=" " >
+                <div class="row">
+                    <div class="col-xs-12 img" id="img-musica"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12" id="fitxa-musica"></div>
+                </div>
+            </div>
+        </div>
         
         <!--####################################################################################-->
-        <!--####################################################################################-->
-        <!--###################                 ESDEVENIMENT           ###########################-->
-        <!--####################################################################################-->
+        <!--###################                 ESDEVENIMENT           #########################-->
         <!--####################################################################################-->
 
 
@@ -1161,7 +1203,11 @@
                 <div class="row">
                     <div class="col-xs-12"><i class="icon-tur ico-radio"></i></div>
                     <div class="col-xs-12"><h3>Ràdio Capdepera</h3></div>
-                    <div class="col-xs-12"><button class="literal" onclick="init.openRadio()" data-literal="msg_entra">Entra-hi!</button></div>
+                    <div class="col-xs-12">
+                        <audio id="radio_capdepera" src=""></audio>
+                        <button id="playStop" class="radio" onclick="init.radio.playStop()"><i class="icon ico-play"></i></button>
+                        <div id="sound"><img src="icons/sound.gif" title="sound"></div>
+                    </div>
                 </div>
             </div>
         </div>

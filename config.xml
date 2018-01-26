@@ -2,7 +2,7 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.incCapdepera.bitgrup"
-        version   = "2.0.7">
+        version   = "3.0">
 	
 	
     <name>OnCapdepera</name>
@@ -44,6 +44,7 @@
     <gap:plugin name="cordova-plugin-uniquedeviceid"  source="npm" />
     <gap:plugin name="cordova-plugin-device"  source="npm" />
     <gap:plugin name="cordova-plugin-inappbrowser"  source="npm" />
+    <gap:plugin name="cordova-allow-background-audio"  source="npm" />
 	
 
   
