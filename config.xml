@@ -47,7 +47,7 @@
     <gap:plugin name="cordova-plugin-uniquedeviceid"  source="npm" />
     <gap:plugin name="cordova-plugin-device"  source="npm" />
     <gap:plugin name="cordova-plugin-inappbrowser"  source="npm" />
-    <gap:plugin name="nl.kingsquare.background-audio"  />
+    <gap:plugin name="cordova-plugin-backgroundaudio"   />
     
 
   
@@ -57,6 +57,10 @@
     </feature> 
     <feature name="http://api.phonegap.com/1.0/geolocation"/>
     <feature name="http://api.phonegap.com/1.0/file"/>
+    <feature name="BackgroundAudio">
+        <param name="ios-package" value="BackgroundAudio" />
+        <param name="onload" value="true" />
+    </feature>
 	
 	
     <gap:platform name="ios" />
