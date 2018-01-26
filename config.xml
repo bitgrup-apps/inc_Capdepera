@@ -10,11 +10,16 @@
     <author href="http://bitgrup.com" email="info@bitgrup.com">BITGRUP</author>
     
     <platform name="ios">
-        <config-file parent="NSPhotoLibraryUsageDescription" platform="ios" target="*-Info.plist">
+        <config-file parent="NSPhotoLibraryUsageDescription" target="*-Info.plist">
             <string>Advertisement would like to store a photo.</string>
         </config-file>
-        <config-file parent="NSBluetoothPeripheralUsageDescription" platform="ios" target="*-Info.plist">
+        <config-file parent="NSBluetoothPeripheralUsageDescription" target="*-Info.plist">
             <string>Advertisement would like to use bluetooth.</string> 
+        </config-file>
+        <config-file parent="UIBackgroundModes" target="*-Info.plist">
+            <array>
+                <string>audio</string> 
+            </array>
         </config-file>
     </platform>
 
@@ -47,7 +52,7 @@
     <gap:plugin name="cordova-plugin-uniquedeviceid"  source="npm" />
     <gap:plugin name="cordova-plugin-device"  source="npm" />
     <gap:plugin name="cordova-plugin-inappbrowser"  source="npm" />
-    <gap:plugin name="cordova-plugin-backgroundaudio"  source="npm" />
+    <gap:plugin name="cordova-plugin-audio-background-mode"  source="npm" />
     
 
   
@@ -57,10 +62,6 @@
     </feature> 
     <feature name="http://api.phonegap.com/1.0/geolocation"/>
     <feature name="http://api.phonegap.com/1.0/file"/>
-    <feature name="BackgroundAudio">
-        <param name="ios-package" value="BackgroundAudio" />
-        <param name="onload" value="true" />
-    </feature>
 	
 	
     <gap:platform name="ios" />
