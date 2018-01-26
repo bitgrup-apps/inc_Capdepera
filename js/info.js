@@ -552,16 +552,6 @@ var init = {
     }
 }
 
-//FUNCIONS EN SEGON PLA
-window.BackgroundService.start(
-    function(fn) { 
-        console.log('back start');
-        if(init.radio.status == 1){
-            init.radio.play();
-        }
-    },
-    function() { console.log('err') }
-);
 
 
 //$(document).ready(function(){init.initApp();});
