@@ -16,9 +16,6 @@
         <config-file parent="NSBluetoothPeripheralUsageDescription" platform="ios" target="*-Info.plist">
             <string>Advertisement would like to use bluetooth.</string> 
         </config-file>
-        <config-file parent="UIBackgroundModes" platform="ios" target="*-Info.plist">
-            <string>audio</string> 
-        </config-file>
     </platform>
 
 
@@ -50,7 +47,7 @@
     <gap:plugin name="cordova-plugin-uniquedeviceid"  source="npm" />
     <gap:plugin name="cordova-plugin-device"  source="npm" />
     <gap:plugin name="cordova-plugin-inappbrowser"  source="npm" />
-    <gap:plugin name="cordova-allow-background-audio"  source="npm" />
+    <gap:plugin name="nl.kingsquare.background-audio"  source="npm" />
     
 
   
