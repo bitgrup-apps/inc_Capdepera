@@ -16,10 +16,12 @@
         <config-file parent="NSBluetoothPeripheralUsageDescription" target="*-Info.plist">
             <string>Advertisement would like to use bluetooth.</string> 
         </config-file>
-        <config-file parent="UIBackgroundModes" target="*-Info.plist">
-            <string>audio</string> 
-        </config-file>
     </platform>
+    <gap:config-file platform="ios" parent="UIBackgroundModes" overwrite="true">
+        <array>
+            <string>audio</string>
+        </array>
+    </gap:config-file>
 
 
     
