@@ -517,6 +517,10 @@ var init = {
             var mediaElement = document.getElementById("radio_capdepera");
             mediaElement.pause();
             mediaElement.src = "";
+        },
+        playBackground: function(){
+            var mediaElement = document.getElementById("radio_capdepera");
+            mediaElement.play();
         }
     },
     
@@ -547,6 +551,17 @@ var init = {
         init.areYouSure('E BIT-73: No es pot accedir al serveis a n\'aquest moment', 'Aceptar', function () {});
     }
 }
+
+//FUNCIONS EN SEGON PLA
+window.BackgroundService.start(
+    function(fn) { 
+        console.log('back start');
+        if(init.radio.status == 1){
+            init.radio.play();
+        }
+    },
+    function() { console.log('err') }
+);
 
 
 //$(document).ready(function(){init.initApp();});

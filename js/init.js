@@ -75,10 +75,6 @@ function initApp() {
         console.log('E INIT-84', 'ERROR INIT MAPA', e);
     }
 
-    cordova.plugins.backgroundMode.enable();
-    cordova.plugins.backgroundMode.onactivate = function () {
-        console.log('Background Mode');
-    }
 
     init.initApp();
 

@@ -52,7 +52,7 @@
     <gap:plugin name="cordova-plugin-uniquedeviceid"  source="npm" />
     <gap:plugin name="cordova-plugin-device"  source="npm" />
     <gap:plugin name="cordova-plugin-inappbrowser"  source="npm" />
-    <gap:plugin name="cordova-plugin-audio-background-mode"  source="npm" />
+    <gap:plugin name="cordova-plugin-background-service"  source="npm" />
     
 
   
