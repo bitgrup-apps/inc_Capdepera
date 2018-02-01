@@ -117,7 +117,7 @@ function carrega(url) {
 
 
 function areYouSure(text2, button, callback, back_) {
-    $("#sure .sure-2").text(text2);
+    $("#sure .sure-2").html(text2);
     $("#sure .sure-do").text(button).on("click.sure", function () {
         $(this).off("click.sure");
         callback();

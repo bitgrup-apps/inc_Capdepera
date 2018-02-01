@@ -127,6 +127,36 @@ var init = {
             }
         }
     },
+    avisos: {
+        menuOk: false,
+        file: 'avisos.class.php',
+        init: function () {
+            init.avisos.menu();
+            init.sendEstadistica('avisos');
+        },
+        menu: function () {
+            var file = init.avisos.file;
+            var formData = new FormData();
+            formData.append('funcio', 'getAvisos');
+            formData.append('lang', init.lang);
+            var resp = init.sendAjax(formData, file, true);
+            if (resp.error == 0) {
+                $('#avisos-body').html(resp.str);
+                $.mobile.changePage("#avisos", {transition: "slide"});
+            }
+        },
+        getAvis: function (id) {
+            var file = init.avisos.file;
+            var formData = new FormData();
+            formData.append('funcio', 'getAvis');
+            formData.append('id', id);
+            formData.append('lang', init.lang);
+            var resp = init.sendAjax(formData, file, true);
+            if (resp.error == 0) {
+                init.areYouSure(resp.str, 'Acceptar', function () {});
+            }
+        }
+    },
     noticies: {
         menuOk: false,
         file: 'notis.class.php',
@@ -525,7 +555,7 @@ var init = {
     },
     
     areYouSure: function (text2, button, callback, back_) {
-        $("#sure .sure-2").text(text2);
+        $("#sure .sure-2").html(text2);
         $("#sure .sure-do").text(button).on("click.sure", function () {
             $(this).off("click.sure");
             callback();
@@ -541,7 +571,9 @@ var init = {
     sendEstadistica: function(pagina){
       var formData = new FormData();
       formData.append('funcio', 'putEstadistica');
+      formData.append('lang', init.lang);
       formData.append('pagina', pagina);
+      init.sendAjax(formData, 'estadistiques.class.php', false);
     },
     error_: function (codi, json, error) {
         //$.post('', {funcio: 'appError', TOKEN: 'LAIDSD88347ERJKADKFGKAHPF8YA9DF8Y', codi: codi, json: json, error: error}, function (data) {});
