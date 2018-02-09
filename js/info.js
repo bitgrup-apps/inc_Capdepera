@@ -153,7 +153,8 @@ var init = {
             formData.append('lang', init.lang);
             var resp = init.sendAjax(formData, file, true);
             if (resp.error == 0) {
-                init.areYouSure(resp.str, 'Acceptar', function () {});
+                $('#avisos-fitxa-body').html(resp.str);
+                $.mobile.changePage("#avisos-fitxa", {transition: "slide"});
             }
         }
     },

@@ -68,9 +68,9 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #home-nou .pastilla.esdevn::before{background-position:-161.5vw -108vw;}
 #home-nou .pastilla.sprts{background-image:url('../icons/bot3.png'); }
 #home-nou .pastilla.sprts::before{background-position:-161.5vw -133vw;}
-#home-nou .pastilla.notc{background-image:url('../icons/bot5.png'); }
+#home-nou .pastilla.notc{background-image:url('../icons/bot8.png'); }
 #home-nou .pastilla.notc::before{background-position:-161.5vw -155vw;}
-#home-nou .pastilla.incd{background-image:url('../icons/bot1.png'); }
+#home-nou .pastilla.incd{background-image:url('../icons/bot5.png'); }
 #home-nou .pastilla.incd::before{background-position:-126.5vw -182vw; background-size: 160vw;}
 #home-nou .pastilla.msca{background-image:url('../icons/bot4.png'); }
 #home-nou .pastilla.msca::before{background-position:-126.5vw -227.5vw; background-size: 160vw;}
@@ -81,7 +81,7 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #home-nou .radio_pastilla > a::before{background-size: 130vw;background-position: -104.8vw -114vw;top: 3vw;left: 6.5vw;width: 12vw;height: 12vw;}*/
 #home-nou .pastilla.rdio{background-image:url('../icons/bot6.png'); }
 #home-nou .pastilla.rdio::before{background-position:-161.5vw -177vw; }
-#home-nou .pastilla.avisos{background-image:url('../icons/bot2.png'); }
+#home-nou .pastilla.avisos{background-image:url('../icons/bot7.png'); }
 #home-nou .pastilla.avisos::before{background-position:-126.5vw -205.5vw; background-size: 160vw;}
 #home-nou .ui-content > a:first-child{position:absolute; right: 10px; top: 10px; width:10vw; height: 10vw; background-image: url(../icons/sprite_info_turisme.svg); background-size: 115vw; background-position: -91vw -115.5vw;z-index: 99;}
 #home-nou .ui-content > .col-xs-6{padding: 0.5vw;}
@@ -411,6 +411,8 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 
 /*######## ESPORTS I MUSICA #############*/
 .info-turisme.esports .header{background:#c33538;}
+.info-turisme.esports.musica .header{background:#7b9cc4;}
+.esports.musica .llista-esports > div > div:nth-child(2){background-color: #6f81ab;}
 .info-turisme.esports .ui-content{background:#fff; padding: 0;}
 
 /*home*/
@@ -463,11 +465,11 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #esdeveniments-fitxa.fitxa p{padding: 3vh 0 0.5vw;}
 #esdeveniments-fitxa.fitxa p.data-hora{padding: 0.5vw 0px 0.5vw 6vw;position: relative;}
 .fitxa p.data-hora::before{content:" "; position:absolute; left:0; top: 0.7vw; width: 5vw; height: 5vw; background-image: url(../icons/sprite_info_turisme.svg); background-size: 80vw; }
-.fitxa p.data-hora.fecha::before{background-position: -8vw -58.5vw;}
-.fitxa p.data-hora.hora::before{background-position: -1.4vw -56.3vw; background-size: 29vw;}
+.fitxa p.data-hora.fecha::before{background-position: -1.4vw -68.3vw; background-size: 29vw;}
+.fitxa p.data-hora.hora::before{background-position: -8vw -58.5vw; background-size: 80vw;}
 
 /*######## NOTICIES #############*/
-.noticies .ui-header{background:#22c6d0}
+.noticies .ui-header{background:#894db0}
 
 /*home*/
 #noticies-home p{font-size: 3.5vw; text-shadow:none; line-height: 3.9vw; padding: 5px 0 20px; font-weight: 400;}
@@ -495,11 +497,12 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #sound{position: absolute;right: 20%;top: 10vw; display: none;}
 #sound img{width:10vw;}
 
-/*######## RADIO #############*/
-#avisos .ui-header{background:#cfa01c;}
+/*######## AVISOS #############*/
+.avisos-page .ui-header{background:#f1de32;}
 #avisos .ui-content {padding:0;background: #3f3f3e;}
 #avisos-body > div{padding:20px; border-bottom: 2px solid #fff; text-shadow:none; color:#fff; } 
 #avisos-body > div:hover, #avisos-body > div:active, #avisos-body > div:focus{opacity:0.7;}
+#avisos-fitxa{text-shadow:none; }
 
 /*######## LOGIN #############*/
 .login .ui-header{background:#a2c037}
