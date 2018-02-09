@@ -61,28 +61,28 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #home-nou .ui-content{background-image: url(../images/fondo-3.jpg); background-size: cover; background-position: center; height: 100vh;padding: 1vw 12vw;}
 #home-nou h1{  margin:6vh 0 2vh; text-align: center; font-size: 12vw; font-family: 'Helena';}
 #home-nou .pastilla{margin: 0.1vw; padding: 22vw 2vw 5vw 2vw; text-align: center; font-size: 4vw; color:#fff; font-weight: 700; text-shadow:none;display: inline-block; width: 100%; text-transform: uppercase;background-size: cover; background-position: center; background-repeat: no-repeat;}
-#home-nou .pastilla::before{position:absolute; width:15vw; height: 15vw; background-image: url(../icons/sprite_info_turisme.svg); background-size: 200vw; content: " ";top: 5.5vw;left: 11.5vw;}
+#home-nou .pastilla::before{position:absolute; width:20vw; height: 20vw; background-image: url(../icons/sprite_info_turisme.svg); background-size: 200vw; content: " ";top: 2.5vw;left: 9.5vw;}
 #home-nou .pastilla.oncpd{background-image:url('../icons/bot1.png'); }
-#home-nou .pastilla.oncpd::before{background-position:-157vw -62vw;}
+#home-nou .pastilla.oncpd::before{background-position:-155vw -60vw;}
 #home-nou .pastilla.esdevn{background-image:url('../icons/bot2.png'); }
-#home-nou .pastilla.esdevn::before{background-position:-161.5vw -108vw;}
+#home-nou .pastilla.esdevn::before{background-position:-159vw -108vw;}
 #home-nou .pastilla.sprts{background-image:url('../icons/bot3.png'); }
-#home-nou .pastilla.sprts::before{background-position:-161.5vw -133vw;}
+#home-nou .pastilla.sprts::before{background-position:-158.5vw -131vw;}
 #home-nou .pastilla.notc{background-image:url('../icons/bot8.png'); }
-#home-nou .pastilla.notc::before{background-position:-161.5vw -155vw;}
+#home-nou .pastilla.notc::before{background-position:-159.5vw -153vw;}
 #home-nou .pastilla.incd{background-image:url('../icons/bot5.png'); }
-#home-nou .pastilla.incd::before{background-position:-126.5vw -182vw; background-size: 160vw;}
+#home-nou .pastilla.incd::before{background-position:-123.5vw -181vw; background-size: 160vw;}
 #home-nou .pastilla.msca{background-image:url('../icons/bot4.png'); }
-#home-nou .pastilla.msca::before{background-position:-126.5vw -227.5vw; background-size: 160vw;}
+#home-nou .pastilla.msca::before{background-position:-124.5vw -224.5vw; background-size: 160vw;}
 /*#home-nou .pastilla.rdio{background-color: #d4df86;background-color: #d4df86;padding: 15px 20px;border-radius: 10px;margin-top:20px;}
 #home-nou .pastilla.rdio::before{background-position: -88vw -96vw;background-size: 110vw;width: 12vw;height: 12vw;left: 4vw;}
 #home-nou .radio_pastilla{float: right; margin-top: 8vh; width: 24vw;}
 #home-nou .radio_pastilla > a{ font-size: 3.5vw; border-radius: 12vw;padding: 14vw 0 0;height: 23vw; }
 #home-nou .radio_pastilla > a::before{background-size: 130vw;background-position: -104.8vw -114vw;top: 3vw;left: 6.5vw;width: 12vw;height: 12vw;}*/
 #home-nou .pastilla.rdio{background-image:url('../icons/bot6.png'); }
-#home-nou .pastilla.rdio::before{background-position:-161.5vw -177vw; }
+#home-nou .pastilla.rdio::before{background-position:-159.5vw -175vw; }
 #home-nou .pastilla.avisos{background-image:url('../icons/bot7.png'); }
-#home-nou .pastilla.avisos::before{background-position:-126.5vw -205.5vw; background-size: 160vw;}
+#home-nou .pastilla.avisos::before{background-position:-124.5vw -202.5vw; background-size: 160vw;}
 #home-nou .ui-content > a:first-child{position:absolute; right: 10px; top: 10px; width:10vw; height: 10vw; background-image: url(../icons/sprite_info_turisme.svg); background-size: 115vw; background-position: -91vw -115.5vw;z-index: 99;}
 #home-nou .ui-content > .col-xs-6{padding: 0.5vw;}
 
