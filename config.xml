@@ -2,7 +2,7 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.incCapdepera.bitgrup"
-        version   = "3.1.5">
+        version   = "3.1.6">
 	
 	
     <name>OnCapdepera</name>
@@ -19,6 +19,9 @@
         <config-file parent="NSLocationAlwaysUsageDescription " platform="ios" target="*-Info.plist">
             <string>The location will be used to attach information to the incidents</string>
         </config-file> 
+        <config-file parent="NSLocationWhenInUseUsageDescription " platform="ios" target="*-Info.plist">
+            <string>The location will be used to attach information to the incidents</string>
+        </config-file>
     </platform>
 
 
@@ -35,6 +38,7 @@
     <preference name="deployment-target" value="7.0" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="UIWebViewBounce" value="false" />
+    <preference name="GEOLOCATION_USAGE_DESCRIPTION" default=" " />
 
 	   
     <!-- PLUGINS -->
