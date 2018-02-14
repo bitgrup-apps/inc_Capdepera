@@ -396,7 +396,6 @@ var init = {
         mapaUbicacio: function () {
             try {
                 var div = document.getElementById('mapa');
-                console.log(div);
                 window.mapa.setDiv(div);
                 $.mobile.changePage("#oncapdepera-ubicacio", {transition: "slide"});
             } catch (e) {
