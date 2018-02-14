@@ -42,15 +42,15 @@
 
 	   
     <!-- PLUGINS -->
-    <plugin name="cordova-plugin-googlemaps" version="^2.2.4" >
-        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyAbCsdbOZ31x79tk8PDVHsW3AL_zgNseGo" />
-        <variable name="API_KEY_FOR_IOS" value="AIzaSyB7g2Ackb5PebwE30QwAqAzPMGo1r4HnFQ" />
+    <gap:plugin name="cordova-plugin-googlemaps" version="1.4.0" source="npm">
+        <param name="API_KEY_FOR_ANDROID" value="AIzaSyAbCsdbOZ31x79tk8PDVHsW3AL_zgNseGo" />
+        <param name="API_KEY_FOR_IOS" value="AIzaSyB7g2Ackb5PebwE30QwAqAzPMGo1r4HnFQ" />
         <!-- these are optional settings -->
-        <variable name="PLAY_SERVICES_VERSION" value="11.8.0" />
-        <variable name="ANDROID_SUPPORT_V4_VERSION" value="24.1.0" />
-        <variable name="LOCATION_WHEN_IN_USE_DESCRIPTION" value="Show your location on the map" />
-        <variable name="LOCATION_ALWAYS_USAGE_DESCRIPTION" value="Trace your location on the map" />
-    </plugin>
+        <param name="PLAY_SERVICES_VERSION" value="11.8.0" />
+        <param name="ANDROID_SUPPORT_V4_VERSION" value="24.1.0" />
+        <param name="LOCATION_WHEN_IN_USE_DESCRIPTION" value="Show your location on the map" />
+        <param name="LOCATION_ALWAYS_USAGE_DESCRIPTION" value="Trace your location on the map" />
+    </gap:plugin>
     <gap:plugin name="phonegap-plugin-push"  source="npm" version="1.9.2"/>
     <gap:plugin name="cordova-plugin-file-transfer"  source="npm"  spec="1.6.3"/>    
     <gap:plugin name="cordova-plugin-camera"  source="npm"  spec="2.4.1"/>
