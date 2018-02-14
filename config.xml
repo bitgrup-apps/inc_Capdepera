@@ -16,10 +16,10 @@
         <config-file parent="NSBluetoothPeripheralUsageDescription" platform="ios" target="*-Info.plist">
             <string>Advertisement would like to use bluetooth.</string> 
         </config-file>
-        <config-file parent="NSLocationAlwaysUsageDescription " platform="ios" target="*-Info.plist">
+        <config-file parent="NSLocationAlwaysUsageDescription" platform="ios" target="*-Info.plist">
             <string>The location will be used to attach information to the incidents</string>
         </config-file> 
-        <config-file parent="NSLocationWhenInUseUsageDescription " platform="ios" target="*-Info.plist">
+        <config-file parent="NSLocationWhenInUseUsageDescription" platform="ios" target="*-Info.plist">
             <string>The location will be used to attach information to the incidents</string>
         </config-file>
     </platform>
@@ -28,7 +28,7 @@
     
 	
     <!-- PREFERENCE -->
-    <preference name="phonegap-version" value="cli-8.0.0" /> 
+    <preference name="phonegap-version" value="cli-7.1.0" /> 
     <preference name="orientation" value="portrait" /> 
     <preference name="stay-in-webview" value="false" />
     <preference name="CameraUsesGeolocation" value="false" />
