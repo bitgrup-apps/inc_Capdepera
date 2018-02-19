@@ -334,7 +334,7 @@ var init = {
                 var ok = true;
                 //comprovam usuari
                 if ($('#usuari-login').val() == '' || $('#pass-login').val() == '') {
-                    init.areYouSure('Tots el camps son obligatories', 'Acceptar', function () {});
+                    init.areYouSure(jQuery.i18n.prop('msg_alert_1'), jQuery.i18n.prop('msg_acceptar'), function () {});
                     ok = false;
                 }
 
@@ -364,9 +364,9 @@ var init = {
                         $.mobile.changePage("#home", {transition: "slide", changeHash: true});
                         init.session.motraAmagaLogin(false);
                     } else if (intResp === 2) {
-                        init.areYouSure('Aquest dispositiu no està autoritzat', 'Acceptar', function () {});
+                        init.areYouSure(jQuery.i18n.prop('msg_alert_2'), jQuery.i18n.prop('msg_acceptar'), function () {});
                     } else if (intResp === 3) {
-                        init.areYouSure('Usuari i/o contrasenya incorrecte', 'Acceptar', function () {});
+                        init.areYouSure(jQuery.i18n.prop('msg_alert_3'), jQuery.i18n.prop('msg_acceptar'), function () {});
                     }
                     init.urlFunctions = antigaUrl;
                 }
@@ -432,43 +432,44 @@ var init = {
     incidencia: {
         file: 'oncapdepera.class.php',
         enviaIncidencia: function () {
-
-            var imageURI = document.getElementById('imgIncidenciaOnCap').getAttribute("src");
-            if (imageURI === 'images/no-img-3.jpg') {
-                var formData = new FormData($('#form-incidenciaOnCap')[0]);
-                formData.append('lang', init.lang);
-                var resp = init.sendAjax(formData, init.incidencia.file, true);
-                if (resp.error == 0) {
-                    alert('INCIDÈNCIA ENVIADA CORRECTAMENT');
-                    $.mobile.changePage("#home", {transition: "slide", changeHash: false});
-                }
-            } else {
-                try {
-                    var parametros = {
-                        adresaIncidencia: document.getElementById("adresaIncidenciaOnCap").value,
-                        poblacioIncidencia: document.getElementById("poblacioIncidenciaOnCap").value,
-                        assumpte: document.getElementById("assumpteOnCap").value,
-                        descripcio: document.getElementById("descripcioOnCap").value,
-                        longitutIncidencia: document.getElementById("longitutIncidenciaOnCap").value,
-                        latitutIncidencia: document.getElementById("latitutIncidenciaOnCap").value,
-                        email: document.getElementById("emailOnCap").value,
-                        name: 'imgIncidenciaOnCap',
-                        funcio: 'novaIncidenciaOnCap'
-                    };
-                    var options = new FileUploadOptions();
-                    options.fileKey = "imgIncidenciaOnCap";
-                    options.fileName = 'imgIncidenciaOnCap';
-                    options.mimeType = "image/jpeg";
-                    options.chunkedMode = false;
-                    options.params = parametros;
-                    var ft = new FileTransfer();
-                    ft.onprogress = function (progressEvent) {
-                        $('#loading').css('display', 'table');
-                    };
-                    ft.upload(imageURI, encodeURI(init.urlFunctions + init.incidencia.file), init.incidencia.win, init.incidencia.onFail, options);
-                } catch (e) {
-                    $('#loading').css('display', 'none');
-                    init.error_('E 395', 'ERROR ENVIANT INCIDENCIA', e);
+            if ($('#assumpteOnCap').val() != '') {
+                var imageURI = document.getElementById('imgIncidenciaOnCap').getAttribute("src");
+                if (imageURI === 'images/no-img-3.jpg') {
+                    var formData = new FormData($('#form-incidenciaOnCap')[0]);
+                    formData.append('lang', init.lang);
+                    var resp = init.sendAjax(formData, init.incidencia.file, true);
+                    if (resp.error == 0) {
+                        init.areYouSure(jQuery.i18n.prop('msg_incidencia_enviada'),jQuery.i18n.prop('msg_acceptar'),function(){}, 'success');
+                        init.incidencia.reset();
+                    }
+                } else {
+                    try {
+                        var parametros = {
+                            adresaIncidencia: document.getElementById("adresaIncidenciaOnCap").value,
+                            poblacioIncidencia: document.getElementById("poblacioIncidenciaOnCap").value,
+                            assumpte: document.getElementById("assumpteOnCap").value,
+                            descripcio: document.getElementById("descripcioOnCap").value,
+                            longitutIncidencia: document.getElementById("longitutIncidenciaOnCap").value,
+                            latitutIncidencia: document.getElementById("latitutIncidenciaOnCap").value,
+                            email: document.getElementById("emailOnCap").value,
+                            name: 'imgIncidenciaOnCap',
+                            funcio: 'novaIncidenciaOnCap'
+                        };
+                        var options = new FileUploadOptions();
+                        options.fileKey = "imgIncidenciaOnCap";
+                        options.fileName = 'imgIncidenciaOnCap';
+                        options.mimeType = "image/jpeg";
+                        options.chunkedMode = false;
+                        options.params = parametros;
+                        var ft = new FileTransfer();
+                        ft.onprogress = function (progressEvent) {
+                            $('#loading').css('display', 'table');
+                        };
+                        ft.upload(imageURI, encodeURI(init.urlFunctions + init.incidencia.file), init.incidencia.win, init.incidencia.onFail, options);
+                    } catch (e) {
+                        $('#loading').css('display', 'none');
+                        init.error_('E 395', 'ERROR ENVIANT INCIDENCIA', e);
+                    }
                 }
             }
 
@@ -485,12 +486,20 @@ var init = {
                 if (resposta.error == '1') {
                     init.error_('E FUNCTIONS-405', data.response, resposta.str);
                 } else {
-                    alert('INCIDÈNCIA ENVIADA CORRECTAMENT');
-                    $.mobile.changePage("#home-nou", {transition: "slide", changeHash: false});
+                    init.areYouSure(jQuery.i18n.prop('msg_incidencia_enviada'),jQuery.i18n.prop('msg_acceptar'),function(){}, 'success');
+                    init.incidencia.reset();
                 }
             } catch (e) {
                 init.error_('E 416', data, e);
             }
+        },
+        reset: function () {
+            $('#emailOnCap').val('');
+            $('#assumpteOnCap').val('');
+            $('#descripcioOnCap').val('');
+            $('#imgIncidenciaOnCap').attr('src', 'images/no-img-3.jpg');
+            $('#adresaIncidenciaOnCap').val('');
+            $('#poblacioIncidenciaOnCap').val('');
         }
     },
     img: {
@@ -521,17 +530,17 @@ var init = {
     carregaPagExt: function (url) {
         var ref = window.open(url, '_system', 'location=no');
     },
-    radio:{
-        status:0,
+    radio: {
+        status: 0,
         playStop: function () {
             //init.carregaPagExt('http://91.121.156.27:8010/stream');
-            if(init.radio.status == 0){
+            if (init.radio.status == 0) {
                 init.radio.play();
-            }else{
+            } else {
                 init.radio.stop();
             }
         },
-        play: function(){
+        play: function () {
             $('#playStop i').addClass('ico-stop');
             $('#sound').show();
             init.radio.status = 1;
@@ -540,7 +549,7 @@ var init = {
             mediaElement.src = "http://91.121.156.27:8010/stream";
             mediaElement.play();
         },
-        stop: function(){
+        stop: function () {
             $('#playStop i').removeClass('ico-stop');
             $('#sound').hide();
             init.radio.status = 0;
@@ -548,18 +557,29 @@ var init = {
             mediaElement.pause();
             mediaElement.src = "";
         },
-        playBackground: function(){
+        playBackground: function () {
             var mediaElement = document.getElementById("radio_capdepera");
             mediaElement.play();
         }
     },
-    
-    areYouSure: function (text2, button, callback, back_) {
+
+    areYouSure: function (text2, button, callback, tipus) {
+        if (tipus == 'avis') {
+            $('#logo-AreYouSure').attr('src', 'icons/avis2.png');
+        }else if(tipus == 'success'){
+            $('#logo-AreYouSure').attr('src', 'icons/success2.png');
+        } else {
+            $('#logo-AreYouSure').attr('src', 'icons/alert2.png');
+        }
+
         $("#sure .sure-2").html(text2);
         $("#sure .sure-do").text(button).on("click.sure", function () {
+            $.mobile.back();
             $(this).off("click.sure");
             callback();
+            callback = false;
         });
+        
         $.mobile.changePage("#sure");
     },
     htmlEntities: function (str) {
@@ -568,19 +588,19 @@ var init = {
     openDeviceBrowser: function (externalLinkToOpen) {
         window.open(externalLinkToOpen, '_system', 'location=no');
     },
-    sendEstadistica: function(pagina){
-      var formData = new FormData();
-      formData.append('funcio', 'putEstadistica');
-      formData.append('lang', init.lang);
-      formData.append('pagina', pagina);
-      init.sendAjax(formData, 'estadistiques.class.php', false);
+    sendEstadistica: function (pagina) {
+        var formData = new FormData();
+        formData.append('funcio', 'putEstadistica');
+        formData.append('lang', init.lang);
+        formData.append('pagina', pagina);
+        init.sendAjax(formData, 'estadistiques.class.php', false);
     },
     error_: function (codi, json, error) {
         //$.post('', {funcio: 'appError', TOKEN: 'LAIDSD88347ERJKADKFGKAHPF8YA9DF8Y', codi: codi, json: json, error: error}, function (data) {});
         console.log(codi);
         console.log(json);
         console.log(error);
-        init.areYouSure('E BIT-73: No es pot accedir al serveis a n\'aquest moment', 'Aceptar', function () {});
+        init.areYouSure(jQuery.i18n.prop('msg_alert_4'), jQuery.i18n.prop('msg_acceptar'), function () {});
     }
 }
 
