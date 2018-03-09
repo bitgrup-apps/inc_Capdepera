@@ -107,7 +107,7 @@ function initPushNotification() {
 
     window.push.on('notification', function (data) {
         console.log(data);
-        areYouSure(data.message, "Acceptar", function () { }, 'avis'); 
+        areYouSure(data.message, "Aceptar", function () { }, 'avis'); 
 
     });
 
