@@ -116,12 +116,21 @@ function carrega(url) {
 }
 
 
-function areYouSure(text2, button, callback, back_) {
+function areYouSure(text2, button, callback, tipus) {
+    if (tipus == 'avis') {
+        $('#logo-AreYouSure').attr('src', 'icons/avis2.png');
+    } else if (tipus == 'success') {
+        $('#logo-AreYouSure').attr('src', 'icons/success2.png');
+    } else {
+        $('#logo-AreYouSure').attr('src', 'icons/alert2.png');
+    }
     $("#sure .sure-2").html(text2);
     $("#sure .sure-do").text(button).on("click.sure", function () {
-        $(this).off("click.sure");
-        callback();
-    });
+            $.mobile.back();
+            $(this).off("click.sure");
+            callback();
+            callback = false;
+        });
     $.mobile.changePage("#sure");
 }
 
@@ -193,7 +202,7 @@ function comprovaPasa1b() {
     } catch (e) {
         error_('E INCID-323', 'carregaMapa', e);
     }
-    
+
     return ok;
 }
 
@@ -556,19 +565,19 @@ function comprovaPosicio(lat, long) {
 }
 function errorMapa() {
     /*
-    //alert('No es pot aconseguir la vostra localització, indicau una localització al mapa');
-    try {
-        window.mapa.animateCamera({
-            target: {
-                lat: 39.694881,
-                lng: 3.3551102,
-            },
-            'duration': 2,
-            zoom: 15
-        });
-    } catch (e) {
-        error_('E FUNCTIONS-564', 'animateCamara', e);
-    }*/
+     //alert('No es pot aconseguir la vostra localització, indicau una localització al mapa');
+     try {
+     window.mapa.animateCamera({
+     target: {
+     lat: 39.694881,
+     lng: 3.3551102,
+     },
+     'duration': 2,
+     zoom: 15
+     });
+     } catch (e) {
+     error_('E FUNCTIONS-564', 'animateCamara', e);
+     }*/
 
 }
 //#############################################################
