@@ -161,19 +161,25 @@ function initMap() {
 }
 
 function onMapInit() {
-
+    
     //LOCALITZACIÓ
     var onSuccess = function (location) {
         //comprovam posició
 
-
         $('#latitutIncidencia').val(location.latLng.lat);
         $('#longitutIncidencia').val(location.latLng.lng);
+        $('#latitutIncidenciaOnCap').val(location.lat);
+        $('#longitutIncidenciaOnCap').val(location.lng);
+                
         const GOOGLE = new plugin.google.maps.LatLng(location.latLng.lat, location.latLng.lng);
+        
         var request = {
-            'position': GOOGLE
+            position:GOOGLE
         };
+        console.log(request);
+        
         plugin.google.maps.Geocoder.geocode(request, function (results) {
+            console.log(results);
             if (results.length) {
                 var result = results[0];
                 var position = result.position;
@@ -204,8 +210,7 @@ function onMapInit() {
                 //ONCAPDEPERA
                 $('#adresaIncidenciaOnCap').val(result.thoroughfare);
                 $('#poblacioIncidenciaOnCap').val(result.locality);
-                $('#latitutIncidenciaOnCap').val(position.lat);
-                $('#longitutIncidenciaOnCap').val(position.lng);
+                
             
             } else {
                 console.log('E-202: NOT LENGHT MAPA');
@@ -250,7 +255,6 @@ function novaLocalitzacio(posicio) {
     };
 
     plugin.google.maps.Geocoder.geocode(request, function (results) {
-        ;
         if (results.length) {
 
             var result = results[0];
