@@ -50,7 +50,7 @@
 
         <div data-role="page"  id="home-nou">
             <div data-role="content" class=" " >
-                <a href="#loggin-home" data-role="none" data-transition="slide"></a>
+                <a href="#loggin-home" id="login_home" data-role="none" data-transition="slide"></a>
                 <div class="col-xs-12 logo"><h1 class="literal" data-literal="msg_hom">Benvinguts</h1></div>
                 <div class="col-xs-6">
                     <a href="#" class="pastilla oncpd" data-role="none" onclick="init.onCapdepera.init();">Oncapdepera</a>
@@ -68,7 +68,7 @@
                     <a href="#" class="pastilla notc literal" data-literal="msg_menu_4" data-role="none"  onclick="init.noticies.init();">Notícies</a>
                 </div>
                 <div class="col-xs-6">
-                    <a href="#oncapdepera-incidencia" class="pastilla incd literal" data-literal="msg_menu_6" onclick="init.sendEstadistica('incidencia');" data-role="none">Incidència</a>
+                    <a href="#oncapdepera-incidencia" class="pastilla incd literal" data-literal="msg_menu_6" onclick="init.sendEstadistica('incidencia'); init.incidencia.getNovaPosicio();" data-role="none">Incidència</a>
                 </div>
                 <div class="col-xs-6">
                     <a href="#avisos" class="pastilla avisos literal" data-literal="msg_menu_7" onclick="init.avisos.init();" data-role="none">Avisos</a>

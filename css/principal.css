@@ -85,7 +85,7 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #home-nou .pastilla.avisos::before{background-position:-124.5vw -202.5vw; background-size: 160vw;}
 #home-nou .ui-content > a:first-child{position:absolute; right: 10px; top: 10px; width:10vw; height: 10vw; background-image: url(../icons/sprite_info_turisme.svg); background-size: 115vw; background-position: -91vw -115.5vw;z-index: 99;}
 #home-nou .ui-content > .col-xs-6{padding: 0.5vw;}
-
+#login_home{display:none;} 
 
 
 /*######## HOME #############*/

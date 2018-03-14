@@ -8,9 +8,22 @@ var init = {
     initApp: function () {
         init.initLangs();
         init.session.initSession();
+        init.veurePartOperaris();
     },
     home: function () {
         $.mobile.changePage("#home-nou", {transition: "slide", reverse: true});
+    },
+    veurePartOperaris(){
+        var formData = new FormData();
+        formData.append('funcio', 'veure_part_operaris');
+        var resp = init.sendAjax(formData, 'oncapdepera.class.php', false);
+        if(resp.error == 0){
+            if(resp.veure_part_operaris == 1){
+                $('#login_home').css('display', 'block');
+            }else{
+                $('#login_home').css('display', 'none');
+            }
+        }
     },
     onCapdepera: {
         menuOk: false,
@@ -498,8 +511,10 @@ var init = {
             $('#assumpteOnCap').val('');
             $('#descripcioOnCap').val('');
             $('#imgIncidenciaOnCap').attr('src', 'images/no-img-3.jpg');
-            $('#adresaIncidenciaOnCap').val('');
-            $('#poblacioIncidenciaOnCap').val('');
+            
+        },
+        getNovaPosicio: function(){
+            onMapInit();
         }
     },
     img: {

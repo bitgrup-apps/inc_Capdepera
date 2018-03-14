@@ -10,17 +10,20 @@
     <author href="http://bitgrup.com" email="info@bitgrup.com">BITGRUP</author>
     
     <platform name="ios">
+        <config-file parent="NSCameraUsageDescription" platform="ios" target="*-Info.plist">
+            <string>Se necesita acceder a la cámara para añadir imágenes</string>
+        </config-file>
         <config-file parent="NSPhotoLibraryUsageDescription" platform="ios" target="*-Info.plist">
-            <string>The photographs will be used to attach information to the incidents</string>
+            <string>Se necesita acceder a la libreria para añadir imágenes</string>
         </config-file>
         <config-file parent="NSBluetoothPeripheralUsageDescription" platform="ios" target="*-Info.plist">
             <string>Advertisement would like to use bluetooth.</string> 
         </config-file>
         <config-file parent="NSLocationAlwaysUsageDescription" platform="ios" target="*-Info.plist">
-            <string>The location will be used to attach information to the incidents</string>
+            <string>Se necesita la localización en caso de querer enviar una incidencia</string>
         </config-file> 
         <config-file parent="NSLocationWhenInUseUsageDescription" platform="ios" target="*-Info.plist">
-            <string>The location will be used to attach information to the incidents</string>
+            <string>Se necesita la localización en caso de querer enviar una incidencia</string>
         </config-file>
     </platform>
 

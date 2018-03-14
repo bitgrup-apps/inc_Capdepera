@@ -179,7 +179,7 @@ function onMapInit() {
         console.log(request);
         
         plugin.google.maps.Geocoder.geocode(request, function (results) {
-            console.log(results);
+
             if (results.length) {
                 var result = results[0];
                 var position = result.position;
