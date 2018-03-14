@@ -168,8 +168,8 @@ function onMapInit() {
 
         $('#latitutIncidencia').val(location.latLng.lat);
         $('#longitutIncidencia').val(location.latLng.lng);
-        $('#latitutIncidenciaOnCap').val(location.lat);
-        $('#longitutIncidenciaOnCap').val(location.lng);
+        $('#latitutIncidenciaOnCap').val(location.latLng.lat);
+        $('#longitutIncidenciaOnCap').val(location.latLng.lng);
                 
         const GOOGLE = new plugin.google.maps.LatLng(location.latLng.lat, location.latLng.lng);
         
