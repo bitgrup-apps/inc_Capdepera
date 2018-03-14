@@ -201,6 +201,12 @@ function onMapInit() {
 
                 $('#adresaIncidencia').val(result.thoroughfare);
                 $('#poblacioIncidencia').val(result.locality);
+                //ONCAPDEPERA
+                $('#adresaIncidenciaOnCap').val(result.thoroughfare);
+                $('#poblacioIncidenciaOnCap').val(result.locality);
+                $('#latitutIncidenciaOnCap').val(position.lat);
+                $('#longitutIncidenciaOnCap').val(position.lng);
+            
             } else {
                 console.log('E-202: NOT LENGHT MAPA');
                 errorMapa();
