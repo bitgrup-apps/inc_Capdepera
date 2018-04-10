@@ -458,12 +458,12 @@ var init = {
                 } else {
                     try {
                         var parametros = {
-                            adresaIncidencia: document.getElementById("adresaIncidenciaOnCap").value,
-                            poblacioIncidencia: document.getElementById("poblacioIncidenciaOnCap").value,
+                            adresaIncidenciaOnCap: document.getElementById("adresaIncidenciaOnCap").value,
+                            poblacioIncidenciaOnCap: document.getElementById("poblacioIncidenciaOnCap").value,
                             assumpte: document.getElementById("assumpteOnCap").value,
                             descripcio: document.getElementById("descripcioOnCap").value,
-                            longitutIncidencia: document.getElementById("longitutIncidenciaOnCap").value,
-                            latitutIncidencia: document.getElementById("latitutIncidenciaOnCap").value,
+                            longitutIncidenciaOnCap: document.getElementById("longitutIncidenciaOnCap").value,
+                            latitutIncidenciaOnCap: document.getElementById("latitutIncidenciaOnCap").value,
                             email: document.getElementById("emailOnCap").value,
                             name: 'imgIncidenciaOnCap',
                             funcio: 'novaIncidenciaOnCap'
