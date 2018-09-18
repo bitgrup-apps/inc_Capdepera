@@ -9,17 +9,17 @@ var idInc;
 //##################  per carregar pagines externes amb jquery ####################
 //###################################################################################
 
-$(document).bind("mobileinit", function () {
-    $.support.cors = true;
-    $.mobile.allowCrossDomainPages = true;
-});
-// Determine support properties
-(function (xhr) {
-    jQuery.extend(jQuery.support, {
-        ajax: !!xhr,
-        cors: !!xhr && ("withCredentials" in xhr)
-    });
-})(jQuery.ajaxSettings.xhr());
+//$(document).bind("mobileinit", function () { 
+//    $.support.cors = true;
+//    $.mobile.allowCrossDomainPages = true;
+//});
+//// Determine support properties
+//(function (xhr) {
+//    jQuery.extend(jQuery.support, {
+//        ajax: !!xhr,
+//        cors: !!xhr && ("withCredentials" in xhr)
+//    });
+//})(jQuery.ajaxSettings.xhr());
 
 
 //###################################################################################

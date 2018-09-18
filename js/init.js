@@ -17,7 +17,7 @@ function onLoad() {
 }
 
 function initApp() {
-
+    console.log('inici');
 
 
     //controlam tipus dispositiu
