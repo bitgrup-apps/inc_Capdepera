@@ -31,7 +31,7 @@
     
 	
     <!-- PREFERENCE -->
-    <preference name="phonegap-version" value="cli-7.0.1" /> 
+    <preference name="phonegap-version" value="cli-6.5.0" /> 
     <preference name="orientation" value="portrait" /> 
     <preference name="stay-in-webview" value="false" />
     <preference name="CameraUsesGeolocation" value="false" />

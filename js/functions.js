@@ -336,6 +336,11 @@ function enviaIncidencia() {
     if ($('#incidenciaNoVisible').is(':checked')) {
         incidenciaNoVisible = 1;
     }
+    
+    if(window.myip){
+            var ip = window.myip;
+    }
+    
     var parametros = {
         adresa: document.getElementById("adresaIncidencia").value,
         //titol: document.getElementById("titolIncidencia").value,
@@ -354,7 +359,7 @@ function enviaIncidencia() {
         email_usuari: '',
         //tel_usuari: document.getElementById("tel_usuari").value,
         tel_usuari: '',
-        ip_usuari: window.myip,
+        ip_usuari: window.ip,
         incidenciaNoVisible: incidenciaNoVisible,
         name: 'imgIncidencia',
         funcio: 'novaIncidencia',
