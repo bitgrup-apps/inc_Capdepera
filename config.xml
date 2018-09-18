@@ -41,6 +41,7 @@
     <preference name="deployment-target" value="7.0" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="UIWebViewBounce" value="false" />
+    <preference name="GEOLOCATION_USAGE_DESCRIPTION" default=" " />
 
 	   
     <!-- PLUGINS -->
@@ -57,7 +58,7 @@
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <!--gap:plugin name="com-badrit-macaddress"  source="npm"/-->
     <!--gap:plugin name="cordova-plugin-uniquedeviceid"  source="npm" /-->
-    <gap:plugin name="cordova-plugin-device"  source="npm" />
+    <!--gap:plugin name="cordova-plugin-device"  source="npm" /-->
     <gap:plugin name="cordova-plugin-inappbrowser"  source="npm" />
     <!--gap:plugin name="cordova-allow-background-audio"  source="npm" /-->
     
