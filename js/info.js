@@ -549,28 +549,6 @@ var init = {
 
         status: 0,
 
-
-        onInitSuccess: function () {
-            var mediaElement = document.getElementById("radio_capdepera");
-            mediaElement.pause();
-            mediaElement.src = "http://91.121.156.27:8010/stream";
-            mediaElement.play();
-        },
-
-        onInitError: function (e) {
-            console.log(e);
-        },
-        
-        onStopSuccess: function () {
-            var mediaElement = document.getElementById("radio_capdepera");
-            mediaElement.pause();
-            mediaElement.src = "";
-        },
-
-        onStopError: function (e) {
-            console.log(e);
-        },
-
         playStop: function () {
             //init.carregaPagExt('http://91.121.156.27:8010/stream');
             try {
@@ -587,43 +565,18 @@ var init = {
             $('#playStop i').addClass('ico-stop');
             $('#sound').show();
             init.radio.status = 1;
-
-            MusicControls.create({
-                track: 'Radio Capdepera', // optional, default : ''
-                artist: '-', // optional, default : ''
-                cover: 'images/logo-radio.png', // optional, default : nothing
-                isPlaying: true, // optional, default : true
-                // hide previous/next/close buttons:
-                hasPrev: false, // show previous button, optional, default: true
-                hasNext: false, // show next button, optional, default: true
-                hasClose: false, // show close button, optional, default: false
-                // iOS only, optional
-                album: 'Radio Capdepera', // optional, default: ''
-                hasSkipForward: true, //optional, default: false. true value overrides hasNext.
-                hasSkipBackward: true, //optional, default: false. true value overrides hasPrev.
-                skipForwardInterval: 15, //optional. default: 0.
-                skipBackwardInterval: 15, //optional. default: 0.
-                // Android only, optional
-                // text displayed in the status bar when the notification (and the ticker) are updated
-                ticker: 'Now playing "Radio Capdepera"',
-                //All icons default to their built-in android equivalents
-                //The supplied drawable name, e.g. 'media_play', is the name of a drawable found under android/res/drawable* folders
-                playIcon: 'media_play',
-                pauseIcon: 'media_pause',
-                prevIcon: 'media_prev',
-                nextIcon: 'media_next',
-                closeIcon: 'media_close',
-                notificationIcon: 'notification'
-            }, init.radio.onSuccess, init.radio.onError);
-
-
+            var mediaElement = document.getElementById("radio_capdepera");
+            mediaElement.pause();
+            mediaElement.src = "http://91.121.156.27:8010/stream";
+            mediaElement.play();
         },
         stop: function () {
             $('#playStop i').removeClass('ico-stop');
             $('#sound').hide();
             init.radio.status = 0;
-            MusicControls.destroy(onSuccess, onError);
-
+            var mediaElement = document.getElementById("radio_capdepera");
+            mediaElement.pause();
+            mediaElement.src = "";
         },
         playBackground: function () {
             var mediaElement = document.getElementById("radio_capdepera");
