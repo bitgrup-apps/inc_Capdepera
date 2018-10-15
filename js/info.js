@@ -592,11 +592,11 @@ var init = {
                 track: 'Radio Capdepera', // optional, default : ''
                 artist: '-', // optional, default : ''
                 cover: 'images/logo-radio.png', // optional, default : nothing
-                isPlaying: false, // optional, default : true
+                isPlaying: true, // optional, default : true
                 // hide previous/next/close buttons:
                 hasPrev: false, // show previous button, optional, default: true
                 hasNext: false, // show next button, optional, default: true
-                hasClose: true, // show close button, optional, default: false
+                hasClose: false, // show close button, optional, default: false
                 // iOS only, optional
                 album: 'Radio Capdepera', // optional, default: ''
                 hasSkipForward: true, //optional, default: false. true value overrides hasNext.
