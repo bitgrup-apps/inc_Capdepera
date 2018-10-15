@@ -9,11 +9,6 @@ var init = {
         init.initLangs();
         init.session.initSession();
         init.veurePartOperaris();
-        try{
-            init.radio.init();
-        }catch(e){
-            console.log('radio no disponible');
-        }
     },
     home: function () {
         $.mobile.changePage("#home-nou", {transition: "slide", reverse: true});
@@ -554,7 +549,45 @@ var init = {
 
         status: 0,
 
-        init: function () {
+
+        onInitSuccess: function () {
+            var mediaElement = document.getElementById("radio_capdepera");
+            mediaElement.pause();
+            mediaElement.src = "http://91.121.156.27:8010/stream";
+            mediaElement.play();
+        },
+
+        onInitError: function (e) {
+            console.log(e);
+        },
+        
+        onStopSuccess: function () {
+            var mediaElement = document.getElementById("radio_capdepera");
+            mediaElement.pause();
+            mediaElement.src = "";
+        },
+
+        onStopError: function (e) {
+            console.log(e);
+        },
+
+        playStop: function () {
+            //init.carregaPagExt('http://91.121.156.27:8010/stream');
+            try {
+                if (init.radio.status == 0) {
+                    init.radio.play();
+                } else {
+                    init.radio.stop();
+                }
+            } catch (e) {
+                console.log('radio no disponible');
+            }
+        },
+        play: function () {
+            $('#playStop i').addClass('ico-stop');
+            $('#sound').show();
+            init.radio.status = 1;
+
             MusicControls.create({
                 track: 'Radio Capdepera', // optional, default : ''
                 artist: '-', // optional, default : ''
@@ -582,45 +615,14 @@ var init = {
                 closeIcon: 'media_close',
                 notificationIcon: 'notification'
             }, init.radio.onSuccess, init.radio.onError);
-        },
-        
-        onSuccess: function(){
-            
-        },
-        
-        onError: function(){
-            
-        },
 
-        playStop: function () {
-            //init.carregaPagExt('http://91.121.156.27:8010/stream');
-            if (init.radio.status == 0) {
-                init.radio.play();
-            } else {
-                init.radio.stop();
-            }
-        },
-        play: function () {
-            $('#playStop i').addClass('ico-stop');
-            $('#sound').show();
-            init.radio.status = 1;
-//            var mediaElement = document.getElementById("radio_capdepera");
-//            mediaElement.pause();
-//            mediaElement.src = "http://91.121.156.27:8010/stream";
-//            mediaElement.play();
-            
-            MusicControls.updateIsPlaying(true); 
 
         },
         stop: function () {
             $('#playStop i').removeClass('ico-stop');
             $('#sound').hide();
             init.radio.status = 0;
-//            var mediaElement = document.getElementById("radio_capdepera");
-//            mediaElement.pause();
-//            mediaElement.src = "";
-            
-            MusicControls.updateIsPlaying(false); 
+            MusicControls.destroy(onSuccess, onError);
 
         },
         playBackground: function () {
