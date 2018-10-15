@@ -9,18 +9,23 @@ var init = {
         init.initLangs();
         init.session.initSession();
         init.veurePartOperaris();
+        try{
+            init.radio.init();
+        }catch(e){
+            console.log('radio no disponible');
+        }
     },
     home: function () {
         $.mobile.changePage("#home-nou", {transition: "slide", reverse: true});
     },
-    veurePartOperaris(){
+    veurePartOperaris() {
         var formData = new FormData();
         formData.append('funcio', 'veure_part_operaris');
         var resp = init.sendAjax(formData, 'oncapdepera.class.php', false);
-        if(resp.error == 0){
-            if(resp.veure_part_operaris == 1){
+        if (resp.error == 0) {
+            if (resp.veure_part_operaris == 1) {
                 $('#login_home').css('display', 'block');
-            }else{
+            } else {
                 $('#login_home').css('display', 'none');
             }
         }
@@ -452,7 +457,7 @@ var init = {
                     formData.append('lang', init.lang);
                     var resp = init.sendAjax(formData, init.incidencia.file, true);
                     if (resp.error == 0) {
-                        init.areYouSure(jQuery.i18n.prop('msg_incidencia_enviada'),jQuery.i18n.prop('msg_acceptar'),function(){}, 'success');
+                        init.areYouSure(jQuery.i18n.prop('msg_incidencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
                         init.incidencia.reset();
                     }
                 } else {
@@ -499,7 +504,7 @@ var init = {
                 if (resposta.error == '1') {
                     init.error_('E FUNCTIONS-405', data.response, resposta.str);
                 } else {
-                    init.areYouSure(jQuery.i18n.prop('msg_incidencia_enviada'),jQuery.i18n.prop('msg_acceptar'),function(){}, 'success');
+                    init.areYouSure(jQuery.i18n.prop('msg_incidencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
                     init.incidencia.reset();
                 }
             } catch (e) {
@@ -511,9 +516,9 @@ var init = {
             $('#assumpteOnCap').val('');
             $('#descripcioOnCap').val('');
             $('#imgIncidenciaOnCap').attr('src', 'images/no-img-3.jpg');
-            
+
         },
-        getNovaPosicio: function(){
+        getNovaPosicio: function () {
             onMapInit();
         }
     },
@@ -546,7 +551,47 @@ var init = {
         var ref = window.open(url, '_system', 'location=no');
     },
     radio: {
+
         status: 0,
+
+        init: function () {
+            MusicControls.create({
+                track: 'Radio Capdepera', // optional, default : ''
+                artist: '-', // optional, default : ''
+                cover: 'images/logo-radio.png', // optional, default : nothing
+                isPlaying: false, // optional, default : true
+                // hide previous/next/close buttons:
+                hasPrev: false, // show previous button, optional, default: true
+                hasNext: false, // show next button, optional, default: true
+                hasClose: true, // show close button, optional, default: false
+                // iOS only, optional
+                album: 'Radio Capdepera', // optional, default: ''
+                hasSkipForward: true, //optional, default: false. true value overrides hasNext.
+                hasSkipBackward: true, //optional, default: false. true value overrides hasPrev.
+                skipForwardInterval: 15, //optional. default: 0.
+                skipBackwardInterval: 15, //optional. default: 0.
+                // Android only, optional
+                // text displayed in the status bar when the notification (and the ticker) are updated
+                ticker: 'Now playing "Radio Capdepera"',
+                //All icons default to their built-in android equivalents
+                //The supplied drawable name, e.g. 'media_play', is the name of a drawable found under android/res/drawable* folders
+                playIcon: 'media_play',
+                pauseIcon: 'media_pause',
+                prevIcon: 'media_prev',
+                nextIcon: 'media_next',
+                closeIcon: 'media_close',
+                notificationIcon: 'notification'
+            }, init.radio.onSuccess, init.radio.onError);
+        },
+        
+        onSuccess: function(){
+            
+        },
+        
+        onError: function(){
+            
+        },
+
         playStop: function () {
             //init.carregaPagExt('http://91.121.156.27:8010/stream');
             if (init.radio.status == 0) {
@@ -559,18 +604,24 @@ var init = {
             $('#playStop i').addClass('ico-stop');
             $('#sound').show();
             init.radio.status = 1;
-            var mediaElement = document.getElementById("radio_capdepera");
-            mediaElement.pause();
-            mediaElement.src = "http://91.121.156.27:8010/stream";
-            mediaElement.play();
+//            var mediaElement = document.getElementById("radio_capdepera");
+//            mediaElement.pause();
+//            mediaElement.src = "http://91.121.156.27:8010/stream";
+//            mediaElement.play();
+            
+            MusicControls.updateIsPlaying(true); 
+
         },
         stop: function () {
             $('#playStop i').removeClass('ico-stop');
             $('#sound').hide();
             init.radio.status = 0;
-            var mediaElement = document.getElementById("radio_capdepera");
-            mediaElement.pause();
-            mediaElement.src = "";
+//            var mediaElement = document.getElementById("radio_capdepera");
+//            mediaElement.pause();
+//            mediaElement.src = "";
+            
+            MusicControls.updateIsPlaying(false); 
+
         },
         playBackground: function () {
             var mediaElement = document.getElementById("radio_capdepera");
@@ -581,7 +632,7 @@ var init = {
     areYouSure: function (text2, button, callback, tipus) {
         if (tipus == 'avis') {
             $('#logo-AreYouSure').attr('src', 'icons/avis2.png');
-        }else if(tipus == 'success'){
+        } else if (tipus == 'success') {
             $('#logo-AreYouSure').attr('src', 'icons/success2.png');
         } else {
             $('#logo-AreYouSure').attr('src', 'icons/alert2.png');
@@ -594,7 +645,7 @@ var init = {
             callback();
             callback = false;
         });
-        
+
         $.mobile.changePage("#sure");
     },
     htmlEntities: function (str) {

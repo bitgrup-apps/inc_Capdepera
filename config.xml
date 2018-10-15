@@ -2,7 +2,7 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.incCapdepera.bitgrup"
-        version   = "3.2.7">
+        version   = "3.2.8">
 	
 	
     <name>OnCapdepera</name>
@@ -37,8 +37,8 @@
     <preference name="CameraUsesGeolocation" value="false" />
     <preference name="ChildBrowser" value="disable"/>
     <preference name="android-build-tool" value="gradle" /> 
-    <preference name="android-minSdkVersion" value="19" />
-    <preference name="deployment-target" value="7.0" />
+    <preference name="android-minSdkVersion" value="21" />
+    <preference name="deployment-target" value="8.0" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="UIWebViewBounce" value="false" />
 
@@ -59,7 +59,9 @@
     <gap:plugin name="cordova-plugin-uniquedeviceid"  source="npm" />
     <gap:plugin name="cordova-plugin-device"  source="npm" />
     <gap:plugin name="cordova-plugin-inappbrowser"  source="npm" />
-    <gap:plugin name="cordova-allow-background-audio"  source="npm" />
+    <!--gap:plugin name="cordova-allow-background-audio"  source="npm" /-->
+    <gap:plugin name="cordova-music-controls-plugin"  source="npm" />
+    
     
 
   

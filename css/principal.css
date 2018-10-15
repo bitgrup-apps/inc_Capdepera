@@ -323,7 +323,7 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 /*######## INFO #############*/
 .info-turisme{font-family: 'Montserrat';}
 .info-turisme .header{background:#66ad28;padding-top: 7vw;}
-.info-turisme .img {background-size: cover;background-position: center;background-repeat: no-repeat;width: 100%;height: 45vw; max-height: 40vh;}
+.info-turisme .img {background-size: 90% auto;background-position: center;background-repeat: no-repeat;width: 100%;height: 45vw; max-height: 40vh;}
 .info-turisme .header.ui-header > div > div:nth-child(2) {font-size: 5.5vw; text-transform: uppercase;color: #fff;text-align: center;font-weight: 400;padding-top: 0.5vw;}
 .info-turisme .header.ui-header > div > div:last-child { background-image: url('../icons/home.png'); background-size: 7.5vw;background-position: center; background-repeat: no-repeat; height: 8.75vw;}
 .info-turisme .header.ui-header > div > div:first-child > a { background-image: url('../icons/back.png'); width: 5vw; height: 5vw; background-repeat: no-repeat; background-position: center; display: inline-block; background-size: 4.25vw;  margin-top: 2.25vw;}
