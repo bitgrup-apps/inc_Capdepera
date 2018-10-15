@@ -58,9 +58,9 @@
     <gap:plugin name="com-badrit-macaddress"  source="npm" />
     <gap:plugin name="cordova-plugin-uniquedeviceid"  source="npm" />
     <gap:plugin name="cordova-plugin-device"  source="npm" />
-    <gap:plugin name="cordova-plugin-inappbrowser"  source="npm" />
+    <gap:plugin name="cordova-plugin-inappbrowser"   />
     <!--gap:plugin name="cordova-allow-background-audio"  source="npm" /-->
-    <gap:plugin name="cordova-music-controls-plugin"  source="npm" />
+    <gap:plugin name="cordova-plugin-music-controls"  source="npm" />
     
     
 
