@@ -45,6 +45,7 @@ var init = {
                     $('#m-festes').html(resp.festes);
                     $('#m-nuclis').html(resp.nuclis);
                     $('#m-rutes').html(resp.rutes);
+                    $('#m-rutes-c').html(resp.ciclistes);
 
                     $('.menu').click(function () {
                         if ($(this).find('.sub-menu').is(":visible")) {
@@ -215,9 +216,7 @@ var init = {
         }
 
     },
-
     esdeveniments: {
-
         file: 'esdeveniments.class.php',
 
         getEsdeveniments: function () {
@@ -244,6 +243,28 @@ var init = {
             }
         }
     },
+    reservaMarina: {
+        menuOk: false,
+        file: 'oncapdepera.class.php',
+
+        init: function () {
+            var file = init.reservaMarina.file;
+            var formData = new FormData();
+            formData.append('funcio', 'getFitxa');
+            formData.append('tipus', 'reserva');
+            formData.append('id', '0');
+            formData.append('lang', 'es');
+            var resp = init.sendAjax(formData, file, true);
+            if (resp.error == 0) {
+                $('#reservamarina-fitxa-body').html(resp.str);
+                $.mobile.changePage("#reservamarina-fitxa", {transition: "slide"});
+            } else {
+                $('#reservamarina-fitxa-body').html(resp.error);
+            }
+                
+        }
+    },
+    
     initLangs: function () {
         init.getLang();
         jQuery.i18n.properties({

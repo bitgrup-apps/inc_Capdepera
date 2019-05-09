@@ -58,31 +58,40 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 
 
 /*######## HOME - NOU ###################*/
-#home-nou .ui-content{background-image: url(../images/fondo-3.jpg); background-size: cover; background-position: center; height: 100vh;padding: 1vw 12vw;}
-#home-nou h1{  margin:6vh 0 2vh; text-align: center; font-size: 12vw; font-family: 'Helena';}
-#home-nou .pastilla{margin: 0.1vw; padding: 22vw 2vw 5vw 2vw; text-align: center; font-size: 4vw; color:#fff; font-weight: 700; text-shadow:none;display: inline-block; width: 100%; text-transform: uppercase;background-size: cover; background-position: center; background-repeat: no-repeat;}
-#home-nou .pastilla::before{position:absolute; width:20vw; height: 20vw; background-image: url(../icons/sprite_info_turisme.svg); background-size: 200vw; content: " ";top: 2.5vw;left: 9.5vw;}
-#home-nou .pastilla.oncpd{background-image:url('../icons/bot1.png'); }
-#home-nou .pastilla.oncpd::before{background-position:-155vw -60vw;}
-#home-nou .pastilla.esdevn{background-image:url('../icons/bot2.png'); }
-#home-nou .pastilla.esdevn::before{background-position:-159vw -108vw;}
-#home-nou .pastilla.sprts{background-image:url('../icons/bot3.png'); }
-#home-nou .pastilla.sprts::before{background-position:-158.5vw -131vw;}
-#home-nou .pastilla.notc{background-image:url('../icons/bot8.png'); }
-#home-nou .pastilla.notc::before{background-position:-159.5vw -153vw;}
-#home-nou .pastilla.incd{background-image:url('../icons/bot5.png'); }
-#home-nou .pastilla.incd::before{background-position:-123.5vw -181vw; background-size: 160vw;}
-#home-nou .pastilla.msca{background-image:url('../icons/bot4.png'); }
-#home-nou .pastilla.msca::before{background-position:-124.5vw -224.5vw; background-size: 160vw;}
+#home-nou .ui-content{background-image: url(../images/fondo_home.jpg); background-size: cover; background-position: center; height: 100vh;padding: 1vw 6vw;}
+#home-nou h1{  margin:6vh 0 2vh; text-align: center; font-size: 9vw; font-family: 'Quicksand';}
+#home-nou .logo{margin-bottom: 16vw;}
+#home-nou .pastilla{padding: 20vw 2vw 5vw 0vw; text-align: center; font-size: 3.5vw; color:#fff; font-weight: 500; text-shadow:none;display: inline-block; width: 110%; text-transform: uppercase;background-size: cover; background-position: center; background-repeat: no-repeat;}
+#home-nou .pastilla::before{position:absolute; width:20vw; height: 20vw; background-image: url(../icons/spriteoncdphome.svg); background-size: 200vw; content: " ";top: 2.5vw;left: 9.5vw;}
+#home-nou .pastilla.oncpd{border-style: solid; border-width: 0px 1px 1px 0px;}
+#home-nou .pastilla.oncpd::before{background-position:-18vw -12vw;}
+#home-nou .pastilla.esdevn{border-style: solid; border-width: 0px 0px 1px 1px;}
+#home-nou .pastilla.esdevn::before{background-position:-85vw -12vw;}
+#home-nou .pastilla.sprts{border-style: solid; border-width: 0px 1px 1px 0px;}
+#home-nou .pastilla.sprts::before{background-position:-120vw -12vw;}
+#home-nou .pastilla.notc{border-style: solid; border-width: 0px 0px 1px 0px;}
+#home-nou .pastilla.notc::before{background-position:-49vw -12vw;}
+#home-nou .pastilla.incd{border-style: solid; border-width: 0px 1px 0px 0px;padding-bottom: 10vw;}
+#home-nou .pastilla.incd::before{background-position:-19vw -39vw;}
+#home-nou .pastilla.msca{border-style: solid; border-width: 0px 0px 1px 1px;}
+#home-nou .pastilla.msca::before{background-position:-76vw -39vw;}
 /*#home-nou .pastilla.rdio{background-color: #d4df86;background-color: #d4df86;padding: 15px 20px;border-radius: 10px;margin-top:20px;}
 #home-nou .pastilla.rdio::before{background-position: -88vw -96vw;background-size: 110vw;width: 12vw;height: 12vw;left: 4vw;}
 #home-nou .radio_pastilla{float: right; margin-top: 8vh; width: 24vw;}
 #home-nou .radio_pastilla > a{ font-size: 3.5vw; border-radius: 12vw;padding: 14vw 0 0;height: 23vw; }
 #home-nou .radio_pastilla > a::before{background-size: 130vw;background-position: -104.8vw -114vw;top: 3vw;left: 6.5vw;width: 12vw;height: 12vw;}*/
-#home-nou .pastilla.rdio{background-image:url('../icons/bot6.png'); }
-#home-nou .pastilla.rdio::before{background-position:-159.5vw -175vw; }
-#home-nou .pastilla.avisos{background-image:url('../icons/bot7.png'); }
-#home-nou .pastilla.avisos::before{background-position:-124.5vw -202.5vw; background-size: 160vw;}
+#home-nou .pastilla.rdio{border-style: solid; border-width: 0px 0px 0px 0px;}
+#home-nou .pastilla.rdio::before{background-position:-167vw -12vw; }
+#home-nou .pastilla.avisos{border-style: solid; border-width: 0px 0px 1px 0px;}
+#home-nou .pastilla.avisos::before{background-position:-100vw -39vw;}
+#home-nou .pastilla.senderisme{border-style: solid; border-width: 0px 0px 1px 1px;}
+#home-nou .pastilla.senderisme::before{background-position:-48vw -39vw;}
+#home-nou .pastilla.ciclisme{border-style: solid; border-width: 0px 1px 0px 0px;}
+#home-nou .pastilla.ciclisme::before{background-position:-130vw -39vw;}
+#home-nou .pastilla.buida{border-style: solid; border-width: 0px 0px 0px 1px; padding-bottom: 10vw;}
+#home-nou .pastilla.buida::before{background-image: none}
+#home-nou .pastilla.reserva{border-style: solid; border-width: 0px 0px 0px 1px;}
+#home-nou .pastilla.reserva::before{background-position:-164vw -40vw;}
 #home-nou .ui-content > a:first-child{position:absolute; right: 10px; top: 10px; width:10vw; height: 10vw; background-image: url(../icons/sprite_info_turisme.svg); background-size: 115vw; background-position: -91vw -115.5vw;z-index: 99;}
 #home-nou .ui-content > .col-xs-6{padding: 0.5vw;}
 #login_home{display:none;} 
@@ -345,6 +354,7 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 .oncapdepera .ui-content{padding: 0;}
 
 .oncapdepera .icon{background-image:url('../icons/spriteoncapdepera.svg');background-size: 99.5vw;float:left; top:initial;display: inline-block; position:relative;}
+.oncapdepera .icon-v2{background-image:url('../icons/spriteoncdphome.svg');background-size: auto 50vh;float:left;background-repeat: no-repeat;}
 
 /*home*/
 #oncapdepera-home .ui-content{background:#444242;}
@@ -360,7 +370,8 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #oncapdepera-home .festes{background-color: #95a543; background-position: -16vw 2.5vw;}
 #oncapdepera-home .serveis{background-color: #789130; background-position: -31.75vw 2vw;}
 #oncapdepera-home .nuclis{background-color: #ced424; background-position: -48vw 2.5vw;}
-#oncapdepera-home .rutes{background-color: #bcc57d; background-position: -64vw 2vw;}
+#oncapdepera-home .rutes{background-color: #bcc57d; background-position: -21.5vh -19.25vh;}
+#oncapdepera-home .rutesCic{background-color: #bcc57d; background-position: -62.5vh -19.25vh;}
 #oncapdepera-home .informa{background-color: #6b9572; background-position: -84.25vw 2.5vw;}
 #oncapdepera-home .menu.doble{min-height: 99px;padding: 3vw 5vw 3vw 20vw;}
 #oncapdepera-home .menu.doble > span:nth-child(2){padding-top: 0;padding-bottom: 0;}
@@ -368,9 +379,47 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 
 
 /*fitxa*/
-#oncapdepera-fitxa{background:#fff;}
+/*#oncapdepera-fitxa{background:#fff;}
 #oncapdepera-fitxa .galeria{margin-top:10vh; margin-bottom: 10vw;}
-#oncapdepera-fitxa .galeria > div{padding:3px;}
+#oncapdepera-fitxa .galeria > div{padding:3px;}*/
+#oncapdepera-fitxa {background:#fff;}
+#oncapdepera-fitxa .sec {margin: 0px 5%;}
+#oncapdepera-fitxa .sec img{width: 90%;}
+#oncapdepera-fitxa .sec2 {margin: 0px 0 18px 5px;}
+#oncapdepera-fitxa .sec3 {margin-bottom: 5%;}
+#oncapdepera-fitxa .sec3 .bold {color: #b04960;font-weight: 600;font-size: 18px;}
+#oncapdepera-fitxa .sec3 .bold-c {color: #da7d31;font-weight: 600;font-size: 18px;}
+#oncapdepera-fitxa .sec4 {margin-top: 18px;}
+#oncapdepera-fitxa .sec4 p{font-weight: 600; margin-bottom: 0px; margin-top: 0px;}
+#oncapdepera-fitxa .sec5 {margin: 18px 5%;}
+#oncapdepera-fitxa .sec6 {margin: 20px 0 20px 0;}
+#oncapdepera-fitxa .ini {text-align: left; color: #b04960;}
+#oncapdepera-fitxa .fi {text-align: right; color: #b04960;}
+#oncapdepera-fitxa .ini-c {text-align: left; color: #da7d31;}
+#oncapdepera-fitxa .fi-c {text-align: right; color: #da7d31;}
+#oncapdepera-fitxa .ttl{font-weight:600;}
+#oncapdepera-fitxa .grey{background: #f4f4f4; text-align: center;}
+#oncapdepera-fitxa .grey .dif {background:url('http://www.oncapdepera.com/images/icons/sprite.svg'); height: 40px; background-size: 200%; background-position: 10px -20px; margin: 5% 0 0 0;}
+#oncapdepera-fitxa .grey .dist {background:url('http://www.oncapdepera.com/images/icons/sprite.svg'); height: 40px; background-size: 200%; background-position: 10px -225px; margin: 5% 0 0 0;}
+#oncapdepera-fitxa .grey .dur {background:url('http://www.oncapdepera.com/images/icons/sprite.svg'); height: 40px; background-size: 200%; background-position: 10px -270px; margin: 5% 0 0 0;}
+#oncapdepera-fitxa .img-desnivell img {margin: 2%; width: 96%;}
+#oncapdepera-fitxa .interest{display: inline-block; width: 30%;margin-bottom: 60px;}
+#oncapdepera-fitxa .interest .text_interest_cont {text-align: center;}
+#oncapdepera-fitxa .interest .interest_img{background-image: url('http://www.oncapdepera.com/images/icons/leyenda.png');width: 75px; height: 75px; background-repeat: no-repeat;margin-left:calc((100% - 75px)/2);background-size: 700% auto;float: left;}
+#oncapdepera-fitxa .interest .interest_text {width: 100%;font-size: 14px;height: 50px;padding-top: 10px;margin-top: 80px;}
+#oncapdepera-fitxa #interest_5 .interest_img {background-position-x: 0%;}
+#oncapdepera-fitxa #interest_1 .interest_img {background-position-x: 16.5%;}
+#oncapdepera-fitxa #interest_4 .interest_img {background-position-x: 33.25%;}
+#oncapdepera-fitxa #interest_3 .interest_img {background-position-x: 50%;}
+#oncapdepera-fitxa #interest_6 .interest_img {background-position-x: 66.5%;}
+#oncapdepera-fitxa #interest_2 .interest_img {background-position-x: 83.25%;}
+#oncapdepera-fitxa #interest_7 .interest_img {background-position-x: 99.75%;}
+#oncapdepera-fitxa .link {border-right-style: solid;border-right-width: thin;border-left-style: solid;border-left-width: thin;text-align: center;}
+#oncapdepera-fitxa .link{background: url(../icons/spriteoncdphome.svg) no-repeat scroll 0 0px transparent;background-position:-3vh -37vh;content: " ";display: block;position: absolute;width: 100%;height: 12vh;top: 0vh; left: 0vh; background-size: 100vh; padding: 20px; padding-bottom: 80px;}
+#oncapdepera-fitxa .link span {position: relative;top: 20px;color:#000;}
+#oncapdepera-fitxa .link-c {border-right-style: solid;border-right-width: thin;border-left-style: solid;border-left-width: thin;text-align: center;}
+#oncapdepera-fitxa .link-c{background: url(../icons/spriteoncdphome.svg) no-repeat scroll 0 0px transparent;background-position:2vh -37vh;content: " ";display: block;position: absolute;width: 100%;height: 12vh;top: 0vh; left: 0vh; background-size: 100vh; padding: 50px; padding-bottom: 70px;}
+#oncapdepera-fitxa .link-c span {position: relative;top: 0vh;color:#000;}
 
 /*incidencia*/
 #oncapdepera-incidencia {    background: #f9f9f9;}
@@ -408,6 +457,16 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #oncapdepera-serveis .nav-tabs > li > a{background:transparent; border: none; margin:0; border-radius: 0; padding: 0; text-align: center;opacity: 0.5;}
 #oncapdepera-serveis .nav-tabs > li.active > a{opacity: 1;}
 #oncapdepera-serveis #page-mercats.servei-contingut span{text-transform: none;}
+
+/*######## RESERVA MARINA ################*/
+#oncaddepera-reserva .oncapdepera.header {background: #83a0b0}
+#oncapdepera-reserva{text-shadow:none;}
+#oncapdepera-reserva h2 {font-weight: 100; margin-right: 100px;font-size: 25px;text-transform: uppercase;color: #040700;margin: 30px 5% 15px;padding: 0;font-family: 'Lato', sans-serif;}
+#oncapdepera-reserva h4 {font-weight: 100; margin-right: 100px;font-size: 18px;color: #858585; margin: 0px 5% 15px; padding: 0;}
+#oncapdepera-reserva p {font-size: 18px; margin: 18px 5%; padding: 0; color: #040700; font-family: 'Lato', sans-serif; font-weight: 300; line-height: 23px;}
+#oncapdepera-reserva .link {border-right-style: solid;border-right-width: thin;border-left-style: solid;border-left-width: thin;text-align: center;}
+#oncapdepera-reserva .link{background: url(../icons/spriteoncdphome.svg) no-repeat scroll 0 0px transparent;background-position: -3vh -35vh;content: " "; display: block;position: absolute;width: 18vh;height: 10vh;top: 0vh;left: 0vw; background-size: 100vh; padding: 60px;}
+#oncapdepera-reserva .link span {position: absolute;left: 0px;color:#000;}
 
 /*######## ESPORTS I MUSICA #############*/
 .info-turisme.esports .header{background:#c33538;}
