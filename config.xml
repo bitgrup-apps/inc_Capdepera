@@ -73,18 +73,10 @@
     </feature> 
     <feature name="http://api.phonegap.com/1.0/geolocation"/>
     <feature name="http://api.phonegap.com/1.0/file"/>
-	
-	
-    <gap:platform name="ios" />
-    <gap:platform name="android">
-        <allow-intent href="market:*" />
-        <resource-file src="google-services.json" target="app/google-services.json" />
-    </gap:platform>
     
     <engine name="android" spec="~7.0.0" />
     <engine name="ios" spec="~4.5.4" />
-	
-	
+		
     <access origin="*://*.googleapis.com/*" subdomains="true" />
     <access origin="*://*.gstatic.com/*" subdomains="true" />
     <access origin="*://*.google.com/*" subdomains="true" />
@@ -141,6 +133,7 @@
     <!-- ANDROID -->
     <platform name="android">
         <allow-intent href="market:*" />
+        <resource-file src="google-services.json" target="app/google-services.json" />
     </platform>    
     <icon src="icons/icoapp/Android/res/drawable/icon.png" platform="android"/>
     <icon src="icons/icoapp/Android/res/drawable-ldpi/icon.png" platform="android" qualifier="ldpi" />
