@@ -2,7 +2,7 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.incCapdepera.bitgrup"
-        version   = "3.3.2">
+        version   = "3.3.3">
 	
 	
     <name>OnCapdepera</name>
@@ -39,7 +39,7 @@
     <preference name="android-build-tool" value="gradle" /> 
     <preference name="android-targetSdkVersion"  value="26" />
     <preference name="android-minSdkVersion" value="21" />
-    <preference name="deployment-target" value="9.2" />
+    <preference name="deployment-target" value="9.0" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="UIWebViewBounce" value="false" />
 
@@ -111,7 +111,7 @@
     <icon src="icons/icoapp/iOS/Resources/icons/Icon-76@2x.png" gap:platform="ios" width="152" height="152" />
     <icon src="icons/icoapp/iOS/Resources/icons/Icon-167.png" gap:platform="ios" width="167" height="167" />
     <icon src="icons/icoapp/iOS/Resources/icons/Icon-60@3x.png" gap:platform="ios" width="180" height="180" />
-    <!--icon src="icons/icoapp/iOS/Resources/icons/Icon-1024.png" width="1024" height="1024" /-->
+    <icon src="icons/icoapp/iOS/Resources/icons/Icon-1024.png" gap:platform="ios" width="1024" height="1024" />
 	
     <gap:splash src="icons/icoapp/iOS/Resources/splash/Default-568h@2x~iphone_640x1136.png"              gap:platform="ios" width="640" height="1136" />
     <gap:splash src="icons/icoapp/iOS/Resources/splash/Default-750@2x~iphone6-landscape_1334x750.png"    gap:platform="ios" width="1334" height="750" />

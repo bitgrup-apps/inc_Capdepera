@@ -36,7 +36,7 @@ a:hover,a:active, a:focus{text-decoration:none;opacity:0.7;}
 
 #loading{position:fixed; z-index:10; display:none; width:100%; height:100%; background-image:url('../icons/loading.gif'); background-color:rgba(256,256,256,0.7); background-size:19vw auto; background-position:center center; background-repeat:no-repeat;}
 
-
+.iconaPetita {zoom:0.5; -moz-transform:scale(0.5);-moz-transform-origin: 0 0;}
 
 /*######## TITOLS ##########*/
 h1{color:#fff; font-size:48px; text-align:center; font-weight:700; text-shadow:none; margin-top:30px;}
@@ -52,6 +52,8 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 .ui-header.ui-header .refresh{background-image:url('../icons/refresh.png'); right:12%; margin-top:9px;}
 .icon.ico-play{width:17vw; height:17vw; background-image: url('../icons/play.svg'); background-size: 15vw;top: 1.4vw;left: 1.4vw;}
 .icon.ico-play.ico-stop{background-image: url('../icons/stop.svg');}
+.icona.sug {background-image:url('../icons/conversation.svg'); background-position: 15px , 0;background-size: 35px 35px;background-repeat: no-repeat;background-color: #789130;}
+.icona.cinema {background-image:url('../icons/clapperboard.svg'); background-position: 15px , 0;background-size: 35px 35px;background-repeat: no-repeat;}
 
 
 /*######## MAPA ###################*/
@@ -63,17 +65,17 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #home-nou .logo{margin-bottom: 16vw;}
 #home-nou .pastilla{padding: 20vw 2vw 5vw 0vw; text-align: center; font-size: 3.5vw; color:#fff; font-weight: 500; text-shadow:none;display: inline-block; width: 110%; text-transform: uppercase;background-size: cover; background-position: center; background-repeat: no-repeat;}
 #home-nou .pastilla::before{position:absolute; width:20vw; height: 20vw; background-image: url(../icons/spriteoncdphome.svg); background-size: 200vw; content: " ";top: 2.5vw;left: 9.5vw;}
-#home-nou .pastilla.oncpd{border-style: solid; border-width: 0px 1px 1px 0px;}
+#home-nou .pastilla.oncpd{border-style: solid; border-width: 0px 0px 0px 1px;}
 #home-nou .pastilla.oncpd::before{background-position:-18vw -12vw;}
 #home-nou .pastilla.esdevn{border-style: solid; border-width: 0px 0px 1px 1px;}
 #home-nou .pastilla.esdevn::before{background-position:-85vw -12vw;}
 #home-nou .pastilla.sprts{border-style: solid; border-width: 0px 1px 1px 0px;}
 #home-nou .pastilla.sprts::before{background-position:-120vw -12vw;}
-#home-nou .pastilla.notc{border-style: solid; border-width: 0px 0px 1px 0px;}
+#home-nou .pastilla.notc{border-style: solid; border-width: 0px 1px 0px 0px;}
 #home-nou .pastilla.notc::before{background-position:-49vw -12vw;}
-#home-nou .pastilla.incd{border-style: solid; border-width: 0px 1px 0px 0px;padding-bottom: 10vw;}
+#home-nou .pastilla.incd{border-style: solid; border-width: 0px 1px 1px 0px;}
 #home-nou .pastilla.incd::before{background-position:-19vw -39vw;}
-#home-nou .pastilla.msca{border-style: solid; border-width: 0px 0px 1px 1px;}
+#home-nou .pastilla.msca{border-style: solid; border-width: 0px 0px 1px 0px;}
 #home-nou .pastilla.msca::before{background-position:-76vw -39vw;}
 /*#home-nou .pastilla.rdio{background-color: #d4df86;background-color: #d4df86;padding: 15px 20px;border-radius: 10px;margin-top:20px;}
 #home-nou .pastilla.rdio::before{background-position: -88vw -96vw;background-size: 110vw;width: 12vw;height: 12vw;left: 4vw;}
@@ -90,8 +92,12 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #home-nou .pastilla.ciclisme::before{background-position:-130vw -39vw;}
 #home-nou .pastilla.buida{border-style: solid; border-width: 0px 0px 0px 1px; padding-bottom: 10vw;}
 #home-nou .pastilla.buida::before{background-image: none}
-#home-nou .pastilla.reserva{border-style: solid; border-width: 0px 0px 0px 1px;}
-#home-nou .pastilla.reserva::before{background-position:-164vw -40vw;}
+#home-nou .pastilla.reserva{border-style: solid; border-width: 0px 0px 1px 1px;}
+/*#home-nou .pastilla.reserva::before{background-position:-164vw -40vw;}*/
+#home-nou .past{padding: 20vw 2vw 5vw 0vw; text-align: center; font-size: 3.5vw; color:#fff; font-weight: 500; text-shadow:none;display: inline-block; width: 110%; text-transform: uppercase;background-size: cover; background-position: center; background-repeat: no-repeat;}
+#home-nou .past::before{position:absolute; width:20vw; height: 20vw; background-image: url(../icons/clapperboard.svg); content: " ";top: 8.5vw;left: 10.5vw;background-repeat: no-repeat;background-size: 30px 30px;}
+#home-nou .past.reserva::before{background-position: 0px 0px;}
+#home-nou .past.reserva {border-style: solid; border-width: 0px 0px 1px 1px;}
 #home-nou .ui-content > a:first-child{position:absolute; right: 10px; top: 10px; width:10vw; height: 10vw; background-image: url(../icons/sprite_info_turisme.svg); background-size: 115vw; background-position: -91vw -115.5vw;z-index: 99;}
 #home-nou .ui-content > .col-xs-6{padding: 0.5vw;}
 #login_home{display:none;} 
@@ -367,6 +373,7 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #oncapdepera-home .menu > span:nth-child(2){padding:4vw 0 1.5vw 3vw; float: left;}
 #oncapdepera-home .menu span{font-size: 6.5vw; color:#fff; text-shadow:none;text-align: left;}
 #oncapdepera-home .visites{background-color: #008841; background-position: 2.25px 2.5vw;}
+#oncapdepera-home .res{background-color: #008841; background-position: -161vw -41vw;}
 #oncapdepera-home .festes{background-color: #95a543; background-position: -16vw 2.5vw;}
 #oncapdepera-home .serveis{background-color: #789130; background-position: -31.75vw 2vw;}
 #oncapdepera-home .nuclis{background-color: #ced424; background-position: -48vw 2.5vw;}
@@ -376,7 +383,10 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #oncapdepera-home .menu.doble{min-height: 99px;padding: 3vw 5vw 3vw 20vw;}
 #oncapdepera-home .menu.doble > span:nth-child(2){padding-top: 0;padding-bottom: 0;}
 #oncapdepera-home .menu .sub-menu li{list-style: none; text-shadow:none; color:#aeadb3; font-size: 22px; padding:15px 0;font-weight: 400; background-image: url('../icons/li-menu.png'); background-size: 1.75vw auto; background-position: right center; background-repeat: no-repeat;}
-
+/*#oncapdepera-home .ico{padding: 20vw 2vw 5vw 0vw; text-align: center; font-size: 3.5vw; color:#fff; font-weight: 500; text-shadow:none;display: inline-block; width: 110%; text-transform: uppercase;background-size: cover; background-position: center; background-repeat: no-repeat;}*/
+#oncapdepera-home .ico{width:20vw; height: 20vw; background-image: url(../icons/spriteoncdphome.svg); background-size: 200vw; content: " ";top: 2.5vw;left: 9.5vw;}
+/*#oncapdepera-home .pastilla.reserva{border-style: solid; border-width: 0px 0px 0px 1px;}*/
+#oncapdepera-home .ico .res{background-position:-164vw -40vw;}
 
 /*fitxa*/
 /*#oncapdepera-fitxa{background:#fff;}
@@ -434,6 +444,10 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #oncapdepera-incidencia .ui-btn:hover{background:#fff; color:#384981; }
 #oncapdepera-incidencia{background-color:#f9f9f9;}
 #oncapdepera-ubicacio.ui-page{background:none;}
+
+/*sugerencia*/
+
+#oncapdepera-sugerencia textarea{height: 100px !important;}
 
 /*serveis*/
 #oncapdepera-serveis .ui-content{background:#fff;}
@@ -515,6 +529,18 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #llista-esdeveniments .span-esd.mes-esd{font-weight: 400;font-size: 3.5vw;padding-top: 3vw;}
 #llista-esdeveniments .span-esd.dia-esd{font-weight: 700;font-size: 9vw;line-height: 9vw;}
 #llista-esdeveniments .img_2{background-size: cover;background-position: center;background-repeat: no-repeat;height: 24vw;}
+
+/*Cine*/
+#cine-home .ui-content{background:#3f3f3e}
+#llista-cine > div{padding:0; color:#fff; font-size:5vw; font-weight: 700; border-bottom: 2px solid #fff; text-shadow:none;height: 24vw;}
+#llista-cine > div.cine::before{background-position: -6.5vw -1.5vw;}
+#llista-cine > div.teatre::before{background-position: -6.5vw -16.4vw;}
+#llista-cine > div > div:nth-child(2){padding:8vw 5px 8vw 15px;}
+#llista-cine > div > div:last-child{background:#656565;height: 100%; text-align: center;}
+#llista-cine .span-esd{width:100%; display: inline-block;}
+#llista-cine .span-esd.mes-esd{font-weight: 400;font-size: 3.5vw;padding-top: 3vw;}
+#llista-cine .span-esd.dia-esd{font-weight: 700;font-size: 9vw;line-height: 9vw;}
+#llista-cine .img_2{background-size: cover;background-position: center;background-repeat: no-repeat;height: 24vw;}
 
 /*fitxa*/
 #esdeveniments-fitxa.fitxa h1{font-size: 6vw;}

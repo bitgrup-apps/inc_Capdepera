@@ -241,6 +241,17 @@ var init = {
                 $('#img_esdev').css('background-image', 'url(http://www.oncapdepera.com/panel/img/eventos/' + resp.img + ')');
                 $.mobile.changePage("#esdeveniments-fitxa", {transition: "slide"});
             }
+        },
+        getCine: function() {
+            var formData = new FormData();
+            formData.append('funcio', 'getCine');
+            formData.append('lang', init.lang);
+            var resp = init.sendAjax(formData, init.esdeveniments.file, true);
+            if (resp.error == 0) {
+                $('#llista-cine').html(resp.str);
+                $.mobile.changePage("#cine-home", {transition: "slide"});
+            }
+//            init.sendEstadistica('agenda');
         }
     },
     reservaMarina: {
@@ -463,6 +474,44 @@ var init = {
             $.mobile.changePage("#oncapdepera-ubicacio");
         }
     },
+    
+    sugerencia: {
+       file: 'oncapdepera.class.php',
+       enviaSugerencia: function () {
+            var formData = new FormData($('#form-sugerencia')[0]);
+                    formData.append('lang', init.lang);
+                    var resp = init.sendAjax(formData, init.incidencia.file, true);
+                    if (resp.error == 0) {
+                        init.areYouSure(jQuery.i18n.prop('msg_sugerencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
+                        init.sugerencia.reset();
+                    }
+       },
+       onFail: function (message) {
+            $('#loading').css('display', 'none');
+            init.error_('E 611', 'ERROR ENVIANT INCIDENCIA', message);
+        },
+        win: function (data) {
+            $('#loading').css('display', 'none');
+            try {
+                var resposta = JSON.parse(data.response);
+                if (resposta.error == '1') {
+                    init.error_('E FUNCTIONS-405', data.response, resposta.str);
+                } else {
+                    init.areYouSure(jQuery.i18n.prop('msg_sugerencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
+                   // init.incidencia.reset();
+                }
+            } catch (e) {
+                init.error_('E 416', data, e);
+            }
+        },
+        reset: function () {
+            $('#email').val('');
+            $('#sugerencia').val('');
+           
+
+        },
+    },
+    
     incidencia: {
         file: 'oncapdepera.class.php',
         enviaIncidencia: function () {
@@ -486,6 +535,7 @@ var init = {
                             longitutIncidenciaOnCap: document.getElementById("longitutIncidenciaOnCap").value,
                             latitutIncidenciaOnCap: document.getElementById("latitutIncidenciaOnCap").value,
                             email: document.getElementById("emailOnCap").value,
+                            categoria: document.getElementById("valorCategoria").value,
                             name: 'imgIncidenciaOnCap',
                             funcio: 'novaIncidenciaOnCap'
                         };
@@ -644,7 +694,7 @@ var init = {
         console.log(error);
         init.areYouSure(jQuery.i18n.prop('msg_alert_4'), jQuery.i18n.prop('msg_acceptar'), function () {});
     }
-}
+};
 
 
 
