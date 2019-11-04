@@ -520,6 +520,7 @@ var init = {
                 if (imageURI === 'images/no-img-3.jpg') {
                     var formData = new FormData($('#form-incidenciaOnCap')[0]);
                     formData.append('lang', init.lang);
+                    formData.append('funcio', 'novaIncidenciaOnCap');
                     var resp = init.sendAjax(formData, init.incidencia.file, true);
                     if (resp.error == 0) {
                         init.areYouSure(jQuery.i18n.prop('msg_incidencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
@@ -590,14 +591,15 @@ var init = {
     },
     
     incidenciaDB: {
-        file: 'incidencies.php',
+        file: 'oncapdepera.class.php',
         enviaIncidenciaDB: function () {
             if ($('#assumpteOnCap').val() != '') {
                 var imageURI = document.getElementById('imgIncidenciaOnCap').getAttribute("src");
                 if (imageURI === 'images/no-img-3.jpg') {
                     var formData = new FormData($('#form-incidenciaOnCap')[0]);
                     formData.append('lang', init.lang);
-                    var resp = init.sendAjax(formData, init.incidencia.file, true);
+                    formData.append('funcio', 'novaIncidenciaDB');
+                    var resp = init.sendAjax(formData, init.incidenciaDB.file, true);
                     if (resp.error == 0) {
                         init.areYouSure(jQuery.i18n.prop('msg_incidencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
                         init.incidencia.reset();
@@ -614,7 +616,7 @@ var init = {
                             email: document.getElementById("emailOnCap").value,
                             categoria: document.getElementById("valorCategoria").value,
                             name: 'imgIncidenciaOnCap',
-                            funcio: 'novaIncidencia'
+                            funcio: 'novaIncidenciaDB'
                         };
                         var options = new FileUploadOptions();
                         options.fileKey = "imgIncidenciaOnCap";
