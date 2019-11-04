@@ -4,6 +4,7 @@ var init = {
 
     urlFunctions: 'http://gestcap.com/gestio/App/part-turistica/',
     lang: 'es',
+    ipA: '',
 
     initApp: function () {
         init.initLangs();
@@ -590,13 +591,14 @@ var init = {
         }
     },
     
+  
+    
     incidenciaDB: {
         file: 'oncapdepera.class.php',
-        enviaIncidenciaDB: function () {
-            var ipA='';
-//            networkinterface.getIPAddress((ip) => {
-//            ipA = ip;
-//            });
+        enviaIncidenciaDB: function () {            
+        networkinterface.getWiFiIPAddress( function(ipInformation){init.ipA = ipInformation.ip;}, function(){} );
+            
+            
             if ($('#assumpteOnCap').val() != '') {
                 var imageURI = document.getElementById('imgIncidenciaOnCap').getAttribute("src");
                 if (imageURI === 'images/no-img-3.jpg') {
