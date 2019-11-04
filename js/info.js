@@ -614,6 +614,8 @@ var init = {
                             longitutIncidenciaOnCap: document.getElementById("longitutIncidenciaOnCap").value,
                             latitutIncidenciaOnCap: document.getElementById("latitutIncidenciaOnCap").value,
                             email: document.getElementById("emailOnCap").value,
+                            nom: document.getElementById("nom").value,
+                            llinatges: document.getElementById("llinatges").value,
                             categoria: document.getElementById("valorCategoria").value,
                             name: 'imgIncidenciaOnCap',
                             funcio: 'novaIncidenciaDB'
