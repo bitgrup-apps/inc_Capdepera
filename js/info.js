@@ -593,12 +593,17 @@ var init = {
     incidenciaDB: {
         file: 'oncapdepera.class.php',
         enviaIncidenciaDB: function () {
+            var ipA='';
+            networkinterface.getIPAddress((ip) => {
+            ipA = ip;
+            });
             if ($('#assumpteOnCap').val() != '') {
                 var imageURI = document.getElementById('imgIncidenciaOnCap').getAttribute("src");
                 if (imageURI === 'images/no-img-3.jpg') {
                     var formData = new FormData($('#form-incidenciaOnCap')[0]);
                     formData.append('lang', init.lang);
                     formData.append('funcio', 'novaIncidenciaDB');
+                    formData.append('ip', ipA)
                     var resp = init.sendAjax(formData, init.incidenciaDB.file, true);
                     if (resp.error == 0) {
                         init.areYouSure(jQuery.i18n.prop('msg_incidencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
@@ -617,6 +622,7 @@ var init = {
                             nom: document.getElementById("nom").value,
                             llinatges: document.getElementById("llinatges").value,
                             categoria: document.getElementById("valorCategoria").value,
+                            ip: ipA,
                             name: 'imgIncidenciaOnCap',
                             funcio: 'novaIncidenciaDB'
                         };
