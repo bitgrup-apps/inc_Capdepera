@@ -588,6 +588,84 @@ var init = {
             onMapInit();
         }
     },
+    
+    incidenciaDB: {
+        file: 'incidencies.php',
+        enviaIncidenciaDB: function () {
+            if ($('#assumpteOnCap').val() != '') {
+                var imageURI = document.getElementById('imgIncidenciaOnCap').getAttribute("src");
+                if (imageURI === 'images/no-img-3.jpg') {
+                    var formData = new FormData($('#form-incidenciaOnCap')[0]);
+                    formData.append('lang', init.lang);
+                    var resp = init.sendAjax(formData, init.incidencia.file, true);
+                    if (resp.error == 0) {
+                        init.areYouSure(jQuery.i18n.prop('msg_incidencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
+                        init.incidencia.reset();
+                    }
+                } else {
+                    try {
+                        var parametros = {
+                            adresaIncidenciaOnCap: document.getElementById("adresaIncidenciaOnCap").value,
+                            poblacioIncidenciaOnCap: document.getElementById("poblacioIncidenciaOnCap").value,
+                            assumpte: document.getElementById("assumpteOnCap").value,
+                            descripcio: document.getElementById("descripcioOnCap").value,
+                            longitutIncidenciaOnCap: document.getElementById("longitutIncidenciaOnCap").value,
+                            latitutIncidenciaOnCap: document.getElementById("latitutIncidenciaOnCap").value,
+                            email: document.getElementById("emailOnCap").value,
+                            categoria: document.getElementById("valorCategoria").value,
+                            name: 'imgIncidenciaOnCap',
+                            funcio: 'novaIncidencia'
+                        };
+                        var options = new FileUploadOptions();
+                        options.fileKey = "imgIncidenciaOnCap";
+                        options.fileName = 'imgIncidenciaOnCap';
+                        options.mimeType = "image/jpeg";
+                        options.chunkedMode = false;
+                        options.params = parametros;
+                        var ft = new FileTransfer();
+                        ft.onprogress = function (progressEvent) {
+                            $('#loading').css('display', 'table');
+                        };
+                        ft.upload(imageURI, encodeURI(init.urlFunctions + init.incidencia.file), init.incidencia.win, init.incidencia.onFail, options);
+                    } catch (e) {
+                        $('#loading').css('display', 'none');
+                        init.error_('E 395', 'ERROR ENVIANT INCIDENCIA', e);
+                    }
+                }
+            }
+
+            return false;
+        },
+        onFail: function (message) {
+            $('#loading').css('display', 'none');
+            init.error_('E 611', 'ERROR ENVIANT INCIDENCIA', message);
+        },
+        win: function (data) {
+            $('#loading').css('display', 'none');
+            try {
+                var resposta = JSON.parse(data.response);
+                if (resposta.error == '1') {
+                    init.error_('E FUNCTIONS-405', data.response, resposta.str);
+                } else {
+                    init.areYouSure(jQuery.i18n.prop('msg_incidencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
+                    init.incidencia.reset();
+                }
+            } catch (e) {
+                init.error_('E 416', data, e);
+            }
+        },
+        reset: function () {
+            $('#emailOnCap').val('');
+            $('#assumpteOnCap').val('');
+            $('#descripcioOnCap').val('');
+            $('#imgIncidenciaOnCap').attr('src', 'images/no-img-3.jpg');
+
+        },
+        getNovaPosicio: function () {
+            onMapInit();
+        }
+    },
+    
     img: {
         getImg: function () {
             navigator.camera.getPicture(init.img.onSuccess, init.img.onFail, {
