@@ -594,9 +594,9 @@ var init = {
         file: 'oncapdepera.class.php',
         enviaIncidenciaDB: function () {
             var ipA='';
-            networkinterface.getIPAddress((ip) => {
-            ipA = ip;
-            });
+//            networkinterface.getIPAddress((ip) => {
+//            ipA = ip;
+//            });
             if ($('#assumpteOnCap').val() != '') {
                 var imageURI = document.getElementById('imgIncidenciaOnCap').getAttribute("src");
                 if (imageURI === 'images/no-img-3.jpg') {
