@@ -596,7 +596,7 @@ var init = {
     incidenciaDB: {
         file: 'oncapdepera.class.php',
         enviaIncidenciaDB: function () {            
-        networkinterface.getWiFiIPAddress( function(ipInformation){init.ipA = ipInformation.ip;}, function(){} );
+//        networkinterface.getWiFiIPAddress( function(ipInformation){init.ipA = ipInformation.ip;}, function(){} );
             
             
             if ($('#assumpteOnCap').val() != '') {
