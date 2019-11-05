@@ -63,6 +63,7 @@
     <gap:plugin name="cordova-plugin-device"  source="npm" />
     <gap:plugin name="cordova-plugin-inappbrowser" source="npm" spec="3.0.0"/>
     <gap:plugin name="cordova-plugin-background-audio"  source="npm"/>
+    <plugin name="cordova-plugin-networkinterface" source="npm" />
     
     
 
