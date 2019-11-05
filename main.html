@@ -807,21 +807,13 @@
                             <label class="literal" data-literal="msg_form_6">Població</label><input  id="poblacioIncidenciaOnCap" name="poblacioIncidenciaOnCap" value="">
                         </div>
                         <div class="col-xs-12">
-                            <button id="botoIncidencia" type="button"  class="boto">Enviar</button> <!-- onclick="init.incidencia.enviaIncidencia();init.incidenciaDB.enviaIncidenciaDB();" -->
+                            <button id="botoIncidencia" type="button" onclick="init.incidencia.enviaIncidencia();" class="boto">Enviar</button>
                         </div>
                         <input type="hidden" id="valorCategoria" name="categoria" value="">
                         <input type="hidden" id="latitutIncidenciaOnCap" name="latitutIncidenciaOnCap" value="">
                         <input type="hidden" id="longitutIncidenciaOnCap" name="longitutIncidenciaOnCap" value="">
 <!--                        <input type="hidden" id="funcio" name="funcio" value="novaIncidenciaOnCap">-->
-                    </form>
-                    <script>
-                        $('#botoIncidencia').on('click',function(){
-                            init.incidencia.enviaIncidencia();                            
-                        });
-                        $('#botoIncidencia').on('click',function(){
-                            init.incidenciaDB.enviaIncidenciaDB();                            
-                        });
-                        </script>
+                    </form>                   
                 </div>
             </div>
         </div>
