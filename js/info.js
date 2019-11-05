@@ -590,21 +590,26 @@ var init = {
             onMapInit();
         }
     },
+    
+    getIp: function() {
+      networkinterface.getWiFiIPAddress( onSuccess, onError );  
+    },
+    
     onSucces: function(ipInformation){
         init.ipA = ipInformation.ip;
     },
     
     onError: function() {
-        
+        console.log('error ip');
     },
   
     
     incidenciaDB: {
         file: 'oncapdepera.class.php',
         enviaIncidenciaDB: function () {            
-       // networkinterface.getWiFiIPAddress( onSucces, onError);
-//       networkinterface = new networkinterface();
-       networkinterface.getIPAddress(function (ip) { init.ipA = ip; });     
+           init.getIp();
+
+       
             
             if ($('#assumpteOnCap').val() != '') {
                 var imageURI = document.getElementById('imgIncidenciaOnCap').getAttribute("src");
