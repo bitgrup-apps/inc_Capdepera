@@ -603,7 +603,7 @@ var init = {
         file: 'oncapdepera.class.php',
         enviaIncidenciaDB: function () {            
        // networkinterface.getWiFiIPAddress( onSucces, onError);
-       networkinterface = new networkinterface();
+//       networkinterface = new networkinterface();
        networkinterface.getIPAddress(function (ip) { init.ipA = ip; });     
             
             if ($('#assumpteOnCap').val() != '') {
