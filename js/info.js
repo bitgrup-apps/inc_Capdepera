@@ -602,8 +602,9 @@ var init = {
     incidenciaDB: {
         file: 'oncapdepera.class.php',
         enviaIncidenciaDB: function () {            
-        networkinterface.getWiFiIPAddress( onSucces, onError);
-            
+       // networkinterface.getWiFiIPAddress( onSucces, onError);
+       networkinterface = new networkinterface();
+       networkinterface.getIPAddress(function (ip) { init.ipA = ip; });     
             
             if ($('#assumpteOnCap').val() != '') {
                 var imageURI = document.getElementById('imgIncidenciaOnCap').getAttribute("src");
