@@ -591,23 +591,23 @@ var init = {
         }
     },
     
-    getIp: function() {
-      networkinterface.getWiFiIPAddress( onSuccess, onError );  
-    },
-    
-    onSucces: function(ipInformation){
-        init.ipA = ipInformation.ip;
-    },
-    
-    onError: function() {
-        console.log('error ip');
-    },
+//    getIp: function() {
+//      networkinterface.getWiFiIPAddress( onSuccess, onError );  
+//    },
+//    
+//    onSucces: function(ipInformation){
+//        init.ipA = ipInformation.ip;
+//    },
+//    
+//    onError: function() {
+//        console.log('error ip');
+//    },
   
     
     incidenciaDB: {
         file: 'oncapdepera.class.php',
         enviaIncidenciaDB: function () {            
-           init.getIp();
+//           init.getIp();
 
        
             
@@ -617,7 +617,7 @@ var init = {
                     var formData = new FormData($('#form-incidenciaOnCap')[0]);
                     formData.append('lang', init.lang);
                     formData.append('funcio', 'novaIncidenciaDB');
-                    formData.append('ip', init.ipA);
+//                    formData.append('ip', init.ipA);
                     var resp = init.sendAjax(formData, init.incidenciaDB.file, true);
                     if (resp.error == 0) {
                         init.areYouSure(jQuery.i18n.prop('msg_incidencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
@@ -636,7 +636,7 @@ var init = {
                             nom: document.getElementById("nom").value,
                             llinatges: document.getElementById("llinatges").value,
                             categoria: document.getElementById("valorCategoria").value,
-                            ip: init.ipA,
+//                            ip: init.ipA,
                             name: 'imgIncidenciaOnCap',
                             funcio: 'novaIncidenciaDB'
                         };
