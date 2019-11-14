@@ -217,6 +217,26 @@ var init = {
         }
 
     },
+    
+    cine: {
+        file: 'esdeveniments.class.php',
+        init: function () {
+            init.cine.menu();
+            init.sendEstadistica('noticies');
+        },
+        menu: function() {
+            init.sendEstadistica('cinema');
+            var formData = new FormData();
+            formData.append('funcio', 'getCine');
+            formData.append('lang', init.lang);
+            var resp = init.sendAjax(formData, init.esdeveniments.file, true);
+            if (resp.error == 0) {
+                $('#llista-cine').html(resp.str);
+                $.mobile.changePage("#cine-home", {transition: "slide"});
+            }
+        }  
+    },
+    
     esdeveniments: {
         file: 'esdeveniments.class.php',
 
@@ -243,17 +263,7 @@ var init = {
                 $.mobile.changePage("#esdeveniments-fitxa", {transition: "slide"});
             }
         },
-        getCine: function() {
-            var formData = new FormData();
-            formData.append('funcio', 'getCine');
-            formData.append('lang', init.lang);
-            var resp = init.sendAjax(formData, init.esdeveniments.file, true);
-            if (resp.error == 0) {
-                $('#llista-cine').html(resp.str);
-                $.mobile.changePage("#cine-home", {transition: "slide"});
-            }
-//            init.sendEstadistica('agenda');
-        }
+        
     },
     reservaMarina: {
         menuOk: false,
