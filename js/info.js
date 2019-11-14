@@ -691,7 +691,7 @@ var init = {
         reset: function () {
             $('#emailOnCap').val('');
             $('#assumpteOnCap').val('');
-            $('#descripcioOnCap').val('');
+            $('#descripcioOnCap').val('');          
             $('#imgIncidenciaOnCap').attr('src', 'images/no-img-3.jpg');
 
         },
