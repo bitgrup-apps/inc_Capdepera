@@ -494,7 +494,7 @@ var init = {
                     var resp = init.sendAjax(formData, init.incidencia.file, true);
                     if (resp.error == 0) {
                         init.areYouSure(jQuery.i18n.prop('msg_sugerencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
-                  //      init.sugerencia.reset();
+                        init.sugerencia.reset();
 
                         
                     }
@@ -522,7 +522,7 @@ var init = {
             $('#sugerencia').val('');
            
 
-        },
+        }
     },
     
     incidencia: {
