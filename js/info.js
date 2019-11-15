@@ -489,8 +489,11 @@ var init = {
     sugerencia: {
        file: 'oncapdepera.class.php',
        enviaSugerencia: function () {
-            var formData = new FormData($('#form-sugerencia')[0]);
-                    formData.append('lang', init.lang);
+            var formData = new FormData(); //$('#form-sugerencia')[0]
+          formData.append('email' ,document.getElementById("emailSugerencia").value);
+          formData.append('sugerencia' ,document.getElementById("sugerencia").value);
+          formData.append('lang', init.lang);
+          formData.append('funcio', 'novaSugerenciaOnCap');
                     var resp = init.sendAjax(formData, init.incidencia.file, true);
                     if (resp.error == 0) {
                         init.areYouSure(jQuery.i18n.prop('msg_sugerencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
