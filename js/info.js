@@ -487,45 +487,45 @@ var init = {
     },
     
     sugerencia: {
-//       file: 'oncapdepera.class.php',
-//       enviaSugerencia: function () {
-//            var formData = new FormData(); //$('#form-sugerencia')[0]
-//          formData.append('email' ,document.getElementById("emailSugerencia").value);
-//          formData.append('sugerencia' ,document.getElementById("sugerencia").value);
-//          formData.append('lang', init.lang);
-//          formData.append('funcio', 'novaSugerenciaOnCap');
-//                    var resp = init.sendAjax(formData, init.incidencia.file, true);
-//                    if (resp.error == 0) {
-//                        init.areYouSure(jQuery.i18n.prop('msg_sugerencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
-//                        init.sugerencia.reset();
-//
-//                        
-//                    }
-//       },
-//       onFail: function (message) {
-//            $('#loading').css('display', 'none');
-//            init.error_('E 611', 'ERROR ENVIANT INCIDENCIA', message);
-//        },
-//        win: function (data) {
-//            $('#loading').css('display', 'none');
-//            try {
-//                var resposta = JSON.parse(data.response);
-//                if (resposta.error == '1') {
-//                    init.error_('E FUNCTIONS-405', data.response, resposta.str);
-//                } else {                    
-//                    init.areYouSure(jQuery.i18n.prop('msg_sugerencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
-//                    init.incidencia.reset();
-//                }
-//            } catch (e) {
-//                init.error_('E 416', data, e);
-//            }
-//        },
-//        reset: function () {
-//            $('#emailSugerencia').val('');
-//            $('#sugerencia').val('');
-//           
-//
-//        }
+       file: 'oncapdepera.class.php',
+       enviaSugerencia: function () {
+            var formData = new FormData(); //$('#form-sugerencia')[0]
+          formData.append('email' ,document.getElementById("emailSugerencia").value);
+          formData.append('sugerencia' ,document.getElementById("sugerencia").value);
+          formData.append('lang', init.lang);
+          formData.append('funcio', 'novaSugerenciaOnCap');
+                    var resp = init.sendAjax(formData, init.incidencia.file, true);
+                    if (resp.error == 0) {
+                        init.areYouSure(jQuery.i18n.prop('msg_sugerencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
+                        init.sugerencia.reset();
+
+                        
+                    }
+       },
+       onFail: function (message) {
+            $('#loading').css('display', 'none');
+            init.error_('E 611', 'ERROR ENVIANT INCIDENCIA', message);
+        },
+        win: function (data) {
+            $('#loading').css('display', 'none');
+            try {
+                var resposta = JSON.parse(data.response);
+                if (resposta.error == '1') {
+                    init.error_('E FUNCTIONS-405', data.response, resposta.str);
+                } else {                    
+                    init.areYouSure(jQuery.i18n.prop('msg_sugerencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
+                    init.incidencia.reset();
+                }
+            } catch (e) {
+                init.error_('E 416', data, e);
+            }
+        },
+        reset: function () {
+            $('#emailSugerencia').val('');
+            $('#sugerencia').val('');
+           
+
+        }
     },
     
     incidencia: {
