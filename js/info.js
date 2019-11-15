@@ -493,9 +493,9 @@ var init = {
                     formData.append('lang', init.lang);
                     var resp = init.sendAjax(formData, init.incidencia.file, true);
                     if (resp.error == 0) {
-                       // init.areYouSure(jQuery.i18n.prop('msg_sugerencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
-                        init.sugerencia.reset();
-//                        $.mobile.back();
+                        init.areYouSure(jQuery.i18n.prop('msg_sugerencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
+                  //      init.sugerencia.reset();
+
                         
                     }
        },
@@ -509,8 +509,8 @@ var init = {
                 var resposta = JSON.parse(data.response);
                 if (resposta.error == '1') {
                     init.error_('E FUNCTIONS-405', data.response, resposta.str);
-                } else {
-                  //  init.areYouSure(jQuery.i18n.prop('msg_sugerencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
+                } else {                    
+                    init.areYouSure(jQuery.i18n.prop('msg_sugerencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
                     init.incidencia.reset();
                 }
             } catch (e) {
