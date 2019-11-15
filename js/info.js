@@ -494,7 +494,7 @@ var init = {
                     var resp = init.sendAjax(formData, init.incidencia.file, true);
                     if (resp.error == 0) {
                         init.areYouSure(jQuery.i18n.prop('msg_sugerencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
-                        init.sugerencia.reset();
+                      //  init.sugerencia.reset();
                     }
        },
        onFail: function (message) {
@@ -509,7 +509,7 @@ var init = {
                     init.error_('E FUNCTIONS-405', data.response, resposta.str);
                 } else {
                     init.areYouSure(jQuery.i18n.prop('msg_sugerencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
-                   // init.incidencia.reset();
+                    init.incidencia.reset();
                 }
             } catch (e) {
                 init.error_('E 416', data, e);
@@ -631,7 +631,7 @@ var init = {
                     var resp = init.sendAjax(formData, init.incidenciaDB.file, true);
                     if (resp.error == 0) {
                         init.areYouSure(jQuery.i18n.prop('msg_incidencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
-                        init.incidencia.reset();
+                        init.incidencia.reset();                        
                     }
                 } else {
                     try {
