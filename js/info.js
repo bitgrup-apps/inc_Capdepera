@@ -494,7 +494,7 @@ var init = {
           formData.append('sugerencia' ,document.getElementById("sugerencia").value);
           formData.append('lang', init.lang);
           formData.append('funcio', 'novaSugerenciaOnCap');
-                    var resp = init.sendAjax(formData, init.incidencia.file, true);
+                    var resp = init.sendAjax(formData, init.sugerencia.file, true);
                     if (resp.error == 0) {
                         init.areYouSure(jQuery.i18n.prop('msg_sugerencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
                         init.sugerencia.reset();
@@ -514,7 +514,7 @@ var init = {
                     init.error_('E FUNCTIONS-405', data.response, resposta.str);
                 } else {                    
                     init.areYouSure(jQuery.i18n.prop('msg_sugerencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
-                    init.incidencia.reset();
+                    init.sugerencia.reset();
                 }
             } catch (e) {
                 init.error_('E 416', data, e);
@@ -605,20 +605,7 @@ var init = {
             onMapInit();
         }
     },
-    
-//    getIp: function() {
-//      networkinterface.getWiFiIPAddress( onSuccess, onError );  
-//    },
-//    
-//    onSucces: function(ipInformation){
-//        init.ipA = ipInformation.ip;
-//    },
-//    
-//    onError: function() {
-//        console.log('error ip');
-//    },
-  
-    
+          
     incidenciaDB: {
         file: 'oncapdepera.class.php',
         enviaIncidenciaDB: function () {            
