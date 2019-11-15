@@ -510,7 +510,7 @@ var init = {
                 if (resposta.error == '1') {
                     init.error_('E FUNCTIONS-405', data.response, resposta.str);
                 } else {
-                    init.areYouSure(jQuery.i18n.prop('msg_sugerencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
+                  //  init.areYouSure(jQuery.i18n.prop('msg_sugerencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
                     init.incidencia.reset();
                 }
             } catch (e) {
