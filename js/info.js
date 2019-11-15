@@ -493,8 +493,10 @@ var init = {
                     formData.append('lang', init.lang);
                     var resp = init.sendAjax(formData, init.incidencia.file, true);
                     if (resp.error == 0) {
-                        init.areYouSure(jQuery.i18n.prop('msg_sugerencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
+                       // init.areYouSure(jQuery.i18n.prop('msg_sugerencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
                         init.sugerencia.reset();
+                        $.mobile.back();
+                        
                     }
        },
        onFail: function (message) {
@@ -766,7 +768,7 @@ var init = {
             mediaElement.play();
         }
     },
-
+ 
     areYouSure: function (text2, button, callback, tipus) {
         if (tipus == 'avis') {
             $('#logo-AreYouSure').attr('src', 'icons/avis2.png');
