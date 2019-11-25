@@ -53,7 +53,7 @@
         <param name="API_KEY_FOR_IOS" value="AIzaSyB7g2Ackb5PebwE30QwAqAzPMGo1r4HnFQ" />
     </gap:plugin>
     <plugin name="phonegap-plugin-push" source="npm" > <!--spec="~2.1.2" -->
-        <variable name="FCM_VERSION" value="15.0.2" />
+        <variable name="FCM_VERSION" value="17.1.0" />
     </plugin> 
     <gap:plugin name="cordova-plugin-file-transfer"  source="npm" />   <!--spec="1.6.3"--> 
     <gap:plugin name="cordova-plugin-camera"  source="npm"  /> <!--spec="2.4.1"-->
