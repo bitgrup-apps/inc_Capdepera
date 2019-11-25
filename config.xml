@@ -55,13 +55,13 @@
     <plugin name="phonegap-plugin-push" source="npm" > <!--spec="~2.1.2" -->
         <variable name="FCM_VERSION" value="15.0.2" />
     </plugin> 
-    <gap:plugin name="cordova-plugin-file-transfer"  source="npm"  spec="1.6.3"/>    
-    <gap:plugin name="cordova-plugin-camera"  source="npm"  spec="2.4.1"/>
+    <gap:plugin name="cordova-plugin-file-transfer"  source="npm" />   <!--spec="1.6.3"--> 
+    <gap:plugin name="cordova-plugin-camera"  source="npm"  /> <!--spec="2.4.1"-->
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <gap:plugin name="com-badrit-macaddress"  source="npm" />
     <gap:plugin name="cordova-plugin-uniquedeviceid"  source="npm" />
     <gap:plugin name="cordova-plugin-device"  source="npm" />
-    <gap:plugin name="cordova-plugin-inappbrowser" source="npm" spec="3.0.0"/>
+    <gap:plugin name="cordova-plugin-inappbrowser" source="npm" /> <!--spec="3.0.0"-->
     <gap:plugin name="cordova-plugin-background-audio"  source="npm"/>
 <!--    <gap:plugin name="cordova-plugin-networkinterface" source="npm" />-->
     
