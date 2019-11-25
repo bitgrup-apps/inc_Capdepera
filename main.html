@@ -144,7 +144,7 @@
             </div>
 
             <div data-role="content" >
-                <h2>Gestiona la teva incidència</h2>
+                <h2 class="literal" data-literal="inc_13">Gestiona la teva incidència</h2>
                 <div class="container-fluid t-incidencies">
                     <div class="row btns-incidencies">
                         <a data-role="none" href="#oncapdepera-incidencia" data-transition="slide" onClick="$('#valorCategoria').val(1);">
@@ -840,14 +840,14 @@
                         </div>
                         <div class="col-xs-12">
                             <label class="literal" data-literal="msg_form_4">Ubicació</label>
-                            <a href="#" data-role="none" onclick="init.mapa.mapaUbicacio();" >Indicar una altre ubicació al mapa</a>
+                            <a href="#" data-role="none" onclick="init.mapa.mapaUbicacio();" class="literal" data-literal="inc_14">Indicar una altre ubicació al mapa</a>
                         </div>
                         <div class="col-xs-12">
                             <label class="literal" data-literal="msg_form_5">Adressa</label><input  id="adresaIncidenciaOnCap" name="adresaIncidenciaOnCap" value="">
                             <label class="literal" data-literal="msg_form_6">Població</label><input  id="poblacioIncidenciaOnCap" name="poblacioIncidenciaOnCap" value="">
                         </div>
                         <div class="col-xs-12">
-                            <button id="botoIncidencia" type="button" onclick="init.incidencia.enviaIncidencia();" class="boto">Enviar</button>
+                            <button id="botoIncidencia" type="button" onclick="init.incidencia.enviaIncidencia();" class="boto literal" data-literal="sug_1">Enviar</button>
                         </div>
                         <input type="hidden" id="valorCategoria" name="categoria" value="">
                         <input type="hidden" id="latitutIncidenciaOnCap" name="latitutIncidenciaOnCap" value="">
