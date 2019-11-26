@@ -2,9 +2,10 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.incCapdepera.bitgrup"
-        version   = "3.3.4">
-	
-	
+        version   = "3.3.4"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    	
+
     <name>OnCapdepera</name>
     <description>OnCapdepera</description>
     <author href="http://bitgrup.com" email="info@bitgrup.com">BITGRUP</author>
@@ -87,10 +88,10 @@
     <allow-navigation href="*" />
     <allow-intent href="*" />
     <access origin="*" />
-    <platform name="android">        
-        <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/uses-permission" xmlns:android="http://schemas.android.com/apk/res/android">
-            <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-        </edit-config>
+    <platform name="android">
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+        <uses-permission android:name="android.permission.INTERNET"/>
+    </config-file>
     </platform>
 
     <key>ExternalHosts</key>
