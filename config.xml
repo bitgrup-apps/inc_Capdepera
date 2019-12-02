@@ -91,9 +91,9 @@
     <platform name="android">
     <allow-intent href="*" />
     <allow-navigation href="*" />
-   <config-file target="AndroidManifest.xml" parent="/manifest/application" mode="merge">
-            <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-   </config-file>
+    <config-file parent="/*" target="AndroidManifest.xml">
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    </config-file>
     </platform>
 
     <key>ExternalHosts</key>
