@@ -95,7 +95,7 @@
         <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
             <application android:usesCleartextTraffic="true" />
         </edit-config>
-   <config-file target="/manifest/application" file="app/src/main/AndroidManifest.xml" mode="merge" xmlns:android="http://schemas.android.com/apk/res/android">
+   <config-file parent="/manifest" platform="android"  mode="merge">
             <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
    </config-file>
     </platform>
