@@ -84,16 +84,14 @@
     <access origin="*://*.gstatic.com/*" subdomains="true" />
     <access origin="*://*.google.com/*" subdomains="true" />
     <access origin="*://*.googleusercontent.com/*" subdomains="true" />
-    <access origin="*://*.91.121.156.27/*" subdomains="true" />
-    
-    
+    <access origin="*://*.91.121.156.27/*" subdomains="true" />        
     <access origin="*" />
+    <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest">
+        <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    </edit-config>
     <platform name="android">
     <allow-intent href="*" />
-    <allow-navigation href="*" />
-   <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest">
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-   </edit-config>
+    <allow-navigation href="*" />  
     </platform>
 
     <key>ExternalHosts</key>
