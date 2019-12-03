@@ -159,7 +159,7 @@ function initMap() {
                 window.mapa = map;
                 window.mapa.setClickable(true);
                 window.mapa.getVisibleRegion();
-                window.mapa.on(plugin.google.maps.event.MAP_READY, onMapInit);
+                window.mapa.one(plugin.google.maps.event.MAP_READY, onMapInit);
 
             } else {
                 console.log('E-149: ' + message);
