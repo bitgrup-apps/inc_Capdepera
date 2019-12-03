@@ -449,40 +449,168 @@ var init = {
         }
     },
     mapa: {
-        mapaUbicacio: function () {
+//        mapaUbicacio: function () {
+//            try {
+//                var div = document.getElementById('mapa');
+//                window.mapa.setDiv(div);
+//                $.mobile.changePage("#oncapdepera-ubicacio", {transition: "slide"});
+//            } catch (e) {
+//                error_('E INCID-316', 'carregaMapa', e);
+//            }
+//        },
+//        puntAlMapa: function (lat, long, text) {
+//            var position_ = new plugin.google.maps.LatLng(lat, long);
+//            var request = {'position': position_};
+//            plugin.google.maps.Geocoder.geocode(request, function (results) {
+//                if (position_) {
+//                    window.mapa.addMarker({
+//                        'position': position_,
+//                        'title': text
+//                    }, function (marker) {
+//                        marker.showInfoWindow();
+//                        window.mapa.addEventListenerOnce("MARKER_REMOVE", function () {
+//                            marker.remove();
+//                        });
+//                    });
+//                    window.mapa.animateCamera({
+//                        target: {
+//                            lat: lat,
+//                            lng: long
+//                        },
+//                        'duration': 1,
+//                        zoom: 18
+//                    });
+//                }
+//            });
+//            $.mobile.changePage("#oncapdepera-ubicacio");
+//        }
+
+        map: null,
+
+        init: function () {
             try {
-                var div = document.getElementById('mapa');
-                window.mapa.setDiv(div);
-                $.mobile.changePage("#oncapdepera-ubicacio", {transition: "slide"});
+                if (!init.mapa.map) {
+                    var div = document.getElementById('mapa');
+                    //OPCIONS
+                    var options = {
+                        'camera': {target: {lat: 39.625908, lng: 2.973964}, zoom: 15},
+                        'backgroundColor': '#FFFFFF',
+                        'mapType': plugin.google.maps.MapTypeId.ROADMAP,
+                        'controls': {'myLocation': true},
+                        'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true}
+                    };
+                    init.mapa.map = plugin.google.maps.Map.getMap(div, options);
+                    init.mapa.map.setClickable(true);
+                    init.mapa.map.getVisibleRegion();
+                    init.mapa.map.one(plugin.google.maps.event.MAP_READY, init.mapa.onMapInit);
+                } else {
+                    //CHANGE DIV MAP AND LOCATION
+                    var div = document.getElementById('mapa');
+                    init.mapa.map.setDiv(div);
+                    
+                        init.mapa.getLocation();
+                    
+                }
+                return true;
             } catch (e) {
-                error_('E INCID-316', 'carregaMapa', e);
+                if (true) {
+                    init.alert('El Mapa no està disponible, revisi la configuració del seu telèfon i doni permisos per poder utilitzar el mapa.');
+                    return false;
+                } else {
+                    return true;
+                }
             }
         },
-        puntAlMapa: function (lat, long, text) {
-            var position_ = new plugin.google.maps.LatLng(lat, long);
-            var request = {'position': position_};
+
+        onMapInit: function () {
+            init.mapa.getLocation();
+            // SI CLICK GUARDAM NOVA LOCALITZACIÓ
+            init.mapa.clickEvent();
+            //INSERTAM INCIDÈNCIES CREADES
+           // init.issues.insertIssuesMap();
+        },
+
+        clickEvent: function () {
+            var evtName = plugin.google.maps.event.MAP_CLICK;
+            init.mapa.map.on(evtName, function (latLng) {
+                init.mapa.map.trigger("MARKER_REMOVE");
+                init.issues.new_.location = {'lat': latLng.lat, 'long': latLng.lng};
+                const NOVAPOSICIO = new plugin.google.maps.LatLng(latLng.lat, latLng.lng);
+                init.mapa.getAdress(NOVAPOSICIO);
+            });
+        },
+
+        getLocation: function () {
+            var option = {enableHighAccuracy: true};
+            plugin.google.maps.LocationService.getMyLocation(option, function (location) {
+                //CAMERA POSITION
+                var lat = location.latLng.lat;
+                var long = location.latLng.lng;
+                init.mapa.changeCamera(lat, long);
+                const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, long);
+                init.mapa.getAdress(NOVAPOSICIO);
+               // init.issues.new_.location = {'lat': lat, 'long': long};
+            });
+        },
+
+        getAdress: function (posicio) {
+            init.mapa.map.trigger("MARKER_REMOVE");
+            var request = {'position': posicio};
+            var adressa = {'adressa': null, 'poblacio': null};
             plugin.google.maps.Geocoder.geocode(request, function (results) {
-                if (position_) {
-                    window.mapa.addMarker({
-                        'position': position_,
-                        'title': text
-                    }, function (marker) {
+                if (results.length) {
+                    var result = results[0];
+                    var position = result.position;
+                    var address = [result.thoroughfare || "", result.locality || "", result.postalCode || ""].join(", ");
+                    init.mapa.map.addMarker({'position': posicio, 'title': address}, function (marker) {
                         marker.showInfoWindow();
-                        window.mapa.addEventListenerOnce("MARKER_REMOVE", function () {
+                        init.mapa.map.addEventListenerOnce("MARKER_REMOVE", function () {
                             marker.remove();
                         });
                     });
-                    window.mapa.animateCamera({
-                        target: {
-                            lat: lat,
-                            lng: long
-                        },
-                        'duration': 1,
-                        zoom: 18
-                    });
+                    adressa.adressa = result.thoroughfare;
+                    adressa.poblacio = result.locality;
+                } else {
+                    init.alert("No es pot aconseguir la vostra ubicació");
                 }
             });
-            $.mobile.changePage("#oncapdepera-ubicacio");
+           // init.issues.new_.adress = adressa;
+        },
+
+        changeCamera: function (lat, long) {
+            init.mapa.map.animateCamera({
+                target: {lat: lat, lng: long},
+                zoom: 17,
+                tilt: 60,
+                bearing: 0,
+                duration: 2000
+            }, function () {
+                //alert("Camera target has been changed");
+            });
+        },
+
+        insertMarker: function (issue) {
+            try {
+                var icon = 'www/icons/warning.png';
+                if (device.platform === 'Android') {
+                    var icon = 'icons/warning.png';
+                }
+                const POSITION = {"lat": issue.LATITUDE, "lng": issue.LONGITUDE};
+                var htmlInfoWindow = new plugin.google.maps.HtmlInfoWindow();
+                var html = ['<div class="mapInfowindow"><b>' + init.maxWords(issue.DESCRIPTION) + '</b><div><button type="buttton" onclick="bitgrup.issues.getIssue(' + issue.ID + ');">Veure</button></div></div>'].join("");
+                htmlInfoWindow.setContent(html);
+                var marker = bitgrup.mapa.map.addMarker({
+                    position: POSITION,
+                    icon: {url: icon}
+                });
+                marker.on(plugin.google.maps.event.MARKER_CLICK, function () {
+                    htmlInfoWindow.open(marker);
+                });
+                return marker;
+                //marker.trigger(plugin.google.maps.event.MARKER_CLICK);
+            } catch (e) {
+
+            }
         }
     },
     
