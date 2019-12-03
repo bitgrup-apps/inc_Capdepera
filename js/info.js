@@ -449,16 +449,10 @@ var init = {
         }
     },
     mapa: {
-       
-        
         mapaUbicacio: function () {
             try {
-                var mapDiv = document.getElementById('mapaIncidencia');
-                init.mapa.map = plugin.google.maps.Map.getMap(mapDiv);
-                init.mapa.map.one(plugin.google.maps.event.MAP_READY, function(){});
                 var div = document.getElementById('mapa');
-                init.mapa.map.setDiv(div);
-                //window.mapa.setDiv(div);
+                window.mapa.setDiv(div);
                 $.mobile.changePage("#oncapdepera-ubicacio", {transition: "slide"});
             } catch (e) {
                 error_('E INCID-316', 'carregaMapa', e);
