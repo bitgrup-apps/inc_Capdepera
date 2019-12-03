@@ -141,35 +141,35 @@ function initMap() {
                         'zoom': 18
                     }
                 });
-                window.mapa = map;
-                window.mapa.one(plugin.google.maps.event.MAP_READY, onMapInit);
-//    try {
-//        plugin.google.maps.Map.isAvailable(function (isAvailable, message) {
-//            if (isAvailable) {
-//                var map = plugin.google.maps.Map.getMap(document.getElementById("mapaIncidencia"), {
-//                    'backgroundColor': '#FFFFFF',
-//                    'mapType': plugin.google.maps.MapTypeId.ROADMAP,
-//                    'controls': {'compass': true, 'myLocationButton': true, 'indoorPicker': true, 'zoom': true},
-//                    'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true},
-//                    'camera': {
-//                        'latLng': CAPDEPERA_LOC,
-//                        'zoom': 18
-//                    }
-//                });
 //                window.mapa = map;
-//                window.mapa.setClickable(true);
-//                window.mapa.getVisibleRegion();
-//                window.mapa.on(plugin.google.maps.event.MAP_READY, onMapInit);
-//
-//            } else {
-//                console.log('E-149: ' + message);
-//                errorMapa();
-//            }
-//        });
-//
-//    } catch (e) {
-//        error_('E INIT-178', 'ERROR INIT MAP', e);
-//    }
+//                window.mapa.one(plugin.google.maps.event.MAP_READY, onMapInit);
+    try {
+        plugin.google.maps.Map.isAvailable(function (isAvailable, message) {
+            if (isAvailable) {
+                var map = plugin.google.maps.Map.getMap(document.getElementById("mapaIncidencia"), {
+                    'backgroundColor': '#FFFFFF',
+                    'mapType': plugin.google.maps.MapTypeId.ROADMAP,
+                    'controls': {'compass': true, 'myLocationButton': true, 'indoorPicker': true, 'zoom': true},
+                    'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true},
+                    'camera': {
+                        'latLng': CAPDEPERA_LOC,
+                        'zoom': 18
+                    }
+                });
+                window.mapa = map;
+                window.mapa.setClickable(true);
+                window.mapa.getVisibleRegion();
+                window.mapa.one(plugin.google.maps.event.MAP_READY, onMapInit);
+
+            } else {
+                console.log('E-149: ' + message);
+                errorMapa();
+            }
+        });
+
+    } catch (e) {
+        error_('E INIT-178', 'ERROR INIT MAP', e);
+    }
 
 }
 
@@ -243,7 +243,7 @@ function onMapInit() {
     plugin.google.maps.LocationService.getMyLocation(onSuccess, onError);
 //    // SI CLICK GUARDAM NOVA LOCALITZACIÓ
     var evtName = plugin.google.maps.event.MAP_CLICK;
-    window.mapa.on(evtName, function (latLng) {
+    window.mapa.one(evtName, function (latLng) {
         if (comprovaPosicio(latLng.lat, latLng.lng)) {
             window.mapa.trigger("MARKER_REMOVE");
             $('#latitutIncidencia').val(latLng.lat);
