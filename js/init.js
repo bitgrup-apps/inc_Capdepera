@@ -243,7 +243,7 @@ function onMapInit() {
     plugin.google.maps.LocationService.getMyLocation(onSuccess, onError);
 //    // SI CLICK GUARDAM NOVA LOCALITZACIÓ
     var evtName = plugin.google.maps.event.MAP_CLICK;
-    window.mapa.on(evtName, function (latLng) {
+    plugin.google.maps.one(evtName, function (latLng) {
         if (comprovaPosicio(latLng.lat, latLng.lng)) {
             window.mapa.trigger("MARKER_REMOVE");
             $('#latitutIncidencia').val(latLng.lat);
