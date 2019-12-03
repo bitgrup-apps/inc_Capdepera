@@ -69,7 +69,12 @@ function initApp() {
 
     //MAPA
     try {
-        initMap();
+        //initMap();
+         var mapDiv = document.getElementById("mapaIncidencia");
+         var map = plugin.google.maps.Map.getMap(mapDiv);
+         function onMapInit(map) {
+
+};
     } catch (e) {
         errorMapa();
         console.log('E INIT-84', 'ERROR INIT MAPA', e);
@@ -199,7 +204,7 @@ function onMapInit() {
                 window.mapa.animateCamera({
                     target: {
                         lat: location.latLng.lat,
-                        lng: location.latLng.lng,
+                        lng: location.latLng.lng
                     },
                     'duration': 2,
                     zoom: 18
@@ -227,20 +232,20 @@ function onMapInit() {
     };
 
     //AGAFAM LA LOCALITZACIÓ
-   // window.mapa.LocationService.getMyLocation(onSuccess, onError);
+    window.mapa.LocationService.getMyLocation(onSuccess, onError);
     // SI CLICK GUARDAM NOVA LOCALITZACIÓ
-//    var evtName = plugin.google.maps.event.MAP_CLICK;
-//    window.mapa.on(evtName, function (latLng) {
-//        if (comprovaPosicio(latLng.lat, latLng.lng)) {
-//            window.mapa.trigger("MARKER_REMOVE");
-//            $('#latitutIncidencia').val(latLng.lat);
-//            $('#longitutIncidencia').val(latLng.lng);
-//            const NOVAPOSICIO = new plugin.google.maps.LatLng(latLng.lat, latLng.lng);
-//            novaLocalitzacio(NOVAPOSICIO);
-//        } else {
-//            alert("La nova posició no es troba a una àrea correcte");
-//        }
-//    });
+    var evtName = plugin.google.maps.event.MAP_CLICK;
+    window.mapa.on(evtName, function (latLng) {
+        if (comprovaPosicio(latLng.lat, latLng.lng)) {
+            window.mapa.trigger("MARKER_REMOVE");
+            $('#latitutIncidencia').val(latLng.lat);
+            $('#longitutIncidencia').val(latLng.lng);
+            const NOVAPOSICIO = new plugin.google.maps.LatLng(latLng.lat, latLng.lng);
+            novaLocalitzacio(NOVAPOSICIO);
+        } else {
+            alert("La nova posició no es troba a una àrea correcte");
+        }
+    });
     //ACTUALITZAM LLISTA DE INCIDENCIES
     //iniciaLlistatIncidencies();
 
@@ -291,7 +296,7 @@ function novaLocalitzacio(posicio) {
         } else {
             if (posicio) {
                 window.mapa.addMarker({
-                    'position': posicio,
+                    'position': posicio
                 }, function (marker) {
                     marker.showInfoWindow();
                     window.mapa.addEventListenerOnce("MARKER_REMOVE", function () {
