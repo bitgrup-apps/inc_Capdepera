@@ -68,13 +68,13 @@ function initApp() {
     }
 
     //MAPA
-//    try {
-//        initMap();
-//
-//    } catch (e) {
-//        errorMapa();
-//        console.log('E INIT-84', 'ERROR INIT MAPA', e);
-//    }
+    try {
+        initMap();
+
+    } catch (e) {
+        errorMapa();
+        console.log('E INIT-84', 'ERROR INIT MAPA', e);
+    }
 
 
     init.initApp();
