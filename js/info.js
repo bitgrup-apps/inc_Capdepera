@@ -449,13 +449,15 @@ var init = {
         }
     },
     mapa: {
+       
+        
         mapaUbicacio: function () {
             try {
                 var mapDiv = document.getElementById('mapaIncidencia');
-                var map = plugin.google.maps.Map.getMap(mapDiv);
-                map.one(plugin.google.maps.event.MAP_READY, function(){});
+                init.mapa.map = plugin.google.maps.Map.getMap(mapDiv);
+                init.mapa.map.one(plugin.google.maps.event.MAP_READY, function(){});
                 var div = document.getElementById('mapa');
-                map.setDiv(div);
+                init.mapa.map.setDiv(div);
                 //window.mapa.setDiv(div);
                 $.mobile.changePage("#oncapdepera-ubicacio", {transition: "slide"});
             } catch (e) {
