@@ -93,7 +93,7 @@
       <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
             <application android:usesCleartextTraffic="true" />
       </edit-config>      
-      <config-file platform="android" parent="/manifest" target="app/src/main/AndroidManifest.xml" mode="merge">
+      <config-file parent="/manifest" target="app/src/main/AndroidManifest.xml" mode="merge">
            <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
       </config-file>  
     </platform>
