@@ -85,10 +85,10 @@
     <access origin="*://*.google.com/*" subdomains="true" />
     <access origin="*://*.googleusercontent.com/*" subdomains="true" />
     <access origin="*://*.91.121.156.27/*" subdomains="true" />        
-    <access origin="*" />    
-    <platform name="android">
-      <allow-intent href="*" />
-      <allow-navigation href="*" />
+    <access origin="*" />
+    <allow-intent href="*" />
+      <allow-navigation href="*" />  
+    <platform name="android">      
       <config-file target="AndroidManifest.xml" parent="/manifest/application">
            <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
       </config-file>  
