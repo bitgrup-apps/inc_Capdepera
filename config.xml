@@ -88,7 +88,8 @@
     <access origin="*" />
     <allow-intent href="*" />
       <allow-navigation href="*" />  
-    <platform name="android">      
+    <platform name="android">
+        <resource-file src="platforms/android/app/src/main/AndroidManifest.xml" target="AndroidManifest.xml" />      
       <config-file platform="android" parent="/manifest" target="app/src/main/AndroidManifest.xml" mode="merge">
            <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
       </config-file>  
