@@ -452,12 +452,25 @@ var init = {
         mapaUbicacio: function () {
             try {
                 var div = document.getElementById('mapa');
-                window.mapa.setDiv(div);
+               // window.mapa.setDiv(div);
+               var options = {
+                        'camera': {target: {lat: 39.625908, lng: 2.973964}, zoom: 15},
+                        'backgroundColor': '#FFFFFF',
+                        'mapType': plugin.google.maps.MapTypeId.ROADMAP,
+                        'controls': {'myLocation': true},
+                        'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true}
+                    };
+                 var map = plugin.google.maps.Map.getMap(div, options);
+                 map.one(plugin.google.maps.event.MAP_READY, mapa.onMapInit);
                 $.mobile.changePage("#oncapdepera-ubicacio", {transition: "slide"});
             } catch (e) {
                 error_('E INCID-316', 'carregaMapa', e);
             }
         },
+        onMapInit: function(map) {
+             
+        },
+        
         puntAlMapa: function (lat, long, text) {
             var position_ = new plugin.google.maps.LatLng(lat, long);
             var request = {'position': position_};
