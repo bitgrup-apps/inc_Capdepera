@@ -89,7 +89,7 @@
     <allow-intent href="*" />
       <allow-navigation href="*" />  
     <platform name="android">      
-      <config-file target="AndroidManifest.xml" parent="/manifest">
+      <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest">
            <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
       </config-file>  
     </platform>
