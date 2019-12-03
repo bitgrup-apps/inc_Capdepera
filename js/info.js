@@ -454,6 +454,7 @@ var init = {
                 var div = document.getElementById('mapa');
                 var map = plugin.google.maps.Map.getMap(div);
                 map.one(plugin.google.maps.event.MAP_READY, function(){});
+                map.setDiv(div);
                 //window.mapa.setDiv(div);
                 $.mobile.changePage("#oncapdepera-ubicacio", {transition: "slide"});
             } catch (e) {
