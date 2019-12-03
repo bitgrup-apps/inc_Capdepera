@@ -46,8 +46,11 @@
     <preference name="UIWebViewBounce" value="false" />
 
 	   
+    <preference name="GOOGLE_MAPS_ANDROID_API_KEY" value="AIzaSyAbCsdbOZ31x79tk8PDVHsW3AL_zgNseGo" />
+    <preference name="GOOGLE_MAPS_IOS_API_KEY" value="AIzaSyB7g2Ackb5PebwE30QwAqAzPMGo1r4HnFQ" />
+    
     <!-- PLUGINS -->
-    <gap:plugin name="cordova-plugin-googlemaps" version="1.4.5"  source="npm">
+    <gap:plugin name="cordova-plugin-googlemaps">
         <!-- produccio-->
         <param name="API_KEY_FOR_ANDROID" value="AIzaSyAbCsdbOZ31x79tk8PDVHsW3AL_zgNseGo" />
         <!-- desarrollo-->
@@ -66,6 +69,7 @@
     <gap:plugin name="cordova-plugin-inappbrowser" source="npm" /> <!--spec="3.0.0"-->
     <gap:plugin name="cordova-plugin-background-audio"  source="npm"/>
     <preference name="PLAY_SERVICES_VERSION" value="17.0.0" />
+    <gap:plugin name="cordova-plugin-foreground-service"  source="npm" />
 <!--    <gap:plugin name="cordova-plugin-networkinterface" source="npm" />-->
     
     
@@ -89,13 +93,15 @@
     <access origin="*" />
     <allow-intent href="*" />
       <allow-navigation href="*" />  
+      
     <platform name="android">
       <resource-file src="google-services.json" target="app/google-services.json" />
+      <uses-library android:name="org.apache.http.legacy" android:required="false" />
       <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
             <application android:usesCleartextTraffic="true" />
       </edit-config>      
-      <config-file parent="/manifest" target="app/src/main/AndroidManifest.xml" xmlns:android="http://schemas.android.com/apk/res/android">
-           <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+      <config-file parent="./" target="app/src/main/AndroidManifest.xml" xmlns:android="http://schemas.android.com/apk/res/android">
+            <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
       </config-file>  
     </platform>
 
