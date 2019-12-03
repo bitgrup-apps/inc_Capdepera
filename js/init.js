@@ -159,7 +159,7 @@ function initMap() {
                 window.mapa = map;
                 window.mapa.setClickable(true);
                 window.mapa.getVisibleRegion();
-                window.mapa.one(plugin.google.maps.event.MAP_READY, onMapInit);
+                window.mapa.on(plugin.google.maps.event.MAP_READY, onMapInit);
 
             } else {
                 console.log('E-149: ' + message);
@@ -243,7 +243,7 @@ function onMapInit() {
     plugin.google.maps.LocationService.getMyLocation(onSuccess, onError);
 //    // SI CLICK GUARDAM NOVA LOCALITZACIÓ
     var evtName = plugin.google.maps.event.MAP_CLICK;
-    window.mapa.one(evtName, function (latLng) {
+    window.mapa.on(evtName, function (latLng) {
         if (comprovaPosicio(latLng.lat, latLng.lng)) {
             window.mapa.trigger("MARKER_REMOVE");
             $('#latitutIncidencia').val(latLng.lat);
