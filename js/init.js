@@ -200,7 +200,7 @@ function onMapInit() {
                     result.thoroughfare || "",
                     result.locality || "",
                     result.postalCode || ""].join(", ");
-               // window.mapa.trigger("MARKER_REMOVE");
+                window.mapa.trigger("MARKER_REMOVE");
                 window.mapa.addMarker({
                     'position': position,
                     'title': address
@@ -240,7 +240,7 @@ function onMapInit() {
     };
 //
 //    //AGAFAM LA LOCALITZACIÓ
-    plugin.google.maps.LocationService.getMyLocation(onSuccess, onError);
+    window.mapa.LocationService.getMyLocation(onSuccess, onError);
 //    // SI CLICK GUARDAM NOVA LOCALITZACIÓ
 //    var evtName = plugin.google.maps.event.MAP_CLICK;
 //    plugin.google.maps.one(evtName, function (latLng) {
