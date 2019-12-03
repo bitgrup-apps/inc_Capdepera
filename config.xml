@@ -33,7 +33,7 @@
     
 	
     <!-- PREFERENCE -->
-    <preference name="phonegap-version" value="cli-8.0.0" /> 
+    <preference name="phonegap-version" value="cli-8.1.1" /> 
     <preference name="orientation" value="portrait" /> 
     <preference name="stay-in-webview" value="false" />
     <preference name="CameraUsesGeolocation" value="false" />
@@ -50,7 +50,7 @@
     <preference name="GOOGLE_MAPS_IOS_API_KEY" value="AIzaSyB7g2Ackb5PebwE30QwAqAzPMGo1r4HnFQ" />
     
     <!-- PLUGINS -->
-    <plugin name="cordova-plugin-googlemaps" version="1.4.5" source="npm">
+    <plugin name="cordova-plugin-googlemaps" version="2.2.0" source="npm">
         <!-- produccio-->
         <variable name="API_KEY_FOR_ANDROID" value="AIzaSyAbCsdbOZ31x79tk8PDVHsW3AL_zgNseGo" />
         <!-- desarrollo-->
