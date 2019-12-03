@@ -467,7 +467,7 @@ var init = {
                 error_('E INCID-316', 'carregaMapa', e);
             }
         },
-        onMapInit: function(map) {
+        onMapInit: function() {
              
         },
         
