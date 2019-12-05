@@ -69,7 +69,7 @@ function initApp() {
 
     //MAPA
     try {
-       // initMap();
+        initMap();
 
     } catch (e) {
         errorMapa();
@@ -131,10 +131,20 @@ function initPushNotification() {
     
 function initMap() {
     const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};
-    var map = new google.maps.Map(document.getElementById('mapa'), {
-            zoom: 17,
-            center: CAPDEPERA_LOC
-        });
+    var options = {
+                        'camera': {target: {lat: 39.625908, lng: 2.973964}, zoom: 15},
+                        'backgroundColor': '#FFFFFF',
+                        'mapType': plugin.google.maps.MapTypeId.ROADMAP,
+                        'controls': {'myLocation': true},
+                        'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true}
+                    };
+                    var div = document.getElementById("mapaIncidencia");
+                    var map = plugin.google.maps.Map.getMap(div, options);
+                    map.one(plugin.google.maps.event.MAP_READY, function(){});
+//    var map = new google.maps.Map(document.getElementById('mapa'), {
+//            zoom: 17,
+//            center: CAPDEPERA_LOC
+//        });
 //    var map = plugin.google.maps.Map.getMap(document.getElementById("mapaIncidencia"), {
 //                    'backgroundColor': '#FFFFFF',
 //                    'mapType': plugin.google.maps.MapTypeId.ROADMAP,

@@ -499,38 +499,39 @@ var init = {
 
         init: function (id) {
             var id = 'mapa1';
-            try {
-                if (!init.mapa.map) {
-                    var div = document.getElementById(id);
-                    //OPCIONS
-                    var options = {
-                        'camera': {target: {lat: 39.625908, lng: 2.973964}, zoom: 15},
-                        'backgroundColor': '#FFFFFF',
-                        'mapType': plugin.google.maps.MapTypeId.ROADMAP,
-                        'controls': {'myLocation': true},
-                        'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true}
-                    };
-                    init.mapa.map = plugin.google.maps.Map.getMap(div, options);
-                    init.mapa.map.setClickable(true);
-                    init.mapa.map.getVisibleRegion();
-                    init.mapa.map.one(plugin.google.maps.event.MAP_READY, init.mapa.onMapInit);
-                } else {
-                    //CHANGE DIV MAP AND LOCATION
-                    var div = document.getElementById(id);
-                    init.mapa.map.setDiv(div);
-                    if(!init.issues.new_.location){
-                        init.mapa.getLocation();
-                    }
-                }
-                return true;
-            } catch (e) {
-                if (init.production) {
-                    init.alert('El Mapa no està disponible, revisi la configuració del seu telèfon i doni permisos per poder utilitzar el mapa.');
-                    return false;
-                } else {
-                    return true;
-                }
-            }
+            init.mapa.map.setDiv(id);
+//            try {
+//                if (!init.mapa.map) {
+//                    var div = document.getElementById('mapa1');
+//                    //OPCIONS
+//                    var options = {
+//                        'camera': {target: {lat: 39.625908, lng: 2.973964}, zoom: 15},
+//                        'backgroundColor': '#FFFFFF',
+//                        'mapType': plugin.google.maps.MapTypeId.ROADMAP,
+//                        'controls': {'myLocation': true},
+//                        'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true}
+//                    };
+//                    init.mapa.map = plugin.google.maps.Map.getMap(div, options);
+//                    init.mapa.map.setClickable(true);
+//                    init.mapa.map.getVisibleRegion();
+//                    init.mapa.map.one(plugin.google.maps.event.MAP_READY, init.mapa.onMapInit);
+//                } else {
+//                    //CHANGE DIV MAP AND LOCATION
+//                    var div = document.getElementById('mapa1');
+//                    init.mapa.map.setDiv(div);
+//                    if(!init.issues.new_.location){
+//                        init.mapa.getLocation();
+//                    }
+//                }
+//                return true;
+//            } catch (e) {
+//                if (init.production) {
+//                    init.alert('El Mapa no està disponible, revisi la configuració del seu telèfon i doni permisos per poder utilitzar el mapa.');
+//                    return false;
+//                } else {
+//                    return true;
+//                }
+//            }
         },
 
         onMapInit: function () {
