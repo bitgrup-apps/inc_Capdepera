@@ -228,7 +228,7 @@ function onMapInit() {
     };
 
     //AGAFAM LA LOCALITZACIÓ
-    window.mapa.LocationService.getMyLocation(onSuccess, onError);
+    plugin.google.maps.LocationService.getMyLocation(onSuccess, onError);
     // SI CLICK GUARDAM NOVA LOCALITZACIÓ
     var evtName = plugin.google.maps.event.MAP_CLICK;
     window.mapa.one(evtName, function (latLng) {
