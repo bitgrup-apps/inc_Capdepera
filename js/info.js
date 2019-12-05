@@ -604,9 +604,9 @@ var init = {
             $('#imgIncidenciaOnCap').attr('src', 'images/no-img-3.jpg');
 
         },
-//        getNovaPosicio: function () {
-//            onMapInit();
-//        }
+        getNovaPosicio: function () {
+            onMapInit();
+        }
     },
           
     incidenciaDB: {
