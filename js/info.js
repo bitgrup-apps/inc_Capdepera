@@ -498,8 +498,9 @@ var init = {
         map: null,
 
         init: function (id) {
-            var id = 'mapa1';
-            init.mapa.map.setDiv(id);
+//            var id = 'mapa1';
+//            init.mapa.map.setDiv(id);
+            $.mobile.changePage("#oncapdepera-ubicacio", {transition: "slide"});
 //            try {
 //                if (!init.mapa.map) {
 //                    var div = document.getElementById('mapa1');

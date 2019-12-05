@@ -139,8 +139,9 @@ function initMap() {
                         'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true}
                     };
                     var div = document.getElementById("mapaIncidencia");
-                    var map = plugin.google.maps.Map.getMap(div, options);
-                    map.one(plugin.google.maps.event.MAP_READY, function(){});
+                    mapa.map = plugin.google.maps.Map.getMap(div, options);
+                    mapa.map.one(plugin.google.maps.event.MAP_READY, function(){});
+                    mapa.map.setDiv('mapa1');
 //    var map = new google.maps.Map(document.getElementById('mapa'), {
 //            zoom: 17,
 //            center: CAPDEPERA_LOC
