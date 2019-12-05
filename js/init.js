@@ -69,7 +69,7 @@ function initApp() {
 
     //MAPA
     try {
-        initMap();
+       // initMap();
 
     } catch (e) {
         errorMapa();
