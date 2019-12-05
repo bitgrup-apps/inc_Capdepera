@@ -913,11 +913,11 @@
                 <script type="text/javascript">
                 function start() {
                 var latlong = {lat: 24.801522, lng:84.995989};
-                var map = new google.maps.Map(document.getElementById('mapa1'), {
+                var map = plugin.google.maps.Map(document.getElementById('mapa1'), {
                 zoom: 17,
                 center: latlong
         });
-            var marker = new google.maps.Marker({
+            var marker = plugin.google.maps.Marker({
                 position: latlong,
                 map: map
             });
