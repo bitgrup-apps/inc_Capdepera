@@ -48,7 +48,7 @@
                 <a href="#loggin-home" id="login_home" data-role="none" data-transition="slide"></a>
                 <div class="col-xs-12 logo"><h1 class="literal" data-literal="msg_hom">Benvinguts</h1></div>
                  <div class="col-xs-4">
-                    <a href="#afegirIncidencia" class="pastilla incd literal" data-literal="msg_menu_6" onclick="init.sendEstadistica('incidencia'); " data-role="none">Incidències</a><!--init.incidencia.getNovaPosicio();-->
+                    <a href="#afegirIncidencia" class="pastilla incd literal" data-literal="msg_menu_6" onclick="init.sendEstadistica('incidencia'); init.incidencia.getNovaPosicio();" data-role="none">Incidències</a>
                 </div>
                  <div class="col-xs-4">
                     <a href="#avisos" class="pastilla avisos literal" data-literal="msg_menu_7" onclick="init.avisos.init();" data-role="none">Avisos</a>
@@ -910,20 +910,8 @@
                 </div>
             </div>
             <div data-role="content" class=""  id="oncpd-html">
-                <script type="text/javascript">
-                function start() {
-                var latlong = {lat: 24.801522, lng:84.995989};
-                var map = plugin.google.maps.Map(document.getElementById('mapa1'), {
-                zoom: 17,
-                center: latlong
-        });
-            var marker = plugin.google.maps.Marker({
-                position: latlong,
-                map: map
-            });
-        }
-        </script>
-                <div id="mapa1" class="mapa" style="width:300px;height:300px;"></div>
+                
+                <div id="mapa" class="mapa"></div>
             </div>
         </div>
 
