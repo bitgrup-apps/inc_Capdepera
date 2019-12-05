@@ -451,8 +451,13 @@ var init = {
     mapa: {
         mapaUbicacio: function () {
             try {
-                var div = document.getElementById('mapa');
-                window.mapa.setDiv(div);
+//                var div = document.getElementById('mapa');
+//                window.mapa.setDiv(div);
+           const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};
+           var map = new google.maps.Map(document.getElementById('mapa'), {
+            zoom: 17,
+            center: CAPDEPERA_LOC
+        });
                 $.mobile.changePage("#oncapdepera-ubicacio", {transition: "slide"});
             } catch (e) {
                 error_('E INCID-316', 'carregaMapa', e);
