@@ -454,7 +454,7 @@ var init = {
 //                var div = document.getElementById('mapa');
 //                window.mapa.setDiv(div);
            const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};
-           var map = plugin.google.maps.Map.getMap(document.getElementById('mapa'), {
+           var map = plugin.google.maps.Map.getMap(document.getElementById('mapa1'), {
             zoom: 17,
             center: CAPDEPERA_LOC
         });
