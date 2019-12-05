@@ -57,7 +57,7 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 
 
 /*######## MAPA ###################*/
-#mapa {height: 100%;width: 100%;}
+.mapa {height: 300px;width: 200px;}
 
 /*######## HOME - NOU ###################*/
 #home-nou .ui-content{background-image: url(../images/fondo_home.jpg); background-size: cover; background-position: center; height: 100vh;padding: 1vw 6vw;}
