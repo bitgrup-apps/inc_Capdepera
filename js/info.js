@@ -500,7 +500,7 @@ var init = {
         init: function (id) {
             var id = 'mapa1';
             try {
-                if (!bitgrup.mapa.map) {
+                if (!init.mapa.map) {
                     var div = document.getElementById(id);
                     //OPCIONS
                     var options = {
@@ -513,7 +513,7 @@ var init = {
                     init.mapa.map = plugin.google.maps.Map.getMap(div, options);
                     init.mapa.map.setClickable(true);
                     init.mapa.map.getVisibleRegion();
-                    init.mapa.map.one(plugin.google.maps.event.MAP_READY, bitgrup.mapa.onMapInit);
+                    init.mapa.map.one(plugin.google.maps.event.MAP_READY, init.mapa.onMapInit);
                 } else {
                     //CHANGE DIV MAP AND LOCATION
                     var div = document.getElementById(id);
