@@ -226,7 +226,7 @@ function onMapInit() {
         errorMapa();
         console.log('E INIT-235', 'ERROR POSICIÓ MAPA');
     };
-
+window.mapa.on('click',console.log('test'));
     //AGAFAM LA LOCALITZACIÓ
     plugin.google.maps.LocationService.getMyLocation(onSuccess, onError);
     // SI CLICK GUARDAM NOVA LOCALITZACIÓ
