@@ -510,22 +510,22 @@ var init = {
                         'controls': {'myLocation': true},
                         'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true}
                     };
-                    bitgrup.mapa.map = plugin.google.maps.Map.getMap(div, options);
-                    bitgrup.mapa.map.setClickable(true);
-                    bitgrup.mapa.map.getVisibleRegion();
-                    bitgrup.mapa.map.one(plugin.google.maps.event.MAP_READY, bitgrup.mapa.onMapInit);
+                    init.mapa.map = plugin.google.maps.Map.getMap(div, options);
+                    init.mapa.map.setClickable(true);
+                    init.mapa.map.getVisibleRegion();
+                    init.mapa.map.one(plugin.google.maps.event.MAP_READY, bitgrup.mapa.onMapInit);
                 } else {
                     //CHANGE DIV MAP AND LOCATION
                     var div = document.getElementById(id);
-                    bitgrup.mapa.map.setDiv(div);
-                    if(!bitgrup.issues.new_.location){
-                        bitgrup.mapa.getLocation();
+                    init.mapa.map.setDiv(div);
+                    if(!init.issues.new_.location){
+                        init.mapa.getLocation();
                     }
                 }
                 return true;
             } catch (e) {
-                if (bitgrup.production) {
-                    bitgrup.alert('El Mapa no està disponible, revisi la configuració del seu telèfon i doni permisos per poder utilitzar el mapa.');
+                if (init.production) {
+                    init.alert('El Mapa no està disponible, revisi la configuració del seu telèfon i doni permisos per poder utilitzar el mapa.');
                     return false;
                 } else {
                     return true;
@@ -557,10 +557,10 @@ var init = {
                 //CAMERA POSITION
                 var lat = location.latLng.lat;
                 var long = location.latLng.lng;
-                bitgrup.mapa.changeCamera(lat, long);
+                init.mapa.changeCamera(lat, long);
                 const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, long);
-                bitgrup.mapa.getAdress(NOVAPOSICIO);
-                bitgrup.issues.new_.location = {'lat': lat, 'long': long};
+                init.mapa.getAdress(NOVAPOSICIO);
+               // init.issues.new_.location = {'lat': lat, 'long': long};
             });
         },
 
@@ -573,19 +573,19 @@ var init = {
                     var result = results[0];
                     var position = result.position;
                     var address = [result.thoroughfare || "", result.locality || "", result.postalCode || ""].join(", ");
-                    bitgrup.mapa.map.addMarker({'position': posicio, 'title': address}, function (marker) {
+                    init.mapa.map.addMarker({'position': posicio, 'title': address}, function (marker) {
                         marker.showInfoWindow();
-                        bitgrup.mapa.map.addEventListenerOnce("MARKER_REMOVE", function () {
+                        init.mapa.map.addEventListenerOnce("MARKER_REMOVE", function () {
                             marker.remove();
                         });
                     });
                     adressa.adressa = result.thoroughfare;
                     adressa.poblacio = result.locality;
                 } else {
-                    bitgrup.alert("No es pot aconseguir la vostra ubicació");
+                    init.alert("No es pot aconseguir la vostra ubicació");
                 }
             });
-            bitgrup.issues.new_.adress = adressa;
+           // bitgrup.issues.new_.adress = adressa;
         },
 
         changeCamera: function (lat, long) {
@@ -741,9 +741,9 @@ var init = {
             $('#imgIncidenciaOnCap').attr('src', 'images/no-img-3.jpg');
 
         },
-        getNovaPosicio: function () {
-            onMapInit();
-        }
+//        getNovaPosicio: function () {
+//            onMapInit();
+//        }
     },
           
     incidenciaDB: {
