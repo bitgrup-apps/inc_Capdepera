@@ -189,22 +189,22 @@ function onMapInit() {
                     result.locality || "",
                     result.postalCode || ""].join(", ");
               //  window.mapa.trigger("MARKER_REMOVE");
-                window.mapa.addMarker({
-                    'position': position,
-                    'title': address
-                }, function (marker) {
-                    window.mapa.addEventListenerOnce("MARKER_REMOVE", function () {
-                        marker.remove();
-                    });
-                });
-                window.mapa.animateCamera({
-                    target: {
-                        lat: location.latLng.lat,
-                        lng: location.latLng.lng
-                    },
-                    'duration': 2,
-                    zoom: 18
-                });
+//                window.mapa.addMarker({
+//                    'position': position,
+//                    'title': address
+//                }, function (marker) {
+//                    window.mapa.addEventListenerOnce("MARKER_REMOVE", function () {
+//                        marker.remove();
+//                    });
+//                });
+//                window.mapa.animateCamera({
+//                    target: {
+//                        lat: location.latLng.lat,
+//                        lng: location.latLng.lng
+//                    },
+//                    'duration': 2,
+//                    zoom: 18
+//                });
 
                 $('#adresaIncidencia').val(result.thoroughfare);
                 $('#poblacioIncidencia').val(result.locality);
