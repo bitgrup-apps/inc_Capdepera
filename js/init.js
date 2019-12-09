@@ -242,7 +242,7 @@ function onMapInit() {
 //        } else {
 //            alert("La nova posició no es troba a una àrea correcte");
 //        }
-    });
+//    });
     //ACTUALITZAM LLISTA DE INCIDENCIES
     //iniciaLlistatIncidencies();
 
