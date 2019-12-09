@@ -455,10 +455,8 @@ var init = {
             try {
                 
                 var div = document.getElementById('mapa');
-                window.mapa.setDiv(div);
-                console.log('test despres setDiv');
+               // window.mapa.setDiv(div);
                 $.mobile.changePage("#oncapdepera-ubicacio", {transition: "slide"});
-                console.log('test despres changepage');
             } catch (e) {
                 error_('E INCID-316', 'carregaMapa', e);
             }
