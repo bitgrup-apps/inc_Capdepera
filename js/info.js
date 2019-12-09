@@ -217,14 +217,14 @@ var init = {
         }
 
     },
-    
+
     cine: {
         file: 'esdeveniments.class.php',
         init: function () {
             init.cine.menu();
             init.sendEstadistica('noticies');
         },
-        menu: function() {
+        menu: function () {
             init.sendEstadistica('cinema');
             var formData = new FormData();
             formData.append('funcio', 'getCine');
@@ -234,9 +234,9 @@ var init = {
                 $('#llista-cine').html(resp.str);
                 $.mobile.changePage("#cine-home", {transition: "slide"});
             }
-        }  
+        }
     },
-    
+
     esdeveniments: {
         file: 'esdeveniments.class.php',
 
@@ -263,7 +263,7 @@ var init = {
                 $.mobile.changePage("#esdeveniments-fitxa", {transition: "slide"});
             }
         },
-        
+
     },
     reservaMarina: {
         menuOk: false,
@@ -283,10 +283,10 @@ var init = {
             } else {
                 $('#reservamarina-fitxa-body').html(resp.error);
             }
-                
+
         }
     },
-    
+
     initLangs: function () {
         init.getLang();
         jQuery.i18n.properties({
@@ -449,10 +449,43 @@ var init = {
         }
     },
     mapa: {
+
+        initMapa: function () {
+            const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};
+            try {
+                plugin.google.maps.Map.isAvailable(function (isAvailable, message) {
+                    if (isAvailable) {
+                        var map = plugin.google.maps.Map.getMap(document.getElementById("mapaIncidencia"), {
+                            'backgroundColor': '#FFFFFF',
+                            'mapType': plugin.google.maps.MapTypeId.ROADMAP,
+                            'controls': {'compass': true, 'myLocationButton': true, 'indoorPicker': true, 'zoom': true},
+                            'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true},
+                            'camera': {
+                                'latLng': CAPDEPERA_LOC,
+                                'zoom': 18
+                            }
+                        });
+                        window.mapa = map;
+                      //  window.mapa.setClickable(true);
+                       // window.mapa.getVisibleRegion();
+                        window.mapa.one(plugin.google.maps.event.MAP_READY, function(){});
+
+
+                    } else {
+                        console.log('E-149: ' + message);
+                        errorMapa();
+                    }
+                });
+
+            } catch (e) {
+                error_('E INIT-178', 'ERROR INIT MAP', e);
+            }
+        },
+
         mapaUbicacio: function () {
             try {
                 var div = document.getElementById('mapa');
-                window.mapa.setDiv(div);          
+                window.mapa.setDiv(div);
                 $.mobile.changePage("#oncapdepera-ubicacio", {transition: "slide"});
             } catch (e) {
                 error_('E INCID-316', 'carregaMapa', e);
@@ -485,27 +518,26 @@ var init = {
             $.mobile.changePage("#oncapdepera-ubicacio");
         }
 
-        
-    },
-    
-    
-    sugerencia: {
-       file: 'oncapdepera.class.php',
-       enviaSugerencia: function () {
-            var formData = new FormData(); //$('#form-sugerencia')[0]
-          formData.append('email' ,document.getElementById("emailSugerencia").value);
-          formData.append('sugerencia' ,document.getElementById("sugerencia").value);
-          formData.append('lang', init.lang);
-          formData.append('funcio', 'novaSugerenciaOnCap');
-                    var resp = init.sendAjax(formData, init.sugerencia.file, true);
-                    if (resp.error == 0) {
-                        init.areYouSure(jQuery.i18n.prop('msg_sugerencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
-                        init.sugerencia.reset();
 
-                        
-                    }
-       },
-       onFail: function (message) {
+    },
+
+    sugerencia: {
+        file: 'oncapdepera.class.php',
+        enviaSugerencia: function () {
+            var formData = new FormData(); //$('#form-sugerencia')[0]
+            formData.append('email', document.getElementById("emailSugerencia").value);
+            formData.append('sugerencia', document.getElementById("sugerencia").value);
+            formData.append('lang', init.lang);
+            formData.append('funcio', 'novaSugerenciaOnCap');
+            var resp = init.sendAjax(formData, init.sugerencia.file, true);
+            if (resp.error == 0) {
+                init.areYouSure(jQuery.i18n.prop('msg_sugerencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
+                init.sugerencia.reset();
+
+
+            }
+        },
+        onFail: function (message) {
             $('#loading').css('display', 'none');
             init.error_('E 611', 'ERROR ENVIANT INCIDENCIA', message);
         },
@@ -515,7 +547,7 @@ var init = {
                 var resposta = JSON.parse(data.response);
                 if (resposta.error == '1') {
                     init.error_('E FUNCTIONS-405', data.response, resposta.str);
-                } else {                    
+                } else {
                     init.areYouSure(jQuery.i18n.prop('msg_sugerencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
                     init.sugerencia.reset();
                 }
@@ -526,11 +558,11 @@ var init = {
         reset: function () {
             $('#emailSugerencia').val('');
             $('#sugerencia').val('');
-           
+
 
         }
     },
-    
+
     incidencia: {
         file: 'oncapdepera.class.php',
         enviaIncidencia: function () {
@@ -608,14 +640,14 @@ var init = {
             onMapInit();
         }
     },
-          
+
     incidenciaDB: {
         file: 'oncapdepera.class.php',
-        enviaIncidenciaDB: function () {            
+        enviaIncidenciaDB: function () {
 //           init.getIp();
 
-       
-            
+
+
             if ($('#assumpteOnCap').val() != '') {
                 var imageURI = document.getElementById('imgIncidenciaOnCap').getAttribute("src");
                 if (imageURI === 'images/no-img-3.jpg') {
@@ -626,7 +658,7 @@ var init = {
                     var resp = init.sendAjax(formData, init.incidenciaDB.file, true);
                     if (resp.error == 0) {
                         init.areYouSure(jQuery.i18n.prop('msg_incidencia_enviada'), jQuery.i18n.prop('msg_acceptar'), function () {}, 'success');
-                        init.incidencia.reset();                        
+                        init.incidencia.reset();
                     }
                 } else {
                     try {
@@ -686,7 +718,7 @@ var init = {
         reset: function () {
             $('#emailOnCap').val('');
             $('#assumpteOnCap').val('');
-            $('#descripcioOnCap').val('');          
+            $('#descripcioOnCap').val('');
             $('#imgIncidenciaOnCap').attr('src', 'images/no-img-3.jpg');
 
         },
@@ -694,7 +726,7 @@ var init = {
             onMapInit();
         }
     },
-    
+
     img: {
         getImg: function () {
             navigator.camera.getPicture(init.img.onSuccess, init.img.onFail, {
@@ -761,7 +793,7 @@ var init = {
             mediaElement.play();
         }
     },
- 
+
     areYouSure: function (text2, button, callback, tipus) {
         if (tipus == 'avis') {
             $('#logo-AreYouSure').attr('src', 'icons/avis2.png');
