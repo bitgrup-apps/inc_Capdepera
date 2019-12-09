@@ -134,7 +134,7 @@ function initMap() {
     try {
         plugin.google.maps.Map.isAvailable(function (isAvailable, message) {
             if (isAvailable) {
-                var map = plugin.google.maps.Map.getMap(document.getElementById("mapa"), {
+                var map = plugin.google.maps.Map.getMap(document.getElementById("mapaIncidencia"), {
                     'backgroundColor': '#FFFFFF',
                     'mapType': plugin.google.maps.MapTypeId.ROADMAP,
                     'controls': {'compass': true, 'myLocationButton': true, 'indoorPicker': true, 'zoom': true},
@@ -148,7 +148,10 @@ function initMap() {
                 window.mapa.setClickable(true);
                 window.mapa.getVisibleRegion();
                 window.mapa.one(plugin.google.maps.event.MAP_READY, onMapInit);
-                
+                if(window.mapa) {
+                    var div = document.getElementById('mapa');
+                    window.setDiv(div);
+                }
 
             } else {
                 console.log('E-149: ' + message);
