@@ -451,7 +451,7 @@ var init = {
     mapa: {
        
        initM: function(){
-//         const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};   
+         const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};   
 //    try {
 //        plugin.google.maps.Map.isAvailable(function (isAvailable, message) {
 //            if (isAvailable) {
