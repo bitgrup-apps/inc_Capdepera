@@ -451,10 +451,10 @@ var init = {
     mapa: {
        
        initM: function(){
-         const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};   
-    try {
-        plugin.google.maps.Map.isAvailable(function (isAvailable, message) {
-            if (isAvailable) {
+//         const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};   
+//    try {
+//        plugin.google.maps.Map.isAvailable(function (isAvailable, message) {
+//            if (isAvailable) {
                 var map = plugin.google.maps.Map.getMap(document.getElementById("mapaIncidencia"), {
                     'backgroundColor': '#FFFFFF',
                     'mapType': plugin.google.maps.MapTypeId.ROADMAP,
@@ -465,26 +465,27 @@ var init = {
                         'zoom': 18
                     }
                 });
-                window.mapa = map;
-                window.mapa.setClickable(true);
-                window.mapa.getVisibleRegion();
-                window.mapa.one(plugin.google.maps.event.MAP_READY, onMapInit);
-                if(window.mapa) {
-                    console.log('preSetdiv');
-                    var div = document.getElementById('mapa');
-                    window.setDiv(div);
-                    console.log('postSetdiv');
-                }
-
-            } else {
-                console.log('E-149: ' + message);
-                errorMapa();
-            }
-        });
-
-    } catch (e) {
-        error_('E INIT-178', 'ERROR INIT MAP', e);
-    }
+                console.log('post map');
+//                window.mapa = map;
+//                window.mapa.setClickable(true);
+//                window.mapa.getVisibleRegion();
+//                window.mapa.one(plugin.google.maps.event.MAP_READY, onMapInit);
+//                if(window.mapa) {
+//                    console.log('preSetdiv');
+//                    var div = document.getElementById('mapa');
+//                    window.setDiv(div);
+//                    console.log('postSetdiv');
+//                }
+//
+//            } else {
+//                console.log('E-149: ' + message);
+//                errorMapa();
+//            }
+//        });
+//
+//    } catch (e) {
+//        error_('E INIT-178', 'ERROR INIT MAP', e);
+//    }
   
        },
 
