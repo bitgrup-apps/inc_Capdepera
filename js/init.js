@@ -149,8 +149,10 @@ function initMap() {
                 window.mapa.getVisibleRegion();
                 window.mapa.one(plugin.google.maps.event.MAP_READY, onMapInit);
                 if(window.mapa) {
+                    console.log('preSetdiv');
                     var div = document.getElementById('mapa');
                     window.setDiv(div);
+                    console.log('postSetdiv');
                 }
 
             } else {
