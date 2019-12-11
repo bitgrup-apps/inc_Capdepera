@@ -7,6 +7,7 @@ var push;
 var platform;
 var okPush = true; // si l'usuari vol rebre notificacions
 var tokenPush;
+var mapawow;
 
 function onLoad() {
     if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent))) {
@@ -73,6 +74,14 @@ function initApp() {
 
     } catch (e) {
         errorMapa();
+        console.log('E INIT-84', 'ERROR INIT MAPA', e);
+    }
+    //MAPA WOW
+    try {
+        mapawow.initWow();
+
+    } catch (e) {
+       // errorMapa();
         console.log('E INIT-84', 'ERROR INIT MAPA', e);
     }
 
@@ -344,4 +353,18 @@ function failUUID(e) {
     error_('E INIT-235', 'ERROR UUID', e);
     window.MACadress = '00:00:00';
 }
+
+var mapawow = {
+    
+    initWow: function(){
+        var mapDiv = document.getElementById("mapaWow");
+        var map = plugin.google.maps.Map.getMap(mapDiv);
+        map.one(plugin.google.maps.event.MAP_READY, onMapInitwow);
+        window.mapawow = map;
+    },
+    onMapInitwow: function() {
+        
+    }
+    
+};
 //###################################################################################
