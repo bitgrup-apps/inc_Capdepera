@@ -145,7 +145,7 @@ function initMap() {
     try {
         plugin.google.maps.Map.isAvailable(function (isAvailable, message) {
             if (isAvailable) {
-                var map = plugin.google.maps.Map.getMap(document.getElementById("mapaIncidencia"), {
+                var map = setTimeout(function() { plugin.google.maps.Map.getMap(document.getElementById("mapaIncidencia"), {
                     'backgroundColor': '#FFFFFF',
                     'mapType': plugin.google.maps.MapTypeId.ROADMAP,
                     'controls': {'compass': true, 'myLocationButton': true, 'indoorPicker': true, 'zoom': true},
@@ -154,7 +154,7 @@ function initMap() {
                         'latLng': CAPDEPERA_LOC,
                         'zoom': 18
                     }
-                });
+                });},300);
                 window.mapa = map;
                 window.mapa.setClickable(true);
                 window.mapa.getVisibleRegion();
