@@ -69,23 +69,23 @@ function initApp() {
     }
 
     //MAPA
-    try {
-        
-        initMap();
-
-    } catch (e) {
-        errorMapa();
-        console.log('E INIT-84', 'ERROR INIT MAPA', e);
-    }
+//    try {
+//        
+//        initMap();
+//
+//    } catch (e) {
+//        errorMapa();
+//        console.log('E INIT-84', 'ERROR INIT MAPA', e);
+//    }
     //MAPA WOW
-    try {
-        mapawow.getMap();
-        
-
-    } catch (e) {
-       // errorMapa();
-        console.log('E INIT-84', 'ERROR INIT MAPA', e);
-    }
+//    try {
+//        mapawow.getMap();
+//        
+//
+//    } catch (e) {
+//       // errorMapa();
+//        console.log('E INIT-84', 'ERROR INIT MAPA', e);
+//    }
 
 
     init.initApp();
