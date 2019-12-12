@@ -70,6 +70,7 @@ function initApp() {
 
     //MAPA
     try {
+        
         initMap();
 
     } catch (e) {
@@ -78,7 +79,8 @@ function initApp() {
     }
     //MAPA WOW
     try {
-        mapawow.initWow();
+        setTimeout(mapawow.initWow(),2000);
+        
 
     } catch (e) {
        // errorMapa();
@@ -359,7 +361,7 @@ var mapawow = {
     initWow: function(){
         var mapDiv = document.getElementById("mapaWow");
         var map = plugin.google.maps.Map.getMap(mapDiv);
-        map.one(plugin.google.maps.event.MAP_READY, onMapInitwow);
+        map.one(plugin.google.maps.event.MAP_READY, mapawow.onMapInitwow);
         window.mapawow = map;
     },
     onMapInitwow: function() {
