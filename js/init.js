@@ -358,11 +358,17 @@ function failUUID(e) {
 
 var mapawow = {
     
+    wow: null,
+    
     initWow: function(){
+        if(!mapawow.wow) {
         var mapDiv = document.getElementById("mapaWow");
         var map = setTimeout(plugin.google.maps.Map.getMap(mapDiv),5000);
         map.one(plugin.google.maps.event.MAP_READY, mapawow.onMapInitwow);
-        window.mapawow = map;
+        mapawow.wow = map;
+    }else {
+        mapawow.map.setDiv("mapaWow");
+    }
     },
     onMapInitwow: function() {
         
