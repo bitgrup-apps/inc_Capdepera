@@ -360,7 +360,7 @@ var mapawow = {
     
     initWow: function(){
         var mapDiv = document.getElementById("mapaWow");
-        var map = plugin.google.maps.Map.getMap(mapDiv);
+        var map = setTimeout(plugin.google.maps.Map.getMap(mapDiv),5000);
         map.one(plugin.google.maps.event.MAP_READY, mapawow.onMapInitwow);
         window.mapawow = map;
     },
