@@ -492,7 +492,7 @@ var init = {
         mapaUbicacio: function () {
             try {
                 
-                var div = document.getElementById('mapa');
+              //  var div = document.getElementById('mapa');
                // window.mapa.setDiv(div);
                 $.mobile.changePage("#oncapdepera-ubicacio", {transition: "slide"});
             } catch (e) {
