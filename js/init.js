@@ -154,7 +154,7 @@ function initMap() {
                         'latLng': CAPDEPERA_LOC,
                         'zoom': 18
                     }
-                });},300);
+                });},5000);
                 window.mapa = map;
                 window.mapa.setClickable(true);
                 window.mapa.getVisibleRegion();
@@ -162,7 +162,7 @@ function initMap() {
                 if(window.mapa) {
                     console.log('preSetdiv');
                     var div = document.getElementById('mapa');
-                    window.setDiv(div);
+                    setTimeout(function() {window.mapa.setDiv(div)},5000);
                     console.log('postSetdiv');
                 }
 
