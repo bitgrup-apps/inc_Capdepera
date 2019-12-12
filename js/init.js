@@ -143,8 +143,8 @@ function initPushNotification() {
 function initMap() {
     const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};   
     try {
-        plugin.google.maps.Map.isAvailable(function (isAvailable, message) {
-            if (isAvailable) {
+//        plugin.google.maps.Map.isAvailable(function (isAvailable, message) {
+//            if (isAvailable) {
                 var map = setTimeout(function() { plugin.google.maps.Map.getMap(document.getElementById("mapa"), {
                     'backgroundColor': '#FFFFFF',
                     'mapType': plugin.google.maps.MapTypeId.ROADMAP,
@@ -154,23 +154,23 @@ function initMap() {
                         'latLng': CAPDEPERA_LOC,
                         'zoom': 18
                     }
-                });},5000);
+                });},300);
                 window.mapa = map;
                 window.mapa.setClickable(true);
                 window.mapa.getVisibleRegion();
                 window.mapa.one(plugin.google.maps.event.MAP_READY, onMapInit);
-//                if(window.mapa) {
-//                    console.log('preSetdiv');
-//                    var div = document.getElementById('mapa');
-//                    setTimeout(function() {window.mapa.setDiv(div)},5000);
-//                    console.log('postSetdiv');
-//                }
-
-            } else {
-                console.log('E-149: ' + message);
-                errorMapa();
-            }
-        });
+////                if(window.mapa) {
+////                    console.log('preSetdiv');
+////                    var div = document.getElementById('mapa');
+////                    setTimeout(function() {window.mapa.setDiv(div)},5000);
+////                    console.log('postSetdiv');
+////                }
+//
+//            } else {
+//                console.log('E-149: ' + message);
+//                errorMapa();
+//            }
+//        });
 
     } catch (e) {
         error_('E INIT-178', 'ERROR INIT MAP', e);
