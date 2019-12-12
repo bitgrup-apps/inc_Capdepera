@@ -374,8 +374,8 @@ var mapawow = {
                         'latLng': CAPDEPERA_LOC,
                         'zoom': 18
                     }
-                });}, 5000);
-        mapawow.wow.on(plugin.google.maps.event.MAP_READY, mapawow.onMapInitwow);
+                });}, 300);
+      //  mapawow.wow.one(plugin.google.maps.event.MAP_READY, mapawow.onMapInitwow);
        
     }else {
         mapawow.wow.setDiv("mapaWow");
