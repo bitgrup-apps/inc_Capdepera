@@ -367,7 +367,7 @@ var mapawow = {
        // mapawow.wow.one(plugin.google.maps.event.MAP_READY, mapawow.onMapInitwow);
        
     }else {
-        mapawow.map.setDiv("mapaWow");
+        mapawow.wow.setDiv("mapaWow");
     }
     },
     onMapInitwow: function() {
