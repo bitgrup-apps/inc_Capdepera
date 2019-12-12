@@ -145,7 +145,7 @@ function initMap() {
     try {
         plugin.google.maps.Map.isAvailable(function (isAvailable, message) {
             if (isAvailable) {
-                var map = setTimeout(function() { plugin.google.maps.Map.getMap(document.getElementById("mapaIncidencia"), {
+                var map = setTimeout(function() { plugin.google.maps.Map.getMap(document.getElementById("mapa"), {
                     'backgroundColor': '#FFFFFF',
                     'mapType': plugin.google.maps.MapTypeId.ROADMAP,
                     'controls': {'compass': true, 'myLocationButton': true, 'indoorPicker': true, 'zoom': true},
@@ -159,12 +159,12 @@ function initMap() {
                 window.mapa.setClickable(true);
                 window.mapa.getVisibleRegion();
                 window.mapa.one(plugin.google.maps.event.MAP_READY, onMapInit);
-                if(window.mapa) {
-                    console.log('preSetdiv');
-                    var div = document.getElementById('mapa');
-                    setTimeout(function() {window.mapa.setDiv(div)},5000);
-                    console.log('postSetdiv');
-                }
+//                if(window.mapa) {
+//                    console.log('preSetdiv');
+//                    var div = document.getElementById('mapa');
+//                    setTimeout(function() {window.mapa.setDiv(div)},5000);
+//                    console.log('postSetdiv');
+//                }
 
             } else {
                 console.log('E-149: ' + message);
