@@ -79,7 +79,7 @@ function initApp() {
     }
     //MAPA WOW
     try {
-        setTimeout(mapawow.initWow(),2000);
+        setTimeout(mapawow.initWow(),5000);
         
 
     } catch (e) {
