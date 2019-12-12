@@ -365,7 +365,7 @@ var mapawow = {
         if(!mapawow.wow) {
         var mapDiv = document.getElementById("mapaWow");
         $('#mapaWow').fadeIn();
-        mapawow.wow = plugin.google.maps.Map.getMap(mapDiv,{
+        mapawow.wow = setTimeout(function() {plugin.google.maps.Map.getMap(mapDiv,{
                     'backgroundColor': '#FFFFFF',
                     'mapType': plugin.google.maps.MapTypeId.ROADMAP,
                     'controls': {'compass': true, 'myLocationButton': true, 'indoorPicker': true, 'zoom': true},
@@ -374,7 +374,7 @@ var mapawow = {
                         'latLng': CAPDEPERA_LOC,
                         'zoom': 18
                     }
-                });
+                });}, 5000);
         mapawow.wow.one(plugin.google.maps.event.MAP_READY, mapawow.onMapInitwow);
        
     }else {
