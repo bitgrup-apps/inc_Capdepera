@@ -364,7 +364,7 @@ var mapawow = {
         if(!mapawow.wow) {
         var mapDiv = document.getElementById("mapaWow");
         mapawow.wow = setTimeout(plugin.google.maps.Map.getMap(mapDiv),5000);
-        mapawow.wow.one(plugin.google.maps.event.MAP_READY, mapawow.onMapInitwow);
+       // mapawow.wow.one(plugin.google.maps.event.MAP_READY, mapawow.onMapInitwow);
        
     }else {
         mapawow.map.setDiv("mapaWow");
