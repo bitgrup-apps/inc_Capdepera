@@ -364,7 +364,7 @@ var mapawow = {
         const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};   
         if(!mapawow.wow) {
         var mapDiv = document.getElementById("mapaWow");
-        $('#mapa-wow').fadeIn(300);
+        $('#mapaWow').fadeIn();
         mapawow.wow = plugin.google.maps.Map.getMap(mapDiv,{
                     'backgroundColor': '#FFFFFF',
                     'mapType': plugin.google.maps.MapTypeId.ROADMAP,
