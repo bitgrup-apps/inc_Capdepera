@@ -362,7 +362,9 @@ var mapawow = {
     
     initWow: function(){
         var mapDiv = document.getElementById("mapaWow");
+        console.log('before getmap');
         mapawow.wow = setTimeout(function() {plugin.google.maps.Map.getMap(mapDiv)},400);
+        console.log('after getmap');
 //        const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};   
 //        if(!mapawow.wow) {
 //        var mapDiv = document.getElementById("mapaWow");
