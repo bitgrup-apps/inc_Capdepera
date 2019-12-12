@@ -78,14 +78,14 @@ function initApp() {
         console.log('E INIT-84', 'ERROR INIT MAPA', e);
     }
     //MAPA WOW
-    try {
-        setTimeout(mapawow.initWow(),5000);
-        
-
-    } catch (e) {
-       // errorMapa();
-        console.log('E INIT-84', 'ERROR INIT MAPA', e);
-    }
+//    try {
+//        setTimeout(mapawow.initWow(),5000);
+//        
+//
+//    } catch (e) {
+//       // errorMapa();
+//        console.log('E INIT-84', 'ERROR INIT MAPA', e);
+//    }
 
 
     init.initApp();
@@ -383,6 +383,10 @@ var mapawow = {
     },
     onMapInitwow: function() {
         
+    }
+    
+    ,getMap: function() {
+        mapawow.initWow();
     }
     
 };
