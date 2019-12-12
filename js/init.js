@@ -361,28 +361,26 @@ var mapawow = {
     wow: null,
     
     initWow: function(){
+       
+        const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};   
+        if(!mapawow.wow) {
         var mapDiv = document.getElementById("mapaWow");
-        console.log('before getmap');
-        mapawow.wow = setTimeout(function() {plugin.google.maps.Map.getMap(mapDiv)},400);
-        console.log('after getmap');
-//        const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};   
-//        if(!mapawow.wow) {
-//        var mapDiv = document.getElementById("mapaWow");
-//        mapawow.wow = setTimeout(function() {plugin.google.maps.Map.getMap(mapDiv,{
-//                    'backgroundColor': '#FFFFFF',
-//                    'mapType': plugin.google.maps.MapTypeId.ROADMAP,
-//                    'controls': {'compass': true, 'myLocationButton': true, 'indoorPicker': true, 'zoom': true},
-//                    'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true},
-//                    'camera': {
-//                        'latLng': CAPDEPERA_LOC,
-//                        'zoom': 18
-//                    }
-//                });}, 300);
-//      //  mapawow.wow.one(plugin.google.maps.event.MAP_READY, mapawow.onMapInitwow);
-//       
-//    }else {
-//        mapawow.wow.setDiv("mapaWow");
-//    }
+        mapawow.wow = setTimeout(function() {plugin.google.maps.Map.getMap(mapDiv,{
+                    'backgroundColor': '#FFFFFF',
+                    'mapType': plugin.google.maps.MapTypeId.ROADMAP,
+                    'controls': {'compass': true, 'myLocationButton': true, 'indoorPicker': true, 'zoom': true},
+                    'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true},
+                    'camera': {
+                        'latLng': CAPDEPERA_LOC,
+                        'zoom': 18
+                    }
+                });}, 300);
+      //  mapawow.wow.one(plugin.google.maps.event.MAP_READY, mapawow.onMapInitwow);
+       
+    }else {
+        console.log('setDiv');
+        mapawow.wow.setDiv("mapaWow");
+    }
     },
     onMapInitwow: function() {
         
