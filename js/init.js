@@ -361,9 +361,19 @@ var mapawow = {
     wow: null,
     
     initWow: function(){
+        const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};   
         if(!mapawow.wow) {
         var mapDiv = document.getElementById("mapaWow");
-        mapawow.wow = setTimeout(plugin.google.maps.Map.getMap(mapDiv),5000);
+        mapawow.wow = plugin.google.maps.Map.getMap(mapDiv,{
+                    'backgroundColor': '#FFFFFF',
+                    'mapType': plugin.google.maps.MapTypeId.ROADMAP,
+                    'controls': {'compass': true, 'myLocationButton': true, 'indoorPicker': true, 'zoom': true},
+                    'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true},
+                    'camera': {
+                        'latLng': CAPDEPERA_LOC,
+                        'zoom': 18
+                    }
+                });
        // mapawow.wow.one(plugin.google.maps.event.MAP_READY, mapawow.onMapInitwow);
        
     }else {
