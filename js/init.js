@@ -375,7 +375,7 @@ var mapawow = {
                         'zoom': 18
                     }
                 });}, 5000);
-        mapawow.wow.one(plugin.google.maps.event.MAP_READY, mapawow.onMapInitwow);
+        mapawow.wow.on(plugin.google.maps.event.MAP_READY, mapawow.onMapInitwow);
        
     }else {
         mapawow.wow.setDiv("mapaWow");
