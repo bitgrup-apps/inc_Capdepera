@@ -230,16 +230,15 @@ getLocation: function() {
             });
 },
 
-clickEvent: function () {
-    console.log('click');
+clickEvent: function () {    
             var evtName = plugin.google.maps.event.MAP_CLICK;
             mapaInc.mapInc.on(evtName, function (latLng) {
-            
-            mapaInc.mapInc.trigger("MARKER_REMOVE");
-            $('#latitutIncidencia').val(latLng.lat);
-            $('#longitutIncidencia').val(latLng.lng);
-            const NOVAPOSICIO = new plugin.google.maps.LatLng(latLng.lat, latLng.lng);
-            mapaInc.novaLocalitzacio(NOVAPOSICIO);
+            console.log('click');
+//            mapaInc.mapInc.trigger("MARKER_REMOVE");
+//            $('#latitutIncidencia').val(latLng.lat);
+//            $('#longitutIncidencia').val(latLng.lng);
+//            const NOVAPOSICIO = new plugin.google.maps.LatLng(latLng.lat, latLng.lng);
+//            mapaInc.novaLocalitzacio(NOVAPOSICIO);
             });
         },
 
