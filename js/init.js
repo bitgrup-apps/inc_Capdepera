@@ -157,13 +157,10 @@ var mapaInc = {
                         'latLng': CAPDEPERA_LOC,
                         'zoom': 18
                     }
-                });},300);
-                mapaInc.getNovaposiscio();
-                console.log('despres asignar' + mapaInc.mapInc);
+                });},300);               
                 mapaInc.mapInc.setClickable(true);
                 mapaInc.mapInc.getVisibleRegion();
-                mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
-                console.log('despres one 1' + mapaInc.mapInc);
+                mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);               
     
 
 
@@ -177,7 +174,7 @@ var mapaInc = {
   
     //LOCALITZACIÓ
     
-
+console.log('onmapinit');
     //AGAFAM LA LOCALITZACIÓ
     plugin.google.maps.LocationService.getMyLocation(mapaInc.onSuccess, mapaInc.onError);
     // SI CLICK GUARDAM NOVA LOCALITZACIÓ
