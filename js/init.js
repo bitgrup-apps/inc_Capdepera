@@ -205,8 +205,13 @@ getLocation: function() {
                 var long = location.latLng.lng;
                // mapaInc.mapInc.changeCamera(lat, long);
                 const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, long);
-              //  mapaInc.mapInc.getAdress(NOVAPOSICIO);                
-             plugin.google.maps.Geocoder.geocode(NOVAPOSICIO,function (results) {
+              //  mapaInc.mapInc.getAdress(NOVAPOSICIO); 
+              const GOOGLE = new plugin.google.maps.LatLng(location.latLng.lat, location.latLng.lng);
+        
+        var request = {
+            position:GOOGLE
+        };
+             plugin.google.maps.Geocoder.geocode(request,function (results) {
 
             if (results.length) {                
                 $('#adresaIncidencia').val(result.thoroughfare);
