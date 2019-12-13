@@ -158,6 +158,7 @@ var mapaInc = {
                         'zoom': 18
                     }
                 });},300);
+                mapaInc.getNovaposiscio();
                 console.log('despres asignar' + mapaInc.mapInc);
                 mapaInc.mapInc.setClickable(true);
                 mapaInc.mapInc.getVisibleRegion();
