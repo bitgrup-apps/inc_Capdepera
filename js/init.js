@@ -143,8 +143,7 @@ function initPushNotification() {
 function initMap() {
     const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};   
     try {
-//        plugin.google.maps.Map.isAvailable(function (isAvailable, message) {
-//            if (isAvailable) {
+
                 var map = setTimeout(function() { plugin.google.maps.Map.getMap(document.getElementById("mapa"), {
                     'backgroundColor': '#FFFFFF',
                     'mapType': plugin.google.maps.MapTypeId.ROADMAP,
@@ -158,19 +157,66 @@ function initMap() {
                 window.mapa = map;
                 window.mapa.setClickable(true);
                 window.mapa.getVisibleRegion();
-                window.mapa.one(plugin.google.maps.event.MAP_READY, onMapInit);
-////                if(window.mapa) {
-////                    console.log('preSetdiv');
-////                    var div = document.getElementById('mapa');
-////                    setTimeout(function() {window.mapa.setDiv(div)},5000);
-////                    console.log('postSetdiv');
-////                }
-//
-//            } else {
-//                console.log('E-149: ' + message);
-//                errorMapa();
-//            }
-//        });
+                window.mapa.one(plugin.google.maps.event.MAP_READY, function(){
+                var onSuccess = function (location) {
+        //comprovam posició
+
+        $('#latitutIncidencia').val(location.latLng.lat);
+        $('#longitutIncidencia').val(location.latLng.lng);
+        $('#latitutIncidenciaOnCap').val(location.latLng.lat);
+        $('#longitutIncidenciaOnCap').val(location.latLng.lng);
+                
+        const GOOGLE = new plugin.google.maps.LatLng(location.latLng.lat, location.latLng.lng);
+        
+        var request = {
+            position:GOOGLE
+        };
+        console.log(request);
+        
+        plugin.google.maps.Geocoder.geocode(request, function (results) {
+
+            if (results.length) {
+                var result = results[0];
+                var position = result.position;
+                var address = [
+                    result.thoroughfare || "",
+                    result.locality || "",
+                    result.postalCode || ""].join(", ");
+                window.mapa.trigger("MARKER_REMOVE");
+                window.mapa.addMarker({
+                    'position': position,
+                    'title': address
+                }, function (marker) {
+                    window.mapa.addEventListenerOnce("MARKER_REMOVE", function () {
+                        marker.remove();
+                    });
+                });
+                window.mapa.animateCamera({
+                    target: {
+                        lat: location.latLng.lat,
+                        lng: location.latLng.lng
+                    },
+                    'duration': 2,
+                    zoom: 18
+                });
+
+                $('#adresaIncidencia').val(result.thoroughfare);
+                $('#poblacioIncidencia').val(result.locality);
+                //ONCAPDEPERA
+                $('#adresaIncidenciaOnCap').val(result.thoroughfare);
+                $('#poblacioIncidenciaOnCap').val(result.locality);
+                
+            
+            } else {
+                console.log('E-202: NOT LENGHT MAPA');
+                errorMapa();
+            }
+        });
+
+
+    };
+                });
+
 
     } catch (e) {
         error_('E INIT-178', 'ERROR INIT MAP', e);
@@ -179,7 +225,7 @@ function initMap() {
 }
 
 function onMapInit() {
-  var mapa = window.mapa;
+  
     //LOCALITZACIÓ
     var onSuccess = function (location) {
         //comprovam posició
@@ -205,7 +251,7 @@ function onMapInit() {
                     result.thoroughfare || "",
                     result.locality || "",
                     result.postalCode || ""].join(", ");
-                    mapa.trigger("MARKER_REMOVE");
+//                window.mapa.trigger("MARKER_REMOVE");
 //                window.mapa.addMarker({
 //                    'position': position,
 //                    'title': address
@@ -248,7 +294,7 @@ function onMapInit() {
     plugin.google.maps.LocationService.getMyLocation(onSuccess, onError);
     // SI CLICK GUARDAM NOVA LOCALITZACIÓ
     var evtName = plugin.google.maps.event.MAP_CLICK;
-    mapa.one(evtName, function (latLng) {
+    window.mapa.one(evtName, function (latLng) {
         if (comprovaPosicio(latLng.lat, latLng.lng)) {
             window.mapa.trigger("MARKER_REMOVE");
             $('#latitutIncidencia').val(latLng.lat);
