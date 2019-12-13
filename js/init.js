@@ -160,9 +160,9 @@ var mapaInc = {
                 });},300);               
 //                mapaInc.mapInc.setClickable(true);
 //                mapaInc.mapInc.getVisibleRegion();
-                console.log('preone');
-                mapaInc.mapInc.on(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
-                console.log('postone');
+               
+              //  mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
+               
              // mapaInc.onMapInit();
                
 
@@ -173,8 +173,7 @@ var mapaInc = {
 
 },
 
- onMapInit: function() {
-    console.log('onmapInit');
+ onMapInit: function() {    
     mapaInc.mapInc.setClickable(true);
     mapaInc.mapInc.getVisibleRegion();
     //LOCALITZACIÓ
@@ -233,10 +232,11 @@ getLocation: function() {
             });
 },
 
-clickEvent: function () {    
+clickEvent: function () { 
+     console.log('event');
             var evtName = plugin.google.maps.event.MAP_CLICK;
             mapaInc.mapInc.on(evtName, function (latLng) {
-            
+            console.log('click');
 //            mapaInc.mapInc.trigger("MARKER_REMOVE");
             $('#latitutIncidencia').val(latLng.lat);
             $('#longitutIncidencia').val(latLng.lng);
