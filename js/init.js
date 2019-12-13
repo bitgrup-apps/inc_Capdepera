@@ -142,7 +142,7 @@ function initPushNotification() {
 
 var mapaInc = {
     
-    mapInc = null,
+    mapInc: null,
 
     initMap: function() {
     const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};   
