@@ -148,7 +148,7 @@ var mapaInc = {
     const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};   
     try {
 
-                var map = setTimeout(function() { plugin.google.maps.Map.getMap(document.getElementById("mapa"), {
+                mapaInc.mapInc = setTimeout(function() { plugin.google.maps.Map.getMap(document.getElementById("mapa"), {
                     'backgroundColor': '#FFFFFF',
                     'mapType': plugin.google.maps.MapTypeId.ROADMAP,
                     'controls': {'compass': true, 'myLocationButton': true, 'indoorPicker': true, 'zoom': true},
@@ -158,7 +158,7 @@ var mapaInc = {
                         'zoom': 18
                     }
                 });},300);
-                mapaInc.mapInc = map;
+                
                 mapaInc.mapInc.setClickable(true);
                 mapaInc.mapInc.getVisibleRegion();
                 mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
