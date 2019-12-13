@@ -645,8 +645,8 @@ var init = {
 
         },
         getNovaPosicio: function () {
-           // onMapInit();
-           initMap();
+            onMapInit();
+         
         }
     },
 
