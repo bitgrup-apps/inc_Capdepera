@@ -215,6 +215,10 @@ function initMap() {
 
 
     };
+     var onError = function (msg) {
+        errorMapa();
+        console.log('E INIT-235', 'ERROR POSICIÓ MAPA');
+    };
     plugin.google.maps.LocationService.getMyLocation(onSuccess, onError);
     // SI CLICK GUARDAM NOVA LOCALITZACIÓ
     var evtName = plugin.google.maps.event.MAP_CLICK;
