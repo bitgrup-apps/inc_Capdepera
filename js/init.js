@@ -206,7 +206,7 @@ getLocation: function() {
                // mapaInc.mapInc.changeCamera(lat, long);
                 const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, long);
               //  mapaInc.mapInc.getAdress(NOVAPOSICIO);
-                console.log('pos getLocation: '+NOVAPOSICIO)
+                console.log('pos getLocation: '+NOVAPOSICIO.LatLng.lat)
             });
 },
 
