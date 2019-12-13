@@ -245,33 +245,33 @@ function initMap() {
 
 }
 
-function onMapInit() {
-  
-    //LOCALITZACIÓ
-    var onSuccess = function (location) {
-        //comprovam posició
-
-        $('#latitutIncidencia').val(location.latLng.lat);
-        $('#longitutIncidencia').val(location.latLng.lng);
-        $('#latitutIncidenciaOnCap').val(location.latLng.lat);
-        $('#longitutIncidenciaOnCap').val(location.latLng.lng);
-                
-        const GOOGLE = new plugin.google.maps.LatLng(location.latLng.lat, location.latLng.lng);
-        
-        var request = {
-            position:GOOGLE
-        };
-        console.log(request);
-        
-        plugin.google.maps.Geocoder.geocode(request, function (results) {
-
-            if (results.length) {
-                var result = results[0];
-                var position = result.position;
-                var address = [
-                    result.thoroughfare || "",
-                    result.locality || "",
-                    result.postalCode || ""].join(", ");
+//function onMapInit() {
+//  
+//    //LOCALITZACIÓ
+//    var onSuccess = function (location) {
+//        //comprovam posició
+//
+//        $('#latitutIncidencia').val(location.latLng.lat);
+//        $('#longitutIncidencia').val(location.latLng.lng);
+//        $('#latitutIncidenciaOnCap').val(location.latLng.lat);
+//        $('#longitutIncidenciaOnCap').val(location.latLng.lng);
+//                
+//        const GOOGLE = new plugin.google.maps.LatLng(location.latLng.lat, location.latLng.lng);
+//        
+//        var request = {
+//            position:GOOGLE
+//        };
+//        console.log(request);
+//        
+//        plugin.google.maps.Geocoder.geocode(request, function (results) {
+//
+//            if (results.length) {
+//                var result = results[0];
+//                var position = result.position;
+//                var address = [
+//                    result.thoroughfare || "",
+//                    result.locality || "",
+//                    result.postalCode || ""].join(", ");
 //                window.mapa.trigger("MARKER_REMOVE");
 //                window.mapa.addMarker({
 //                    'position': position,
@@ -289,47 +289,47 @@ function onMapInit() {
 //                    'duration': 2,
 //                    zoom: 18
 //                });
-
-                $('#adresaIncidencia').val(result.thoroughfare);
-                $('#poblacioIncidencia').val(result.locality);
-                //ONCAPDEPERA
-                $('#adresaIncidenciaOnCap').val(result.thoroughfare);
-                $('#poblacioIncidenciaOnCap').val(result.locality);
-                
-            
-            } else {
-                console.log('E-202: NOT LENGHT MAPA');
-                errorMapa();
-            }
-        });
-
-
-    };
-
-    var onError = function (msg) {
-        errorMapa();
-        console.log('E INIT-235', 'ERROR POSICIÓ MAPA');
-    };
-
-    //AGAFAM LA LOCALITZACIÓ
-    plugin.google.maps.LocationService.getMyLocation(onSuccess, onError);
-    // SI CLICK GUARDAM NOVA LOCALITZACIÓ
-    var evtName = plugin.google.maps.event.MAP_CLICK;
-    window.mapa.one(evtName, function (latLng) {
-        if (comprovaPosicio(latLng.lat, latLng.lng)) {
-            window.mapa.trigger("MARKER_REMOVE");
-            $('#latitutIncidencia').val(latLng.lat);
-            $('#longitutIncidencia').val(latLng.lng);
-            const NOVAPOSICIO = new plugin.google.maps.LatLng(latLng.lat, latLng.lng);
-            novaLocalitzacio(NOVAPOSICIO);
-        } else {
-            alert("La nova posició no es troba a una àrea correcte");
-        }
-    });
-    //ACTUALITZAM LLISTA DE INCIDENCIES
-    //iniciaLlistatIncidencies();
-
-}
+//
+//                $('#adresaIncidencia').val(result.thoroughfare);
+//                $('#poblacioIncidencia').val(result.locality);
+//                //ONCAPDEPERA
+//                $('#adresaIncidenciaOnCap').val(result.thoroughfare);
+//                $('#poblacioIncidenciaOnCap').val(result.locality);
+//                
+//            
+//            } else {
+//                console.log('E-202: NOT LENGHT MAPA');
+//                errorMapa();
+//            }
+//        });
+//
+//
+//    };
+//
+//    var onError = function (msg) {
+//        errorMapa();
+//        console.log('E INIT-235', 'ERROR POSICIÓ MAPA');
+//    };
+//
+//    //AGAFAM LA LOCALITZACIÓ
+//    plugin.google.maps.LocationService.getMyLocation(onSuccess, onError);
+//    // SI CLICK GUARDAM NOVA LOCALITZACIÓ
+//    var evtName = plugin.google.maps.event.MAP_CLICK;
+//    window.mapa.one(evtName, function (latLng) {
+//        if (comprovaPosicio(latLng.lat, latLng.lng)) {
+//            window.mapa.trigger("MARKER_REMOVE");
+//            $('#latitutIncidencia').val(latLng.lat);
+//            $('#longitutIncidencia').val(latLng.lng);
+//            const NOVAPOSICIO = new plugin.google.maps.LatLng(latLng.lat, latLng.lng);
+//            novaLocalitzacio(NOVAPOSICIO);
+//        } else {
+//            alert("La nova posició no es troba a una àrea correcte");
+//        }
+//    });
+//    //ACTUALITZAM LLISTA DE INCIDENCIES
+//    //iniciaLlistatIncidencies();
+//
+//}
 
 //NOVA LOCALITZACIÓ AL MAPA
 function novaLocalitzacio(posicio) {
