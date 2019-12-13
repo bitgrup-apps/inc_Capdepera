@@ -206,16 +206,9 @@ getLocation: function() {
                // mapaInc.mapInc.changeCamera(lat, long);
                 const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, long);
               //  mapaInc.mapInc.getAdress(NOVAPOSICIO);                
-             plugin.google.maps.Geocoder.geocode(request, function (results) {
+             plugin.google.maps.Geocoder.geocode(function (results) {
 
-            if (results.length) {
-                var result = results[0];
-                var position = result.position;
-                var address = [
-                    result.thoroughfare || "",
-                    result.locality || "",
-                    result.postalCode || ""].join(", ");               
-
+            if (results.length) {                
                 $('#adresaIncidencia').val(result.thoroughfare);
                 $('#poblacioIncidencia').val(result.locality);
                 //ONCAPDEPERA
