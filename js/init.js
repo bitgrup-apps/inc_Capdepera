@@ -161,7 +161,7 @@ var mapaInc = {
 //                mapaInc.mapInc.setClickable(true);
 //                mapaInc.mapInc.getVisibleRegion();
                 console.log('preone');
-                mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
+                mapaInc.mapInc.on(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
                 console.log('postone');
              // mapaInc.onMapInit();
                
