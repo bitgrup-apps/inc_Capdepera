@@ -163,7 +163,7 @@ var mapaInc = {
                
               //  mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
                
-             // mapaInc.onMapInit();
+              mapaInc.onMapInit();
                
 
 
@@ -174,7 +174,8 @@ var mapaInc = {
 },
 
  onMapInit: function() {    
-    
+    mapaInc.mapInc.setClickable(true);
+    mapaInc.mapInc.getVisibleRegion();
     //LOCALITZACIÓ
     mapaInc.clickEvent();
     //AGAFAM LA LOCALITZACIÓ
