@@ -205,7 +205,7 @@ function onMapInit() {
                     result.thoroughfare || "",
                     result.locality || "",
                     result.postalCode || ""].join(", ");
-//                window.mapa.trigger("MARKER_REMOVE");
+                    mapa.trigger("MARKER_REMOVE");
 //                window.mapa.addMarker({
 //                    'position': position,
 //                    'title': address
