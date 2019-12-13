@@ -161,8 +161,8 @@ var mapaInc = {
 //                mapaInc.mapInc.setClickable(true);
 //                mapaInc.mapInc.getVisibleRegion();
                 
-              //  mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
-              mapaInc.onMapInit();
+                mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
+             // mapaInc.onMapInit();
                
 
 
@@ -173,7 +173,9 @@ var mapaInc = {
 },
 
  onMapInit: function() {
-  
+     console.log('onmapInit');
+    mapaInc.mapInc.setClickable(true);
+    mapaInc.mapInc.getVisibleRegion();
     //LOCALITZACIÓ
     mapaInc.clickEvent();
     //AGAFAM LA LOCALITZACIÓ
