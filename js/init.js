@@ -198,7 +198,7 @@ console.log('onmapinit');
 
   onSuccess: function (location) {
         //comprovam posició
-
+console.log('onsucces');
         $('#latitutIncidencia').val(location.latLng.lat);
         $('#longitutIncidencia').val(location.latLng.lng);
         $('#latitutIncidenciaOnCap').val(location.latLng.lat);

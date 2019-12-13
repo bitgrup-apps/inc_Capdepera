@@ -48,7 +48,7 @@
                 <a href="#loggin-home" id="login_home" data-role="none" data-transition="slide"></a>
                 <div class="col-xs-12 logo"><h1 class="literal" data-literal="msg_hom">Benvinguts</h1></div>
                  <div class="col-xs-4">
-                    <a href="#afegirIncidencia" class="pastilla incd literal" data-literal="msg_menu_6" onclick="init.sendEstadistica('incidencia');" data-role="none">Incidències</a>
+                    <a href="#afegirIncidencia" class="pastilla incd literal" data-literal="msg_menu_6" onclick="init.sendEstadistica('incidencia');mapaInc.initMap();" data-role="none">Incidències</a>
                 </div>
                  <div class="col-xs-4">
                     <a href="#avisos" class="pastilla avisos literal" data-literal="msg_menu_7" onclick="init.avisos.init();" data-role="none">Avisos</a>
@@ -844,7 +844,7 @@
                         </div>
                         <div class="col-xs-12">
                             <label class="literal" data-literal="msg_form_4">Ubicació</label>
-                            <a href="#" data-role="none" onclick="mapaInc.initMap();init.mapa.mapaUbicacio();" class="literal" data-literal="inc_14">Indicar una altre ubicació al mapa</a><!--init.mapa.mapaUbicacio();-->
+                            <a href="#" data-role="none" onclick="init.mapa.mapaUbicacio();" class="literal" data-literal="inc_14">Indicar una altre ubicació al mapa</a><!--init.mapa.mapaUbicacio();-->
                         </div>
                         <div class="col-xs-12">
                             <label class="literal" data-literal="msg_form_5">Adressa</label><input  id="adresaIncidenciaOnCap" name="adresaIncidenciaOnCap" value="">
