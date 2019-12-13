@@ -160,10 +160,10 @@ var mapaInc = {
                 });},300);               
 //                mapaInc.mapInc.setClickable(true);
 //                mapaInc.mapInc.getVisibleRegion();
-                console.log('pre-one');
+                
               //  mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
               mapaInc.onMapInit();
-                console.log('post-one');
+               
 
 
     } catch (e) {
@@ -176,26 +176,26 @@ var mapaInc = {
   
     //LOCALITZACIÓ
     
-console.log('onmapinit');
+
     //AGAFAM LA LOCALITZACIÓ
-//    plugin.google.maps.LocationService.getMyLocation(mapaInc.onSuccess, mapaInc.onError);
-//    // SI CLICK GUARDAM NOVA LOCALITZACIÓ
-//    var evtName = plugin.google.maps.event.MAP_CLICK;
-//    console.log('abans one 2'+ mapaInc.mapInc);
-//    mapaInc.mapInc.one(evtName, function (latLng) {
-//        if (comprovaPosicio(latLng.lat, latLng.lng)) {
-//            mapaInc.mapInc.trigger("MARKER_REMOVE");
-//            $('#latitutIncidencia').val(latLng.lat);
-//            $('#longitutIncidencia').val(latLng.lng);
-//            const NOVAPOSICIO = new plugin.google.maps.LatLng(latLng.lat, latLng.lng);
-//            mapaInc.novaLocalitzacio(NOVAPOSICIO);
-//        } else {
-//            alert("La nova posició no es troba a una àrea correcte");
-//        }
-//    });
-//    //ACTUALITZAM LLISTA DE INCIDENCIES
-//    //iniciaLlistatIncidencies();
-//
+    plugin.google.maps.LocationService.getMyLocation(mapaInc.onSuccess, mapaInc.onError);
+    // SI CLICK GUARDAM NOVA LOCALITZACIÓ
+    var evtName = plugin.google.maps.event.MAP_CLICK;
+    console.log('abans one 2'+ mapaInc.mapInc);
+    mapaInc.mapInc.one(evtName, function (latLng) {
+        if (comprovaPosicio(latLng.lat, latLng.lng)) {
+            mapaInc.mapInc.trigger("MARKER_REMOVE");
+            $('#latitutIncidencia').val(latLng.lat);
+            $('#longitutIncidencia').val(latLng.lng);
+            const NOVAPOSICIO = new plugin.google.maps.LatLng(latLng.lat, latLng.lng);
+            mapaInc.novaLocalitzacio(NOVAPOSICIO);
+        } else {
+            alert("La nova posició no es troba a una àrea correcte");
+        }
+    });
+    //ACTUALITZAM LLISTA DE INCIDENCIES
+    //iniciaLlistatIncidencies();
+
 },
 
   onSuccess: function (location) {
