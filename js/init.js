@@ -175,7 +175,7 @@ var mapaInc = {
  onMapInit: function() {
   
     //LOCALITZACIÓ
-    mapaInc.getLocation();
+    
     //AGAFAM LA LOCALITZACIÓ
 //    plugin.google.maps.LocationService.getMyLocation(mapaInc.onSuccess, mapaInc.onError);
 //    // SI CLICK GUARDAM NOVA LOCALITZACIÓ
@@ -205,8 +205,9 @@ getLocation: function() {
                 var long = location.latLng.lng;
                // mapaInc.mapInc.changeCamera(lat, long);
                 const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, long);
-              //  mapaInc.mapInc.getAdress(NOVAPOSICIO);
-                console.log('pos getLocation: '+NOVAPOSICIO.lat)
+              //  mapaInc.mapInc.getAdress(NOVAPOSICIO);                
+                 $('#latitutIncidenciaOnCap').val(NOVAPOSICIO.lat);
+                 $('#longitutIncidenciaOnCap').val(NOVAPOSICIO.lng);
             });
 },
 
