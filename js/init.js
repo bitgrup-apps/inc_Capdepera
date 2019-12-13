@@ -175,32 +175,55 @@ var mapaInc = {
  onMapInit: function() {
   
     //LOCALITZACIÓ
-    
-
+    mapaInc.getLocation();
     //AGAFAM LA LOCALITZACIÓ
-    plugin.google.maps.LocationService.getMyLocation(mapaInc.onSuccess, mapaInc.onError);
-    // SI CLICK GUARDAM NOVA LOCALITZACIÓ
-    var evtName = plugin.google.maps.event.MAP_CLICK;
-    console.log('abans one 2'+ mapaInc.mapInc);
-    mapaInc.mapInc.one(evtName, function (latLng) {
-        if (comprovaPosicio(latLng.lat, latLng.lng)) {
-            mapaInc.mapInc.trigger("MARKER_REMOVE");
-            $('#latitutIncidencia').val(latLng.lat);
-            $('#longitutIncidencia').val(latLng.lng);
-            const NOVAPOSICIO = new plugin.google.maps.LatLng(latLng.lat, latLng.lng);
-            mapaInc.novaLocalitzacio(NOVAPOSICIO);
-        } else {
-            alert("La nova posició no es troba a una àrea correcte");
-        }
-    });
+//    plugin.google.maps.LocationService.getMyLocation(mapaInc.onSuccess, mapaInc.onError);
+//    // SI CLICK GUARDAM NOVA LOCALITZACIÓ
+//    var evtName = plugin.google.maps.event.MAP_CLICK;    
+//    mapaInc.mapInc.one(evtName, function (latLng) {
+//        if (comprovaPosicio(latLng.lat, latLng.lng)) {
+//            mapaInc.mapInc.trigger("MARKER_REMOVE");
+//            $('#latitutIncidencia').val(latLng.lat);
+//            $('#longitutIncidencia').val(latLng.lng);
+//            const NOVAPOSICIO = new plugin.google.maps.LatLng(latLng.lat, latLng.lng);
+//            mapaInc.novaLocalitzacio(NOVAPOSICIO);
+//        } else {
+//            alert("La nova posició no es troba a una àrea correcte");
+//        }
+//    });
     //ACTUALITZAM LLISTA DE INCIDENCIES
     //iniciaLlistatIncidencies();
 
 },
 
+getLocation: function() {
+    
+    var option = {enableHighAccuracy: true};
+            plugin.google.maps.LocationService.getMyLocation(option, function (location) {
+                //CAMERA POSITION
+                var lat = location.latLng.lat;
+                var long = location.latLng.lng;
+                mapaInc.mapInc.changeCamera(lat, long);
+                const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, long);
+              //  mapaInc.mapInc.getAdress(NOVAPOSICIO);
+                console.log('pos getLocation: '+NOVAPOSICIO)
+            });
+},
+
+changeCamera: function (lat, long) {
+            mapaInc.mapInc.animateCamera({
+                target: {lat: lat, lng: long},
+                zoom: 17,
+                tilt: 60,
+                bearing: 0,
+                duration: 2000
+            }, function () {
+                //alert("Camera target has been changed");
+            });
+        },
+
   onSuccess: function (location) {
         //comprovam posició
-console.log('onsucces');
         $('#latitutIncidencia').val(location.latLng.lat);
         $('#longitutIncidencia').val(location.latLng.lng);
         $('#latitutIncidenciaOnCap').val(location.latLng.lat);
