@@ -206,8 +206,28 @@ getLocation: function() {
                // mapaInc.mapInc.changeCamera(lat, long);
                 const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, long);
               //  mapaInc.mapInc.getAdress(NOVAPOSICIO);                
-                 $('#latitutIncidenciaOnCap').val(NOVAPOSICIO.lat);
-                 $('#longitutIncidenciaOnCap').val(NOVAPOSICIO.lng);
+             plugin.google.maps.Geocoder.geocode(request, function (results) {
+
+            if (results.length) {
+                var result = results[0];
+                var position = result.position;
+                var address = [
+                    result.thoroughfare || "",
+                    result.locality || "",
+                    result.postalCode || ""].join(", ");               
+
+                $('#adresaIncidencia').val(result.thoroughfare);
+                $('#poblacioIncidencia').val(result.locality);
+                //ONCAPDEPERA
+                $('#adresaIncidenciaOnCap').val(result.thoroughfare);
+                $('#poblacioIncidenciaOnCap').val(result.locality);
+                
+            
+            } else {
+                console.log('E-202: NOT LENGHT MAPA');
+                errorMapa();
+            }
+        });
             });
 },
 
