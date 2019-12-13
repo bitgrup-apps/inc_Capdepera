@@ -158,10 +158,11 @@ var mapaInc = {
                         'zoom': 18
                     }
                 });},300);
-                
+                console.log('despres asignar' + mapaInc.mapInc);
                 mapaInc.mapInc.setClickable(true);
                 mapaInc.mapInc.getVisibleRegion();
                 mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
+                console.log('despres one 1' + mapaInc.mapInc);
     
 
 
