@@ -161,7 +161,8 @@ var mapaInc = {
 //                mapaInc.mapInc.setClickable(true);
 //                mapaInc.mapInc.getVisibleRegion();
                 console.log('pre-one');
-                mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);               
+              //  mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
+              mapaInc.onMapInit();
                 console.log('post-one');
 
 
