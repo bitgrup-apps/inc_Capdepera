@@ -233,6 +233,7 @@ getLocation: function() {
 clickEvent: function () {
             var evtName = plugin.google.maps.event.MAP_CLICK;
             mapaInc.mapInc.on(evtName, function (latLng) {
+            console.log('click');
             mapaInc.mapInc.trigger("MARKER_REMOVE");
             $('#latitutIncidencia').val(latLng.lat);
             $('#longitutIncidencia').val(latLng.lng);
