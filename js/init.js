@@ -206,7 +206,7 @@ getLocation: function() {
                // mapaInc.mapInc.changeCamera(lat, long);
                 const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, long);
               //  mapaInc.mapInc.getAdress(NOVAPOSICIO);                
-             plugin.google.maps.Geocoder.geocode(function (results) {
+             plugin.google.maps.Geocoder.geocode(NOVAPOSICIO,function (results) {
 
             if (results.length) {                
                 $('#adresaIncidencia').val(result.thoroughfare);
