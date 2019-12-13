@@ -181,6 +181,7 @@ var mapaInc = {
     plugin.google.maps.LocationService.getMyLocation(mapaInc.onSuccess, mapaInc.onError);
     // SI CLICK GUARDAM NOVA LOCALITZACIÓ
     var evtName = plugin.google.maps.event.MAP_CLICK;
+    console.log('abans one 2'+ mapaInc.mapInc);
     mapaInc.mapInc.one(evtName, function (latLng) {
         if (comprovaPosicio(latLng.lat, latLng.lng)) {
             mapaInc.mapInc.trigger("MARKER_REMOVE");
