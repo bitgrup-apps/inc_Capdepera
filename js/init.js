@@ -160,7 +160,7 @@ function initMap() {
                 window.mapa.one(plugin.google.maps.event.MAP_READY, function(){
                 var onSuccess = function (location) {
         //comprovam posició
-
+        console.log('succes');
         $('#latitutIncidencia').val(location.latLng.lat);
         $('#longitutIncidencia').val(location.latLng.lng);
         $('#latitutIncidenciaOnCap').val(location.latLng.lat);
@@ -216,10 +216,12 @@ function initMap() {
 
     };
      var onError = function (msg) {
+           console.log('error');
         errorMapa();
         console.log('E INIT-235', 'ERROR POSICIÓ MAPA');
     };
     plugin.google.maps.LocationService.getMyLocation(onSuccess, onError);
+      console.log('after locationservice');
     // SI CLICK GUARDAM NOVA LOCALITZACIÓ
     var evtName = plugin.google.maps.event.MAP_CLICK;
     window.mapa.one(evtName, function (latLng) {
