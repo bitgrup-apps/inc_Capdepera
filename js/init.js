@@ -213,7 +213,8 @@ getLocation: function() {
         };
              plugin.google.maps.Geocoder.geocode(request,function (results) {
 
-            if (results.length) {                
+            if (results.length) {
+                var result = results[0];
                 $('#adresaIncidencia').val(result.thoroughfare);
                 $('#poblacioIncidencia').val(result.locality);
                 //ONCAPDEPERA
