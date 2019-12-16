@@ -158,18 +158,7 @@ var mapaInc = {
                         'latLng': mapaInc.pos,
                         'zoom': 18
                     }
-                });plugin.google.maps.Map.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);},100);               
-//                mapaInc.mapInc.setClickable(true);
-//                mapaInc.mapInc.getVisibleRegion();
-               
-                //setTimeout(function() { mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit); },350);
-               //mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
-              // mapaInc.mapInc.addEventListener(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
-             // setTimeout(function() { mapaInc.mapInc.addEventListener(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit); },350);
-               console.log('after one');
-              //mapaInc.onMapInit();
-            //  setTimeout(function() { mapaInc.onMapInit(); },350);
-               
+                });mapaInc.mapInc.on(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);},100);               
 
 
     } catch (e) {
@@ -180,7 +169,7 @@ var mapaInc = {
 
  onMapInit: function() { 
     console.log('onmapInit');
-//    setTimeout(function() { mapaInc.mapInc.Map.addMarker({'position': mapaInc.pos}, function (marker) {
+//    setTimeout(function() { mapaInc.mapInc.addMarker({'position': mapaInc.pos}, function (marker) {
 //                        marker.showInfoWindow();
 //                        mapaInc.mapInc.addEventListenerOnce("MARKER_REMOVE", function () {
 //                            marker.remove();
