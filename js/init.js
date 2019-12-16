@@ -178,7 +178,7 @@ var mapaInc = {
 
  onMapInit: function() { 
     console.log('onmapInit');
-    mapaInc.mapInc.addMarker({'position': posicio}, function (marker) {
+    mapaInc.mapInc.addMarker({'position': mapaInc.pos}, function (marker) {
                         marker.showInfoWindow();
                         mapaInc.mapInc.addEventListenerOnce("MARKER_REMOVE", function () {
                             marker.remove();
