@@ -844,7 +844,7 @@
                         </div>
                         <div class="col-xs-12">
                             <label class="literal" data-literal="msg_form_4">Ubicació</label>
-                            <a href="#" data-role="none" onclick="mapaInc.initMap();init.mapa.mapaUbicacio();" class="literal" data-literal="inc_14">Indicar una altre ubicació al mapa</a><!--init.mapa.mapaUbicacio();-->
+                            <a href="#" data-role="none" onclick="$.mobile.changePage('#oncapdepera-ubicacio', {transition: 'slide'});mapaInc.initMap();init.mapa.mapaUbicacio();" class="literal" data-literal="inc_14">Indicar una altre ubicació al mapa</a><!--init.mapa.mapaUbicacio();-->
                         </div>
                         <div class="col-xs-12">
                             <label class="literal" data-literal="msg_form_5">Adressa</label><input  id="adresaIncidenciaOnCap" name="adresaIncidenciaOnCap" value="">
@@ -915,10 +915,26 @@
             </div>
             <div data-role="content" class=""  id="oncpd-html">
                 
-                <div id="mapa" class="mapa"></div>
+                <div id="mapa_canvas" class="mapa"></div>
             </div>
-        </div>
+            <script>
+                document.addEventListener("deviceready", function() {
+  // Define a div tag with id="map_canvas"
+  var mapDiv = document.getElementById("map_canvas");
 
+  // Initialize the map plugin
+  var map = plugin.google.maps.Map.getMap(mapDiv);
+
+  // The MAP_READY event notifies the native map view is fully ready to use.
+  map.one(plugin.google.maps.event.MAP_READY, onMapInit);
+});
+
+function onMapInit(map) {
+console.log('mapcanvas');
+}
+                </script>
+        </div>
+        
 
 
 
