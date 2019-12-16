@@ -69,14 +69,14 @@ function initApp() {
     }
 
     //MAPA
-//    try {
-//        
-//        initMap();
-//
-//    } catch (e) {
-//        errorMapa();
-//        console.log('E INIT-84', 'ERROR INIT MAPA', e);
-//    }
+    try {
+        
+        mapaInc.initMap();
+
+    } catch (e) {
+        errorMapa();
+        console.log('E INIT-84', 'ERROR INIT MAPA', e);
+    }
     //MAPA WOW
 //    try {
 //        mapawow.getMap();
