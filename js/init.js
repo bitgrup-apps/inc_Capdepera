@@ -158,7 +158,7 @@ var mapaInc = {
                         'latLng': mapaInc.pos,
                         'zoom': 18
                     }
-                });mapaInc.mapInc.Map.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);},100);               
+                });plugin.google.maps.Map.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);},100);               
 //                mapaInc.mapInc.setClickable(true);
 //                mapaInc.mapInc.getVisibleRegion();
                
@@ -180,12 +180,12 @@ var mapaInc = {
 
  onMapInit: function() { 
     console.log('onmapInit');
-    setTimeout(function() { mapaInc.mapInc.Map.addMarker({'position': mapaInc.pos}, function (marker) {
-                        marker.showInfoWindow();
-                        mapaInc.mapInc.addEventListenerOnce("MARKER_REMOVE", function () {
-                            marker.remove();
-                        });
-                    }); },350); 
+//    setTimeout(function() { mapaInc.mapInc.Map.addMarker({'position': mapaInc.pos}, function (marker) {
+//                        marker.showInfoWindow();
+//                        mapaInc.mapInc.addEventListenerOnce("MARKER_REMOVE", function () {
+//                            marker.remove();
+//                        });
+//                    }); },350); 
     //LOCALITZACIÓ
   //  mapaInc.clickEvent();
     //AGAFAM LA LOCALITZACIÓ
