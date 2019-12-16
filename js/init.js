@@ -158,7 +158,7 @@ var mapaInc = {
                         'latLng': mapaInc.pos,
                         'zoom': 18
                     }
-                });mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);},100);               
+                });plugin.google.maps.Map.getMap(document.getElementById("mapa").one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit));},100);               
 //                mapaInc.mapInc.setClickable(true);
 //                mapaInc.mapInc.getVisibleRegion();
                

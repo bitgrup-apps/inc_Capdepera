@@ -50,7 +50,7 @@
     <preference name="GOOGLE_MAPS_IOS_API_KEY" value="AIzaSyB7g2Ackb5PebwE30QwAqAzPMGo1r4HnFQ" />
     
     <!-- PLUGINS -->
-    <plugin name="cordova-plugin-googlemaps" spec="2.4.6">
+    <plugin name="cordova-plugin-googlemaps" spec="2.6.0">
         <!-- produccio-->
         <variable name="API_KEY_FOR_ANDROID" value="AIzaSyAbCsdbOZ31x79tk8PDVHsW3AL_zgNseGo" />
         <!-- desarrollo-->
