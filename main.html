@@ -920,7 +920,7 @@
             <script>
                 document.addEventListener("deviceready", function() {
                   var mapDiv = document.getElementById("map_canvas");
-                  var map = plugin.google.maps.Map.getMap(mapDiv);
+                  var map = setTimeout(function() {plugin.google.maps.Map.getMap(mapDiv);}, 100 );
 
                   map.one(plugin.google.maps.event.MAP_READY, onMapInit);
 });
