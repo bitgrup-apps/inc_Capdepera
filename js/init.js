@@ -147,7 +147,6 @@ var mapaInc = {
 
     initMap: function() {
     //const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};
-    //mapaInc.getPosicioInicial();
     try {
 
                 mapaInc.mapInc = setTimeout(function() { plugin.google.maps.Map.getMap(document.getElementById("mapa"), {
@@ -166,7 +165,7 @@ var mapaInc = {
                 //setTimeout(function() { mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit); },350);
                //mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
               // mapaInc.mapInc.addEventListener(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
-              //setTimeout(function() { mapaInc.mapInc.addEventListener(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit); },350);
+              setTimeout(function() { mapaInc.mapInc.addEventListener(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit); },350);
                console.log('after one');
               //mapaInc.onMapInit();
                
@@ -187,7 +186,7 @@ var mapaInc = {
 //                        });
 //                    });
     //LOCALITZACIÓ
-    mapaInc.clickEvent();
+  //  mapaInc.clickEvent();
     //AGAFAM LA LOCALITZACIÓ
 //    plugin.google.maps.LocationService.getMyLocation(mapaInc.onSuccess, mapaInc.onError);
 //    // SI CLICK GUARDAM NOVA LOCALITZACIÓ
@@ -206,21 +205,6 @@ var mapaInc = {
     //ACTUALITZAM LLISTA DE INCIDENCIES
     //iniciaLlistatIncidencies();
 
-},
-
-getPosicioInicial: function() {
-            
-            var option = {enableHighAccuracy: true};
-            plugin.google.maps.LocationService.getMyLocation(option, function (location) {
-                
-                //CAMERA POSITION
-                var lat = location.latLng.lat;
-                var long = location.latLng.lng;
-               // mapaInc.mapInc.changeCamera(lat, long);
-                mapaInc.pos = new plugin.google.maps.LatLng(lat, long);
-                console.log('posInicial');
-            });
-            
 },
 
 getLocation: function() {
