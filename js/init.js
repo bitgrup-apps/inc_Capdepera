@@ -164,7 +164,7 @@ var mapaInc = {
 //                mapaInc.mapInc.getVisibleRegion();
                
              // setTimeout(function() { mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit); },350);
-              mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
+               mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
                console.log('after one');
               //mapaInc.onMapInit();
                
@@ -178,8 +178,12 @@ var mapaInc = {
 
  onMapInit: function() { 
     console.log('onmapInit');
-    mapaInc.mapInc.setClickable(true);
-    mapaInc.mapInc.getVisibleRegion();
+    mapaInc.mapInc.addMarker({'position': posicio}, function (marker) {
+                        marker.showInfoWindow();
+                        mapaInc.mapInc.addEventListenerOnce("MARKER_REMOVE", function () {
+                            marker.remove();
+                        });
+                    });
     //LOCALITZACIÓ
     mapaInc.clickEvent();
     //AGAFAM LA LOCALITZACIÓ
