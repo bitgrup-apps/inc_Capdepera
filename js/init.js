@@ -145,7 +145,8 @@ var mapaInc = {
     mapInc: null,
 
     initMap: function() {
-    const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};   
+    const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};
+    var pos = mapaInc.getPosicioInicial();
     try {
 
                 mapaInc.mapInc = setTimeout(function() { plugin.google.maps.Map.getMap(document.getElementById("mapa"), {
@@ -154,7 +155,7 @@ var mapaInc = {
                     'controls': {'compass': true, 'myLocationButton': true, 'indoorPicker': true, 'zoom': true},
                     'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true},
                     'camera': {
-                        'latLng': CAPDEPERA_LOC,
+                        'latLng': pos,
                         'zoom': 18
                     }
                 });},300);               
@@ -198,6 +199,19 @@ var mapaInc = {
     //ACTUALITZAM LLISTA DE INCIDENCIES
     //iniciaLlistatIncidencies();
 
+},
+
+getPosicioInicial: function() {
+            var NOVAPOSICIO;
+            var option = {enableHighAccuracy: true};
+            plugin.google.maps.LocationService.getMyLocation(option, function (location) {
+                //CAMERA POSITION
+                var lat = location.latLng.lat;
+                var long = location.latLng.lng;
+               // mapaInc.mapInc.changeCamera(lat, long);
+                NOVAPOSICIO = new plugin.google.maps.LatLng(lat, long);
+            });
+            return NOVAPOSICIO;
 },
 
 getLocation: function() {
