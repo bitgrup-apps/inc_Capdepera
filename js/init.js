@@ -165,7 +165,7 @@ var mapaInc = {
                 //setTimeout(function() { mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit); },350);
                //mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
               // mapaInc.mapInc.addEventListener(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
-              setTimeout(function() { mapaInc.mapInc.addEventListener(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit); },350);
+              setTimeout(function() { mapInc.addEventListener(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit); },350);
                console.log('after one');
               //mapaInc.onMapInit();
                
