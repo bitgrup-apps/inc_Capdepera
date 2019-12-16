@@ -163,8 +163,9 @@ var mapaInc = {
 //                mapaInc.mapInc.setClickable(true);
 //                mapaInc.mapInc.getVisibleRegion();
                
-                setTimeout(function() { mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit); },350);
+                //setTimeout(function() { mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit); },350);
                //mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
+               mapaInc.mapInc.addEventListenerOnce(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit());
                console.log('after one');
               //mapaInc.onMapInit();
                
