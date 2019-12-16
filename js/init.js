@@ -146,8 +146,7 @@ var mapaInc = {
     pos: {"lat": 39.702031, "lng": 3.431725},
 
     initMap: function() {
-    const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};
-    var pos = mapaInc.getPosicioInicial();
+    //const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};
     console.log('posicio:'+ pos);
     try {
 
@@ -157,7 +156,7 @@ var mapaInc = {
                     'controls': {'compass': true, 'myLocationButton': true, 'indoorPicker': true, 'zoom': true},
                     'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true},
                     'camera': {
-                        'latLng': pos,
+                        'latLng': mapaInc.pos,
                         'zoom': 18
                     }
                 });},300);               
