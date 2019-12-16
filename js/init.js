@@ -161,9 +161,9 @@ var mapaInc = {
 //                mapaInc.mapInc.setClickable(true);
 //                mapaInc.mapInc.getVisibleRegion();
                
-              //  mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
+              setTimeout(mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit),350);
                
-              mapaInc.onMapInit();
+              //mapaInc.onMapInit();
                
 
 
@@ -173,7 +173,8 @@ var mapaInc = {
 
 },
 
- onMapInit: function() {    
+ onMapInit: function() { 
+    console.log('onmapInit');
     mapaInc.mapInc.setClickable(true);
     mapaInc.mapInc.getVisibleRegion();
     //LOCALITZACIÓ
