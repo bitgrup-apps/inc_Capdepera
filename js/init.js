@@ -158,7 +158,7 @@ var mapaInc = {
                         'latLng': mapaInc.pos,
                         'zoom': 18
                     }
-                });plugin.google.maps.Map.getMap(document.getElementById("mapa").one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit));},100);               
+                });mapaInc.mapInc.Map.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);},100);               
 //                mapaInc.mapInc.setClickable(true);
 //                mapaInc.mapInc.getVisibleRegion();
                
@@ -180,7 +180,7 @@ var mapaInc = {
 
  onMapInit: function() { 
     console.log('onmapInit');
-    setTimeout(function() { mapaInc.mapInc.addMarker({'position': mapaInc.pos}, function (marker) {
+    setTimeout(function() { mapaInc.mapInc.Map.addMarker({'position': mapaInc.pos}, function (marker) {
                         marker.showInfoWindow();
                         mapaInc.mapInc.addEventListenerOnce("MARKER_REMOVE", function () {
                             marker.remove();
