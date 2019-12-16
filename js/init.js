@@ -148,7 +148,7 @@ var mapaInc = {
     initMap: function() {
     //const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};
     try {
-
+                if(!mapaInc.mapInc){
                 mapaInc.mapInc = setTimeout(function() { plugin.google.maps.Map.getMap(document.getElementById("mapa"), {
                     'backgroundColor': '#FFFFFF',
                     'mapType': plugin.google.maps.MapTypeId.ROADMAP,
@@ -158,7 +158,13 @@ var mapaInc = {
                         'latLng': mapaInc.pos,
                         'zoom': 18
                     }
-                });mapaInc.mapInc.on(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);},100);               
+                });mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);},100); 
+            
+            //mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
+                }else {
+                    var div = document.getElementById('mapa');
+                    mapaInc.mapInc.setDiv(div);
+                }
 
 
     } catch (e) {
