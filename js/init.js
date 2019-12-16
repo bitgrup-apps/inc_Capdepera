@@ -143,11 +143,11 @@ function initPushNotification() {
 var mapaInc = {
     
     mapInc: null,
-    pos: mapaInc.getPosicioInicial(),
+    pos: {"lat": 39.702031, "lng": 3.431725},
 
     initMap: function() {
     //const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};
-    
+    mapaInc.getPosicioInicial();
     try {
 
                 mapaInc.mapInc = setTimeout(function() { plugin.google.maps.Map.getMap(document.getElementById("mapa"), {
@@ -165,7 +165,8 @@ var mapaInc = {
                
                 //setTimeout(function() { mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit); },350);
                //mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
-               mapaInc.mapInc.addEventListener(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
+              // mapaInc.mapInc.addEventListener(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
+              //setTimeout(function() { mapaInc.mapInc.addEventListener(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit); },350);
                console.log('after one');
               //mapaInc.onMapInit();
                
@@ -217,7 +218,7 @@ getPosicioInicial: function() {
                 var long = location.latLng.lng;
                // mapaInc.mapInc.changeCamera(lat, long);
                 mapaInc.pos = new plugin.google.maps.LatLng(lat, long);
-                
+                console.log('posInicial');
             });
             
 },
