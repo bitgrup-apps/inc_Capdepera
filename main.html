@@ -844,7 +844,7 @@
                         </div>
                         <div class="col-xs-12">
                             <label class="literal" data-literal="msg_form_4">Ubicació</label>
-                            <a href="#" data-role="none" onclick="mapaInici();init.mapa.mapaUbicacio();" class="literal" data-literal="inc_14">Indicar una altre ubicació al mapa</a><!--init.mapa.mapaUbicacio();-->
+                            <a href="#" data-role="none" onclick="init.mapa.mapaUbicacio();" class="literal" data-literal="inc_14">Indicar una altre ubicació al mapa</a><!--init.mapa.mapaUbicacio();-->
                         </div>
                         <div class="col-xs-12">
                             <label class="literal" data-literal="msg_form_5">Adressa</label><input  id="adresaIncidenciaOnCap" name="adresaIncidenciaOnCap" value="">
@@ -918,11 +918,12 @@
                 <div id="map_canvas" class="mapa"></div>
             </div>
             <script>
- function mapaInici() {              
+                document.addEventListener("deviceready", function() {
                   var mapDiv = document.getElementById("map_canvas");
-                  var map = setTimeout(function() {plugin.google.maps.Map.getMap(mapDiv);}, 100 );
-                  setTimeout(function() {map.one(plugin.google.maps.event.MAP_READY, onMapInit);}, 120 );
-              }   
+                  var map = setTimeout(function() {plugin.google.maps.Map.getMap(mapDiv);}, 8000 );
+
+                  //map.one(plugin.google.maps.event.MAP_READY, onMapInit);
+});
 
 function onMapInit(map) {
 console.log('mapcanvas');
