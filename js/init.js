@@ -165,9 +165,10 @@ var mapaInc = {
                 //setTimeout(function() { mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit); },350);
                //mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
               // mapaInc.mapInc.addEventListener(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
-              setTimeout(function() { mapInc.addEventListener(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit); },350);
+             // setTimeout(function() { mapaInc.mapInc.addEventListener(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit); },350);
                console.log('after one');
               //mapaInc.onMapInit();
+              setTimeout(function() { mapaInc.onMapInit(); },350);
                
 
 
@@ -179,12 +180,12 @@ var mapaInc = {
 
  onMapInit: function() { 
     console.log('onmapInit');
-//    mapaInc.mapInc.addMarker({'position': mapaInc.pos}, function (marker) {
-//                        marker.showInfoWindow();
-//                        mapaInc.mapInc.addEventListenerOnce("MARKER_REMOVE", function () {
-//                            marker.remove();
-//                        });
-//                    });
+    mapaInc.mapInc.addMarker({'position': mapaInc.pos}, function (marker) {
+                        marker.showInfoWindow();
+                        mapaInc.mapInc.addEventListenerOnce("MARKER_REMOVE", function () {
+                            marker.remove();
+                        });
+                    });
     //LOCALITZACIÓ
   //  mapaInc.clickEvent();
     //AGAFAM LA LOCALITZACIÓ
