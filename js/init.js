@@ -180,12 +180,12 @@ var mapaInc = {
 
  onMapInit: function() { 
     console.log('onmapInit');
-    mapaInc.mapInc.addMarker({'position': mapaInc.pos}, function (marker) {
+   setTimeout(function() { mapaInc.mapInc.addMarker({'position': mapaInc.pos}, function (marker) {
                         marker.showInfoWindow();
                         mapaInc.mapInc.addEventListenerOnce("MARKER_REMOVE", function () {
                             marker.remove();
                         });
-                    });
+                    }); },350); 
     //LOCALITZACIÓ
   //  mapaInc.clickEvent();
     //AGAFAM LA LOCALITZACIÓ
