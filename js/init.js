@@ -158,9 +158,9 @@ var mapaInc = {
                         'latLng': mapaInc.pos,
                         'zoom': 18
                     }
-                });mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);},100); 
+                });},100); 
             
-            //mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
+            setTimeout(function() {mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);},5000);
                 }else {
                     var div = document.getElementById('mapa');
                     mapaInc.mapInc.setDiv(div);
