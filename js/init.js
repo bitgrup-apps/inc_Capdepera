@@ -143,11 +143,11 @@ function initPushNotification() {
 var mapaInc = {
     
     mapInc: null,
-    pos: {"lat": 39.702031, "lng": 3.431725},
+    pos: mapaInc.getPosicioInicial(),
 
     initMap: function() {
     //const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};
-    mapaInc.getPosicioInicial();
+    
     try {
 
                 mapaInc.mapInc = setTimeout(function() { plugin.google.maps.Map.getMap(document.getElementById("mapa"), {
