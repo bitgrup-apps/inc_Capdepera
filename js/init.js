@@ -203,16 +203,18 @@ var mapaInc = {
 },
 
 getPosicioInicial: function() {
-            var NOVAPOSICIO;
+            
             var option = {enableHighAccuracy: true};
             plugin.google.maps.LocationService.getMyLocation(option, function (location) {
+                var NOVAPOSICIO;
                 //CAMERA POSITION
                 var lat = location.latLng.lat;
                 var long = location.latLng.lng;
                // mapaInc.mapInc.changeCamera(lat, long);
                 NOVAPOSICIO = new plugin.google.maps.LatLng(lat, long);
+                return NOVAPOSICIO;
             });
-            return NOVAPOSICIO;
+            
 },
 
 getLocation: function() {
