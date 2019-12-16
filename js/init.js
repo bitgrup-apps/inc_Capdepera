@@ -147,7 +147,7 @@ var mapaInc = {
 
     initMap: function() {
     //const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};
-    mapaInc.getPosicioInicial();
+    //mapaInc.getPosicioInicial();
     try {
 
                 mapaInc.mapInc = setTimeout(function() { plugin.google.maps.Map.getMap(document.getElementById("mapa"), {
@@ -232,7 +232,8 @@ getLocation: function() {
                 var long = location.latLng.lng;
                // mapaInc.mapInc.changeCamera(lat, long);
                 const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, long);
-              //  mapaInc.mapInc.getAdress(NOVAPOSICIO); 
+              //  mapaInc.mapInc.getAdress(NOVAPOSICIO);
+              mapaInc.pos = NOVAPOSICIO;
               const GOOGLE = new plugin.google.maps.LatLng(location.latLng.lat, location.latLng.lng);
         
         var request = {
