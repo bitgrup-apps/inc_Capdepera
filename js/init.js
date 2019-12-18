@@ -220,17 +220,17 @@ var mapaInc = {
             mapaInc.pos = NOVAPOSICIO;
             const GOOGLE = new plugin.google.maps.LatLng(location.latLng.lat, location.latLng.lng);
 
-            var formData = new FormData();
-            formData.append('funcio', 'posInicial');
-            formData.append('posicio', NOVAPOSICIO);
-            var resp = init.sendAjax(formData, 'mapa.class.php', false);
-            if (resp.error == 0) {
-                if (resp.veure_part_operaris == 1) {
-                    $('#login_home').css('display', 'block');
-                } else {
-                    $('#login_home').css('display', 'none');
-                }
-            }
+//            var formData = new FormData();
+//            formData.append('funcio', 'posInicial');
+//            formData.append('posicio', NOVAPOSICIO);
+//            var resp = init.sendAjax(formData, 'mapa.class.php', false);
+//            if (resp.error == 0) {
+//                if (resp.veure_part_operaris == 1) {
+//                    $('#login_home').css('display', 'block');
+//                } else {
+//                    $('#login_home').css('display', 'none');
+//                }
+//            }
 
             var request = {
                 position: GOOGLE
