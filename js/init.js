@@ -170,7 +170,11 @@ var mapaInc = {
 //        error_('E INIT-178', 'ERROR INIT MAP', e);
 //    }
       var map =new google.maps.Map(
-      document.getElementById('mapa'), {zoom: 4, center: CAPDEPERA_LOC});
+      document.getElementById('mapa'), {zoom: 18, center: mapaInc.pos});
+      var marker = new google.maps.Marker({
+      position: mapaInc.pos,
+      map: map
+    });
 
 },
 
