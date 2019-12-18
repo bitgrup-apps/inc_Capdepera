@@ -175,7 +175,7 @@ var mapaInc = {
       position: mapaInc.pos,
       map: map
     });
-    map.addListener(map, 'click', function(){
+    google.maps.event.addListener(map, 'click', function(){
        console.log('click event'); 
     });
     
