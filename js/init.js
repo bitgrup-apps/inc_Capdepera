@@ -182,7 +182,7 @@ var mapaInc = {
        map: map
     });
     var request = {
-            position:loc
+            position:event.latLng
         };
              plugin.google.maps.Geocoder.geocode(request,function (results) {
 
