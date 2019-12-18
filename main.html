@@ -47,29 +47,29 @@
             <div data-role="content" class=" " >
                 <a href="#loggin-home" id="login_home" data-role="none" data-transition="slide"></a>
                 <div class="col-xs-12 logo"><h1 class="literal" data-literal="msg_hom">Benvinguts</h1></div>
-                 <div class="col-xs-4">
+                <div class="col-xs-4">
                     <a href="#afegirIncidencia" class="pastilla incd literal" data-literal="msg_menu_6" onclick="init.sendEstadistica('incidencia');mapaInc.getLocation();" data-role="none">Incidències</a>
                 </div>
-                 <div class="col-xs-4">
+                <div class="col-xs-4">
                     <a href="#avisos" class="pastilla avisos literal" data-literal="msg_menu_7" onclick="init.avisos.init();" data-role="none">Avisos</a>
                 </div>
                 <div class="col-xs-4">
                     <a href="#" class="pastilla esdevn literal" data-literal="msg_menu_2" data-role="none" onclick="init.esdeveniments.getEsdeveniments();">Agenda</a>
                 </div>
-                 <div class="col-xs-4">
+                <div class="col-xs-4">
                     <a href="#" class="pastilla sprts literal" data-literal="msg_menu_3" data-role="none" onclick="init.esports.init();">Esports</a>
                 </div>
                 <div class="col-xs-4">
                     <a href="#" class="pastilla msca literal" data-literal="msg_menu_3b" data-role="none" onclick="init.musica.init();">Música</a>
                 </div>
-                 <div class="col-xs-4">
-                     <span class="icona cinema"></span>
+                <div class="col-xs-4">
+                    <span class="icona cinema"></span>
                     <a href="#" class="past reserva literal" data-literal="msg_menu_12" data-role="none" onclick="init.cine.menu();">Cinema</a>
                 </div>
                 <div class="col-xs-4">
                     <a href="#" class="pastilla notc literal" data-literal="msg_menu_4" data-role="none"  onclick="init.noticies.init();">Notícies</a>
                 </div>
-                 <div class="col-xs-4 radio_pastilla">
+                <div class="col-xs-4 radio_pastilla">
                     <a href="#radio-home" class="pastilla rdio literal" data-literal="msg_menu_5" onclick="init.sendEstadistica('radio');" data-role="none" data-transition="slide">Ràdio</a>
                 </div>
                 <div class="col-xs-4">
@@ -77,29 +77,29 @@
                 </div>
                 <div class="col-xs-4">
                     <span class="icona cinema"></span>
-                    <a href="#visita" class="pastil visita literal" data-literal="Visita" data-role="none" onclick="mapawow.getMap();">Visita</a>
+                    <a href="#visita" class="pastil visita literal" data-literal="Visita" data-role="none" onclick="mapawow.initWow();">Visita</a>
                 </div>
-                
-                
-                
-               
-               
-                
-               
+
+
+
+
+
+
+
                 <!--div class="col-xs-12">
                     <a href="#radio-home" class="pastilla rdio literal" data-literal="msg_menu_5" onclick="init.sendEstadistica('radio');" data-role="none" >Ràdio</a>
                 </-->
-               
-                
+
+
                 <!--                <div class="col-xs-4">
                                     <a href="#" class="pastilla senderisme literal" data-literal="msg_menu_8" data-role="none" onclick="init.esports.init();">Senderismo</a>
                                 </div>
                                 <div class="col-xs-4">
                                     <a href="#" class="pastilla ciclisme literal" data-literal="msg_menu_9" data-role="none" onclick="init.esports.init();">Ciclismo</a>
                                 </div>-->
-<!--                <div class="col-xs-4">
-                    <a href="#oncapdepera-reserva" class="pastilla reserva literal" data-literal="msg_menu_10" data-role="none" data-transition="slide">Reserva marina</a>
-                </div>-->
+                <!--                <div class="col-xs-4">
+                                    <a href="#oncapdepera-reserva" class="pastilla reserva literal" data-literal="msg_menu_10" data-role="none" data-transition="slide">Reserva marina</a>
+                                </div>-->
                 <!--                <div class="col-xs-4">
                                     <a href="#" class="pastilla buida literal"></a>
                                 </div>-->
@@ -730,7 +730,7 @@
                         <span><span class="literal" data-literal="msg_on_men_6">Informa</span><br><span class="literal" data-literal="msg_on_men_6b">d'incidències</span></span>
                     </div>
                 </a-->
-                 <a data-role="none" data-transition="slide" href="#oncapdepera-sugerencia">
+                <a data-role="none" data-transition="slide" href="#oncapdepera-sugerencia">
                     <div class="col-xs-12 menu">
                         <div class="icono-menu"><span class="icona sug "></span></div>
                         <span class="literal" data-literal="msg_menu_11">Sugerencia</span>
@@ -742,11 +742,11 @@
                     <ul class="sub-menu" id="m-visites">
                     </ul>
                 </div>
-                  <div class="col-xs-12 menu doble">
-                      <a href="#oncapdepera-reserva" data-role="none" data-transition="slide">
-                    <div class="icono-menu"><span class="ico res"></span></div>
-                    <span class="literal" style="margin-left: 10px;margin-top: 18px;" data-literal="msg_menu_10">Reserva marina</span>
-                   </a>
+                <div class="col-xs-12 menu doble">
+                    <a href="#oncapdepera-reserva" data-role="none" data-transition="slide">
+                        <div class="icono-menu"><span class="ico res"></span></div>
+                        <span class="literal" style="margin-left: 10px;margin-top: 18px;" data-literal="msg_menu_10">Reserva marina</span>
+                    </a>
                 </div>
                 <div class="col-xs-12 menu doble">
                     <div class="icono-menu"><span class="icon festes"></span></div>
@@ -812,12 +812,12 @@
                 <div class="row">
                     <form id="form-incidenciaOnCap">
                         <h2><span class="literal" data-literal="msg_on_men_6">Informa de</span> <span class="literal" data-literal="msg_on_men_6b">una incidència</span></h2>
-<!--                        <div class="col-xs-12">
-                            <label class="literal" data-literal="msg_form_7">Nom</label><input type="text" id="nom" name="nom" value="">
-                        </div>
-                        <div class="col-xs-12">
-                            <label class="literal" data-literal="msg_form_8">Llinatges</label><input type="text" id="llinatges" name="llinatges" value="">
-                        </div>-->
+                        <!--                        <div class="col-xs-12">
+                                                    <label class="literal" data-literal="msg_form_7">Nom</label><input type="text" id="nom" name="nom" value="">
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <label class="literal" data-literal="msg_form_8">Llinatges</label><input type="text" id="llinatges" name="llinatges" value="">
+                                                </div>-->
                         <div class="col-xs-12">
                             <label>E-mail</label><input type="email" id="emailOnCap" name="email" value="">
                         </div>
@@ -856,14 +856,14 @@
                         <input type="hidden" id="valorCategoria" name="categoria" value="">
                         <input type="hidden" id="latitutIncidenciaOnCap" name="latitutIncidenciaOnCap" value="">
                         <input type="hidden" id="longitutIncidenciaOnCap" name="longitutIncidenciaOnCap" value="">
-<!--                        <input type="hidden" id="funcio" name="funcio" value="novaIncidenciaOnCap">-->
+                        <!--                        <input type="hidden" id="funcio" name="funcio" value="novaIncidenciaOnCap">-->
                     </form>                   
                 </div>
             </div>
         </div>
 
 
-                <!--////////////////////    RESERVA MARINA  ///////////////////////////////-->
+        <!--////////////////////    RESERVA MARINA  ///////////////////////////////-->
 
         <div data-role="page" class="oncapdepera pagina info-turisme"  id="oncapdepera-reserva">
             <div data-role="header" class="header">
@@ -896,13 +896,13 @@
                     </div>
                     <div class="col-xs-4 col-xs-offset-4">
                         <div class="link">
-                            <a href="#" onclick="window.open('http://www.oncapdepera.com/panel/img/reserva/pdf/especies.pdf' , 'system'); return false;"><span class="literal" data-literal="msg_des_pdf_esp">DESCARGAR PDF ESPECIES</span></a>
+                            <a href="#" onclick="window.open('http://www.oncapdepera.com/panel/img/reserva/pdf/especies.pdf', 'system'); return false;"><span class="literal" data-literal="msg_des_pdf_esp">DESCARGAR PDF ESPECIES</span></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <!--////////////////////    MAPA  ///////////////////////////////-->
 
         <div data-role="page" class="oncapdepera  pagina info-turisme"  id="oncapdepera-ubicacio">
@@ -914,13 +914,11 @@
                 </div>
             </div>
             <div data-role="content" class=""  id="oncpd-html">
-                
+
                 <div id="mapa" class="mapa"></div>
             </div>       
         </div>
-        <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbCsdbOZ31x79tk8PDVHsW3AL_zgNseGo&callback=initMap">
-    </script>
+
 
 
 
@@ -1262,10 +1260,10 @@
                 <div class="row" id="llista-esdeveniments"></div>
             </div>
         </div>
-        
+
         <!--////////////////////    cine  ///////////////////////////////-->
-        
-         <div data-role="page" class="esdeveniments pagina info-turisme"  id="cine-home">
+
+        <div data-role="page" class="esdeveniments pagina info-turisme"  id="cine-home">
             <div data-role="header" class="header">
                 <div class="row">
                     <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
@@ -1297,7 +1295,7 @@
                 </div>
             </div>
         </div>
-        
+
 
         <!--####################################################################################-->
         <!--####################################################################################-->
@@ -1340,12 +1338,12 @@
                 </div>
             </div>
         </div>
-         <!--####################################################################################-->
+        <!--####################################################################################-->
         <!--####################################################################################-->
         <!--###################                 SUGERENCIA             ###########################-->
         <!--####################################################################################-->
         <!--####################################################################################-->
-        
+
         <div data-role="page" class="noticies pagina info-turisme fitxa"  id="oncapdepera-sugerencia">
             <div data-role="header" class="header">
                 <div class="row">
@@ -1356,29 +1354,29 @@
             </div>
             <div data-role="content" id="content-sugerencia-fitxa" class=" " >
                 <form id="form-sugerencia">
-                <div class="row" style="margin-top: 40px;">
-                    <div class="col-xs-12">
-                        <label for="emailSugerencia">E-mail</label>
-                        <input id="emailSugerencia" name="emailSugerencia" type="email" placeholder="E-mail">
+                    <div class="row" style="margin-top: 40px;">
+                        <div class="col-xs-12">
+                            <label for="emailSugerencia">E-mail</label>
+                            <input id="emailSugerencia" name="emailSugerencia" type="email" placeholder="E-mail">
+                        </div>
                     </div>
-                </div>
-                <div class="row" style="margin-top: 20px;">
-                    <div class="col-xs-12">
-                        <label for="sugerencia" class="literal" data-literal="msg_menu_11">Sugerència</label>
-                        <textarea id="sugerencia" maxlength="200" name="sugerencia"></textarea>
+                    <div class="row" style="margin-top: 20px;">
+                        <div class="col-xs-12">
+                            <label for="sugerencia" class="literal" data-literal="msg_menu_11">Sugerència</label>
+                            <textarea id="sugerencia" maxlength="200" name="sugerencia"></textarea>
+                        </div>
                     </div>
-                </div>
-                 <div class="row">
-                    <div class="col-xs-12">
-                        <button id="botoSugerencia" type="button" onclick="init.sugerencia.enviaSugerencia();" style="max-width: 160px;" class="boto literal pull-right" data-literal="sug_1">Enviar</button>                        
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button id="botoSugerencia" type="button" onclick="init.sugerencia.enviaSugerencia();" style="max-width: 160px;" class="boto literal pull-right" data-literal="sug_1">Enviar</button>                        
+                        </div>
                     </div>
-                </div>
-                <input type="hidden" id="funcio" name="funcio" value="novaSugerenciaOnCap">
+                    <input type="hidden" id="funcio" name="funcio" value="novaSugerenciaOnCap">
                 </form>
             </div>
         </div>
-        
-        
+
+
 
         <!--####################################################################################-->
         <!--####################################################################################-->
@@ -1508,9 +1506,9 @@
             </div>
         </div>
 
-        
+
         <!--///////////////////    VISITA   //////////////////////////////////-->
-        
+
         <div data-role="page" class="pagina info-turisme"  id="visita">
             <div data-role="header" class="header">
                 <div class="row">
@@ -1529,7 +1527,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <div id="mapaWow" class="midaMapa"></div>
+                    <div id="mapaWow" class="mapa"></div>
                 </div>
             </div>
         </div>
@@ -1539,7 +1537,9 @@
         <script src="phonegap.js" charset="utf-8" type="text/javascript"></script>
         <script src="cordova.js"></script>
         <script type="text/javascript" charset="utf-8" src="cordova_plugins.js"></script>
-
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbCsdbOZ31x79tk8PDVHsW3AL_zgNseGo&callback=initMap">
+        </script>
     </body>
 </html>
 

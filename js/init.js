@@ -147,29 +147,7 @@ var mapaInc = {
     marcador: '',
 
     initMap: function() {
-    const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};
-//    try {
-//
-//                mapaInc.mapInc = setTimeout(function() { plugin.google.maps.Map.getMap(document.getElementById("mapa"), {
-//                    'backgroundColor': '#FFFFFF',
-//                    'mapType': plugin.google.maps.MapTypeId.ROADMAP,
-//                    'controls': {'compass': true, 'myLocationButton': true, 'indoorPicker': true, 'zoom': true},
-//                    'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true},
-//                    'camera': {
-//                        'latLng': mapaInc.pos,
-//                        'zoom': 18
-//                    }
-//                });},100); 
-//            window.mapa = mapaInc.mapInc;
-//
-//             //  setTimeout(function() {window.mapa.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit)},150);
-//           setTimeout(function() {mapaInc.onMapInit()},150);
-//               
-//               
-//
-//    } catch (e) {
-//        error_('E INIT-178', 'ERROR INIT MAP', e);
-//    }
+
       var map =new google.maps.Map(
       document.getElementById('mapa'), {zoom: 18, center: mapaInc.pos});
       mapaInc.marcador = new google.maps.Marker({
@@ -206,58 +184,8 @@ var mapaInc = {
 
 },
 
- onMapInit: function() { 
-    console.log('onmapInit');
-     mapaInc.mapInc.addMarker({'position': mapaInc.pos}, function (marker) {
-                        marker.showInfoWindow();
-                        mapaInc.mapInc.addEventListenerOnce("MARKER_REMOVE", function () {
-                            marker.remove();
-                        });
-                    }); 
-    //LOCALITZACIÓ
-  //  mapaInc.clickEvent();
-    //AGAFAM LA LOCALITZACIÓ
-//    plugin.google.maps.LocationService.getMyLocation(mapaInc.onSuccess, mapaInc.onError);
-//    // SI CLICK GUARDAM NOVA LOCALITZACIÓ
-//    var evtName = plugin.google.maps.event.MAP_CLICK;    
-//    mapaInc.mapInc.one(evtName, function (latLng) {
-//        if (comprovaPosicio(latLng.lat, latLng.lng)) {
-//            mapaInc.mapInc.trigger("MARKER_REMOVE");
-//            $('#latitutIncidencia').val(latLng.lat);
-//            $('#longitutIncidencia').val(latLng.lng);
-//            const NOVAPOSICIO = new plugin.google.maps.LatLng(latLng.lat, latLng.lng);
-//            mapaInc.novaLocalitzacio(NOVAPOSICIO);
-//        } else {
-//            alert("La nova posició no es troba a una àrea correcte");
-//        }
-//    });
-    //ACTUALITZAM LLISTA DE INCIDENCIES
-    //iniciaLlistatIncidencies();
-
-},
-
-setLocation: function(loc) {
-                     
-        var request = {
-            position:loc
-        };
-             plugin.google.maps.Geocoder.geocode(request,function (results) {
-
-            if (results.length) {
-                var result = results[0];
-                $('#adresaIncidencia').val(result.thoroughfare);
-                $('#poblacioIncidencia').val(result.locality);
-                //ONCAPDEPERA
-                $('#adresaIncidenciaOnCap').val(result.thoroughfare);
-                $('#poblacioIncidenciaOnCap').val(result.locality);
-                
-            
-            } else {
-                console.log('E-202: NOT LENGHT MAPA');
-                errorMapa();
-            }
-        });
-            
+ onMapInit: function() {     
+ 
 },
 
 getLocation: function() {
@@ -486,36 +414,10 @@ var mapawow = {
     wow: null,
 
     initWow: function () {
-
-        const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};
-        if (!mapawow.wow) {
-            var mapDiv = document.getElementById("mapaWow");
-            mapawow.wow = setTimeout(function () {
-                plugin.google.maps.Map.getMap(mapDiv, {
-                    'backgroundColor': '#FFFFFF',
-                    'mapType': plugin.google.maps.MapTypeId.ROADMAP,
-                    'controls': {'compass': true, 'myLocationButton': true, 'indoorPicker': true, 'zoom': true},
-                    'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true},
-                    'camera': {
-                        'latLng': CAPDEPERA_LOC,
-                        'zoom': 18
-                    }
-                });
-            }, 300);
-            //  mapawow.wow.one(plugin.google.maps.event.MAP_READY, mapawow.onMapInitwow);
-
-        } else {
-            console.log('setDiv');
-            mapawow.wow.setDiv("mapaWow");
-        }
-    },
-    onMapInitwow: function () {
-
-    }
-
-    , getMap: function () {
-        mapawow.initWow();
-    }
-
+      var map =new google.maps.Map(
+      document.getElementById('mapaWow'), {zoom: 17, center: {"lat": 39.702031, "lng": 3.431725}});
+     
+        
+    }    
 };
 //###################################################################################
