@@ -158,19 +158,13 @@ var mapaInc = {
                         'latLng': mapaInc.pos,
                         'zoom': 18
                     }
-                });plugin.google.maps.Map.getMap(document.getElementById("mapa").one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit));},100);               
-//                mapaInc.mapInc.setClickable(true);
-//                mapaInc.mapInc.getVisibleRegion();
-               
-                //setTimeout(function() { mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit); },350);
-               //mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
-              // mapaInc.mapInc.addEventListener(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
-             // setTimeout(function() { mapaInc.mapInc.addEventListener(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit); },350);
-               console.log('after one');
-              //mapaInc.onMapInit();
-            //  setTimeout(function() { mapaInc.onMapInit(); },350);
-               
+                });},100); 
+            window.mapa = mapaInc.mapInc;
 
+               setTimeout(function() {window.mapa.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit)},150);
+           
+               
+               
 
     } catch (e) {
         error_('E INIT-178', 'ERROR INIT MAP', e);
