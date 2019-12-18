@@ -162,9 +162,9 @@ var mapaInc = {
                     });
                 }, 100);
 
-                setTimeout(function () {
-                    mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
-                }, 150);
+//                setTimeout(function () {
+//                    mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
+//                }, 150);
             } else {
                 var div = document.getElementById('mapa');
                 mapaInc.mapInc.setDiv(div);
