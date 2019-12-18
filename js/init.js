@@ -18,7 +18,7 @@ function onLoad() {
 }
 
 function initApp() {
-    
+
 
 
     //controlam tipus dispositiu
@@ -69,14 +69,14 @@ function initApp() {
     }
 
     //MAPA
-    try {
-        
-        mapaInc.initMap();
-
-    } catch (e) {
-        errorMapa();
-        console.log('E INIT-84', 'ERROR INIT MAPA', e);
-    }
+//    try {
+//
+//        mapaInc.initMap();
+//
+//    } catch (e) {
+//        errorMapa();
+//        console.log('E INIT-84', 'ERROR INIT MAPA', e);
+//    }
     //MAPA WOW
 //    try {
 //        mapawow.getMap();
@@ -119,7 +119,7 @@ function initPushNotification() {
 
     window.push.on('notification', function (data) {
         console.log(data);
-        areYouSure(data.message, "Aceptar", function () { }, 'avis'); 
+        areYouSure(data.message, "Aceptar", function () { }, 'avis');
 
     });
 
@@ -141,49 +141,53 @@ function initPushNotification() {
 //####################//####################//####################
 
 var mapaInc = {
-    
+
     mapInc: null,
     pos: {"lat": 39.702031, "lng": 3.431725},
 
-    initMap: function() {
-    //const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};
-    try {
-                if(!mapaInc.mapInc){
-                mapaInc.mapInc = setTimeout(function() { plugin.google.maps.Map.getMap(document.getElementById("mapa"), {
-                    'backgroundColor': '#FFFFFF',
-                    'mapType': plugin.google.maps.MapTypeId.ROADMAP,
-                    'controls': {'compass': true, 'myLocationButton': true, 'indoorPicker': true, 'zoom': true},
-                    'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true},
-                    'camera': {
-                        'latLng': mapaInc.pos,
-                        'zoom': 18
-                    }
-                });},100); 
-            
-            setTimeout(function() {mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);},50);
-                }else {
-                    var div = document.getElementById('mapa');
-                    mapaInc.mapInc.setDiv(div);
-                }
+    initMap: function () {
+        //const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};
+        try {
+            if (!mapaInc.mapInc) {
+                mapaInc.mapInc = setTimeout(function () {
+                    plugin.google.maps.Map.getMap(document.getElementById("mapa"), {
+                        'backgroundColor': '#FFFFFF',
+                        'mapType': plugin.google.maps.MapTypeId.ROADMAP,
+                        'controls': {'compass': true, 'myLocationButton': true, 'indoorPicker': true, 'zoom': true},
+                        'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true},
+                        'camera': {
+                            'latLng': mapaInc.pos,
+                            'zoom': 18
+                        }
+                    });
+                }, 100);
+
+                setTimeout(function () {
+                    mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
+                }, 150);
+            } else {
+                var div = document.getElementById('mapa');
+                mapaInc.mapInc.setDiv(div);
+            }
 
 
-    } catch (e) {
-        error_('E INIT-178', 'ERROR INIT MAP', e);
-    }
+        } catch (e) {
+            error_('E INIT-178', 'ERROR INIT MAP', e);
+        }
 
-},
+    },
 
- onMapInit: function() { 
-    console.log('onmapInit');
+    onMapInit: function () {
+        console.log('onmapInit');
 //    setTimeout(function() { mapaInc.mapInc.addMarker({'position': mapaInc.pos}, function (marker) {
 //                        marker.showInfoWindow();
 //                        mapaInc.mapInc.addEventListenerOnce("MARKER_REMOVE", function () {
 //                            marker.remove();
 //                        });
 //                    }); },350); 
-    //LOCALITZACIÓ
-  //  mapaInc.clickEvent();
-    //AGAFAM LA LOCALITZACIÓ
+        //LOCALITZACIÓ
+        //  mapaInc.clickEvent();
+        //AGAFAM LA LOCALITZACIÓ
 //    plugin.google.maps.LocationService.getMyLocation(mapaInc.onSuccess, mapaInc.onError);
 //    // SI CLICK GUARDAM NOVA LOCALITZACIÓ
 //    var evtName = plugin.google.maps.event.MAP_CLICK;    
@@ -198,86 +202,98 @@ var mapaInc = {
 //            alert("La nova posició no es troba a una àrea correcte");
 //        }
 //    });
-    //ACTUALITZAM LLISTA DE INCIDENCIES
-    //iniciaLlistatIncidencies();
+        //ACTUALITZAM LLISTA DE INCIDENCIES
+        //iniciaLlistatIncidencies();
 
-},
+    },
 
-getLocation: function() {
-    
-    var option = {enableHighAccuracy: true};
-            plugin.google.maps.LocationService.getMyLocation(option, function (location) {
-                //CAMERA POSITION
-                var lat = location.latLng.lat;
-                var long = location.latLng.lng;
-               // mapaInc.mapInc.changeCamera(lat, long);
-                const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, long);
-              //  mapaInc.mapInc.getAdress(NOVAPOSICIO);
-              mapaInc.pos = NOVAPOSICIO;
-              const GOOGLE = new plugin.google.maps.LatLng(location.latLng.lat, location.latLng.lng);
-        
-        var request = {
-            position:GOOGLE
-        };
-             plugin.google.maps.Geocoder.geocode(request,function (results) {
+    getLocation: function () {
 
-            if (results.length) {
-                var result = results[0];
-                $('#adresaIncidencia').val(result.thoroughfare);
-                $('#poblacioIncidencia').val(result.locality);
-                //ONCAPDEPERA
-                $('#adresaIncidenciaOnCap').val(result.thoroughfare);
-                $('#poblacioIncidenciaOnCap').val(result.locality);
-                
-            
-            } else {
-                console.log('E-202: NOT LENGHT MAPA');
-                errorMapa();
+        var option = {enableHighAccuracy: true};
+        plugin.google.maps.LocationService.getMyLocation(option, function (location) {
+            //CAMERA POSITION
+            var lat = location.latLng.lat;
+            var long = location.latLng.lng;
+            // mapaInc.mapInc.changeCamera(lat, long);
+            const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, long);
+            //  mapaInc.mapInc.getAdress(NOVAPOSICIO);
+            mapaInc.pos = NOVAPOSICIO;
+            const GOOGLE = new plugin.google.maps.LatLng(location.latLng.lat, location.latLng.lng);
+
+            var formData = new FormData();
+            formData.append('funcio', 'posInicial');
+            formData.append('posicio', NOVAPOSICIO);
+            var resp = init.sendAjax(formData, 'mapa.class.php', false);
+            if (resp.error == 0) {
+                if (resp.veure_part_operaris == 1) {
+                    $('#login_home').css('display', 'block');
+                } else {
+                    $('#login_home').css('display', 'none');
+                }
             }
-        });
-            });
-},
 
-clickEvent: function () { 
-     console.log('event');
-            var evtName = plugin.google.maps.event.MAP_CLICK;
-            mapaInc.mapInc.on(evtName, function (latLng) {
+            var request = {
+                position: GOOGLE
+            };
+            plugin.google.maps.Geocoder.geocode(request, function (results) {
+
+                if (results.length) {
+                    var result = results[0];
+                    $('#adresaIncidencia').val(result.thoroughfare);
+                    $('#poblacioIncidencia').val(result.locality);
+                    //ONCAPDEPERA
+                    $('#adresaIncidenciaOnCap').val(result.thoroughfare);
+                    $('#poblacioIncidenciaOnCap').val(result.locality);
+
+
+                } else {
+                    console.log('E-202: NOT LENGHT MAPA');
+                    errorMapa();
+                }
+            });
+        });
+    },
+
+    clickEvent: function () {
+        console.log('event');
+        var evtName = plugin.google.maps.event.MAP_CLICK;
+        mapaInc.mapInc.on(evtName, function (latLng) {
             console.log('click');
 //            mapaInc.mapInc.trigger("MARKER_REMOVE");
             $('#latitutIncidencia').val(latLng.lat);
             $('#longitutIncidencia').val(latLng.lng);
-            console.log('lat: '+latLng.lat)
+            console.log('lat: ' + latLng.lat)
 //            const NOVAPOSICIO = new plugin.google.maps.LatLng(latLng.lat, latLng.lng);
 //            mapaInc.novaLocalitzacio(NOVAPOSICIO);
-            });
-        },
+        });
+    },
 
-changeCamera: function (lat, long) {
-            mapaInc.mapInc.animateCamera({
-                target: {lat: lat, lng: long},
-                zoom: 17,
-                tilt: 60,
-                bearing: 0,
-                duration: 2000
-            }, function () {
-                //alert("Camera target has been changed");
-            });
-        },
+    changeCamera: function (lat, long) {
+        mapaInc.mapInc.animateCamera({
+            target: {lat: lat, lng: long},
+            zoom: 17,
+            tilt: 60,
+            bearing: 0,
+            duration: 2000
+        }, function () {
+            //alert("Camera target has been changed");
+        });
+    },
 
-  onSuccess: function (location) {
+    onSuccess: function (location) {
         //comprovam posició
         $('#latitutIncidencia').val(location.latLng.lat);
         $('#longitutIncidencia').val(location.latLng.lng);
         $('#latitutIncidenciaOnCap').val(location.latLng.lat);
         $('#longitutIncidenciaOnCap').val(location.latLng.lng);
-                
+
         const GOOGLE = new plugin.google.maps.LatLng(location.latLng.lat, location.latLng.lng);
-        
+
         var request = {
-            position:GOOGLE
+            position: GOOGLE
         };
         console.log(request);
-        
+
         plugin.google.maps.Geocoder.geocode(request, function (results) {
 
             if (results.length) {
@@ -310,8 +326,8 @@ changeCamera: function (lat, long) {
                 //ONCAPDEPERA
                 $('#adresaIncidenciaOnCap').val(result.thoroughfare);
                 $('#poblacioIncidenciaOnCap').val(result.locality);
-                
-            
+
+
             } else {
                 console.log('E-202: NOT LENGHT MAPA');
                 errorMapa();
@@ -320,77 +336,77 @@ changeCamera: function (lat, long) {
 
 
     },
-    
+
     onError: function (msg) {
         errorMapa();
         console.log('E INIT-235', 'ERROR POSICIÓ MAPA');
     },
 
 //NOVA LOCALITZACIÓ AL MAPA
- novaLocalitzacio: function(posicio) {
+    novaLocalitzacio: function (posicio) {
 
 
-    var request = {
-        'position': posicio
-    };
+        var request = {
+            'position': posicio
+        };
 
-    plugin.google.maps.Geocoder.geocode(request, function (results) {
-        if (results.length) {
+        plugin.google.maps.Geocoder.geocode(request, function (results) {
+            if (results.length) {
 
-            var result = results[0];
-            var position = result.position;
+                var result = results[0];
+                var position = result.position;
 
-            var address = [
-                result.thoroughfare || "",
-                result.locality || "",
-                result.postalCode || ""].join(", ");
-            mapaInc.mapInc.addMarker({
-                'position': position,
-                'title': address
-            }, function (marker) {
-                marker.showInfoWindow();
-                mapaInc.mapInc.addEventListenerOnce("MARKER_REMOVE", function () {
-                    marker.remove();
-                });
-            });
-            mapaInc.mapInc.animateCamera({
-                target: {
-                    lat: position.lat,
-                    lng: position.lng
-                },
-                'duration': 1,
-                zoom: 18
-            });
-            $('#adresaIncidencia').val(result.thoroughfare);
-            $('#poblacioIncidencia').val(result.locality);
-            //ONCAPDEPERA
-            $('#adresaIncidenciaOnCap').val(result.thoroughfare);
-            $('#poblacioIncidenciaOnCap').val(result.locality);
-            $('#latitutIncidenciaOnCap').val(position.lat);
-            $('#longitutIncidenciaOnCap').val(position.lng);
-        } else {
-            if (posicio) {
+                var address = [
+                    result.thoroughfare || "",
+                    result.locality || "",
+                    result.postalCode || ""].join(", ");
                 mapaInc.mapInc.addMarker({
-                    'position': posicio
+                    'position': position,
+                    'title': address
                 }, function (marker) {
                     marker.showInfoWindow();
                     mapaInc.mapInc.addEventListenerOnce("MARKER_REMOVE", function () {
                         marker.remove();
                     });
                 });
+                mapaInc.mapInc.animateCamera({
+                    target: {
+                        lat: position.lat,
+                        lng: position.lng
+                    },
+                    'duration': 1,
+                    zoom: 18
+                });
+                $('#adresaIncidencia').val(result.thoroughfare);
+                $('#poblacioIncidencia').val(result.locality);
+                //ONCAPDEPERA
+                $('#adresaIncidenciaOnCap').val(result.thoroughfare);
+                $('#poblacioIncidenciaOnCap').val(result.locality);
+                $('#latitutIncidenciaOnCap').val(position.lat);
+                $('#longitutIncidenciaOnCap').val(position.lng);
             } else {
-                alert("No es pot aconseguir la vostra ubicació");
+                if (posicio) {
+                    mapaInc.mapInc.addMarker({
+                        'position': posicio
+                    }, function (marker) {
+                        marker.showInfoWindow();
+                        mapaInc.mapInc.addEventListenerOnce("MARKER_REMOVE", function () {
+                            marker.remove();
+                        });
+                    });
+                } else {
+                    alert("No es pot aconseguir la vostra ubicació");
+                }
+
             }
+        });
 
-        }
-    });
+    },
 
-},
+    getNovaPosicio: function () {
+        mapaInc.onMapInit();
 
-         getNovaPosicio: function () {
-            mapaInc.onMapInit();
-         
-        }
+    }
 
 };
 //###################################################################################
@@ -425,15 +441,16 @@ function failUUID(e) {
 }
 
 var mapawow = {
-    
+
     wow: null,
-    
-    initWow: function(){
-       
-        const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};   
-        if(!mapawow.wow) {
-        var mapDiv = document.getElementById("mapaWow");
-        mapawow.wow = setTimeout(function() {plugin.google.maps.Map.getMap(mapDiv,{
+
+    initWow: function () {
+
+        const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};
+        if (!mapawow.wow) {
+            var mapDiv = document.getElementById("mapaWow");
+            mapawow.wow = setTimeout(function () {
+                plugin.google.maps.Map.getMap(mapDiv, {
                     'backgroundColor': '#FFFFFF',
                     'mapType': plugin.google.maps.MapTypeId.ROADMAP,
                     'controls': {'compass': true, 'myLocationButton': true, 'indoorPicker': true, 'zoom': true},
@@ -442,21 +459,22 @@ var mapawow = {
                         'latLng': CAPDEPERA_LOC,
                         'zoom': 18
                     }
-                });}, 300);
-      //  mapawow.wow.one(plugin.google.maps.event.MAP_READY, mapawow.onMapInitwow);
-       
-    }else {
-        console.log('setDiv');
-        mapawow.wow.setDiv("mapaWow");
-    }
+                });
+            }, 300);
+            //  mapawow.wow.one(plugin.google.maps.event.MAP_READY, mapawow.onMapInitwow);
+
+        } else {
+            console.log('setDiv');
+            mapawow.wow.setDiv("mapaWow");
+        }
     },
-    onMapInitwow: function() {
-        
+    onMapInitwow: function () {
+
     }
-    
-    ,getMap: function() {
+
+    , getMap: function () {
         mapawow.initWow();
     }
-    
+
 };
 //###################################################################################
