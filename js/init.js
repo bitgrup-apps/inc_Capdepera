@@ -160,7 +160,7 @@ var mapaInc = {
                             'zoom': 18
                         }
                     });
-                }, 100);
+                }, 200);
 
 //                setTimeout(function () {
 //                    mapaInc.mapInc.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit);
