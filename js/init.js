@@ -144,6 +144,7 @@ var mapaInc = {
 
     mapInc: null,
     pos: {"lat": 39.702031, "lng": 3.431725},
+    marcador: '',
 
     initMap: function() {
     const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};
@@ -171,12 +172,12 @@ var mapaInc = {
 //    }
       var map =new google.maps.Map(
       document.getElementById('mapa'), {zoom: 18, center: mapaInc.pos});
-      var marker = new google.maps.Marker({
+      mapaInc.marcador = new google.maps.Marker({
       position: mapaInc.pos,
       map: map
     });
     google.maps.event.addListener(map, 'click', function(event){
-       
+       mapaInc.marcador.setMap(null);
        var marker = new google.maps.Marker({
        position: event.latLng,
        map: map
