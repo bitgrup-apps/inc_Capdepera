@@ -146,35 +146,37 @@ var mapaInc = {
     pos: {"lat": 39.702031, "lng": 3.431725},
 
     initMap: function() {
-    //const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};
-    try {
-
-                mapaInc.mapInc = setTimeout(function() { plugin.google.maps.Map.getMap(document.getElementById("mapa"), {
-                    'backgroundColor': '#FFFFFF',
-                    'mapType': plugin.google.maps.MapTypeId.ROADMAP,
-                    'controls': {'compass': true, 'myLocationButton': true, 'indoorPicker': true, 'zoom': true},
-                    'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true},
-                    'camera': {
-                        'latLng': mapaInc.pos,
-                        'zoom': 18
-                    }
-                });},100); 
-            window.mapa = mapaInc.mapInc;
-
-             //  setTimeout(function() {window.mapa.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit)},150);
-           setTimeout(function() {mapaInc.onMapInit()},150);
-               
-               
-
-    } catch (e) {
-        error_('E INIT-178', 'ERROR INIT MAP', e);
-    }
+    const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};
+//    try {
+//
+//                mapaInc.mapInc = setTimeout(function() { plugin.google.maps.Map.getMap(document.getElementById("mapa"), {
+//                    'backgroundColor': '#FFFFFF',
+//                    'mapType': plugin.google.maps.MapTypeId.ROADMAP,
+//                    'controls': {'compass': true, 'myLocationButton': true, 'indoorPicker': true, 'zoom': true},
+//                    'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true},
+//                    'camera': {
+//                        'latLng': mapaInc.pos,
+//                        'zoom': 18
+//                    }
+//                });},100); 
+//            window.mapa = mapaInc.mapInc;
+//
+//             //  setTimeout(function() {window.mapa.one(plugin.google.maps.event.MAP_READY, mapaInc.onMapInit)},150);
+//           setTimeout(function() {mapaInc.onMapInit()},150);
+//               
+//               
+//
+//    } catch (e) {
+//        error_('E INIT-178', 'ERROR INIT MAP', e);
+//    }
+      var map =new google.maps.Map(
+      document.getElementById('mapa'), {zoom: 4, center: CAPDEPERA_LOC});
 
 },
 
  onMapInit: function() { 
     console.log('onmapInit');
-     window.mapa.addMarker({'position': mapaInc.pos}, function (marker) {
+     mapaInc.mapInc.addMarker({'position': mapaInc.pos}, function (marker) {
                         marker.showInfoWindow();
                         mapaInc.mapInc.addEventListenerOnce("MARKER_REMOVE", function () {
                             marker.remove();
