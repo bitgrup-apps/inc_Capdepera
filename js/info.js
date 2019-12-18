@@ -492,8 +492,8 @@ var init = {
         mapaUbicacio: function () {
             try {
                 
-                var div = document.getElementById('mapa');
-                mapaInc.mapInc.setDiv(div);
+//                var div = document.getElementById('mapa');
+//                mapaInc.mapInc.setDiv(div);
                 $.mobile.changePage("#oncapdepera-ubicacio", {transition: "slide"});
             } catch (e) {
                 error_('E INCID-316', 'carregaMapa', e);
