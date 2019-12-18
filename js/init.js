@@ -181,7 +181,25 @@ var mapaInc = {
        position: event.latLng,
        map: map
     });
-    mapaInc.setLoaction(event.latLng);
+    var request = {
+            position:loc
+        };
+             plugin.google.maps.Geocoder.geocode(request,function (results) {
+
+            if (results.length) {
+                var result = results[0];
+                $('#adresaIncidencia').val(result.thoroughfare);
+                $('#poblacioIncidencia').val(result.locality);
+                //ONCAPDEPERA
+                $('#adresaIncidenciaOnCap').val(result.thoroughfare);
+                $('#poblacioIncidenciaOnCap').val(result.locality);
+                
+            
+            } else {
+                console.log('E-202: NOT LENGHT MAPA');
+                errorMapa();
+            }
+        });
     });
     
 
