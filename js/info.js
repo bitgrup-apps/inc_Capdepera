@@ -526,20 +526,20 @@ var init = {
             $.mobile.changePage("#oncapdepera-ubicacio");
         }
         
-        ,setNovaPosicio: function() {
-            var formData = new FormData();
-            formData.append('funcio', 'novaPosicio');
-            var resp = init.sendAjax(formData, init.sugerencia.file, true);
-            
-            if (resp.error == 0) {
-               resposta = JSON.parse(resp);
-               const NOVAPOSICIO = new plugin.google.maps.LatLng(resp.lat, resp.lng);
-               mapaInc.novaLocalitzacio(NOVAPOSICIO);
-
-
-            }
-        
-        }
+//        ,setNovaPosicio: function() {
+//            var formData = new FormData();
+//            formData.append('funcio', 'novaPosicio');
+//            var resp = init.sendAjax(formData, init.sugerencia.file, true);
+//            
+//            if (resp.error == 0) {
+//               resposta = JSON.parse(resp);
+//               const NOVAPOSICIO = new plugin.google.maps.LatLng(resp.lat, resp.lng);
+//               mapaInc.novaLocalitzacio(NOVAPOSICIO);
+//
+//
+//            }
+//        
+//        }
 
     },
 
