@@ -904,22 +904,22 @@ var init = {
             var option = {enableHighAccuracy: true};
             plugin.google.maps.LocationService.getMyLocation(option, function (location) {
               
-                init.wow.lat = location.latLng.lat;
-                init.wow.long = location.latLng.lng;
-                console.log('lat: ' + init.wow.lat);
-            });
-            var formData = new FormData();            
+                var lat = location.latLng.lat;
+                var long = location.latLng.lng;
+                var formData = new FormData();            
             formData.append('lang', init.lang);
             formData.append('funcio', 'getEtnosProximitat');
-            formData.append('lat', init.wow.lat);
-            console.log('lat2: ' + init.wow.lat);
-            formData.append('long', init.wow.long);
+            formData.append('lat', lat);
+            console.log('lat2: ' + lat);
+            formData.append('long', long);
             var resp = init.sendAjax(formData, 'mapa.class.php', true);
             if (resp.error == 0) {                
                 mapawow.initWow(resp.str);               
             } else {
                 console.log('error getEtnos');
             }
+            });
+            
         }
         
         ,getFitxaEtno: function(id) {
