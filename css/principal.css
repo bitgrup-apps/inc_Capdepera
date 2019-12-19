@@ -349,6 +349,16 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 .info-turisme .header.ui-header > div > div:first-child { text-align: center;}
 .info-turisme .ui-content{background:#fff;}
 
+/*######## MAPAWOW #############*/
+.info-wow{font-family: 'Montserrat';}
+.info-wow .header{background:#9d8f7b;padding-top: 7vw;}
+.info-wow .img {background-size: 90% auto;background-position: center;background-repeat: no-repeat;width: 100%;height: 45vw; max-height: 40vh;}
+.info-wow .header.ui-header > div > div:nth-child(2) {font-size: 5.5vw; text-transform: uppercase;color: #fff;text-align: center;font-weight: 400;padding-top: 0.5vw;}
+.info-wow .header.ui-header > div > div:last-child { background-image: url('../icons/home.png'); background-size: 7.5vw;background-position: center; background-repeat: no-repeat; height: 8.75vw;}
+.info-wow .header.ui-header > div > div:first-child > a { background-image: url('../icons/back.png'); width: 5vw; height: 5vw; background-repeat: no-repeat; background-position: center; display: inline-block; background-size: 4.25vw;  margin-top: 2.25vw;}
+.info-wow .header.ui-header > div > div:first-child { text-align: center;}
+.info-wow .ui-content{background:#fff;}
+
 /*icons*/
 .icon-tur{width: 10vw;height: 10vw;background-repeat: no-repeat;display: inline-block; background-size: 80vw; background-image: url('../icons/sprite_info_turisme.svg');margin-bottom: -0.8vw;}
 .icon-tur.ico-clock{background-position: -8.5vw -73.6vw; width: 5vw; height: 5vw;}
@@ -620,5 +630,27 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 /*########### VISITA ##########*/
 .botoCat {border-radius: 0px;padding: 15px 15px;margin-top: 20px;}
 body.midaMapa{background:transparent;}
-.midaMapa {width: 100vw;height: 100vh; float:right;transition: all 0.4s ease-in-out;min-height: 120px;min-width: 120px;}
+.midaMapa {width: 100vw;height: 80vh; float:right;transition: all 0.4s ease-in-out;min-height: 120px;min-width: 120px;}
 body.mapa{background:transparent;}
+
+
+
+/*########### CATEGORIES ##########*/
+.checkbox-round {
+    width: 1em;
+    height: 1em;
+    background-color: white;
+    border-radius: 50%;
+   vertical-align: top;
+    border: 3px solid #9d8f7b;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 0px;
+}
+
+.checkbox-round:checked {
+    background-color: #9d8f7b;
+}
+.relatiu {position:relative;}
+.absolut {position: absolute;}

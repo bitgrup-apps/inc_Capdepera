@@ -413,9 +413,31 @@ var mapawow = {
 
     wow: null,
 
-    initWow: function () {
+    initWow: function (etnos) {
       var map =new google.maps.Map(
-      document.getElementById('mapaWow'), {zoom: 17, center: {"lat": 39.702031, "lng": 3.431725}});
+      document.getElementById('mapaWow'), {zoom: 12, center: {"lat": 39.702031, "lng": 3.431725}});
+      
+      var lloc = JSON.parse(JSON.stringify(etnos));       
+        var infoWindow = new google.maps.InfoWindow();
+        $.each(lloc, function (i, item) {
+            var decodeHTML = function (html) {
+                var txt = document.createElement('textarea');
+                txt.innerHTML = html;
+                return txt.value;
+            };
+            var decoded = decodeHTML(item.titol);           
+            var desc = decodeHTML(item.desc); 
+            var pos = new google.maps.LatLng({lat: parseFloat(item.lat), lng: parseFloat(item.longt)});
+            var marker = new google.maps.Marker({position: pos, map: map, title: '<a href="#">' + decoded + '</a>'});
+
+            google.maps.event.addListener(marker, "click", function (e) {
+                infoWindow.setContent('<a href="#">' + decoded + '</a>');
+                infoWindow.open(map, marker);
+            });
+
+       
+
+        });
      
         
     }    

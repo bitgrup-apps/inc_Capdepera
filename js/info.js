@@ -449,23 +449,23 @@ var init = {
         }
     },
     mapa: {
-       
-       initM: function(){
-         const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};   
+
+        initM: function () {
+            const CAPDEPERA_LOC = {"lat": 39.702031, "lng": 3.431725};
 //    try {
 //        plugin.google.maps.Map.isAvailable(function (isAvailable, message) {
 //            if (isAvailable) {
-                var map = plugin.google.maps.Map.getMap(document.getElementById("mapaIncidencia"), {
-                    'backgroundColor': '#FFFFFF',
-                    'mapType': plugin.google.maps.MapTypeId.ROADMAP,
-                    'controls': {'compass': true, 'myLocationButton': true, 'indoorPicker': true, 'zoom': true},
-                    'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true},
-                    'camera': {
-                        'latLng': CAPDEPERA_LOC,
-                        'zoom': 18
-                    }
-                });
-                console.log('post map');
+            var map = plugin.google.maps.Map.getMap(document.getElementById("mapaIncidencia"), {
+                'backgroundColor': '#FFFFFF',
+                'mapType': plugin.google.maps.MapTypeId.ROADMAP,
+                'controls': {'compass': true, 'myLocationButton': true, 'indoorPicker': true, 'zoom': true},
+                'gestures': {'scroll': true, 'tilt': true, 'rotate': true, 'zoom': true},
+                'camera': {
+                    'latLng': CAPDEPERA_LOC,
+                    'zoom': 18
+                }
+            });
+            console.log('post map');
 //                window.mapa = map;
 //                window.mapa.setClickable(true);
 //                window.mapa.getVisibleRegion();
@@ -486,12 +486,12 @@ var init = {
 //    } catch (e) {
 //        error_('E INIT-178', 'ERROR INIT MAP', e);
 //    }
-  
-       },
+
+        },
 
         mapaUbicacio: function () {
             try {
-                
+
 //                var div = document.getElementById('mapa');
 //                mapaInc.mapInc.setDiv(div);
                 $.mobile.changePage("#oncapdepera-ubicacio", {transition: "slide"});
@@ -525,7 +525,7 @@ var init = {
             });
             $.mobile.changePage("#oncapdepera-ubicacio");
         }
-        
+
 //        ,setNovaPosicio: function() {
 //            var formData = new FormData();
 //            formData.append('funcio', 'novaPosicio');
@@ -855,9 +855,48 @@ var init = {
         console.log(json);
         console.log(error);
         init.areYouSure(jQuery.i18n.prop('msg_alert_4'), jQuery.i18n.prop('msg_acceptar'), function () {});
+    },
+
+    wow: {
+
+        getCategories: function () {
+            var formData = new FormData();
+            formData.append('lang', init.lang);
+            formData.append('funcio', 'llistaCategories');
+            var resp = init.sendAjax(formData, 'mapa.class.php', true);
+            if (resp.error == 0) {
+                $('#llista-categories').html(resp.str);               
+            } else {
+                console.log('error getCats');
+            }
+        }
+        
+        ,getEtnos: function() {
+            var formData = new FormData($('#formCats')[0]);            
+            formData.append('lang', init.lang);
+            formData.append('funcio', 'getEtnos');
+            var resp = init.sendAjax(formData, 'mapa.class.php', true);
+            if (resp.error == 0) {                
+                mapawow.initWow(resp.str);
+                console.log('cats '+ resp.cat);
+            } else {
+                console.log('error getEtnos');
+            }
+        }
+        
+        ,getAllEtnos: function() {
+            var formData = new FormData();            
+            formData.append('lang', init.lang);
+            formData.append('funcio', 'getAllEtnos');
+            var resp = init.sendAjax(formData, 'mapa.class.php', true);
+            if (resp.error == 0) {                
+                mapawow.initWow(resp.str);               
+            } else {
+                console.log('error getEtnos');
+            }
+        }
+
     }
 };
 
 
-
-//$(document).ready(function(){init.initApp();});
