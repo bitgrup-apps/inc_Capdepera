@@ -858,6 +858,9 @@ var init = {
     },
 
     wow: {
+        
+        lat: '',
+        long: '',
 
         getCategories: function () {
             var formData = new FormData();
@@ -897,19 +900,18 @@ var init = {
         }
         
         ,getEtnosProxims: function() {
-            var lat;
-            var long;
+            
             var option = {enableHighAccuracy: true};
             plugin.google.maps.LocationService.getMyLocation(option, function (location) {
               
-                lat = location.latLng.lat;
-                long = location.latLng.lng;          
+                init.wow.lat = location.latLng.lat;
+                init.wowlong = location.latLng.lng;          
             });
             var formData = new FormData();            
             formData.append('lang', init.lang);
             formData.append('funcio', 'getEtnosProximitat');
-            formData.append('lat', lat);
-            formData.append('long', long);
+            formData.append('lat', init.wow.lat);
+            formData.append('long', init.wow.long);
             var resp = init.sendAjax(formData, 'mapa.class.php', true);
             if (resp.error == 0) {                
                 mapawow.initWow(resp.str);               
