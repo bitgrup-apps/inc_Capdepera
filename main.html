@@ -34,6 +34,9 @@
         <script src="js/functions.js" type="text/javascript"></script>
         <script src="js/incidencies.js" type="text/javascript"></script>
         <link href="css/principal.css" rel="stylesheet" type="text/css"/>
+         <!-- LIGHTBOX-->
+        <link href='js/ligthbox/fresco.css' rel='stylesheet' type='text/css'/>
+        <script src="js/ligthbox/fresco.js" type="text/javascript"></script>
 
 
     </head> 
@@ -1558,7 +1561,25 @@
              </div>
              </form>
         </div>
+         
+         <!--///////////////////    FITXA-ETNO   //////////////////////////////////-->
 
+         <div data-role="page" class="pagina info-wow"  id="fitxa-etno">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="Visita">Visita</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div class="row" id="fitxa">
+                
+            </div>
+             <script>
+             mapawow.initSlider();
+             </script>
+        </div>
+         
         <!-- PHONEGAP AND PLUGINS -->
         <script src="phonegap.js" charset="utf-8" type="text/javascript"></script>
         <script src="cordova.js"></script>

@@ -654,3 +654,4 @@ body.mapa{background:transparent;}
 }
 .relatiu {position:relative;}
 .absolut {position: absolute;}
+.img-gal{background-size: cover; background-position: center center; height: 30vw;}

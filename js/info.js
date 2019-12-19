@@ -895,6 +895,19 @@ var init = {
                 console.log('error getEtnos');
             }
         }
+        
+        ,getFitxaEtno: function(id) {
+             var formData = new FormData();            
+            formData.append('lang', init.lang);
+            formData.append('funcio', 'getFitxaEtno');
+            formData.append('id', id);
+            var resp = init.sendAjax(formData, 'mapa.class.php', true);
+            if (resp.error == 0) {                
+               $('#fitxa').html(resp.str);              
+            } else {
+                console.log('error getFitxa');
+            }
+        }
 
     }
 };

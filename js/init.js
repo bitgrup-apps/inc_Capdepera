@@ -67,6 +67,8 @@ function initApp() {
     } catch (e) {
         error_('E INIT-75', 'MAC ADDRESS', e);
     }
+    
+            
 
     //MAPA
 //    try {
@@ -431,15 +433,43 @@ var mapawow = {
             var marker = new google.maps.Marker({position: pos, map: map, title: '<a href="#">' + decoded + '</a>'});
 
             google.maps.event.addListener(marker, "click", function (e) {
-                infoWindow.setContent('<a href="#">' + decoded + '</a>');
+                infoWindow.setContent('<a href="#fitxa-etno" onclick="init.wow.getFitxaEtno('+item.id+')">' + decoded + '</a>');
                 infoWindow.open(map, marker);
             });
 
        
 
+        });             
+    }
+    ,initSlider: function() {
+        $('.popup').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            tLoading: 'Loading image #%curr%...',
+            mainClass: 'mfp-img-mobile',
+            gallery: {
+                enabled: true,
+                navigateByImgClick: true,
+                preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+            },
+            image: {
+                tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+            }
         });
-     
-        
-    }    
+
+//        $("#slider").owlCarousel({
+//            items: 4,
+//            autoPlay: false,
+//            navigation: true,
+//            itemsDesktop: [1199, 4],
+//            itemsTablet: [980, 2],
+//            itemsMobile: [480, 1],
+//            itemsScaleUp: true,
+//            navigationText: [
+//                "<i class='icon-chevron-left icon-white'></i>",
+//                "<i class='icon-chevron-right icon-white'></i>"
+//            ]
+//        });
+    }
 };
 //###################################################################################
