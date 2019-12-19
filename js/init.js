@@ -478,7 +478,14 @@ var mapawow = {
                 });
             }
         }
-        
+    ,getLocalitzacio: function() {
+        var option = {enableHighAccuracy: true};
+            plugin.google.maps.LocationService.getMyLocation(option, function (location) {
+              
+                mapawow.lat = location.latLng.lat;
+                mapawow.long = location.latLng.lng;          
+            });
+    },    
     
 };
 //###################################################################################
