@@ -906,7 +906,7 @@ var init = {
               
                 init.wow.lat = location.latLng.lat;
                 init.wow.long = location.latLng.lng;
-                console.log('lat: ' + location.latLng.lat);
+                console.log('lat: ' + init.wow.lat);
             });
             var formData = new FormData();            
             formData.append('lang', init.lang);
