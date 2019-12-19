@@ -1525,7 +1525,7 @@
                     <a href="#categories"><button class="botoCat" onclick="init.wow.getCategories();">Categoria</button></a>
                 </div>
                 <div class="col-xs-6">
-                    <button class="botoCat">Proximitat</button>
+                    <button class="botoCat" onclick="mapaInc.getLocalitzacio();init.wow.getEtnosProxims()">Proximitat</button>
                 </div>
             </div>
             <div class="row">
@@ -1548,7 +1548,7 @@
              <form id="formCats">
             <div class="row">
                 <div class="col-xs-6">
-                    <button class="botoCat">Seleccionar tot</button>
+                    <button class="botoCat literal" id="botoSelect" data-check="1" data-literal="cer_6" onclick="mapawow.checkCat();">Seleccionar tot</button>
                 </div>
                 <div class="col-xs-6">
                     <a href="#" data-rel="back" data-transition="slide"><button class="botoCat" type="submit" onclick="init.wow.getEtnos();">Acceptar</button></a>
@@ -1574,10 +1574,7 @@
             </div>
             <div class="row" id="fitxa">
                 
-            </div>
-             <script>
-             mapawow.initSlider();
-             </script>
+            </div>          
         </div>
          
         <!-- PHONEGAP AND PLUGINS -->

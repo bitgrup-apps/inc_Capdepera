@@ -896,6 +896,20 @@ var init = {
             }
         }
         
+        ,getEtnosProxims: function() {
+             var formData = new FormData();            
+            formData.append('lang', init.lang);
+            formData.append('funcio', 'getEtnosProximitat');
+            formData.append('lat', mapawow.lat);
+            formData.append('long', mapawow.long);
+            var resp = init.sendAjax(formData, 'mapa.class.php', true);
+            if (resp.error == 0) {                
+                mapawow.initWow(resp.str);               
+            } else {
+                console.log('error getEtnos');
+            }
+        }
+        
         ,getFitxaEtno: function(id) {
              var formData = new FormData();            
             formData.append('lang', init.lang);

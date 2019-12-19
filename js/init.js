@@ -190,6 +190,15 @@ var mapaInc = {
  
 },
 
+getLocalitzacio: function() {
+        var option = {enableHighAccuracy: true};
+            plugin.google.maps.LocationService.getMyLocation(option, function (location) {
+              
+                mapawow.lat = location.latLng.lat;
+                mapawow.long = location.latLng.lng;          
+            });
+    },
+
 getLocation: function() {
     
     var option = {enableHighAccuracy: true};
@@ -414,6 +423,8 @@ function failUUID(e) {
 var mapawow = {
 
     wow: null,
+    lat: null,
+    long: null,
 
     initWow: function (etnos) {
       var map =new google.maps.Map(
@@ -441,35 +452,33 @@ var mapawow = {
 
         });             
     }
-    ,initSlider: function() {
-        $('.popup').magnificPopup({
-            delegate: 'a',
-            type: 'image',
-            tLoading: 'Loading image #%curr%...',
-            mainClass: 'mfp-img-mobile',
-            gallery: {
-                enabled: true,
-                navigateByImgClick: true,
-                preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
-            },
-            image: {
-                tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+    ,checkCat: function () {
+            var all = $('#botoSelect').attr('data-check');            
+            if (all == 1) {
+                $('.grup-categories .ui-checkbox').each(function () {
+                    $(this).find('input').prop("checked", true);
+                    $(this).find('label').removeClass('ui-checkbox-off');
+                    $(this).find('label').addClass('ui-checkbox-on');
+                    $('.btn-categoria').addClass('active');
+                    $('#botoSelect').attr('data-check', '0');
+                    $('#botoSelect').attr('data-literal', 'cer_7');
+                    $('#botoSelect').text('Netejar');
+                    
+                });
+            } else {
+                $('.grup-categories .ui-checkbox').each(function () {
+                    $(this).find('input').prop("checked", false);
+                    $(this).find('label').removeClass('ui-checkbox-on');
+                    $(this).find('label').addClass('ui-checkbox-off');
+                    $('.btn-categoria').removeClass('active');
+                    $('#botoSelect').attr('data-check', '1');
+                    $('#botoSelect').attr('data-literal', 'cer_6');
+                    $('#botoSelect').text('Seleccionar tot');
+                    
+                });
             }
-        });
-
-//        $("#slider").owlCarousel({
-//            items: 4,
-//            autoPlay: false,
-//            navigation: true,
-//            itemsDesktop: [1199, 4],
-//            itemsTablet: [980, 2],
-//            itemsMobile: [480, 1],
-//            itemsScaleUp: true,
-//            navigationText: [
-//                "<i class='icon-chevron-left icon-white'></i>",
-//                "<i class='icon-chevron-right icon-white'></i>"
-//            ]
-//        });
-    }
+        }
+        
+    
 };
 //###################################################################################
