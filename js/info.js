@@ -897,11 +897,19 @@ var init = {
         }
         
         ,getEtnosProxims: function() {
-             var formData = new FormData();            
+            var lat;
+            var long;
+            var option = {enableHighAccuracy: true};
+            plugin.google.maps.LocationService.getMyLocation(option, function (location) {
+              
+                lat = location.latLng.lat;
+                long = location.latLng.lng;          
+            });
+            var formData = new FormData();            
             formData.append('lang', init.lang);
             formData.append('funcio', 'getEtnosProximitat');
-            formData.append('lat', mapawow.lat);
-            formData.append('long', mapawow.long);
+            formData.append('lat', lat);
+            formData.append('long', long);
             var resp = init.sendAjax(formData, 'mapa.class.php', true);
             if (resp.error == 0) {                
                 mapawow.initWow(resp.str);               
