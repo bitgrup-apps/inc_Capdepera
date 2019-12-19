@@ -912,6 +912,7 @@ var init = {
             formData.append('lang', init.lang);
             formData.append('funcio', 'getEtnosProximitat');
             formData.append('lat', init.wow.lat);
+            console.log('lat2: ' + init.wow.lat);
             formData.append('long', init.wow.long);
             var resp = init.sendAjax(formData, 'mapa.class.php', true);
             if (resp.error == 0) {                
