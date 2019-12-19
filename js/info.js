@@ -905,7 +905,8 @@ var init = {
             plugin.google.maps.LocationService.getMyLocation(option, function (location) {
               
                 init.wow.lat = location.latLng.lat;
-                init.wowlong = location.latLng.lng;          
+                init.wow.long = location.latLng.lng;
+                console.log('lat: ' + location.latLng.lat);
             });
             var formData = new FormData();            
             formData.append('lang', init.lang);
