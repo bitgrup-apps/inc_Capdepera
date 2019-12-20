@@ -875,6 +875,7 @@ var init = {
         }
         
         ,getEtnos: function() {
+           
             var formData = new FormData($('#formCats')[0]);            
             formData.append('lang', init.lang);
             formData.append('funcio', 'getEtnos');
@@ -936,6 +937,18 @@ var init = {
             } else {
                 console.log('error getFitxa');
             }
+        }
+        ,resetBoto: function() {
+            $('.grup-categories .ui-checkbox').each(function () {
+                    $(this).find('input').prop("checked", false);
+                    $(this).find('label').removeClass('ui-checkbox-on');
+                    $(this).find('label').addClass('ui-checkbox-off');
+                    $('.btn-categoria').removeClass('active');
+                    $('#botoSelect').attr('data-check', '1');
+                    $('#botoSelect').attr('data-literal', 'cer_6');
+                    $('#botoSelect').text('Seleccionar tot');
+                    
+                });
         }
 
     }

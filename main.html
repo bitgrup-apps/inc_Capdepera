@@ -80,7 +80,7 @@
                 </div>
                 <div class="col-xs-4">
                     <span class="icona cinema"></span>
-                    <a href="#visita" class="pastil visita literal" data-literal="Visita" data-role="none" onclick="init.wow.getAllEtnos();">Visita</a>
+                    <a href="#visita" class="pastil visita literal" data-literal="cer_4" data-role="none" onclick="init.wow.getAllEtnos();">Visita</a>
                 </div>
 
 
@@ -1516,16 +1516,16 @@
             <div data-role="header" class="header">
                 <div class="row">
                     <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
-                    <div class="col-xs-8 literal" data-literal="Visita">Visita</div>
+                    <div class="col-xs-8 literal" data-literal="cer_4">Visita</div>
                     <div class="col-xs-2" onclick="init.home();"></div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-6">
-                    <a href="#categories"><button class="botoCat" onclick="init.wow.getCategories();">Categoria</button></a>
+                    <a href="#categories"><button class="botoCat literal" data-literal="cer_1" onclick="init.wow.getCategories();">Categoria</button></a>
                 </div>
                 <div class="col-xs-6">
-                    <button class="botoCat" onclick="init.wow.getEtnosProxims()">Proximitat</button>
+                    <button class="botoCat literal" data-literal="cer_2" onclick="init.wow.getEtnosProxims()">Proximitat</button>
                 </div>
             </div>
             <div class="row">
@@ -1540,18 +1540,18 @@
          <div data-role="page" class="pagina info-wow"  id="categories">
             <div data-role="header" class="header">
                 <div class="row">
-                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
-                    <div class="col-xs-8 literal" data-literal="Visita">Visita</div>
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide" onclick="init.wow.resetBoto();"></a></div>
+                    <div class="col-xs-8 literal" data-literal="cer_4">Visita</div>
                     <div class="col-xs-2" onclick="init.home();"></div>
                 </div>
             </div>
              <form id="formCats">
             <div class="row">
                 <div class="col-xs-6">
-                    <a class="botoCat boto literal" id="botoSelect" data-check="1" data-literal="cer_6" onclick="mapawow.checkCat();">Seleccionar tot</a>
+                    <a style="text-decoration:none;color: black;" class="botoCat boto literal" id="botoSelect" data-check="1" data-literal="cer_6" onclick="mapawow.checkCat();">Seleccionar tot</a>
                 </div>
                 <div class="col-xs-6">
-                    <a href="#" data-rel="back" data-transition="slide"><button class="botoCat" type="submit" onclick="init.wow.getEtnos();">Acceptar</button></a>
+                    <a href="#" data-rel="back" data-transition="slide"><button style="border: 1px solid black;" class="botoCat literal" data-literal="cer_3"  type="submit" onclick="init.wow.getEtnos();init.wow.resetBoto();">Acceptar</button></a>
                 </div>
             </div>
              <div class="row">
@@ -1568,7 +1568,7 @@
             <div data-role="header" class="header">
                 <div class="row">
                     <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
-                    <div class="col-xs-8 literal" data-literal="Visita">Visita</div>
+                    <div class="col-xs-8 literal" data-literal="cer_4">Visita</div>
                     <div class="col-xs-2" onclick="init.home();"></div>
                 </div>
             </div>
