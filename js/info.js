@@ -950,10 +950,7 @@ var init = {
                     
                     
                 });
-                 $('#botoSelect').each(function () {
-                    literal = $(this).data('literal');
-                    $(this).html(jQuery.i18n.prop(literal));
-                    });
+                 
         }
 
     }

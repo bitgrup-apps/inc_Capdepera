@@ -476,10 +476,7 @@ var mapawow = {
                     $('#botoSelect').attr('data-literal', 'cer_6');                                       
                 });
             }
-             $('#botoSelect').each(function () {
-                    literal = $(this).data('literal');
-                    $(this).html(jQuery.i18n.prop(literal));
-                    });
+            
         }
     ,getLocalitzacio: function() {
         var option = {enableHighAccuracy: true};
