@@ -913,8 +913,11 @@ var init = {
             formData.append('long', long);
             var resp = init.sendAjax(formData, 'mapa.class.php', true);
             if (resp.error == 0) {  
-                console.log('resposta:' + resp.str);
-                mapawow.initWow(resp.str);               
+                if(resp.str = 'no'){
+                    init.areYouSure(jQuery.i18n.prop('msg_alert_4'), jQuery.i18n.prop('msg_acceptar'), function () {});
+                }else {
+                mapawow.initWow(resp.str);
+            }
             } else {
                 console.log('error getEtnos');
             }
