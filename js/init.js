@@ -463,7 +463,7 @@ var mapawow = {
                     $('#botoSelect').attr('data-check', '0');
                     $('#botoSelect').attr('data-literal', 'cer_7');
                     $('#botoSelect').text('Netejar');
-                    
+                    init.setLiterals();
                 });
             } else {
                 $('.grup-categories .ui-checkbox').each(function () {
@@ -474,10 +474,10 @@ var mapawow = {
                     $('#botoSelect').attr('data-check', '1');
                     $('#botoSelect').attr('data-literal', 'cer_6');
                     $('#botoSelect').text('Seleccionar tot');
-                    
+                    init.setLiterals();
                 });
             }
-            init.setLiterals();
+            
         }
     ,getLocalitzacio: function() {
         var option = {enableHighAccuracy: true};
