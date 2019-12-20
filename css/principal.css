@@ -655,3 +655,4 @@ body.mapa{background:transparent;}
 .relatiu {position:relative;}
 .absolut {position: absolute;}
 .img-gal{background-size: cover; background-position: center center; height: 30vw;}
+.boto{padding:8vw 3.5vw; width: 54vw; text-align: center; color:#fff; text-transform: uppercase; font-size: 3vw;font-family: 'Montserrat';display: inherit;margin: 5px auto 5px;}
