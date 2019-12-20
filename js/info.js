@@ -949,6 +949,7 @@ var init = {
                     $('#botoSelect').text('Seleccionar tot');
                     
                 });
+                init.setLiterals();
         }
 
     }

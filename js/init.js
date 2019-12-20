@@ -477,6 +477,7 @@ var mapawow = {
                     
                 });
             }
+            init.setLiterals();
         }
     ,getLocalitzacio: function() {
         var option = {enableHighAccuracy: true};
