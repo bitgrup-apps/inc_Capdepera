@@ -909,11 +909,11 @@ var init = {
                 var formData = new FormData();            
             formData.append('lang', init.lang);
             formData.append('funcio', 'getEtnosProximitat');
-            formData.append('lat', lat);
-            console.log('lat2: ' + lat);
+            formData.append('lat', lat);            
             formData.append('long', long);
             var resp = init.sendAjax(formData, 'mapa.class.php', true);
-            if (resp.error == 0) {                
+            if (resp.error == 0) {  
+                console.log('resposta:' + resp.str);
                 mapawow.initWow(resp.str);               
             } else {
                 console.log('error getEtnos');
