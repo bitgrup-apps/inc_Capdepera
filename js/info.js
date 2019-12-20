@@ -945,8 +945,9 @@ var init = {
                     $(this).find('label').addClass('ui-checkbox-off');
                     $('.btn-categoria').removeClass('active');
                     $('#botoSelect').attr('data-check', '1');
-                    $('#botoSelect').attr('data-literal', 'cer_6');
                     $('#botoSelect').text('Seleccionar tot');
+                    $('#botoSelect').attr('data-literal', 'cer_6');
+                    
                     
                 });
                 

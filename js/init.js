@@ -461,8 +461,9 @@ var mapawow = {
                     $(this).find('label').addClass('ui-checkbox-on');
                     $('.btn-categoria').addClass('active');
                     $('#botoSelect').attr('data-check', '0');
-                    $('#botoSelect').attr('data-literal', 'cer_7');
                     $('#botoSelect').text('Netejar');
+                    $('#botoSelect').attr('data-literal', 'cer_7');
+                    
                     
                 });
             } else {
@@ -472,8 +473,9 @@ var mapawow = {
                     $(this).find('label').addClass('ui-checkbox-off');
                     $('.btn-categoria').removeClass('active');
                     $('#botoSelect').attr('data-check', '1');
-                    $('#botoSelect').attr('data-literal', 'cer_6');
                     $('#botoSelect').text('Seleccionar tot');
+                    $('#botoSelect').attr('data-literal', 'cer_6');
+                   
                     
                 });
             }
