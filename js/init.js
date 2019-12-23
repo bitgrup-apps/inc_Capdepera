@@ -182,7 +182,9 @@ var mapaInc = {
             }
         });
     });
-    
+    $('#mapa').on('swipe',  function (event) {
+            $.event.special.swipe.horizontalDistanceThreshold (300);
+        });
 
 },
 
@@ -448,7 +450,9 @@ var mapawow = {
                 infoWindow.open(map, marker);
             });
 
-       
+        $('#mapaWow').on('swipe',  function (event) {
+            $.event.special.swipe.horizontalDistanceThreshold (300);
+        });
 
         });             
     }
