@@ -914,9 +914,8 @@ var init = {
             formData.append('long', long);
             var resp = init.sendAjax(formData, 'mapa.class.php', true);
             if (resp.error == 0) {  
-                if(resp.str == 'no'){
-                    console.log(resp.str);
-                    init.areYouSure(jQuery.i18n.prop('msg_alert_4'), jQuery.i18n.prop('msg_acceptar'), function () {});
+                if(resp.str == 'no'){                 
+                    init.areYouSure(jQuery.i18n.prop('msg_alert_5'), jQuery.i18n.prop('msg_acceptar'), function () {});
                 }else {
                 mapawow.initWow(resp.str);
             }
