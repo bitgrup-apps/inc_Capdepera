@@ -881,8 +881,7 @@ var init = {
             formData.append('funcio', 'getEtnos');
             var resp = init.sendAjax(formData, 'mapa.class.php', true);
             if (resp.error == 0) {                
-                mapawow.initWow(resp.str);
-                console.log('cats '+ resp.cat);
+                mapawow.initWow(resp.str);                
             } else {
                 console.log('error getEtnos');
             }
