@@ -914,7 +914,7 @@ var init = {
             formData.append('long', long);
             var resp = init.sendAjax(formData, 'mapa.class.php', true);
             if (resp.error == 0) {  
-                if(resp.str = 'no'){
+                if(resp.str == 'no'){
                     console.log(resp.str);
                     init.areYouSure(jQuery.i18n.prop('msg_alert_4'), jQuery.i18n.prop('msg_acceptar'), function () {});
                 }else {
