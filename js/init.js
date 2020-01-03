@@ -450,6 +450,8 @@ var mapawow = {
                 infoWindow.open(map, marker);
             });
 
+            map.setZoom(map.getZoom()-1);
+            map.setZoom(map.getZoom()+1);
         $('#mapaWow').on('swipe',  function (event) {
             $.event.special.swipe.horizontalDistanceThreshold (300);
         });
