@@ -449,7 +449,7 @@ var mapawow = {
                 infoWindow.setContent('<a href="#fitxa-etno" onclick="init.wow.getFitxaEtno('+item.id+')">' + decoded + '</a>');
                 infoWindow.open(map, marker);
             });
-        setTimeOut(map.panTo(posicio),400);
+       
             
         $('#mapaWow').on('swipe',  function (event) {
             $.event.special.swipe.horizontalDistanceThreshold (400);
