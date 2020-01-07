@@ -429,9 +429,9 @@ var mapawow = {
     long: null,
 
     initWow: function (etnos) {
-      var map =new google.maps.Map(
-      document.getElementById('mapaWow'), {zoom: 13, center: {"lat": 39.702030, "lng": 3.431725},disableDefaultUI: true});
       var posicio = {"lat": 39.702031, "lng": 3.431725};
+      var map =new google.maps.Map(
+      document.getElementById('mapaWow'), {zoom: 12, center: posicio,disableDefaultUI: true});      
       var lloc = JSON.parse(JSON.stringify(etnos));       
         var infoWindow = new google.maps.InfoWindow();
         $.each(lloc, function (i, item) {
