@@ -427,13 +427,18 @@ var mapawow = {
     wow: null,
     lat: null,
     long: null,
+    infoWindow : '',
 
     initWow: function (etnos) {
+      mapawow.infoWindow = new google.maps.InfoWindow();
       var posicio = {"lat": 39.702031, "lng": 3.431725};
       var map =new google.maps.Map(
-      document.getElementById('mapaWow'), {zoom: 12, center: posicio,disableDefaultUI: true});      
+      document.getElementById('mapaWow'), {zoom: 12, center: posicio,disableDefaultUI: true});
+      google.maps.event.addListener(map, "click", function(event) {
+        mapawow.infoWindow.close();
+        });      
       var lloc = JSON.parse(JSON.stringify(etnos));       
-        var infoWindow = new google.maps.InfoWindow();
+       // var infoWindow = new google.maps.InfoWindow();
         $.each(lloc, function (i, item) {
             var decodeHTML = function (html) {
                 var txt = document.createElement('textarea');
@@ -446,8 +451,9 @@ var mapawow = {
             var marker = new google.maps.Marker({position: pos, map: map, title: '<a href="#">' + decoded + '</a>'});
 
             google.maps.event.addListener(marker, "click", function (e) {
-                infoWindow.setContent('<a href="#fitxa-etno" onclick="init.wow.getFitxaEtno('+item.id+')">' + decoded + '</a>');
-                infoWindow.open(map, marker);
+                mapawow.infoWindow.close();
+                mapawow.infoWindow.setContent('<a href="#fitxa-etno" onclick="init.wow.getFitxaEtno('+item.id+')">' + decoded + '</a>');
+                mapawow.infoWindow.open(map, marker);
             });
        
             

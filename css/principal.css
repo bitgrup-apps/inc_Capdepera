@@ -65,7 +65,7 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #home-nou .logo{margin-bottom: 16vw;}
 #home-nou .pastilla{padding: 20vw 2vw 5vw 0vw; text-align: center; font-size: 3.5vw; color:#fff; font-weight: 500; text-shadow:none;display: inline-block; width: 110%; text-transform: uppercase;background-size: cover; background-position: center; background-repeat: no-repeat;}
 #home-nou .pastilla::before{position:absolute; width:20vw; height: 20vw; background-image: url(../icons/spriteoncdphome.svg); background-size: 200vw; content: " ";top: 2.5vw;left: 9.5vw;}
-#home-nou .pastilla.oncpd{border-style: solid; border-width: 0px 1px 1px 0px;}
+#home-nou .pastilla.oncpd{border-style: solid; border-width: 0px 1px 0px 0px;}
 #home-nou .pastilla.oncpd::before{background-position:-18vw -12vw;}
 #home-nou .pastilla.esdevn{border-style: solid; border-width: 0px 1px 1px 0px;}
 #home-nou .pastilla.esdevn::before{background-position:-85vw -12vw;}
