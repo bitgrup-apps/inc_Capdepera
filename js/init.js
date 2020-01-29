@@ -452,7 +452,7 @@ var mapawow = {
 
             google.maps.event.addListener(marker, "click", function (e) {
                 mapawow.infoWindow.close();
-                mapawow.infoWindow.setContent('<a href="#fitxa-etno" onclick="init.wow.getFitxaEtno('+item.id+')">' + decoded + '</a>');
+                mapawow.infoWindow.setContent('<a href="#fitxa-etno" onclick="mapawow.infoWindow.close();init.wow.getFitxaEtno('+item.id+')">' + decoded + '</a>');
                 mapawow.infoWindow.open(map, marker);
             });
        
