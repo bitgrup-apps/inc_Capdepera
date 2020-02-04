@@ -77,6 +77,8 @@ var init = {
                 $.mobile.changePage("#oncapdepera-fitxa", {transition: "slide"});
             }
         }
+        
+       
     },
     esports: {
         menuOk: false,

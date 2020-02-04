@@ -37,6 +37,7 @@
          <!-- LIGHTBOX-->
         <link href='js/ligthbox/fresco.css' rel='stylesheet' type='text/css'/>
         <script src="js/ligthbox/fresco.js" type="text/javascript"></script>
+        <script src="js/geoxml.js" type="text/javascript"></script>
 
 
     </head> 
@@ -761,6 +762,12 @@
                     </a>
                 </div>
                 <div class="col-xs-12 menu doble">
+                    <a href="#oncapdepera-posidonia" data-role="none" data-transition="slide" onclick="mapapos.mapaPosidonia()">
+                        <div class="icono-menu"><span class="ico res"></span></div>
+                        <span class="literal" style="margin-left: 10px;margin-top: 18px;" data-literal="msg_menu_10">Mapa Posidònia</span>
+                    </a>
+                </div>
+                <div class="col-xs-12 menu doble">
                     <div class="icono-menu"><span class="icon festes"></span></div>
                     <span><span class="literal" data-literal="msg_on_men_2">Festes</span><br><span class="literal" data-literal="msg_on_men_2b">populars</span></span>
                     <ul class="sub-menu" id="m-festes">
@@ -794,6 +801,22 @@
             </div>
         </div>
 
+        
+         <!--////////////////////    MAPA POSIDONIA  ///////////////////////////////-->
+         
+         <div data-role="page" class="oncapdepera pagina info-turisme"  id="oncapdepera-posidonia">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8">Oncapdepera</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" class=""  id="mapaPos">
+
+            </div>
+        </div>
+         
 
         <!--////////////////////    FITXA  ///////////////////////////////-->
 
