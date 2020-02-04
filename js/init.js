@@ -506,7 +506,7 @@ var mapapos = {
       //var src = 'http://www.google.com/maps/d/kml?forcekml=1&mid=1D3USEeIbdVN3zV4B0S8jgODVIS0NHGvY';
      //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
      var src = 'https://oncapdepera.com/App/posidonia/export.kmz';
-     var src2 = 'https://oncapdepera.com/App/posidonia/exportlayer.kmz';
+     var src2 = 'https://oncapdepera.com/App/posidonia/prova11.kmz';
       var posicio = {"lat": 39.7163321, "lng": 3.4592721};
       //var posicio = {"lat": -19.257753, "lng": 146.823688};
       var map =new google.maps.Map(
@@ -528,7 +528,7 @@ var mapapos = {
 //          var testimonial = document.getElementById('capture');
 //          testimonial.innerHTML = content;
 //        });
-      var kmlTrack = "res/layerPos.kml";
+      var kmlTrack = "res/exportlayer.kmz";
       var myParser = new geoXML3.parser({map: map});
       myParser.parse(kmlTrack);
       
