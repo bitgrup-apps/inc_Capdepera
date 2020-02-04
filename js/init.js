@@ -528,7 +528,7 @@ var mapapos = {
 //          var testimonial = document.getElementById('capture');
 //          testimonial.innerHTML = content;
 //        });
-      var kmlTrack = "js/arta.kml";
+      var kmlTrack = "js/exportlayer.kmz";
       var myParser = new geoXML3.parser({map: map});
       myParser.parse(kmlTrack);
       
