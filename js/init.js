@@ -504,6 +504,7 @@ var mapapos = {
     lat: null,
     long: null,
     marcador: '',
+    pos: '',
     
      mapaPosidonia: function() {
       //var src = 'http://www.google.com/maps/d/kml?forcekml=1&mid=1D3USEeIbdVN3zV4B0S8jgODVIS0NHGvY';
@@ -546,9 +547,9 @@ var mapapos = {
         $('#mapaPos').on('swipe',  function (event) {
             $.event.special.swipe.horizontalDistanceThreshold (400);
         });
-      const NOVAPOSICIO = new plugin.google.maps.LatLng(mapapos.lat, mapapos.long);
+      //const NOVAPOSICIO = new plugin.google.maps.LatLng(mapapos.lat, mapapos.long);
       mapapos.marcador = new google.maps.Marker({
-      position: NOVAPOSICIO,
+      position: mapapos.pos,
       map: map
     });
         
@@ -568,6 +569,12 @@ var mapapos = {
         getLocalPos: function() {
         var option = {enableHighAccuracy: true};
             plugin.google.maps.LocationService.getMyLocation(option, function (location) {
+                var lat = location.latLng.lat;
+                var long = location.latLng.lng;
+               // mapaInc.mapInc.changeCamera(lat, long);
+                const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, long);
+              //  mapaInc.mapInc.getAdress(NOVAPOSICIO);
+              mapapos.pos = NOVAPOSICIO;
               
                 mapapos.lat = location.latLng.lat;
                 mapapos.long = location.latLng.lng;          
