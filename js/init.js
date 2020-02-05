@@ -501,6 +501,9 @@ var mapawow = {
 };
 
 var mapapos = {
+    lat: null,
+    long: null,
+    marcador: '',
     
      mapaPosidonia: function() {
       //var src = 'http://www.google.com/maps/d/kml?forcekml=1&mid=1D3USEeIbdVN3zV4B0S8jgODVIS0NHGvY';
@@ -529,15 +532,34 @@ var mapapos = {
 //          testimonial.innerHTML = content;
 //        });
       var kmlTrack = "res/artalite.kml";
-      var myParser = new geoXML3.parser({map: map});
-      myParser.parse(kmlTrack);
+      var geoXml = new geoXML3.parser({map: map});
+      geoXml.parse(kmlTrack);
       
       
+    
         $('#mapaPos').on('swipe',  function (event) {
             $.event.special.swipe.horizontalDistanceThreshold (400);
         });
+        
+       google.maps.event.addListener(map, 'click', function(event){
+       mapapos.marcador.setMap(null);
+       mapapos.marcador = new google.maps.Marker({
+       position: event.latLng,
+       map: map
+      });
+       });
       
-        }
+      
+        },
+        
+        getLocalPos: function() {
+        var option = {enableHighAccuracy: true};
+            plugin.google.maps.LocationService.getMyLocation(option, function (location) {
+              
+                mapapos.lat = location.latLng.lat;
+                mapapos.long = location.latLng.lng;          
+            });
+    }    
     
     
 };
