@@ -529,7 +529,7 @@ var mapapos = {
         kmlLayer.addListener('click', function(event) {
           var content = event.featureData.infoWindowHtml;
           var testimonial = document.getElementById('capture');
-          testimonial.innerHTML = content;
+         // testimonial.innerHTML = content;
           mapapos.marcador.setMap(null);
           mapapos.marcador = new google.maps.Marker({
           position: event.latLng,
