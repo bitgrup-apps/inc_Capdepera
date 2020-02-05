@@ -562,9 +562,10 @@ var mapapos = {
       });
       console.log('Posidonia no');
        });
-      
-     console.log('Viewport: '+kmlLayer.getDefaultViewport());
-      
+      google.maps.event.addListener(kmlLayer, "defaultviewport_changed", 
+        function() {
+        console.log('Viewport: '+this.getDefaultViewport());
+        });
         },
         
         getLocalPos: function() {
