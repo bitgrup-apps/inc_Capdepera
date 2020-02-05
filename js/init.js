@@ -505,6 +505,7 @@ var mapapos = {
     long: null,
     marcador: '',
     pos: {"lat": 39.702031, "lng": 3.431725},
+    dinsPos: false,
     
      mapaPosidonia: function() {
       //var src = 'http://www.google.com/maps/d/kml?forcekml=1&mid=1D3USEeIbdVN3zV4B0S8jgODVIS0NHGvY';
@@ -562,7 +563,7 @@ var mapapos = {
       console.log('Posidonia no');
        });
       
-     
+     console.log('Viewport: '+kmlLayer.getDefaultViewport());
       
         },
         
