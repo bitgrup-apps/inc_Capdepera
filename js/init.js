@@ -527,8 +527,8 @@ var mapapos = {
           map: map
         });
         kmlLayer.addListener('click', function(event) {
-          var content = event.featureData.infoWindowHtml;
-          var testimonial = document.getElementById('capture');
+         // var content = event.featureData.infoWindowHtml;
+        //  var testimonial = document.getElementById('capture');
          // testimonial.innerHTML = content;
           mapapos.marcador.setMap(null);
           mapapos.marcador = new google.maps.Marker({
