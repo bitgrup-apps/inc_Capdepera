@@ -504,7 +504,7 @@ var mapapos = {
     lat: null,
     long: null,
     marcador: '',
-    pos: '',
+    pos: {"lat": 39.702031, "lng": 3.431725},
     
      mapaPosidonia: function() {
       //var src = 'http://www.google.com/maps/d/kml?forcekml=1&mid=1D3USEeIbdVN3zV4B0S8jgODVIS0NHGvY';
@@ -574,7 +574,7 @@ var mapapos = {
                // mapaInc.mapInc.changeCamera(lat, long);
                 const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, long);
               //  mapaInc.mapInc.getAdress(NOVAPOSICIO);
-              mapapos.pos = NOVAPOSICIO;
+                mapapos.pos = NOVAPOSICIO;
               
                 mapapos.lat = location.latLng.lat;
                 mapapos.long = location.latLng.lng;          
