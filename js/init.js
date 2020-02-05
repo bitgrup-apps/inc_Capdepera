@@ -535,6 +535,7 @@ var mapapos = {
           position: event.latLng,
           map: map
       });
+      console.log('Posidoni si');
         });
 //      var kmlTrack = "res/artalite.kml";
 //      var geoXml = new geoXML3.parser({map: map});
@@ -545,7 +546,7 @@ var mapapos = {
         $('#mapaPos').on('swipe',  function (event) {
             $.event.special.swipe.horizontalDistanceThreshold (400);
         });
-     const NOVAPOSICIO = new plugin.google.maps.LatLng(mapapos.lat, mapapos.long);
+      const NOVAPOSICIO = new plugin.google.maps.LatLng(mapapos.lat, mapapos.long);
       mapapos.marcador = new google.maps.Marker({
       position: NOVAPOSICIO,
       map: map
@@ -557,6 +558,7 @@ var mapapos = {
        position: event.latLng,
        map: map
       });
+      console.log('Posidonia no');
        });
       
      
