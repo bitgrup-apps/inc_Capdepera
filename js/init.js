@@ -520,7 +520,7 @@ var mapapos = {
 //          zIndex: 100,
 //          map: map
 //        });
-        var kmlLayer2 = new google.maps.KmlLayer(src2, {
+        var kmlLayer = new google.maps.KmlLayer(src2, {
           suppressInfoWindows: true,
           preserveViewport: true,
          // zIndex: 100,
