@@ -555,15 +555,11 @@ var mapapos = {
 //       });
       //llegir xml:
            var markers = null;
-           var text = "<bookstore><book>" +
-"<title>Everyday Italian</title>" +
-"<author>Giada De Laurentiis</author>" +
-"<year>2005</year>" +
-"</book></bookstore>"
+           var text = 'res/poly.xml';
         var parser = new DOMParser();
         var xmlDoc = parser.parseFromString(text, 'text/xml');
         document.getElementById("demo").innerHTML =
-        xmlDoc.getElementsByTagName("coordinates")[0].childNodes[0].nodeValue;
+        xmlDoc.getElementsByTagName("coordinates")[0].nodeValue;
 //            $.get("res/poly.xml", {}, function (xml){
 //              $('coordinates',xml).each(function(i){
 //                 markers = $(this);
