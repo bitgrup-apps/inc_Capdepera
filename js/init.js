@@ -531,28 +531,43 @@ var mapapos = {
 //          var testimonial = document.getElementById('capture');
 //          testimonial.innerHTML = content;
 //        });
-      var kmlTrack = "res/artalite.kml";
-      var geoXml = new geoXML3.parser({map: map});
-      geoXml.parse(kmlTrack);
+//      var kmlTrack = "res/artalite.kml";
+//      var geoXml = new geoXML3.parser({map: map});
+//      geoXml.parse(kmlTrack);
       
       
     
         $('#mapaPos').on('swipe',  function (event) {
             $.event.special.swipe.horizontalDistanceThreshold (400);
         });
-      mapapos.marcador = new google.maps.Marker({
-      position: {"lat": mapapos.lat, "lng": mapapos.long},
-      map: map
-    });
+//      const NOVAPOSICIO = new plugin.google.maps.LatLng(mapapos.lat, mapapos.long);
+//      mapapos.marcador = new google.maps.Marker({
+//      position: NOVAPOSICIO,
+//      map: map
+//    });
+//        
+//       google.maps.event.addListener(map, 'click', function(event){
+//       mapapos.marcador.setMap(null);
+//       mapapos.marcador = new google.maps.Marker({
+//       position: event.latLng,
+//       map: map
+//      });
+//       });
+      //llegir xml:
+           var markers = null;
         
-       google.maps.event.addListener(map, 'click', function(event){
-       mapapos.marcador.setMap(null);
-       mapapos.marcador = new google.maps.Marker({
-       position: event.latLng,
-       map: map
-      });
-       });
-      
+            $.get("res/poly.xml", {}, function (xml){
+              $('coordinates',xml).each(function(i){
+                 markers = $(this);
+              });
+            });
+            console.log('markers: '+markers);
+//         $(markers).each(function(i) {
+//             var poly = new google.maps.Polygon({
+//                 paths:
+//             })
+//         });  
+     
       
         },
         
