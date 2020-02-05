@@ -555,12 +555,16 @@ var mapapos = {
 //       });
       //llegir xml:
            var markers = null;
-        
-            $.get("res/poly.xml", {}, function (xml){
-              $('coordinates',xml).each(function(i){
-                 markers = $(this);
-              });
-            });
+           var text = 'res/poly.xml';
+        var parser = new DOMParser();
+        var xmlDoc = parser.parseFromString(text, 'text/xml');
+        document.getElementById("demo").innerHTML =
+        markers = xmlDoc.getElementsByTagName("coordinates")[0].childNodes[0].nodeValue;
+//            $.get("res/poly.xml", {}, function (xml){
+//              $('coordinates',xml).each(function(i){
+//                 markers = $(this);
+//              });
+//            });
             console.log('markers: '+markers);
 //         $(markers).each(function(i) {
 //             var poly = new google.maps.Polygon({
