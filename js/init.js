@@ -559,7 +559,7 @@ var mapapos = {
         var parser = new DOMParser();
         var xmlDoc = parser.parseFromString(text, 'text/xml');
         document.getElementById("demo").innerHTML =
-        markers = xmlDoc.getElementsByTagName("coordinates")[0].childNodes[0].nodeValue;
+        xmlDoc.getElementsByTagName("coordinates")[0].childNodes[0].nodeValue;
 //            $.get("res/poly.xml", {}, function (xml){
 //              $('coordinates',xml).each(function(i){
 //                 markers = $(this);
