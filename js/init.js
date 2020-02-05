@@ -509,7 +509,7 @@ var mapapos = {
       //var src = 'http://www.google.com/maps/d/kml?forcekml=1&mid=1D3USEeIbdVN3zV4B0S8jgODVIS0NHGvY';
      //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
      var src = 'https://oncapdepera.com/App/posidonia/export.kmz';
-     var src2 = 'https://oncapdepera.com/App/posidonia/exportlayer.kmz';
+     var src2 = 'https://oncapdepera.com/App/posidonia/artalite.kml';
       var posicio = {"lat": 39.7163321, "lng": 3.4592721};
       //var posicio = {"lat": -19.257753, "lng": 146.823688};
       var map =new google.maps.Map(
@@ -520,17 +520,22 @@ var mapapos = {
 //          zIndex: 100,
 //          map: map
 //        });
-//        var kmlLayer2 = new google.maps.KmlLayer(src2, {
-//          suppressInfoWindows: true,
-//          preserveViewport: true,
-//          zIndex: 100,
-//          map: map
-//        });
-//        kmlLayer.addListener('click', function(event) {
-//          var content = event.featureData.infoWindowHtml;
-//          var testimonial = document.getElementById('capture');
-//          testimonial.innerHTML = content;
-//        });
+        var kmlLayer2 = new google.maps.KmlLayer(src2, {
+          suppressInfoWindows: true,
+          preserveViewport: true,
+         // zIndex: 100,
+          map: map
+        });
+        kmlLayer.addListener('click', function(event) {
+          var content = event.featureData.infoWindowHtml;
+          var testimonial = document.getElementById('capture');
+          testimonial.innerHTML = content;
+          mapapos.marcador.setMap(null);
+          mapapos.marcador = new google.maps.Marker({
+          position: event.latLng,
+          map: map
+      });
+        });
 //      var kmlTrack = "res/artalite.kml";
 //      var geoXml = new geoXML3.parser({map: map});
 //      geoXml.parse(kmlTrack);
@@ -540,37 +545,20 @@ var mapapos = {
         $('#mapaPos').on('swipe',  function (event) {
             $.event.special.swipe.horizontalDistanceThreshold (400);
         });
-//      const NOVAPOSICIO = new plugin.google.maps.LatLng(mapapos.lat, mapapos.long);
-//      mapapos.marcador = new google.maps.Marker({
-//      position: NOVAPOSICIO,
-//      map: map
-//    });
-//        
-//       google.maps.event.addListener(map, 'click', function(event){
-//       mapapos.marcador.setMap(null);
-//       mapapos.marcador = new google.maps.Marker({
-//       position: event.latLng,
-//       map: map
-//      });
-//       });
-      //llegir xml:
-           var markers = null;
-           var text = 'res/poly.xml';
-        var parser = new DOMParser();
-        var xmlDoc = parser.parseFromString(text, 'text/xml');
-        document.getElementById("demo").innerHTML =
-        xmlDoc.getElementsByTagName("coordinates")[0].nodeValue;
-//            $.get("res/poly.xml", {}, function (xml){
-//              $('coordinates',xml).each(function(i){
-//                 markers = $(this);
-//              });
-//            });
-            console.log('markers: '+markers);
-//         $(markers).each(function(i) {
-//             var poly = new google.maps.Polygon({
-//                 paths:
-//             })
-//         });  
+     const NOVAPOSICIO = new plugin.google.maps.LatLng(mapapos.lat, mapapos.long);
+      mapapos.marcador = new google.maps.Marker({
+      position: NOVAPOSICIO,
+      map: map
+    });
+        
+       google.maps.event.addListener(map, 'click', function(event){
+       mapapos.marcador.setMap(null);
+       mapapos.marcador = new google.maps.Marker({
+       position: event.latLng,
+       map: map
+      });
+       });
+      
      
       
         },
