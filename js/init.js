@@ -540,6 +540,10 @@ var mapapos = {
         $('#mapaPos').on('swipe',  function (event) {
             $.event.special.swipe.horizontalDistanceThreshold (400);
         });
+      mapapos.marcador = new google.maps.Marker({
+      position: {"lat": mapapos.lat, "lng": mapapos.long},
+      map: map
+    });
         
        google.maps.event.addListener(map, 'click', function(event){
        mapapos.marcador.setMap(null);
