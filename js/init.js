@@ -555,7 +555,11 @@ var mapapos = {
 //       });
       //llegir xml:
            var markers = null;
-           var text = 'res/poly.xml';
+           var text = "<bookstore><book>" +
+"<title>Everyday Italian</title>" +
+"<author>Giada De Laurentiis</author>" +
+"<year>2005</year>" +
+"</book></bookstore>"
         var parser = new DOMParser();
         var xmlDoc = parser.parseFromString(text, 'text/xml');
         document.getElementById("demo").innerHTML =
