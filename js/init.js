@@ -512,7 +512,7 @@ var mapapos = {
      //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
      var src = 'https://oncapdepera.com/App/posidonia/export.kmz';
      var src2 = 'https://oncapdepera.com/App/posidonia/artalite.kml';
-      var posicio = {"lat": 39.7163321, "lng": 3.4592721};
+      var posicio = {"lat": 39.9163321, "lng": 3.5592721};
       //var posicio = {"lat": -19.257753, "lng": 146.823688};
       var map =new google.maps.Map(
       document.getElementById('mapaPos'), {zoom: 12, center: posicio,disableDefaultUI: true});
@@ -562,10 +562,11 @@ var mapapos = {
       });
       console.log('Posidonia no');
        });
-      google.maps.event.addListener(kmlLayer, "defaultviewport_changed", 
-        function() {
-        console.log('Viewport: '+this.getDefaultViewport());
+        
+        google.maps.event.trigger(map, 'click', {
+        latLng: new google.maps.LatLng(mapapos.lat, mapapos.long)
         });
+        
         },
         
         getLocalPos: function() {
