@@ -67,8 +67,8 @@ function initApp() {
     } catch (e) {
         error_('E INIT-75', 'MAC ADDRESS', e);
     }
-    
-            
+
+
 
     //MAPA
 //    try {
@@ -148,93 +148,93 @@ var mapaInc = {
     pos: {"lat": 39.702031, "lng": 3.431725},
     marcador: '',
 
-    initMap: function() {
+    initMap: function () {
 
-      var map =new google.maps.Map(
-      document.getElementById('mapa'), {zoom: 18, center: mapaInc.pos});
-      mapaInc.marcador = new google.maps.Marker({
-      position: mapaInc.pos,
-      map: map
-    });
-    google.maps.event.addListener(map, 'click', function(event){
-       mapaInc.marcador.setMap(null);
-       mapaInc.marcador = new google.maps.Marker({
-       position: event.latLng,
-       map: map
-    });
-    var request = {
-            position:event.latLng
-        };
-             plugin.google.maps.Geocoder.geocode(request,function (results) {
-
-            if (results.length) {
-                var result = results[0];
-                $('#adresaIncidencia').val(result.thoroughfare);
-                $('#poblacioIncidencia').val(result.locality);
-                //ONCAPDEPERA
-                $('#adresaIncidenciaOnCap').val(result.thoroughfare);
-                $('#poblacioIncidenciaOnCap').val(result.locality);
-                
-            
-            } else {
-                console.log('E-202: NOT LENGHT MAPA');
-                errorMapa();
-            }
+        var map = new google.maps.Map(
+                document.getElementById('mapa'), {zoom: 18, center: mapaInc.pos});
+        mapaInc.marcador = new google.maps.Marker({
+            position: mapaInc.pos,
+            map: map
         });
-    });
-    $('#mapa').on('swipe',  function (event) {
-            $.event.special.swipe.horizontalDistanceThreshold (300);
-        });
-
-},
-
- onMapInit: function() {     
- 
-},
-
-getLocalitzacio: function() {
-        var option = {enableHighAccuracy: true};
-            plugin.google.maps.LocationService.getMyLocation(option, function (location) {
-              
-                mapawow.lat = location.latLng.lat;
-                mapawow.long = location.latLng.lng;          
+        google.maps.event.addListener(map, 'click', function (event) {
+            mapaInc.marcador.setMap(null);
+            mapaInc.marcador = new google.maps.Marker({
+                position: event.latLng,
+                map: map
             });
+            var request = {
+                position: event.latLng
+            };
+            plugin.google.maps.Geocoder.geocode(request, function (results) {
+
+                if (results.length) {
+                    var result = results[0];
+                    $('#adresaIncidencia').val(result.thoroughfare);
+                    $('#poblacioIncidencia').val(result.locality);
+                    //ONCAPDEPERA
+                    $('#adresaIncidenciaOnCap').val(result.thoroughfare);
+                    $('#poblacioIncidenciaOnCap').val(result.locality);
+
+
+                } else {
+                    console.log('E-202: NOT LENGHT MAPA');
+                    errorMapa();
+                }
+            });
+        });
+        $('#mapa').on('swipe', function (event) {
+            $.event.special.swipe.horizontalDistanceThreshold(300);
+        });
+
     },
 
-getLocation: function() {
-    
-    var option = {enableHighAccuracy: true};
-            plugin.google.maps.LocationService.getMyLocation(option, function (location) {
-                //CAMERA POSITION
-                var lat = location.latLng.lat;
-                var long = location.latLng.lng;
-               // mapaInc.mapInc.changeCamera(lat, long);
-                const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, long);
-              //  mapaInc.mapInc.getAdress(NOVAPOSICIO);
-              mapaInc.pos = NOVAPOSICIO;
-              const GOOGLE = new plugin.google.maps.LatLng(location.latLng.lat, location.latLng.lng);
-        
-        var request = {
-            position:GOOGLE
-        };
-             plugin.google.maps.Geocoder.geocode(request,function (results) {
+    onMapInit: function () {
 
-            if (results.length) {
-                var result = results[0];
-                $('#adresaIncidencia').val(result.thoroughfare);
-                $('#poblacioIncidencia').val(result.locality);
-                //ONCAPDEPERA
-                $('#adresaIncidenciaOnCap').val(result.thoroughfare);
-                $('#poblacioIncidenciaOnCap').val(result.locality);
-                
-            
-            } else {
-                console.log('E-202: NOT LENGHT MAPA');
-                errorMapa();
-            }
+    },
+
+    getLocalitzacio: function () {
+        var option = {enableHighAccuracy: true};
+        plugin.google.maps.LocationService.getMyLocation(option, function (location) {
+
+            mapawow.lat = location.latLng.lat;
+            mapawow.long = location.latLng.lng;
         });
+    },
+
+    getLocation: function () {
+
+        var option = {enableHighAccuracy: true};
+        plugin.google.maps.LocationService.getMyLocation(option, function (location) {
+            //CAMERA POSITION
+            var lat = location.latLng.lat;
+            var long = location.latLng.lng;
+            // mapaInc.mapInc.changeCamera(lat, long);
+            const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, long);
+            //  mapaInc.mapInc.getAdress(NOVAPOSICIO);
+            mapaInc.pos = NOVAPOSICIO;
+            const GOOGLE = new plugin.google.maps.LatLng(location.latLng.lat, location.latLng.lng);
+
+            var request = {
+                position: GOOGLE
+            };
+            plugin.google.maps.Geocoder.geocode(request, function (results) {
+
+                if (results.length) {
+                    var result = results[0];
+                    $('#adresaIncidencia').val(result.thoroughfare);
+                    $('#poblacioIncidencia').val(result.locality);
+                    //ONCAPDEPERA
+                    $('#adresaIncidenciaOnCap').val(result.thoroughfare);
+                    $('#poblacioIncidenciaOnCap').val(result.locality);
+
+
+                } else {
+                    console.log('E-202: NOT LENGHT MAPA');
+                    errorMapa();
+                }
             });
-},
+        });
+    },
 
     clickEvent: function () {
         console.log('event');
@@ -427,77 +427,77 @@ var mapawow = {
     wow: null,
     lat: null,
     long: null,
-    infoWindow : '',
+    infoWindow: '',
 
     initWow: function (etnos) {
-      mapawow.infoWindow = new google.maps.InfoWindow();
-      var posicio = {"lat": 39.702031, "lng": 3.431725};
-      var map =new google.maps.Map(
-      document.getElementById('mapaWow'), {zoom: 12, center: posicio,disableDefaultUI: true});
-      google.maps.event.addListener(map, "click", function(event) {
-        mapawow.infoWindow.close();
-        });      
-      var lloc = JSON.parse(JSON.stringify(etnos));       
-       // var infoWindow = new google.maps.InfoWindow();
+        mapawow.infoWindow = new google.maps.InfoWindow();
+        var posicio = {"lat": 39.702031, "lng": 3.431725};
+        var map = new google.maps.Map(
+                document.getElementById('mapaWow'), {zoom: 12, center: posicio, disableDefaultUI: true});
+        google.maps.event.addListener(map, "click", function (event) {
+            mapawow.infoWindow.close();
+        });
+        var lloc = JSON.parse(JSON.stringify(etnos));
+        // var infoWindow = new google.maps.InfoWindow();
         $.each(lloc, function (i, item) {
             var decodeHTML = function (html) {
                 var txt = document.createElement('textarea');
                 txt.innerHTML = html;
                 return txt.value;
             };
-            var decoded = decodeHTML(item.titol);           
-            var desc = decodeHTML(item.desc); 
+            var decoded = decodeHTML(item.titol);
+            var desc = decodeHTML(item.desc);
             var pos = new google.maps.LatLng({lat: parseFloat(item.lat), lng: parseFloat(item.longt)});
             var marker = new google.maps.Marker({position: pos, map: map, title: '<a href="#">' + decoded + '</a>'});
 
             google.maps.event.addListener(marker, "click", function (e) {
                 mapawow.infoWindow.close();
-                mapawow.infoWindow.setContent('<a href="#fitxa-etno" onclick="mapawow.infoWindow.close();init.wow.getFitxaEtno('+item.id+')">' + decoded + '</a>');
+                mapawow.infoWindow.setContent('<a href="#fitxa-etno" onclick="mapawow.infoWindow.close();init.wow.getFitxaEtno(' + item.id + ')">' + decoded + '</a>');
                 mapawow.infoWindow.open(map, marker);
             });
-       
-            
-        $('#mapaWow').on('swipe',  function (event) {
-            $.event.special.swipe.horizontalDistanceThreshold (400);
-        });
 
-        });             
-    }
-    ,checkCat: function () {
-            var all = $('#botoSelect').attr('data-check');            
-            if (all == 1) {
-                $('.grup-categories .ui-checkbox').each(function () {
-                    $(this).find('input').prop("checked", true);
-                    $(this).find('label').removeClass('ui-checkbox-off');
-                    $(this).find('label').addClass('ui-checkbox-on');
-                    $('.btn-categoria').addClass('active');
-                    $('#botoSelect').attr('data-check', '0');
-                    $('#botoSelect').text('Netejar');
-                    $('#botoSelect').attr('data-literal', 'cer_7');                                     
-                    
-                });
-            } else {
-                $('.grup-categories .ui-checkbox').each(function () {
-                    $(this).find('input').prop("checked", false);
-                    $(this).find('label').removeClass('ui-checkbox-on');
-                    $(this).find('label').addClass('ui-checkbox-off');
-                    $('.btn-categoria').removeClass('active');
-                    $('#botoSelect').attr('data-check', '1');
-                    $('#botoSelect').text('Seleccionar tot');
-                    $('#botoSelect').attr('data-literal', 'cer_6');                                       
-                });
-            }
-            
-        }
-    ,getLocalitzacio: function() {
-        var option = {enableHighAccuracy: true};
-            plugin.google.maps.LocationService.getMyLocation(option, function (location) {
-              
-                mapawow.lat = location.latLng.lat;
-                mapawow.long = location.latLng.lng;          
+
+            $('#mapaWow').on('swipe', function (event) {
+                $.event.special.swipe.horizontalDistanceThreshold(400);
             });
-    }    
-    
+
+        });
+    }
+    , checkCat: function () {
+        var all = $('#botoSelect').attr('data-check');
+        if (all == 1) {
+            $('.grup-categories .ui-checkbox').each(function () {
+                $(this).find('input').prop("checked", true);
+                $(this).find('label').removeClass('ui-checkbox-off');
+                $(this).find('label').addClass('ui-checkbox-on');
+                $('.btn-categoria').addClass('active');
+                $('#botoSelect').attr('data-check', '0');
+                $('#botoSelect').text('Netejar');
+                $('#botoSelect').attr('data-literal', 'cer_7');
+
+            });
+        } else {
+            $('.grup-categories .ui-checkbox').each(function () {
+                $(this).find('input').prop("checked", false);
+                $(this).find('label').removeClass('ui-checkbox-on');
+                $(this).find('label').addClass('ui-checkbox-off');
+                $('.btn-categoria').removeClass('active');
+                $('#botoSelect').attr('data-check', '1');
+                $('#botoSelect').text('Seleccionar tot');
+                $('#botoSelect').attr('data-literal', 'cer_6');
+            });
+        }
+
+    }
+    , getLocalitzacio: function () {
+        var option = {enableHighAccuracy: true};
+        plugin.google.maps.LocationService.getMyLocation(option, function (location) {
+
+            mapawow.lat = location.latLng.lat;
+            mapawow.long = location.latLng.lng;
+        });
+    }
+
 };
 
 var mapapos = {
@@ -506,16 +506,16 @@ var mapapos = {
     marcador: '',
     pos: {"lat": 39.702031, "lng": 3.431725},
     dinsPos: false,
-    
-     mapaPosidonia: function() {
-      //var src = 'http://www.google.com/maps/d/kml?forcekml=1&mid=1D3USEeIbdVN3zV4B0S8jgODVIS0NHGvY';
-     //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
-     var src = 'https://oncapdepera.com/App/posidonia/export.kmz';
-     var src2 = 'https://oncapdepera.com/App/posidonia/artalite.kml';
-      var posicio = {"lat": 39.9163321, "lng": 3.5592721};
-      //var posicio = {"lat": -19.257753, "lng": 146.823688};
-      var map =new google.maps.Map(
-      document.getElementById('mapaPos'), {zoom: 12, center: posicio,disableDefaultUI: true});
+
+    mapaPosidonia: function () {
+        //var src = 'http://www.google.com/maps/d/kml?forcekml=1&mid=1D3USEeIbdVN3zV4B0S8jgODVIS0NHGvY';
+        //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
+        var src = 'https://oncapdepera.com/App/posidonia/export.kmz';
+        var src2 = 'https://oncapdepera.com/App/posidonia/artalite.kml';
+        var posicio = {"lat": 39.9163321, "lng": 3.5592721};
+        //var posicio = {"lat": -19.257753, "lng": 146.823688};
+        var map = new google.maps.Map(
+                document.getElementById('mapaPos'), {zoom: 12, center: posicio, disableDefaultUI: true});
 //      var kmlLayer = new google.maps.KmlLayer(src, {
 //          suppressInfoWindows: true,
 //          preserveViewport: true,
@@ -523,67 +523,70 @@ var mapapos = {
 //          map: map
 //        });
         var kmlLayer = new google.maps.KmlLayer(src2, {
-          suppressInfoWindows: true,
-          preserveViewport: true,
-         // zIndex: 100,
-          map: map
+            suppressInfoWindows: true,
+            preserveViewport: true,
+            // zIndex: 100,
+            map: map
         });
-        kmlLayer.addListener('click', function(event) {
-        // var content = event.featureData.infoWindowHtml;
-        // var testimonial = document.getElementById('capture');
-        // testimonial.innerHTML = content;
-          mapapos.marcador.setMap(null);
-          mapapos.marcador = new google.maps.Marker({
-          position: event.latLng,
-          map: map
-      });
-      console.log('Posidoni si');
+        kmlLayer.addListener('click', function (event) {
+            // var content = event.featureData.infoWindowHtml;
+            // var testimonial = document.getElementById('capture');
+            // testimonial.innerHTML = content;
+            mapapos.marcador.setMap(null);
+            mapapos.marcador = new google.maps.Marker({
+                position: event.latLng,
+                map: map
+            });
+            console.log('Posidoni si');
         });
 //      var kmlTrack = "res/artalite.kml";
 //      var geoXml = new geoXML3.parser({map: map});
 //      geoXml.parse(kmlTrack);
-      
-      
-    
-        $('#mapaPos').on('swipe',  function (event) {
-            $.event.special.swipe.horizontalDistanceThreshold (400);
+
+
+
+        $('#mapaPos').on('swipe', function (event) {
+            $.event.special.swipe.horizontalDistanceThreshold(400);
         });
-      //const NOVAPOSICIO = new plugin.google.maps.LatLng(mapapos.lat, mapapos.long);
-      mapapos.marcador = new google.maps.Marker({
-      position: mapapos.pos,
-      map: map
-    });
-        
-       google.maps.event.addListener(map, 'click', function(event){
-       mapapos.marcador.setMap(null);
-       mapapos.marcador = new google.maps.Marker({
-       position: event.latLng,
-       map: map
-      });
-      console.log('Posidonia no');
-       });
-        
-        google.maps.event.trigger(map, 'click', {
-        latLng: new google.maps.LatLng(mapapos.lat, mapapos.long)
+        //const NOVAPOSICIO = new plugin.google.maps.LatLng(mapapos.lat, mapapos.long);
+        mapapos.marcador = new google.maps.Marker({
+            position: mapapos.pos,
+            map: map
         });
-        
-        },
-        
-        getLocalPos: function() {
-        var option = {enableHighAccuracy: true};
-            plugin.google.maps.LocationService.getMyLocation(option, function (location) {
-                var lat = location.latLng.lat;
-                var long = location.latLng.lng;
-               // mapaInc.mapInc.changeCamera(lat, long);
-                const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, long);
-              //  mapaInc.mapInc.getAdress(NOVAPOSICIO);
-                mapapos.pos = NOVAPOSICIO;
-              
-                mapapos.lat = location.latLng.lat;
-                mapapos.long = location.latLng.lng;          
+
+        google.maps.event.addListener(map, 'click', function (event) {
+            mapapos.marcador.setMap(null);
+            mapapos.marcador = new google.maps.Marker({
+                position: event.latLng,
+                map: map
             });
-    }    
-    
-    
+            console.log('Posidonia no');
+        });
+
+        map.setTimeout(function () {
+            google.maps.event.trigger(map, 'click', {
+                latLng: new google.maps.LatLng(mapapos.lat, mapapos.long)
+            });
+        }, 10000);
+
+
+    },
+
+    getLocalPos: function () {
+        var option = {enableHighAccuracy: true};
+        plugin.google.maps.LocationService.getMyLocation(option, function (location) {
+            var lat = location.latLng.lat;
+            var long = location.latLng.lng;
+            // mapaInc.mapInc.changeCamera(lat, long);
+            const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, long);
+            //  mapaInc.mapInc.getAdress(NOVAPOSICIO);
+            mapapos.pos = NOVAPOSICIO;
+
+            mapapos.lat = location.latLng.lat;
+            mapapos.long = location.latLng.lng;
+        });
+    }
+
+
 };
 //###################################################################################
