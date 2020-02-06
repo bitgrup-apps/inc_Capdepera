@@ -549,10 +549,10 @@ var mapapos = {
             $.event.special.swipe.horizontalDistanceThreshold(400);
         });
         //const NOVAPOSICIO = new plugin.google.maps.LatLng(mapapos.lat, mapapos.long);
-//        mapapos.marcador = new google.maps.Marker({
-//            position: mapapos.pos,
-//            map: map
-//        });
+        mapapos.marcador = new google.maps.Marker({
+            position: mapapos.pos,
+            map: map
+        });
 
         google.maps.event.addListener(map, 'click', function (event) {
             mapapos.marcador.setMap(null);
@@ -566,6 +566,7 @@ var mapapos = {
         setTimeout(function () {
             google.maps.event.trigger(map, 'click', {
                 latLng: new google.maps.LatLng(mapapos.lat, mapapos.long)
+                console.log('autoclick');
             });
         }, 10000);
 
