@@ -566,8 +566,8 @@ var mapapos = {
         setTimeout(function () {
             google.maps.event.trigger(map, 'click', {
                 latLng: new google.maps.LatLng(mapapos.lat, mapapos.long)
-                console.log('autoclick');
-            });
+                
+            });console.log('autoclick');
         }, 10000);
 
 
