@@ -567,7 +567,8 @@ var mapapos = {
             google.maps.event.trigger(map, 'click', {
                 latLng: new google.maps.LatLng(mapapos.lat, mapapos.long)
                 
-            });console.log('autoclick');
+            });
+            map.setCenter({lat: mapapos.lat, lng: mapapos.long});
         }, 5000);
 
 
