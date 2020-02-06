@@ -501,8 +501,8 @@ var mapawow = {
 };
 
 var mapapos = {
-    lat: 39.0,
-    long: 3.1,
+    lat: null,
+    long: null,
     marcador: '',
     pos: {"lat": 39.702031, "lng": 3.431725},
     dinsPos: false,
@@ -515,7 +515,7 @@ var mapapos = {
         var posicio = {"lat": 39.9163321, "lng": 3.5592721};
         //var posicio = {"lat": -19.257753, "lng": 146.823688};
         var map = new google.maps.Map(
-                document.getElementById('mapaPos'), {zoom: 12, center: posicio, disableDefaultUI: true});
+                document.getElementById('mapaPos'), {zoom: 11, center: posicio, disableDefaultUI: true});
 //      var kmlLayer = new google.maps.KmlLayer(src, {
 //          suppressInfoWindows: true,
 //          preserveViewport: true,
@@ -568,7 +568,7 @@ var mapapos = {
                 latLng: new google.maps.LatLng(mapapos.lat, mapapos.long)
                 
             });console.log('autoclick');
-        }, 10000);
+        }, 5000);
 
 
     },
