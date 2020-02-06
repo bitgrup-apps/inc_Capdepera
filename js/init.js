@@ -501,8 +501,8 @@ var mapawow = {
 };
 
 var mapapos = {
-    lat: null,
-    long: null,
+    lat: 39.0,
+    long: 3.1,
     marcador: '',
     pos: {"lat": 39.702031, "lng": 3.431725},
     dinsPos: false,
