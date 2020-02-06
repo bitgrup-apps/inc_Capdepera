@@ -537,7 +537,7 @@ var mapapos = {
                 position: event.latLng,
                 map: map
             });
-            console.log('Posidoni si');
+            $('#infoPos').html('Està sobre posidonia');
         });
 //      var kmlTrack = "res/artalite.kml";
 //      var geoXml = new geoXML3.parser({map: map});
@@ -560,7 +560,7 @@ var mapapos = {
                 position: event.latLng,
                 map: map
             });
-            console.log('Posidonia no');
+            $('#infoPos').html('No està sobre posidonia');
         });
 
         setTimeout(function () {
