@@ -569,7 +569,7 @@ var mapapos = {
                 
             });
             map.setCenter({lat: mapapos.lat, lng: mapapos.long});
-        }, 5000);
+        }, 1000);
 
 
     },
