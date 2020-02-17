@@ -624,7 +624,7 @@ var mapapos = {
         ];
         
         var autonomiques = new google.maps.Polyline({
-        path: flightPlanCoordinates,
+        path: interiors,
         geodesic: true,
         strokeColor: '#FF0000',
         strokeOpacity: 1.0,
