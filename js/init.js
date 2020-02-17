@@ -702,7 +702,7 @@ var mapapos = {
    var estatals = new google.maps.Polyline({
             path: exteriors,
             geodesic: true,
-            strokeColor: '#00FFFF',
+            strokeColor: '#0000FF',
             strokeOpacity: 1.0,
             strokeWeight: 1
         });
@@ -710,7 +710,7 @@ var mapapos = {
         estatals.setMap(map);
 
         var exteriorPoly = new google.maps.Polygon({
-            paths: interiors,
+            paths: exteriors,
             strokeColor: '#FF0000',
             strokeOpacity: 0.8,
             strokeWeight: 2,
