@@ -409,6 +409,8 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #oncapdepera-home .ico{width:20vw; height: 20vw; background-image: url(../icons/spriteoncdphome.svg); background-size: 200vw; content: " ";top: 2.5vw;left: 9.5vw;}
 /*#oncapdepera-home .pastilla.reserva{border-style: solid; border-width: 0px 0px 0px 1px;}*/
 #oncapdepera-home .ico .res{background-position:-164vw -40vw;}
+#oncapdepera-home .posidonia {background-image: url(../icons/acuario.svg);width:20vw; height: 20vw;background-position: 2.0vh 1.75vh;background-repeat: no-repeat;}
+#oncapdepera-home .pos {background-color: #008841;}
 
 /*fitxa*/
 /*#oncapdepera-fitxa{background:#fff;}

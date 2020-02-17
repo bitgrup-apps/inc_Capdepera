@@ -508,30 +508,18 @@ var mapapos = {
     dinsPos: false,
 
     mapaPosidonia: function () {
-        //var src = 'http://www.google.com/maps/d/kml?forcekml=1&mid=1D3USEeIbdVN3zV4B0S8jgODVIS0NHGvY';
-        //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
-        var src = 'https://oncapdepera.com/App/posidonia/export.kmz';
+    
         var src2 = 'https://oncapdepera.com/App/posidonia/artalite.kml';
         var posicio = {"lat": 39.9163321, "lng": 3.5592721};
-        //var posicio = {"lat": -19.257753, "lng": 146.823688};
         var map = new google.maps.Map(
                 document.getElementById('mapaPos'), {zoom: 11, center: posicio, disableDefaultUI: true});
-//      var kmlLayer = new google.maps.KmlLayer(src, {
-//          suppressInfoWindows: true,
-//          preserveViewport: true,
-//          zIndex: 100,
-//          map: map
-//        });
+
         var kmlLayer = new google.maps.KmlLayer(src2, {
             suppressInfoWindows: true,
             preserveViewport: true,
-            // zIndex: 100,
             map: map
         });
-        kmlLayer.addListener('click', function (event) {
-            // var content = event.featureData.infoWindowHtml;
-            // var testimonial = document.getElementById('capture');
-            // testimonial.innerHTML = content;
+        kmlLayer.addListener('click', function (event) {      
             mapapos.marcador.setMap(null);
             mapapos.marcador = new google.maps.Marker({
                 position: event.latLng,
@@ -539,16 +527,11 @@ var mapapos = {
             });
             $('#infoPos').html('Està sobre posidonia');
         });
-//      var kmlTrack = "res/artalite.kml";
-//      var geoXml = new geoXML3.parser({map: map});
-//      geoXml.parse(kmlTrack);
-
-
 
         $('#mapaPos').on('swipe', function (event) {
             $.event.special.swipe.horizontalDistanceThreshold(400);
         });
-        //const NOVAPOSICIO = new plugin.google.maps.LatLng(mapapos.lat, mapapos.long);
+
         mapapos.marcador = new google.maps.Marker({
             position: mapapos.pos,
             map: map
