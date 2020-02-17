@@ -620,7 +620,7 @@ var mapapos = {
             {lat:39.74925949619152 , lng:3.460497444629793 },
             {lat:39.78683381966442 , lng:3.40405116139322 },
             {lat:39.76403437540321 , lng:3.404043988576639 },
-            {lat:39.76232842355503 , lng:3.405110504997997 },                                                                                                       
+            {lat:39.76232842355503 , lng:3.405110504997997 }                                                                                                       
         ];
         
         var autonomiques = new google.maps.Polyline({
@@ -631,7 +631,7 @@ var mapapos = {
         strokeWeight: 2
         });
         
-       // autonomiques.setMap(map);
+        autonomiques.setMap(map);
 
         $('#mapaPos').on('swipe', function (event) {
             $.event.special.swipe.horizontalDistanceThreshold(400);
