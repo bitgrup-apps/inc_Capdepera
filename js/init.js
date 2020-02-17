@@ -508,7 +508,7 @@ var mapapos = {
     dinsPos: false,
 
     mapaPosidonia: function () {
-        var src = 'https://oncapdepera.com/App/posidonia/aiguesInteriors.kml';
+        
         var src2 = 'https://oncapdepera.com/App/posidonia/posTest.kml';
         var posicio = {"lat": 39.9163321, "lng": 3.5592721};
         var map = new google.maps.Map(
@@ -526,28 +526,18 @@ var mapapos = {
                 map: map
             });
              var conte = (google.maps.geometry.poly.containsLocation(event.latLng, interiorPoly));
+             var conte2 = (google.maps.geometry.poly.containsLocation(event.latLng, exteriorPoly));
              var missatge;
         if(conte) {
              missatge = 'Esta en aigues autonòmiques';
+        }else if(conte2){
+           missatge = 'Esta en aigues estatals';
         }else {
-           missatge = '';
+            missatge= '';
         }
-            $('#infoPos').html('Està sobre posidonia'+ missatge);
+            $('#infoPos').html('Està sobre posidonia '+ missatge);
         });
 
-//        var kmlLayer2 = new google.maps.KmlLayer(src, {
-//            suppressInfoWindows: true,
-//            preserveViewport: true,
-//            map: map
-//        });
-//        kmlLayer2.addListener('click', function (event) {      
-//            mapapos.marcador.setMap(null);
-//            mapapos.marcador = new google.maps.Marker({
-//                position: event.latLng,
-//                map: map
-//            });
-//            $('#infoPos').html('Reserva marina: aigues autonòmiques');
-//        });
         var interiors = [
             {lat: 39.76232842355503, lng: 3.405110504997997},
             {lat: 39.76225206429066, lng: 3.406151251961027},
@@ -635,7 +625,7 @@ var mapapos = {
             geodesic: true,
             strokeColor: '#FF0000',
             strokeOpacity: 1.0,
-            strokeWeight: 2
+            strokeWeight: 1
         });
 
         autonomiques.setMap(map);
@@ -647,12 +637,86 @@ var mapapos = {
             strokeWeight: 2,
             fillColor: '#FF0000',
             fillOpacity: 0.35
+        }); 
+        
+        var exteriors = [
+    {lat:39.74850278938518 , lng:3.45975915638991 },
+    {lat:39.74809840923644 , lng:3.461749799248142 },
+    {lat:39.74590350330769 , lng:3.460319589094834 },
+    {lat:39.74569996395992 , lng:3.458499367468368 },
+    {lat:39.74420553335399 , lng:3.457691874450437 },
+    {lat:39.74126416239428 , lng:3.458972489143486 },
+    {lat:39.74057554427602 , lng:3.456971966326483 },
+    {lat:39.7402685940265 , lng:3.460488650231603 },
+    {lat:39.74101929744153 , lng:3.461744347326108 },
+    {lat:39.73781006771491 , lng:3.46212014592139 },
+    {lat:39.73839206540475 , lng:3.460209651571029 },
+    {lat:39.73737268281353 , lng:3.459804498276715 },
+    {lat:39.73755508150973 , lng:3.45860562682788 },
+    {lat:39.73336243214634 , lng:3.457805961862834 },
+    {lat:39.73113122172231 , lng:3.455005670821745 },
+    {lat:39.7272723004529 , lng:3.452258448370558 },
+    {lat:39.72607526621574 , lng:3.452592158042593 },
+    {lat:39.72830144921795 , lng:3.456577993586412 },
+    {lat:39.72771752793407 , lng:3.457432000142344 },
+    {lat:39.72454204380713 , lng:3.452354637281314 },
+    {lat:39.72107602981899 , lng:3.454631500442624 },
+    {lat:39.72195186323284 , lng:3.456482521249076 },
+    {lat:39.72096619987248 , lng:3.460275415641618 },
+    {lat:39.72107436317513 , lng:3.464051338986314 },
+    {lat:39.71969589698995 , lng:3.467174710465906 },
+    {lat:39.72041810515415 , lng:3.467805915124946 },
+    {lat:39.72034507585374 , lng:3.470471223668556 },
+    {lat:39.72195022064976 , lng:3.471428049286673 },
+    {lat:39.72004462731228 , lng:3.476933375483353 },
+    {lat:39.71917522236514 , lng:3.476160411121536 },
+    {lat:39.71737609019545 , lng:3.477108754861533 },
+    {lat:39.71580465831778 , lng:3.476149182403061 },
+    {lat:39.71664727411699 , lng:3.478769769297287 },
+    {lat:39.7146123840151 , lng:3.47874423167589 },
+    {lat:39.71482649605623 , lng:3.476204344565899 },
+    {lat:39.71421179636819 , lng:3.476166184542397 },
+    {lat:39.71297141037708 , lng:3.477655554342167 },
+    {lat:39.7089941160872 , lng:3.474522133573235 },
+    {lat:39.71059589715656 , lng:3.473839843373356 },
+    {lat:39.71172881157199 , lng:3.471334140136937 },
+    {lat:39.7129207306571 , lng:3.470162573797935 },
+    {lat:39.71265733844816 , lng:3.469522878861393 },
+    {lat:39.7119084390815 , lng:3.469901990676894 },
+    {lat:39.71129029573666 , lng:3.469196124648766 },
+    {lat:39.71059865941215 , lng:3.46810948467996 },
+    {lat:39.71044987365942 , lng:3.465917551412607 },
+    {lat:39.7096137056882 , lng:3.464076283265816 },
+    {lat:39.70994470469867 , lng:3.462756468541865 },
+    {lat:39.70975853903767 , lng:3.461606942206006 },
+    {lat:39.70822946986694 , lng:3.461996127674358 },
+    {lat:39.70604051738005 , lng:3.458818024978847 },
+    {lat:39.70567525153187 , lng:3.456962297569448 },
+    {lat:39.70068840456059 , lng:3.456427142841956 },
+    {lat:39.70016163386662 , lng:3.50016322181635 },
+    {lat:39.8166815952825 , lng:3.447255787977799 },
+    {lat:39.78703579569714 , lng:3.40399173879306 },
+    {lat:39.74850278938518 , lng:3.45975915638991 }   
+  ];
+  
+   var estatals = new google.maps.Polyline({
+            path: exteriors,
+            geodesic: true,
+            strokeColor: '#00FFFF',
+            strokeOpacity: 1.0,
+            strokeWeight: 1
         });
-        
-//        google.maps.event.addListener(map, 'click', function(event) {
-//        var conte = (google.maps.geometry.poly.containsLocation(event.latLng, interiorPoly));
-//        });
-        
+
+        estatals.setMap(map);
+
+        var exteriorPoly = new google.maps.Polygon({
+            paths: interiors,
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35
+        }); 
 
         $('#mapaPos').on('swipe', function (event) {
             $.event.special.swipe.horizontalDistanceThreshold(400);
@@ -670,13 +734,16 @@ var mapapos = {
                 map: map
             });
              var conte = (google.maps.geometry.poly.containsLocation(event.latLng, interiorPoly));
+             var conte2 = (google.maps.geometry.poly.containsLocation(event.latLng, exteriorPoly));
              var missatge;
         if(conte) {
              missatge = 'Esta en aigues autonòmiques';
+        }else if (conte2){
+           missatge = 'Esta en aigues estatals';
         }else {
-           missatge = '';
+            missatge = '';
         }
-            $('#infoPos').html('No està sobre posidonia'+ missatge);
+            $('#infoPos').html('No està sobre posidonia '+ missatge);
         });
 
         setTimeout(function () {
