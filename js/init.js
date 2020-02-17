@@ -623,13 +623,14 @@ var mapapos = {
             {lat:39.76232842355503 , lng:3.405110504997997 }                                                                                                       
         ];
         
-        var autonomiques = new google.maps.Polyline({
-        path: interiors,
-        geodesic: true,
-        strokeColor: '#FF0000',
-        strokeOpacity: 1.0,
-        strokeWeight: 2
-        });
+        var autonomiques = new google.maps.Polygon({
+    paths: interiors,
+    strokeColor: '#FF0000',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#FF0000',
+    fillOpacity: 0.35
+  });
         
         autonomiques.setMap(map);
 
