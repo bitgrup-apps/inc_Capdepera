@@ -525,6 +525,13 @@ var mapapos = {
                 position: event.latLng,
                 map: map
             });
+             var conte = (google.maps.geometry.poly.containsLocation(event.latLng, interiorPoly));
+             var missatge;
+        if(conte) {
+             missatge = 'Esta en aigues autonòmiques';
+        }else {
+           missatge = '';
+        }
             $('#infoPos').html('Està sobre posidonia'+ missatge);
         });
 
@@ -642,15 +649,10 @@ var mapapos = {
             fillOpacity: 0.35
         });
         
-        google.maps.event.addListener(map, 'click', function(event) {
-        var conte = (google.maps.geometry.poly.containsLocation(event.latLng, interiorPoly));
-        });
-        var missatge;
-        if(conte) {
-             missatge = 'Esta en aigues autonòmiques';
-        }else {
-           missatge = '';
-        }
+//        google.maps.event.addListener(map, 'click', function(event) {
+//        var conte = (google.maps.geometry.poly.containsLocation(event.latLng, interiorPoly));
+//        });
+        
 
         $('#mapaPos').on('swipe', function (event) {
             $.event.special.swipe.horizontalDistanceThreshold(400);
@@ -667,6 +669,13 @@ var mapapos = {
                 position: event.latLng,
                 map: map
             });
+             var conte = (google.maps.geometry.poly.containsLocation(event.latLng, interiorPoly));
+             var missatge;
+        if(conte) {
+             missatge = 'Esta en aigues autonòmiques';
+        }else {
+           missatge = '';
+        }
             $('#infoPos').html('No està sobre posidonia'+ missatge);
         });
 
