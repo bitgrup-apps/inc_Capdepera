@@ -631,7 +631,7 @@ var mapapos = {
         strokeWeight: 2
         });
         
-        autonomiques.setMap(map);
+       // autonomiques.setMap(map);
 
         $('#mapaPos').on('swipe', function (event) {
             $.event.special.swipe.horizontalDistanceThreshold(400);
