@@ -538,7 +538,7 @@ var mapapos = {
             $('#infoPos').html('Està sobre posidonia '+ missatge);
         });
         
-         var kmlLayer2 = new google.maps.KmlLayer(src2, {
+         var kmlLayer2 = new google.maps.KmlLayer(src, {
             suppressInfoWindows: true,
             preserveViewport: true,
             map: map
