@@ -508,7 +508,7 @@ var mapapos = {
     dinsPos: false,
 
     mapaPosidonia: function () {
-        
+        var src = 'https://oncapdepera.com/App/posidonia/LenComplet.kml';
         var src2 = 'https://oncapdepera.com/App/posidonia/posTest.kml';
         var posicio = {"lat": 39.9163321, "lng": 3.5592721};
         var map = new google.maps.Map(
@@ -536,6 +536,22 @@ var mapapos = {
             missatge= '';
         }
             $('#infoPos').html('Està sobre posidonia '+ missatge);
+        });
+        
+         var kmlLayer2 = new google.maps.KmlLayer(src2, {
+            suppressInfoWindows: true,
+            preserveViewport: true,
+            map: map
+        });
+        
+        kmlLayer2.addListener('click', function (event) {
+            mapapos.marcador.setMap(null);
+            mapapos.marcador = new google.maps.Marker({
+                position: event.latLng,
+                map: map
+            });
+            
+            $('#infoPos').html('Està sobre un area ANEI');
         });
 
         var interiors = [
