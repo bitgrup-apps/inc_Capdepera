@@ -508,7 +508,7 @@ var mapapos = {
     dinsPos: false,
 
     mapaPosidonia: function () {
-        var src = 'https://oncapdepera.com/App/posidonia/LenSmple.kml';
+        var src = 'https://oncapdepera.com/App/posidonia/LenCompletValid.kml';
         var src2 = 'https://oncapdepera.com/App/posidonia/posTest.kml';
         var posicio = {"lat": 39.9163321, "lng": 3.5592721};
         var map = new google.maps.Map(
