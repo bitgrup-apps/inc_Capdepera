@@ -514,30 +514,30 @@ var mapapos = {
         var map = new google.maps.Map(
                 document.getElementById('mapaPos'), {zoom: 11, center: posicio, disableDefaultUI: true});
 
-        var kmlLayer = new google.maps.KmlLayer(src2, {
-            suppressInfoWindows: true,
-            preserveViewport: true,
-            map: map
-        });
-        kmlLayer.addListener('click', function (event) {
-            mapapos.marcador.setMap(null);
-            mapapos.marcador = new google.maps.Marker({
-                position: event.latLng,
-                map: map
-            });
-             var conte = (google.maps.geometry.poly.containsLocation(event.latLng, interiorPoly));
-             var conte2 = (google.maps.geometry.poly.containsLocation(event.latLng, exteriorPoly));
-             var missatge;
-        if(conte) {
-             missatge = 'Esta en aigues autonòmiques';
-        }else if(conte2){
-           missatge = 'Esta en aigues estatals';
-        }else {
-            missatge= '';
-        }
-            $('#infoPos').html('Està sobre posidonia '+ missatge);
-        });
-        
+//        var kmlLayer = new google.maps.KmlLayer(src2, {
+//            suppressInfoWindows: true,
+//            preserveViewport: true,
+//            map: map
+//        });
+//        kmlLayer.addListener('click', function (event) {
+//            mapapos.marcador.setMap(null);
+//            mapapos.marcador = new google.maps.Marker({
+//                position: event.latLng,
+//                map: map
+//            });
+//             var conte = (google.maps.geometry.poly.containsLocation(event.latLng, interiorPoly));
+//             var conte2 = (google.maps.geometry.poly.containsLocation(event.latLng, exteriorPoly));
+//             var missatge;
+//        if(conte) {
+//             missatge = 'Esta en aigues autonòmiques';
+//        }else if(conte2){
+//           missatge = 'Esta en aigues estatals';
+//        }else {
+//            missatge= '';
+//        }
+//            $('#infoPos').html('Està sobre posidonia '+ missatge);
+//        });
+//        
          var kmlLayer2 = new google.maps.KmlLayer(src, {
             suppressInfoWindows: true,
             preserveViewport: true,
