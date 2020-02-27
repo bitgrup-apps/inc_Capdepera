@@ -506,9 +506,10 @@ var mapapos = {
     marcador: '',
     pos: {"lat": 39.702031, "lng": 3.431725},
     dinsPos: false,
-    lang: mapapos.getLang(),
+    lang: '',
 
     mapaPosidonia: function () {
+        mapapos.getLang();
         var reserva;
         var noreserva;
         switch(mapapos.lang) {
@@ -818,7 +819,7 @@ var mapapos = {
         if (lang != 'es' && lang != 'ca' && lang != 'en' && lang != 'de') {
             lang = 'es';
         }
-        init.lang = lang;
+        mapapos.lang = lang;
     }
 
 
