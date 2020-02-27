@@ -521,6 +521,14 @@ var mapapos = {
              reserva = 'Se encuentra usted sobre posidonia. Tenga en cuenta que si tira el ancla aquí podría usted ser multado.' ;
              noreserva = 'Se encuentra usted sobre posidonia. Rogamos tenga usted la máxima precaución intentando que su ancla quede sobre arena o roca.';
              break;
+             case 'en':
+             reserva = 'You are about posidonia. Keep in mind that if you drop the anchor here you could be fined.' ;
+             noreserva = 'You are about posidonia. Please take the utmost caution trying to keep your anchor on sand or rock.';
+             break;
+             case 'de':
+             reserva = 'Sie sind über Posidonia. Denken Sie daran, dass Sie eine Geldstrafe erhalten könnten, wenn Sie den Anker hier fallen lassen.' ;
+             noreserva = 'Sie sind über Posidonia. Bitte seien Sie äußerst vorsichtig und versuchen Sie, Ihren Anker auf Sand oder Felsen zu halten.';
+             break;
         }
         var src = 'https://oncapdepera.com/App/posidonia/LenCompletValid.kml';
         var src2 = 'https://oncapdepera.com/App/posidonia/posTest.kml';
@@ -764,12 +772,12 @@ var mapapos = {
              var conte = (google.maps.geometry.poly.containsLocation(event.latLng, interiorPoly));
              var conte2 = (google.maps.geometry.poly.containsLocation(event.latLng, exteriorPoly));
              var missatge;
-        if(conte || conte2) {
-             missatge = 'Esta en aigues autonòmiques';
-        }else {
-            missatge = '';
-        }
-           // $('#infoPos').html('No està sobre posidonia '+ missatge);
+//        if(conte || conte2) {
+//             missatge = 'Esta en aigues autonòmiques';
+//        }else {
+//            missatge = '';
+//        }
+            $('#infoPos').html('');
         });
 
         setTimeout(function () {
