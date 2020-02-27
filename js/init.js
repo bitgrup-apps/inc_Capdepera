@@ -506,7 +506,7 @@ var mapapos = {
     marcador: '',
     pos: {"lat": 39.702031, "lng": 3.431725},
     dinsPos: false,
-    lang: info.init.getLang(),
+    lang: mapapos.getLang(),
 
     mapaPosidonia: function () {
         var reserva;
@@ -795,6 +795,30 @@ var mapapos = {
             mapapos.lat = location.latLng.lat;
             mapapos.long = location.latLng.lng;
         });
+    },
+    
+    getLang: function () {
+        var lang = null;
+        if (navigator && navigator.userAgent && (lang = navigator.userAgent.match(/android.*\W(\w\w)-(\w\w)\W/i))) {
+            lang = lang[1];
+        }
+
+        if (!lang && navigator) {
+            if (navigator.language) {
+                lang = navigator.language;
+            } else if (navigator.browserLanguage) {
+                lang = navigator.browserLanguage;
+            } else if (navigator.systemLanguage) {
+                lang = navigator.systemLanguage;
+            } else if (navigator.userLanguage) {
+                lang = navigator.userLanguage;
+            }
+            lang = lang.substr(0, 2);
+        }
+        if (lang != 'es' && lang != 'ca' && lang != 'en' && lang != 'de') {
+            lang = 'es';
+        }
+        init.lang = lang;
     }
 
 
