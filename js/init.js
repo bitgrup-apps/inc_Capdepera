@@ -506,8 +506,21 @@ var mapapos = {
     marcador: '',
     pos: {"lat": 39.702031, "lng": 3.431725},
     dinsPos: false,
+    lang: info.init.getLang(),
 
     mapaPosidonia: function () {
+        var reserva;
+        var noreserva;
+        switch(mapapos.lang) {
+            case 'ca':
+             reserva = 'Esteu sobre posidònia. Recordeu que si tira l\'àncora aquí podria vostè ser multat.' ;
+             noreserva = 'Esteu sobre posidònia. Preguem tingui vostè la màxima precaució intentant que la seva  àncora quedi sobre sorra o roca.';
+             break;
+              case 'es':
+             reserva = 'Se encuentra usted sobre posidonia. Tenga en cuenta que si tira el ancla aquí podría usted ser multado.' ;
+             noreserva = 'Se encuentra usted sobre posidonia. Rogamos tenga usted la máxima precaución intentando que su ancla quede sobre arena o roca.';
+             break;
+        }
         var src = 'https://oncapdepera.com/App/posidonia/LenCompletValid.kml';
         var src2 = 'https://oncapdepera.com/App/posidonia/posTest.kml';
         var posicio = {"lat": 39.9163321, "lng": 3.5592721};
@@ -528,31 +541,29 @@ var mapapos = {
              var conte = (google.maps.geometry.poly.containsLocation(event.latLng, interiorPoly));
              var conte2 = (google.maps.geometry.poly.containsLocation(event.latLng, exteriorPoly));
              var missatge;
-        if(conte) {
-             missatge = 'Esta en aigues autonòmiques';
-        }else if(conte2){
-           missatge = 'Esta en aigues estatals';
+        if(conte || conte2) {
+             missatge = reserva;
         }else {
-            missatge= '';
+            missatge= noreserva;
         }
-            $('#infoPos').html('Està sobre posidonia '+ missatge);
+            $('#infoPos').html(missatge);
         });
         
-         var kmlLayer2 = new google.maps.KmlLayer(src, {
-            suppressInfoWindows: true,
-            preserveViewport: true,
-            map: map
-        });
-        
-        kmlLayer2.addListener('click', function (event) {
-            mapapos.marcador.setMap(null);
-            mapapos.marcador = new google.maps.Marker({
-                position: event.latLng,
-                map: map
-            });
-            
-            $('#infoPos').html('Està sobre un area ANEI');
-        });
+//         var kmlLayer2 = new google.maps.KmlLayer(src, {
+//            suppressInfoWindows: true,
+//            preserveViewport: true,
+//            map: map
+//        });
+//        
+//        kmlLayer2.addListener('click', function (event) {
+//            mapapos.marcador.setMap(null);
+//            mapapos.marcador = new google.maps.Marker({
+//                position: event.latLng,
+//                map: map
+//            });
+//            
+//            $('#infoPos').html('Està sobre un area ANEI');
+//        });
 
         var interiors = [
             {lat: 39.76232842355503, lng: 3.405110504997997},
@@ -752,14 +763,12 @@ var mapapos = {
              var conte = (google.maps.geometry.poly.containsLocation(event.latLng, interiorPoly));
              var conte2 = (google.maps.geometry.poly.containsLocation(event.latLng, exteriorPoly));
              var missatge;
-        if(conte) {
+        if(conte || conte2) {
              missatge = 'Esta en aigues autonòmiques';
-        }else if (conte2){
-           missatge = 'Esta en aigues estatals';
         }else {
             missatge = '';
         }
-            $('#infoPos').html('No està sobre posidonia '+ missatge);
+           // $('#infoPos').html('No està sobre posidonia '+ missatge);
         });
 
         setTimeout(function () {
