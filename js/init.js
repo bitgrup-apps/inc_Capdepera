@@ -530,7 +530,7 @@ var mapapos = {
              noreserva = 'Sie sind über Posidonia. Bitte seien Sie äußerst vorsichtig und versuchen Sie, Ihren Anker auf Sand oder Felsen zu halten.';
              break;
         }
-        var src = 'https://oncapdepera.com/App/posidonia/LenCompletValid.kml';
+       // var src = 'https://oncapdepera.com/App/posidonia/LenCompletValid.kml';
         var src2 = 'https://oncapdepera.com/App/posidonia/posTest.kml';
         var posicio = {"lat": 39.9163321, "lng": 3.5592721};
         var map = new google.maps.Map(
@@ -558,21 +558,6 @@ var mapapos = {
             $('#infoPos').html(missatge);
         });
         
-//         var kmlLayer2 = new google.maps.KmlLayer(src, {
-//            suppressInfoWindows: true,
-//            preserveViewport: true,
-//            map: map
-//        });
-//        
-//        kmlLayer2.addListener('click', function (event) {
-//            mapapos.marcador.setMap(null);
-//            mapapos.marcador = new google.maps.Marker({
-//                position: event.latLng,
-//                map: map
-//            });
-//            
-//            $('#infoPos').html('Està sobre un area ANEI');
-//        });
 
         var interiors = [
             {lat: 39.76232842355503, lng: 3.405110504997997},
@@ -772,11 +757,7 @@ var mapapos = {
              var conte = (google.maps.geometry.poly.containsLocation(event.latLng, interiorPoly));
              var conte2 = (google.maps.geometry.poly.containsLocation(event.latLng, exteriorPoly));
              var missatge;
-//        if(conte || conte2) {
-//             missatge = 'Esta en aigues autonòmiques';
-//        }else {
-//            missatge = '';
-//        }
+
             $('#infoPos').html('');
         });
 
