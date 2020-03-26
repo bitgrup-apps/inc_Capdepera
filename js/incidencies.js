@@ -336,7 +336,7 @@ function actualitzaPush() {
         document.cookie = name + "=" + value + expires + "; path=/";
         var actulitzat = actualitzaServidorPush(true);
         if (!actulitzat) {
-            alert('En aquest moment no es pot resoldre la solicitut, provi més tart');
+            alert('En aquest moment no es pot resoldre la solicitut, provi més tard');
             $('.swraper.light').click();
         }
     } else {
