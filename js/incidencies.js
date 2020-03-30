@@ -308,7 +308,7 @@ function removeImg(i) {
 function guardaTokenPush(token) {
     if (window.okPush) {
         $.post('http://oncapdepera.com/App/tokenPush.php',
-         {funcio: 'guardaToken', userToken: token, TOKEN: 'LAIDSD88347ERJKADKFGKAHPF8YA9DF8Y', os: window.platform},
+         {funcio: 'guardaToken', userToken: token, TOKEN: 'LAIDSD88347ERJKADKFGKAHPF8YA9DF8Y', os: window.platform, lang: init.lang},
          function (data) {
              try {
                  var resposta = JSON.parse(data);
