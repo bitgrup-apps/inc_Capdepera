@@ -307,7 +307,7 @@ function removeImg(i) {
 
 function guardaTokenPush(token) {
     if (window.okPush) {
-        $.post('http://oncapdepera.com/App/tokenPush.php',
+        $.post('http://gestcap.com/App/tokenPush.php',
          {funcio: 'guardaToken', userToken: token, TOKEN: 'LAIDSD88347ERJKADKFGKAHPF8YA9DF8Y', os: window.platform, lang: init.lang},
          function (data) {
              try {
@@ -364,7 +364,7 @@ function actualitzaServidorPush(guardaToken) {
     else
         var funcio = 'eliminaToken';
     var ok = true;
-    $.post('http://oncapdepera.com/App/tokenPush.php',
+    $.post('http://gestcap.com/App/tokenPush.php',
      {funcio: funcio, userToken: window.tokenPush, TOKEN: 'LAIDSD88347ERJKADKFGKAHPF8YA9DF8Y', os: window.platform},
      function (data) {
          try {
