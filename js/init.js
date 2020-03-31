@@ -533,7 +533,7 @@ var mapapos = {
              break;
         }
        // var src = 'https://gestcap.com/App/posidonia/LenCompletValid.kml';
-        var src2 = 'https://gestcap.com/App/posidonia/posTest.kml';
+        var src2 = 'http://gestcap.com/App/posidonia/posTest.kml';
         var posicio = {"lat": 39.9163321, "lng": 3.5592721};
         var map = new google.maps.Map(
                 document.getElementById('mapaPos'), {zoom: 11, center: posicio, disableDefaultUI: true});
