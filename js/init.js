@@ -538,13 +538,13 @@ var mapapos = {
         var map = new google.maps.Map(
                 document.getElementById('mapaPos'), {zoom: 11, center: posicio, disableDefaultUI: true});
 
-        var kmlLayer2 = new google.maps.KmlLayer(src, {
-            suppressInfoWindows: true,
-            preserveViewport: true,
-            map: map
-        });
+//        var kmlLayer2 = new google.maps.KmlLayer(src, {
+//            suppressInfoWindows: true,
+//            preserveViewport: true,
+//            map: map
+//        });
 
-        var kmlLayer = new google.maps.KmlLayer(src2, {
+        var kmlLayer = new google.maps.KmlLayer(src, {
             suppressInfoWindows: true,
             preserveViewport: true,
             map: map
