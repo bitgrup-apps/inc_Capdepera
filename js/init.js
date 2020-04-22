@@ -879,8 +879,8 @@ var mapapos = {
         
          
 
-        var anei = new google.maps.Polygon({
-            paths: mesquida,far,
+        var mesq = new google.maps.Polygon({
+            paths: mesquida,
             strokeColor: '#0f0f0f',
             strokeOpacity: 0.8,
             strokeWeight: 2,
@@ -888,7 +888,20 @@ var mapapos = {
             fillOpacity: 0.35
         });
         
-        anei.setMap(map);
+        mesq.setMap(map);
+        
+        var fa = new google.maps.Polygon({
+            paths: far,
+            strokeColor: '#0f0f0f',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#91d982',
+            fillOpacity: 0.35
+        });
+        
+        fa.setMap(map);
+        
+        
 
         $('#mapaPos').on('swipe', function (event) {
             $.event.special.swipe.horizontalDistanceThreshold(400);
