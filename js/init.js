@@ -532,11 +532,17 @@ var mapapos = {
              noreserva = 'Sie sind über Posidonia. Bitte seien Sie äußerst vorsichtig und versuchen Sie, Ihren Anker auf Sand oder Felsen zu halten.';
              break;
         }
-       // var src = 'https://gestcap.com/App/posidonia/LenCompletValid.kml';
+        var src = 'https://gestcap.com/App/posidonia/anei.kml';
         var src2 = 'http://gestcap.com/App/posidonia/posTest.kml';
         var posicio = {"lat": 39.9163321, "lng": 3.5592721};
         var map = new google.maps.Map(
                 document.getElementById('mapaPos'), {zoom: 11, center: posicio, disableDefaultUI: true});
+
+        var kmlLayer2 = new google.maps.KmlLayer(src, {
+            suppressInfoWindows: true,
+            preserveViewport: true,
+            map: map
+        });
 
         var kmlLayer = new google.maps.KmlLayer(src2, {
             suppressInfoWindows: true,
