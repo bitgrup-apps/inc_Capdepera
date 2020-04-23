@@ -910,10 +910,18 @@ var mapapos = {
         
         google.maps.event.addListener(mesq,'click',function(event){
             $('#infoPos').html(aneiMsg);
+            mapapos.marcador.setMap(null);
+            mapapos.marcador = new google.maps.Marker({
+                position: event.latLng,
+                map: map
         });
         
         google.maps.event.addListener(fa,'click',function(event){
             $('#infoPos').html(aneiMsg);
+            mapapos.marcador.setMap(null);
+            mapapos.marcador = new google.maps.Marker({
+                position: event.latLng,
+                map: map
         });
 
         $('#mapaPos').on('swipe', function (event) {
