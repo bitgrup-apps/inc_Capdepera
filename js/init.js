@@ -514,22 +514,27 @@ var mapapos = {
         mapapos.getLang();
         var reserva;
         var noreserva;
+        var aneiMsg;
         switch(mapapos.lang) {
             case 'ca':
              reserva = 'Esteu sobre posidònia. Recordeu que si tira l\'àncora aquí podria vostè ser multat.' ;
              noreserva = 'Esteu sobre posidònia. Preguem tingui vostè la màxima precaució intentant que la seva  àncora quedi sobre sorra o roca.';
+             aneiMsg  = 'Es troba vostè en zona verda protegida. Recordeu extremar les precaucions per evitar incendis. Preguem recullin i evitin llençar les escombraries, ja que podrien ser multats.';
              break;
               case 'es':
              reserva = 'Se encuentra usted sobre posidonia. Tenga en cuenta que si tira el ancla aquí podría usted ser multado.' ;
              noreserva = 'Se encuentra usted sobre posidonia. Rogamos tenga usted la máxima precaución intentando que su ancla quede sobre arena o roca.';
+             aneiMsg  = 'Se encuentra usted en zona verde protegida. Recuerde extremar las precauciones para evitar incendios. Rogamos recojan y eviten tirar basura, ya que podrían ser multados.';
              break;
              case 'en':
              reserva = 'You are about posidonia. Keep in mind that if you drop the anchor here you could be fined.' ;
              noreserva = 'You are about posidonia. Please take the utmost caution trying to keep your anchor on sand or rock.';
+             aneiMsg  = 'You are in a protected green area. Remember to take precautions to avoid fires. Please pick up and avoid littering, as they could be fined.';
              break;
              case 'de':
              reserva = 'Sie sind über Posidonia. Denken Sie daran, dass Sie eine Geldstrafe erhalten könnten, wenn Sie den Anker hier fallen lassen.' ;
              noreserva = 'Sie sind über Posidonia. Bitte seien Sie äußerst vorsichtig und versuchen Sie, Ihren Anker auf Sand oder Felsen zu halten.';
+             aneiMsg  = 'Sie befinden sich in einer geschützten Grünfläche. Denken Sie daran, Vorsichtsmaßnahmen zu treffen, um Brände zu vermeiden. Bitte heben Sie Müll auf und vermeiden Sie ihn, da er mit einer Geldstrafe belegt werden kann.';
              break;
         }
       //  var src = 'http://gestcap.com/App/posidonia/anei.kml';
@@ -557,12 +562,18 @@ var mapapos = {
             });
              var conte = (google.maps.geometry.poly.containsLocation(event.latLng, interiorPoly));
              var conte2 = (google.maps.geometry.poly.containsLocation(event.latLng, exteriorPoly));
+             var aneiMesq = (google.maps.geometry.poly.containsLocation(event.latLng, mesq));
+             var aneiFar = (google.maps.geometry.poly.containsLocation(event.latLng, fa));
              var missatge;
         if(conte || conte2) {
              missatge = reserva;
         }else {
             missatge= noreserva;
         }
+        if(aneiMesq || aneiFar){
+            missatge= aneiMsg;
+        }
+        
             $('#infoPos').html(missatge);
         });
         
@@ -918,10 +929,7 @@ var mapapos = {
                 position: event.latLng,
                 map: map
             });
-             var conte = (google.maps.geometry.poly.containsLocation(event.latLng, interiorPoly));
-             var conte2 = (google.maps.geometry.poly.containsLocation(event.latLng, exteriorPoly));
-             var missatge;
-
+           
             $('#infoPos').html('');
         });
 
