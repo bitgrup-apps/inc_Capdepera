@@ -561,18 +561,14 @@ var mapapos = {
                 map: map
             });
              var conte = (google.maps.geometry.poly.containsLocation(event.latLng, interiorPoly));
-             var conte2 = (google.maps.geometry.poly.containsLocation(event.latLng, exteriorPoly));
-             var aneiMesq = (google.maps.geometry.poly.containsLocation(event.latLng, mesq));
-             var aneiFar = (google.maps.geometry.poly.containsLocation(event.latLng, fa));
+             var conte2 = (google.maps.geometry.poly.containsLocation(event.latLng, exteriorPoly));            
              var missatge;
         if(conte || conte2) {
              missatge = reserva;
         }else {
             missatge= noreserva;
         }
-        if(aneiMesq || aneiFar){
-            missatge= aneiMsg;
-        }
+        
         
             $('#infoPos').html(missatge);
         });
@@ -912,7 +908,13 @@ var mapapos = {
         
         fa.setMap(map);
         
+        google.maps.event.addListener(mesq,'click',function(event){
+            $('#infoPos').html(aneiMsg);
+        });
         
+        google.maps.event.addListener(fa,'click',function(event){
+            $('#infoPos').html(aneiMsg);
+        });
 
         $('#mapaPos').on('swipe', function (event) {
             $.event.special.swipe.horizontalDistanceThreshold(400);
