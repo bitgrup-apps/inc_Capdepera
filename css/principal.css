@@ -114,6 +114,7 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #home-nou .ui-content > .col-xs-6{padding: 0.5vw;}
 #login_home{display:none;} 
 .icon-radio {background-image: url(../icons/spriteoncdphome.svg);position:absolute; width:20vw; height: 20vw;background-size: 200vw; content: " ";top: 2.5vw;left: 7.5vw;background-position:-167vw -12vw;}
+.radio-text {font-size: 6.5vw;color: #fff;text-shadow: none;text-align: left;}
 
 
 /*######## HOME #############*/
