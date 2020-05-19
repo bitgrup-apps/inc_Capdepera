@@ -114,7 +114,7 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #home-nou .ui-content > .col-xs-6{padding: 0.5vw;}
 #login_home{display:none;} 
 .icon-radio {background-image: url(../icons/spriteoncdphome.svg);position:absolute; width:20vw; height: 20vw;background-size: 200vw; content: " ";top: 2.5vw;left: 7.5vw;background-position:-167vw -12vw;}
-.radio-text {font-size: 6.5vw;color: #fff;text-shadow: none;text-align: left;}
+.radio-text {font-size: 6.5vw;color: #fff;text-shadow: none;text-align: left;margin-left: 10px;margin-top: 18px;}
 
 
 /*######## HOME #############*/
@@ -413,6 +413,7 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #oncapdepera-home .ico .res{background-position:-164vw -40vw;}
 #oncapdepera-home .posidonia {background-image: url(../icons/acuario.svg);width:20vw; height: 20vw;background-position: 2.0vh 1.75vh;background-repeat: no-repeat;}
 #oncapdepera-home .pos {background-color: #008841;}
+.onRadio{background-color: #bcc57d; background-position: -62.5vh -19.25vh;background-size: auto 50vh;float: left;background-repeat: no-repeat;}
 
 /*fitxa*/
 /*#oncapdepera-fitxa{background:#fff;}
