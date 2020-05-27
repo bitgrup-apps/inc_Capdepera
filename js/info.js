@@ -2,7 +2,7 @@
 
 var init = {
 
-    urlFunctions: 'https://www.oncapdepera.com/App/',
+    urlFunctions: 'http://gestcap.com/gestio/App/part-turistica/',
     lang: 'es',
     ipA: '',
 
