@@ -2,7 +2,7 @@
 
 var init = {
 
-    urlFunctions: 'https://oncapdepera.com/App/',
+    urlFunctions: 'https://www.oncapdepera.com/App/',
     lang: 'es',
     ipA: '',
 
