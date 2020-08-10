@@ -320,7 +320,7 @@ var init = {
             }
             lang = lang.substr(0, 2);
         }
-        if (lang != 'es' && lang != 'ca') {
+        if (lang != 'es' && lang != 'ca' && lang!='en' && lang!='de') {
             lang = 'es';
         }
         init.lang = lang;
