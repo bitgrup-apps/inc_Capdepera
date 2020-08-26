@@ -100,7 +100,7 @@
       <allow-navigation href="*" />  
       
     <platform name="android">
-      <resource-file src="google-services.json" target="app/google-services.json" />
+      <resource-file src="www/google-services.json" target="app/google-services.json" />
       <uses-library android:name="org.apache.http.legacy" android:required="false" />
       <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
             <application android:usesCleartextTraffic="true" />
@@ -157,7 +157,7 @@
     <!-- ANDROID -->
     <platform name="android">
         <allow-intent href="market:*" />
-        <resource-file src="google-services.json" target="app/google-services.json" />
+        <resource-file src="www/google-services.json" target="app/google-services.json" />
     </platform>    
     <icon src="res/icoapp/Android/res/drawable/icon.png" platform="android"/>
     <icon src="res/icoapp/Android/res/drawable-ldpi/icon.png" platform="android" qualifier="ldpi" />
