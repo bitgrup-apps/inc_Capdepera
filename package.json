@@ -1,0 +1,22 @@
+{
+  "name": "oncapdepera",
+  "version": "3.4.6",
+  "description": "oncapdepera",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitgrup-apps/inc_Capdepera.git"
+  },
+  "keywords": [
+    "oncapdepera"
+  ],
+  "author": "bitgrup",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bitgrup-apps/inc_Capdepera/issues"
+  },
+  "homepage": "https://github.com/bitgrup-apps/inc_Capdepera#readme"
+}

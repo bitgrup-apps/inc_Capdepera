@@ -1,0 +1,1661 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="viewport-fit=cover, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+
+        <title>OnCapdepera</title>
+
+        <!-- JQUERY -->
+
+        <link href="jquery-mobile/jquery.mobile-1.4.5.css" rel="stylesheet" type="text/css"/>
+        <script  src="jquery-mobile/jquery.js" type="text/javascript"></script>
+        <script src="jquery-mobile/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+        <script src="js/jquery.i18n.properties-1.0.9.js" type="text/javascript"></script>
+
+        <!-- bootstrap -->
+        <script src="js/bootstrap/js/bootstrap.min.js"></script>
+        <link href='js/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+        <link href='js/bootstrap/css/bootstrap-theme.min.css' rel='stylesheet' type='text/css'>
+
+
+
+        <!-- SWITCH BUTTONS -->
+        <script src="js/switcher/js/rcswitcher.min.js"></script>
+        <link href='js/switcher/css/rcswitcher.min.css' rel='stylesheet' type='text/css'>
+
+        <!-- APP -->
+        <script src="js/md5.js" type="text/javascript"></script>
+        <script type="application/javascript" src="http://l2.io/ip.js?var=myip" async></script>
+        <script src="js/info.js" type="text/javascript"></script>
+        <script src="js/init.js" type="text/javascript"></script>
+        <script src="js/session.js" type="text/javascript"></script>
+        <script src="js/operaris.js" type="text/javascript"></script>
+        <script src="js/functions.js" type="text/javascript"></script>
+        <script src="js/incidencies.js" type="text/javascript"></script>
+        <link href="css/principal.css" rel="stylesheet" type="text/css"/>
+         <!-- LIGHTBOX-->
+        <link href='js/ligthbox/fresco.css' rel='stylesheet' type='text/css'/>
+        <script src="js/ligthbox/fresco.js" type="text/javascript"></script>
+        <script src="js/geoxml.js" type="text/javascript"></script>
+        <script src="js/geoxmlComplete.js" type="text/javascript"></script>
+        <script src="js/geoxmlparse.js" type="text/javascript"></script>
+
+
+    </head> 
+    <body onLoad="onLoad();"> 
+        <div id="loading"></div>
+
+
+        <!--////////////////////    HOME  ///////////////////////////////-->
+
+        <div data-role="page"  id="home-nou">
+            <div data-role="content" class=" " >
+                <a href="#loggin-home" id="login_home" data-role="none" data-transition="slide"></a>
+                <div class="col-xs-12 logo"><h1 class="literal" data-literal="msg_hom">Benvinguts</h1></div>
+                <div class="col-xs-4">
+                    <a href="#" class="pastilla esdevn literal" data-literal="msg_menu_2" data-role="none" onclick="init.esdeveniments.getEsdeveniments();">Agenda</a>
+                </div>
+                <div class="col-xs-4">
+                    <a href="#afegirIncidencia" class="pastilla incd literal" data-literal="msg_menu_6" onclick="init.sendEstadistica('incidencia');mapaInc.getLocation();" data-role="none">Incidències</a>
+                </div>
+                <div class="col-xs-4">
+                    <span class="icona cinema"></span>
+                    <a href="#oncapdepera-sugerencia" class="pas suge literal" data-literal="msg_menu_11" data-role="none">Sugerencia</a>                                               
+                </div>
+                <div class="col-xs-4">
+                    <span class="icona cinema"></span>
+                    <a href="#" class="past reserva literal" data-literal="msg_menu_12" data-role="none" onclick="init.cine.menu();">Cinema</a>
+                </div>
+                 <div class="col-xs-4">
+                    <a href="#" class="pastilla sprts literal" data-literal="msg_menu_3" data-role="none" onclick="init.esports.init();">Esports</a>
+                </div>
+                 <div class="col-xs-4">
+                    <a href="#" class="pastilla msca literal" data-literal="msg_menu_3b" data-role="none" onclick="init.musica.init();">Música</a>
+                </div>
+                <div class="col-xs-4">
+                    <a href="#avisos" class="pastilla avisos literal" data-literal="msg_menu_7" onclick="init.avisos.init();" data-role="none">Avisos</a>
+                </div>                                                             
+                <div class="col-xs-4">
+                    <a href="#" class="pastilla notc literal" data-literal="msg_menu_4" data-role="none"  onclick="init.noticies.init();">Notícies</a>
+                </div>
+                <div class="col-xs-4">
+<!--                    <a href="#radio-home" class="pastilla rdio literal" data-literal="msg_menu_5" onclick="init.sendEstadistica('radio');" data-role="none" data-transition="slide">Ràdio</a>-->
+                        <a href="#" class="pasti rdo literal" data-literal="msg_menu_14" onclick="init.carregaPagExt('https://oncapdepera.com/empreses-llista.php');" data-role="none">Comerç</a>
+                </div>
+                <div class="col-xs-4">
+                    <span class="icona cinema"></span>
+                    <a href="#visita" class="pastil visita literal" data-literal="cer_4" data-role="none" onclick="init.wow.getAllEtnos();">Visita</a>
+                </div>
+                <div class="col-xs-4">
+                    <a href="#" class="pastilla oncpd" data-role="none" onclick="init.onCapdepera.init();mapapos.getLocalPos();">Capdepera</a>
+                </div>
+                <div class="col-xs-4">
+                    <span class="icona cinema"></span>
+                    <a href="#oncapdepera-serveis" class="pasta servi literal" data-role="none" data-literal="msg_on_men_3">Serveis</a>
+                </div>
+                
+
+
+
+
+
+
+
+                <!--div class="col-xs-12">
+                    <a href="#radio-home" class="pastilla rdio literal" data-literal="msg_menu_5" onclick="init.sendEstadistica('radio');" data-role="none" >Ràdio</a>
+                </-->
+
+
+                <!--                <div class="col-xs-4">
+                                    <a href="#" class="pastilla senderisme literal" data-literal="msg_menu_8" data-role="none" onclick="init.esports.init();">Senderismo</a>
+                                </div>
+                                <div class="col-xs-4">
+                                    <a href="#" class="pastilla ciclisme literal" data-literal="msg_menu_9" data-role="none" onclick="init.esports.init();">Ciclismo</a>
+                                </div>-->
+                <!--                <div class="col-xs-4">
+                                    <a href="#oncapdepera-reserva" class="pastilla reserva literal" data-literal="msg_menu_10" data-role="none" data-transition="slide">Reserva marina</a>
+                                </div>-->
+                <!--                <div class="col-xs-4">
+                                    <a href="#" class="pastilla buida literal"></a>
+                                </div>-->
+            </div>
+
+        </div>
+
+
+
+
+        <!--################################################################################-->
+        <!--######################          INCIDENCIES     ###############################-->
+        <!--################################################################################-->
+
+
+        <!--////////////////////    HOME INCIDENCIES  ///////////////////////////////-->
+
+        <div data-role="page"  id="home">
+
+            <div data-role="header" class="header"></div>
+
+            <div data-role="content" class=" " >
+                <!--a href="#loginPage" data-role="none" data-transition="slide"><div class="icon-config no-sense-xarxa"></div></a-->
+                <div onclick="init.home();"></div>
+                <div class="col-xs-12 logo"><!--img src="images/logo.svg" alt="OnCapdepera" title="OnCapdepera"--></div>
+                <div class="col-xs-12">
+                    <a href="#darreresIncidencies" class="btn-home" data-role="none" data-transition="slide">Veure incidències</a>
+                </div>
+                <div class="col-xs-12">
+                    <a href="#afegirIncidencia" class="btn-home" data-role="none" data-transition="slide">Afegir una incidència</a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+        <!--////////////////////    AFEGIR INCIDENCIA  ///////////////////////////////-->
+
+        <div data-role="page" class="pagina"  id="afegirIncidencia">
+
+            <div data-role="header" class="header">
+                <a href="#" class="back"  data-rel="back" data-transition="slide"></a>
+            </div>
+
+            <div data-role="content" >
+                <h2 class="literal" data-literal="inc_13">Gestiona la teva incidència</h2>
+                <div class="container-fluid t-incidencies">
+                    <div class="row btns-incidencies">
+                        <a data-role="none" href="#oncapdepera-incidencia" data-transition="slide" onClick="$('#valorCategoria').val(1);">
+                            <div class="col-xs-4">
+                                <div class="t-incidencia xarxa">
+                                    <img src="icons/in-aigua.png" alt="CLICKINCIDENCIES"  id="tipus-incidencia-1" title="Xarxa d'aigua">
+                                    <span class="literal" data-literal="inc_1">Xarxa d'aigua</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a data-role="none" href="#oncapdepera-incidencia" data-transition="slide" onClick="$('#valorCategoria').val(2);">
+                            <div class="col-xs-4">
+                                <div class="t-incidencia parcs">
+                                    <img src="icons/in-banc.png" alt="CLICKINCIDENCIES" id="tipus-incidencia-2" title="Parcs infantils i mobiliari urbà">
+                                    <span class="literal" data-literal="inc_2">Parcs</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a data-role="none" href="#oncapdepera-incidencia" data-transition="slide" onClick="$('#valorCategoria').val(3);">
+                            <div class="col-xs-4">
+                                <div class="t-incidencia neteja">
+                                    <img src="icons/in-papelera.png" alt="CLICKINCIDENCIES" id="tipus-incidencia-3" title="Neteja i gestió de residus" >
+                                    <span class="literal"  data-literal="inc_3">Neteja</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a data-role="none" href="#oncapdepera-incidencia" data-transition="slide" onClick="$('#valorCategoria').val(4);">
+                            <div class="col-xs-4">
+                                <div class="t-incidencia enllumenat">
+                                    <img src="icons/in-farola.png" alt="CLICKINCIDENCIES" id="tipus-incidencia-4" title="Enllumenat">
+                                    <span class="literal" data-literal="inc_4">Enllumenat</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a data-role="none" href="#oncapdepera-incidencia" data-transition="slide" id="tipus-incidencia-5"  onClick="$('#valorCategoria').val(5);">
+                            <div class="col-xs-4">
+                                <div class="t-incidencia mobiliari">
+                                    <img src="icons/in-urba.png" alt="CLICKINCIDENCIES" title="Altres">
+                                    <span class="literal" data-literal="inc_5">Mobiliari urbà</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a data-role="none" href="#oncapdepera-incidencia" data-transition="slide" id="tipus-incidencia-6"  onClick="$('#valorCategoria').val(6);">
+                            <div class="col-xs-4">
+                                <div class="t-incidencia medi">
+                                    <img src="icons/in-medi.png" alt="CLICKINCIDENCIES" title="Altres">
+                                    <span class="neteja literal" data-literal="inc_6">Medi ambient i<br>platges</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a data-role="none" href="#oncapdepera-incidencia" data-transition="slide" onClick="$('#valorCategoria').val(8);">
+                            <div class="col-xs-4">
+                                <div class="t-incidencia mobiliari">
+                                    <img src="icons/plant.svg" alt="CLICKINCIDENCIES" id="tipus-incidencia-6" title="Suggeriments">
+                                    <span class="literal" data-literal="inc_7">Jardins</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a data-role="none" href="#oncapdepera-incidencia" data-transition="slide" onClick="$('#valorCategoria').val(9);">
+                            <div class="col-xs-4">
+                                <div class="t-incidencia mobiliari">
+                                    <img src="icons/recycle-sign.svg" alt="CLICKINCIDENCIES" id="tipus-incidencia-6" title="Suggeriments">
+                                    <span class="literal" data-literal="inc_8">Gestió de residus</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a data-role="none" href="#oncapdepera-incidencia" data-transition="slide" onClick="$('#valorCategoria').val(10);">
+                            <div class="col-xs-4">
+                                <div class="t-incidencia mobiliari">
+                                    <img src="icons/podium.svg" alt="CLICKINCIDENCIES" id="tipus-incidencia-6" title="Suggeriments">
+                                    <span class="literal" data-literal="inc_9">Esports</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a data-role="none" href="#oncapdepera-incidencia" data-transition="slide" onClick="$('#valorCategoria').val(11);">
+                            <div class="col-xs-4">
+                                <div class="t-incidencia mobiliari">
+                                    <img src="icons/change.svg" alt="CLICKINCIDENCIES" id="tipus-incidencia-6" title="Suggeriments">
+                                    <span class="literal" data-literal="inc_10">Vies i obres</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a data-role="none" href="#oncapdepera-incidencia" data-transition="slide" onClick="$('#valorCategoria').val(12);">
+                            <div class="col-xs-4">
+                                <div class="t-incidencia mobiliari">
+                                    <img src="icons/enterprise.svg" alt="CLICKINCIDENCIES" id="tipus-incidencia-6" title="Suggeriments">
+                                    <span class="literal" data-literal="inc_11">Edificis Públics</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a data-role="none" href="#oncapdepera-incidencia" data-transition="slide" onClick="$('#valorCategoria').val(7);">
+                            <div class="col-xs-4">
+                                <div class="t-incidencia altres">
+                                    <img src="icons/in-cono.png" alt="CLICKINCIDENCIES" id="tipus-incidencia-6" title="Suggeriments">
+                                    <span class="literal" data-literal="inc_12">altres</span>
+                                </div>
+                            </div>
+                        </a>
+                        <input type="hidden" name="tipusIncidencia" id="tipusIncidencia" value="">
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" class="footer">
+
+            </div>
+
+        </div>
+
+
+        <!--####################################################################################-->
+        <!--##########################   NOVA INCIDENCIA #######################################-->
+        <!--####################################################################################-->
+
+
+        <!--////////////////////    NOVA INCIDENCIA PASA 1  ///////////////////////////////-->
+
+        <div data-role="page" class="pagina nova-incidencia"  id="incidenciaPasa1">
+
+            <div data-role="header" class="header">
+                <a href="#" class="back"  data-rel="back" data-transition="slide"></a>
+                <h4>Nova incidència</h4>
+                <a href="#incidenciaPasa1b" onClick="return comprovaPasa1();" data-role="none" class="seguent"  data-transition="slide"></a>
+            </div>
+
+            <div data-role="content" class="container-fluid" >
+                <div class="row fila-img">
+                    <div class="col-xs-12">
+                        <div class="col-xs-8"><span class="afegeix">Afegeix fins a tres imatges</span></div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="col-xs-6 imgIncidencia">
+                            <div class="pasa1-img">
+                                <img src="images/no-img-2.jpg" id="imgIncidencia" onClick="getImg();" alt="CLICKINCIDENCIES" title="Afegir Imatge">
+                                <div class="removeImg" onClick="removeImg(1);">
+                                    <img src="icons/img-remove.png"  alt="CLICKINCIDENCIES" title="Eliminar Imatge"/>
+                                </div> 
+                            </div>
+
+                        </div>
+                        <div class="col-xs-6 imgIncidencia">
+                            <div class="pasa1-img">
+                                <img src="images/no-img-2.jpg" id="imgIncidenciaB"  alt="CLICKINCIDENCIES" title="Afegir Imatge">
+                                <div class="removeImg" onClick="removeImg(2);"><img src="icons/img-remove.png"  alt="CLICKINCIDENCIES" title="Eliminar Imatge"/></div>
+                            </div>   
+                        </div>
+                        <div class="col-xs-6 imgIncidencia">
+                            <div class="pasa1-img">
+                                <img src="images/no-img-2.jpg" id="imgIncidenciaC"  alt="CLICKINCIDENCIES" title="Afegir Imatge">
+                                <div class="removeImg" onClick="removeImg(3);"><img src="icons/img-remove.png" alt="CLICKINCIDENCIES" title="Eliminar Imatge"/></div> 
+                            </div> 
+                        </div>
+                        <div class="col-xs-6 btn-afg-img">
+                            <div class="col-xs-6"><div class="getImg" onClick="getImg();"><img src="icons/img-camera.png"  alt="CLICKINCIDENCIES" title="Afegir Imatge"/></div></div>
+                            <div class="col-xs-6"> <div class="getImg-gallery" onClick="getImgLibrary();"><img src="icons/img-gallery.png"  alt="CLICKINCIDENCIES" title="Afegir Imatge"/></div> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--div data-role="footer" class="footer">
+                <div class="col-sm-12"><a href="#incidenciaPasa1b" onClick="return comprovaPasa1();" data-transition="slide"><img src="icons/endavant.png" alt="CLICKINCIDENCIES" title="Seguir"></a></div>
+            </div-->
+
+        </div>
+
+        <!--////////////////////    NOVA INCIDENCIA PASA 1B  ///////////////////////////////-->
+
+        <div data-role="page" class="pagina nova-incidencia"  id="incidenciaPasa1b">
+
+            <div data-role="header" class="header">
+                <a href="#" class="back"  data-rel="back" data-transition="slide"></a>
+                <h4>Nova incidència</h4>
+                <a href="#incidenciaPasa2" onClick="return comprovaPasa1b();" data-role="none" class="seguent"  data-transition="slide"></a>
+            </div>
+
+            <div data-role="content" class="container-fluid" >
+                <div class="row">
+                    <div class="col-xs-12 info">
+                        <textarea  name="descIncidencia" id="descIncidencia" placeholder="Descripció de la incidència"></textarea>
+                    </div>
+                </div>
+                <a href="#incidenciaPasa2" data-role="none" onClick="return comprovaPasa1b();" class="seguent-bottom"  data-transition="slide"><img src="icons/endavant.png"></a>
+            </div>
+
+            <!--div data-role="footer" class="footer">
+                <div class="col-sm-12"><a href="#incidenciaPasa2" onClick="return comprovaPasa1b();" data-transition="slide"><img src="icons/endavant.png" alt="CLICKINCIDENCIES" title="Seguir"></a></div>
+            </div-->
+
+        </div>
+
+
+        <!--////////////////////    NOVA INCIDENCIA PASA 2  ///////////////////////////////-->
+
+        <div data-role="page" class="pagina nova-incidencia"  id="incidenciaPasa2">
+
+            <div data-role="header" class="header">
+                <a href="#" class="back"  data-rel="back" data-transition="slide"></a>
+                <h4>Lloc de la incidència</h4>
+                <a href="#incidenciaPasa2B" onClick="return comprovaPasa2();" data-role="none" class="seguent"  data-transition="slide"></a>
+            </div>
+
+            <div data-role="content" class="" >
+                <div class="col-xs-12 mapaIncidencia" id="mapaIncidencia"></div>
+                <!--div class="col-xs-12"><h6>Si no esteis d'acord amb la direcció la podeu modificar</h6></div-->
+                <!--div class="col-xs-12 info">
+                    <input type="text" maxlength="100" id="adresaIncidencia" placeholder="Adreça" name="adresaIncidencia">
+                    <input type="text" maxlength="100" id="poblacioIncidencia" placeholder="CP" name="poblacioIncidencia">
+                </div-->
+                <input type="hidden" id="latitutIncidencia" name="latitutIncidencia" >
+                <input type="hidden" id="longitutIncidencia" name="longitutIncidencia">
+                <input type="hidden" id="adresaIncidencia"  name="adresaIncidencia">
+                <input type="hidden" id="poblacioIncidencia"  name="poblacioIncidencia">
+            </div>
+
+            <!--div data-role="footer" class="footer">
+                <div class="col-sm-12"><a href="#incidenciaPasa2B" onClick="return comprovaPasa2();" data-transition="slide"><img src="icons/endavant.png" alt="CLICKINCIDENCIES" title="Seguir"></a></div>
+            </div-->
+
+        </div>
+
+        <!--////////////////////    NOVA INCIDENCIA PASA 2B  ///////////////////////////////-->
+
+        <div data-role="page" class="pagina nova-incidencia"  id="incidenciaPasa2B">
+
+            <div data-role="header" class="header">
+                <a href="#" class="back"  data-rel="back" data-transition="slide"></a>
+                <h4>Les teves dades</h4>
+                <a href="#incidenciaPasa3" onClick="return comprovaPasa2B();" data-role="none" class="seguent"  data-transition="slide"></a>
+            </div>
+
+            <div data-role="content" class="" >
+                <input type="text" name="nom_usuari" id="nom_usuari" placeholder="Nom" maxlength="150">
+                <input type="text" name="llinatges_usuari" id="llinatges_usuari" placeholder="Llinatges" maxlength="150">
+                <!--input type="checkbox" name="incidenciaNoVisible" id="incidenciaNoVisible" value="1"><label for="incidenciaNoVisible"><b>No</b> vull que aquesta incidència sigui visible per a les persones usuàries de l’aplicació</label-->
+                <!--input type="checkbox" name="rebreNotificacio" id="rebreNotificacio" value="1"><label for="rebreNotificacio">Vull rebre una notificació quan s'hagi resolt la incidència</label>
+                <div id="rebreNotificacioInfo">
+                    <input type="email" name="email_usuari" id="email_usuari" placeholder="Per correu electrònic" maxlength="150">
+                    <input type="tel" name="tel_usuari" id="tel_usuari" placeholder="Per via telefònica" maxlength="20" style="display:none;"> 
+                </div-->
+            </div>
+
+            <!--div data-role="footer" class="footer">
+                <div class="col-sm-12">
+                    <a href="#incidenciaPasa3" onClick="return comprovaPasa2B();" data-transition="slide">
+                        <img src="icons/endavant.png" alt="CLICKINCIDENCIES" title="Seguir">
+                    </a>
+                </div>
+            </div-->
+
+        </div>
+
+        <!--////////////////////    NOVA INCIDENCIA PASA 3  ///////////////////////////////-->
+
+        <div data-role="page" class="pagina nova-incidencia"  id="incidenciaPasa3">
+
+            <div data-role="header" class="header">
+                <a href="#" class="back"  data-rel="back" data-transition="slide"></a>
+                <h4>La teva incidència</h4>
+                <a href="#incidenciaPasa4" onClick="return enviaIncidencia();" data-role="none" class="final"  data-transition="slide"></a>
+            </div>
+
+            <div data-role="content" class="container-fluid" >
+                <div class="row">
+                    <div class="col-xs-12 quadre">
+                        <b>Tipus</b>
+                        <p id="tipusIncidenciaP"></p>
+                        <b>Comentari</b>
+                        <p id="comentariIncidenciaP"></p>
+                    </div>
+                    <div class="col-xs-12 row-dates">
+                        <p id="dataIncidenciaP"></p>
+                    </div>
+                    <div class="col-xs-12 quadre">
+                        <div class="col-xs-6 img-petita"><img src="images/no-img-incid.png" id="imgIncidencia2" alt="CLICKINCIDENCIES" title="Incidència"></div>
+                        <div class="col-xs-6 img-petita"><img src="images/no-img-incid.png" id="imgIncidencia3" alt="CLICKINCIDENCIES" title="Incidència"></div>
+                        <div class="col-xs-6 img-petita"><img src="images/no-img-incid.png" id="imgIncidencia4" alt="CLICKINCIDENCIES" title="Incidència"></div>
+                    </div>
+                </div>
+                <div class="finalIncid" onClick="enviaIncidencia();"><img src="icons/img-fi.png" alt="CLICKINCIDENCIES" title="Enviar"/></div>
+            </div>
+
+            <!--div data-role="footer" class="footer">
+                <div class="col-sm-12">
+                    <a href="#incidenciaPasa4" onClick="return enviaIncidencia();" data-transition="slide">
+                        <img src="icons/ok_incidencia.png" alt="CLICKINCIDENCIES" title="Seguir">
+                    </a>
+                </div>
+            </div-->
+
+        </div>
+
+
+        <!--////////////////////    NOVA INCIDENCIA PASA 4  ///////////////////////////////-->
+
+        <div data-role="page" class="pagina "  id="incidenciaPasa4">
+
+            <div data-role="content" class="container-fluid" >
+                <h1>La teva incidència ha estat registrada</h1>
+                <h3>Gràcies per col·laborar a millorar el poble.</h3>
+            </div>
+            <div class="tornaInici"><a href="#" onClick="refrescarTot();"><img src="icons/endavant.png" alt="CLICKINCIDENCIES" title="Seguir"></a></div>
+        </div>
+
+
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+
+
+
+
+
+        <!--####################################################################################-->
+        <!--##########################   LLISTAT INCIDENCIES ###################################-->
+        <!--####################################################################################-->
+
+
+        <div data-role="page" class="pagina llistaIncidencies"  id="darreresIncidencies">
+
+            <div data-role="header" class="header">
+                <a href="#" class="back"  data-rel="back" data-transition="slide"></a>
+                <h4>Totes les incidències</h4>
+                <a href="#incidenciaPasa1" data-role="none" class="plus icon"  data-transition="slide"></a>
+                <a href="#" data-role="none" class="refresh icon" onClick="refrescaIncidencies();"></a>
+                <a href="#" data-role="none" class="search icon" onClick="$('#cercador').slideToggle('slow');"></a>
+            </div>
+
+            <div data-role="content" class="container-fluid" >
+
+                <div class="row" id="cercador"><div class="col-xs-12"><form><input type="search" data-type="search" name="cercador" id="searchForCollapsibleSet"></form></div></div>
+                <div class="row tipus-llista">
+                    <div class="col-xs-6 location" onClick="carregaLista(2);"></div> 
+                    <div class="col-xs-6 list actiu"  onClick="carregaLista(1);"></div>
+                </div>
+
+
+                <!-- LLISTAT -->
+                <div class="row lista1" id="containerLista">
+                    <div data-role="collapsible-set" data-filter="true" data-inset="true" id="collapsiblesetForFilter" data-input="#searchForCollapsibleSet">
+                    </div>
+                </div>
+
+                <div class="row lista2" id="containerLista2">
+                    <div class="col-xs-12" id="mapaLlista"></div>
+                </div>
+
+            </div>
+
+            <div data-role="footer" class="footer"></div>
+
+        </div>
+
+        <div data-role="page" class="pagina nova-incidencia"  id="veureIncidencia">
+
+            <div data-role="header" class="header">
+                <a href="#" class="back"  data-rel="back" data-transition="slide"></a>
+                <h4>Detalls de la incidència</h4>
+            </div>
+
+            <div data-role="content" class="container-fluid" >
+                <div class="row">
+                    <div class="col-xs-12 info">
+                        <b>Tipus d'incidència</b> 
+                        <p id="tipusIncidenciaP2"></p> 
+                        <!--div id="estatIncP2" class="col-xs-12"></div-->
+                        <p id="dataIncidenciaP2" class="col-xs-12"></p>
+                        <div class="imgIncidencia" ><img src="images/no-img-incid.png" id="imgIncidenciaZ" alt="CLICKINCIDENCIES" title="Incidència"></div>
+                        <div class="col-xs-12">
+                            <div class="col-xs-6 img-petita"><img src="images/no-img-incid.png" id="imgIncidenciaY" alt="CLICKINCIDENCIES" title="Incidència"></div>
+                            <div class="col-xs-6 img-petita"><img src="images/no-img-incid.png" id="imgIncidenciaX" alt="CLICKINCIDENCIES" title="Incidència"></div>
+                        </div>
+                        <b>Comentari</b>
+                        <p id="comentariIncidenciaP2"></p>
+
+                        <div class="col-xs-12">
+                            <button class="boto_verificar" id="verificaIncidencia" data-incidencia="0" onclick="verfificarIncidencia();">Verificar incidència</button>
+                        </div> 
+
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" class="footer">
+                <div class="col-sm-12"><a href="#incidenciaPasa4" onClick="return enviaIncidencia();"><img src="icons/ok_incidencia.png" alt="CLICKINCIDENCIES" title="Seguir"></a></div>
+            </div>
+
+        </div>
+
+
+
+
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+
+
+
+        <!--####################################################################################-->
+        <!--##########################      	OPERARIS   	 ###################################-->
+        <!--####################################################################################-->
+
+
+        <div data-role="page" class="pagina nova-incidencia pagines-operaris"  id="loginPage">
+
+            <div data-role="header" class="header">
+                <a href="#" class="back"  data-rel="back" data-transition="slide"></a>
+                <h4>Configuració</h4>
+            </div>
+            <div class="col-xs-12 notificacions">
+                <div class="col-xs-6"><label for="activaNotificacions">Notificacions</label></div>
+                <div class="col-xs-6"><input data-role="none"  type="checkbox" value="1" name="activaNotificacions" onChange="actualitzaPush();" id="activaNotificacions"></div>
+                <div class="col-xs-12"><a class="link-legal" href="#avisLegal" data-role="none" data-transition="slide">Avís legal</a></div>
+            </div>
+            <div data-role="content" class="" >
+
+                <div class="col-xs-12" id="form-login">
+                    <form id="form-login-operari" action="" onSubmit="return iniciaSessio();">
+                        <label>Inicia la sessió com a operari:</label>
+                        <input type="text" name="userLogin" id="userLogin" placeholder="Usuari" maxlength="150">
+                        <input type="password" name="passwordLogin"  id="passwordLogin"   placeholder="Contrasenya" maxlength="30">
+                        <button type="submit">Envia</button>
+                    </form>
+                </div>
+
+                <div class="operaris">
+                    <a href="#incidenciesOperaris" data-role="none" data-transition="slide"><button type="button">veure les teves incidències</button></a>
+                    <a href="#incidenciesOperarisPerVerificar" id="botoVeureIncidenciesPerVerificar" data-role="none" data-transition="slide"><button type="button">incidències per verificar</button></a>
+                    <a href="#" data-role="none"><button type="button" onclick="logOutOperari();">Tanca la sessió</button></a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ###### AVIS LEGAL  ####    -->
+
+        <div data-role="page" class="pagina avisLegal"  id="avisLegal">
+
+            <div data-role="header" class="header">
+                <a href="#" class="back"  data-rel="back" data-transition="slide"></a>
+                <h4>Avís legal</h4>
+            </div>
+            <div data-role="content" class="" >
+                <div class="col-xs-12">
+                    <p>
+                        El passatge estàndard de Lorem Ipsum, usat des del 1500
+                    </p><p>    
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        Secció 1.10.32 de "De Finibus Bonorum et Malorum", escrit per Ciceró l'any 45 aC.
+                    </p><p>    
+                        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                        Traducció de H. Rackham de 1914
+                    </p><p>    
+                        "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
+
+                    </p>
+                </div>
+            </div>
+            <div data-role="footer" class="footer"></div>
+        </div>
+
+
+
+        <div data-role="page" class="pagina llistaIncidencies pagines-operaris"  id="incidenciesOperaris">
+
+            <div data-role="header" class="header">
+                <a href="#" class="back"  data-rel="back" data-transition="slide"></a>
+                <h4>Incidències operari</h4>
+                <a href="#" data-role="none" class="refresh icon" onClick="refrescaIncidenciesOp();"></a>
+                <a href="#" data-role="none" class="search icon" onClick="$('#cercadorOperari').slideToggle('slow');"></a>
+            </div>
+
+            <div data-role="content" class="container-fluid" >
+
+                <div class="row" id="cercadorOperari"><div class="col-xs-12"><form><input type="search" data-type="search" name="cercador" id="searchForCollapsibleSetOperari"></form></div></div>
+
+                <!-- LLISTAT -->
+                <div class="row lista1" id="containerListaOperari">
+                    <div data-role="collapsible-set" data-filter="true" data-inset="true" id="collapsiblesetForFilterOperari" data-input="#searchForCollapsibleSetOperari">
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" class="footer">
+
+            </div>
+
+        </div>
+
+        <div data-role="page" class="pagina llistaIncidencies pagines-operaris"  id="incidenciesOperarisPerVerificar">
+
+            <div data-role="header" class="header">
+                <a href="#" class="back"  data-rel="back" data-transition="slide"></a>
+                <h4>Incidències per verificar</h4>
+                <a href="#" data-role="none" class="refresh icon" onClick="refrescaIncidenciesOp();"></a>
+                <a href="#" data-role="none" class="search icon" onClick="$('#cercadorOperariPerVerificar').slideToggle('slow');"></a>
+            </div>
+
+            <div data-role="content" class="container-fluid" >
+
+                <div class="row" id="cercadorOperariPerVerificar"><div class="col-xs-12"><form><input type="search" data-type="search" name="cercador" id="searchForCollapsibleSetOperariPerVerificar"></form></div></div>
+
+                <!-- LLISTAT -->
+                <div class="row lista1" id="containerListaOperari">
+                    <div data-role="collapsible-set" data-filter="true" data-inset="true" id="collapsiblesetForFilterOperariPerVerificar" data-input="#searchForCollapsibleSetOperariPerVerificar">
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" class="footer">
+
+            </div>
+
+        </div>
+
+        <div data-role="page" class="pagina nova-incidencia pagines-operaris"  id="veureIncidenciaOperari">
+
+            <div data-role="header" class="header">
+                <a href="#" class="back"  data-rel="back" data-transition="slide"></a>
+                <h4>Detalls de la incidència</h4>
+            </div>
+
+            <div data-role="content" class="container-fluid" >
+                <div class="row">
+                    <div class="col-xs-12 info">
+                        <b>Tipus d'incidència</b>
+                        <p id="tipusIncidenciaP2Operari"></p>
+                        <b>Descripció de la incidència</b>
+                        <p id="descIncidenciaP2Operari"></p>
+                        <b>Lloc i dia</b>
+                        <p id="adresaIncidenciaP2Operari"></p>
+                        <p id="dataIncidenciaP2Operari"></p>
+                        <div class="imgIncidencia"><img src="images/no-img-incid.png" id="imgIncidenciaZOperari" alt="CLICKINCIDENCIES" title="Incidència"></div>
+                        <div class="col-xs-12">
+                            <b>Incidència resolta</b>
+                            <input data-role="none"  type="checkbox" value="1" name="incidenciaResolta" id="incidenciaResolta">
+                        </div>
+                        <div class="col-xs-12">
+                            <b>Comentaris anteriors</b>
+                            <p id="comentariIncidenciaP2OperariAnteriors"></p>
+                        </div>
+                        <b>Escriu el teu comentari</b>
+                        <textarea name="comentariIncidenciaP2Operari" id="comentariIncidenciaP2Operari"></textarea>
+                        <div class="col-sm-12"><button type="button" onClick="enviarActualitzacioIncidencia();">Envia l'actualització</button></div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" class="footer">
+
+            </div>
+
+        </div>
+
+
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+        <!--###################               ONCAPDEPERA            ###########################-->
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+
+
+        <!--////////////////////    HOME  ///////////////////////////////-->
+
+        <div data-role="page" class="oncapdepera pagina info-turisme"  id="oncapdepera-home">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_1">Capdepera</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-on-home" class=" " >
+                <!--a data-role="none" data-transition="slide" href="#oncapdepera-incidencia">
+                    <div class="col-xs-12 menu doble">
+                        <div class="icono-menu"><span class="icon informa"></span></div>
+                        <span><span class="literal" data-literal="msg_on_men_6">Informa</span><br><span class="literal" data-literal="msg_on_men_6b">d'incidències</span></span>
+                    </div>
+                </a-->
+<!--                <a data-role="none" data-transition="slide" href="#oncapdepera-sugerencia">
+                    <div class="col-xs-12 menu">
+                        <div class="icono-menu"><span class="icona sug "></span></div>
+                        <span class="literal" data-literal="msg_menu_11">Sugerencia</span>
+                    </div>
+                </a> -->
+                <div class="col-xs-12 menu doble">
+                    <div class="icono-menu"><span class="icon visites"></span></div>
+                    <span><span class="literal" data-literal="msg_on_men_1">Visites</span><br><span class="literal" data-literal="msg_on_men_1b">turístiques</span></span>
+                    <ul class="sub-menu" id="m-visites">
+                    </ul>
+                </div>
+                <div class="col-xs-12 menu doble">
+                    <a href="#oncapdepera-reserva" data-role="none" data-transition="slide">
+                        <div class="icono-menu"><span class="ico res"></span></div>
+                        <span class="literal" style="margin-left: 10px;margin-top: 18px;" data-literal="msg_menu_10">Reserva marina</span>
+                    </a>
+                </div>
+                <div class="col-xs-12 menu doble">
+                    <a href="#posidonia-presentacio" data-role="none" data-transition="slide"><!---->
+                        <div class="icono-menu "><span class="posidonia pos"></span></div>
+                        <span class="literal" style="margin-left: 10px;margin-top: 18px;" data-literal="msg_menu_13">Mapa Posidònia</span>
+                    </a>
+                </div>
+                <div class="col-xs-12 menu doble">
+                    <div class="icono-menu"><span class="icon festes"></span></div>
+                    <span><span class="literal" data-literal="msg_on_men_2">Festes</span><br><span class="literal" data-literal="msg_on_men_2b">populars</span></span>
+                    <ul class="sub-menu" id="m-festes">
+                    </ul>
+                </div>
+<!--                <a data-role="none" data-transition="slide" href="#oncapdepera-serveis">
+                    <div class="col-xs-12 menu">
+                        <div class="icono-menu"><span class="icon serveis"></span></div>
+                        <span class="literal" data-literal="msg_on_men_3">Serveis</span>
+                    </div>
+                </a>               -->
+                <div class="col-xs-12 menu doble">
+                    <div class="icono-menu"><span class="icon nuclis"></span></div>
+                    <span><span class="literal" data-literal="msg_on_men_4">Nuclis</span><br><span class="literal" data-literal="msg_on_men_4b">urbans</span></span>
+                    <ul class="sub-menu" id="m-nuclis">
+                    </ul>
+                </div>
+                <div class="col-xs-12 menu doble">
+                    <div class="icono-menu"><span class="icon-v2 rutes"></span></div>
+                    <span><span class="literal" data-literal="msg_on_men_5">Rutes de</span><br><span class="literal" data-literal="msg_on_men_5b">Senderisme</span></span>
+                    <ul class="sub-menu" id="m-rutes">
+                    </ul>
+                </div>
+                <div class="col-xs-12 menu doble">
+                    <div class="icono-menu"><span class="icon-v2 rutesCic"></span></div>
+                    <span><span class="literal" data-literal="msg_on_men_7">Rutes de</span><br><span class="literal" data-literal="msg_on_men_7b">Ciclisme</span></span>
+                    <ul class="sub-menu" id="m-rutes-c">
+                    </ul>
+                </div>
+                <div class="col-xs-12 menu doble">
+                    <a href="#radio-home" class=""  onclick="init.sendEstadistica('radio');" data-role="none" data-transition="slide">
+                    <div class="icono-menu"><span class="onRadio"></span><div class="icon-radio"></div></div>
+                    <span class="literal radio-text"  data-literal="msg_menu_5">Radio</span>
+                    </a>              
+                </div>
+
+            </div>
+        </div>
+        
+        <!--////////////////////    PRESENTACIÓ POSIDONIA  ///////////////////////////////-->
+        
+        <div data-role="page" class="oncapdepera pagina info-turisme"  id="posidonia-presentacio">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8">Oncapdepera</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+             
+            <div data-role="content" class=""  id="presentacio">
+                <h1 class="literal text-center" data-literal="msg_menu_13">Mapa Posidonia</h1>
+                <p class="literal" data-literal="pos_general"></p>
+                <div class="row">
+                    <div class="col-xs-4 col-xs-offset-4">
+                        <a data-role="none" data-transition="slide" href="#oncapdepera-posidonia" onclick="mapapos.mapaPosidonia();" class="btn btn-success center-block" style="margin-top: 30px;color: white;">Mapa</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        
+         <!--////////////////////    MAPA POSIDONIA  ///////////////////////////////-->
+         
+         <div data-role="page" class="oncapdepera pagina info-turisme"  id="oncapdepera-posidonia">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8">Oncapdepera</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+             <p id="infoPos"></p>
+            <div data-role="content" class=""  id="mapaPos">
+
+            </div>
+        </div>
+         
+
+        <!--////////////////////    FITXA  ///////////////////////////////-->
+
+        <div data-role="page" class="oncapdepera pagina info-turisme"  id="oncapdepera-fitxa">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8">Oncapdepera</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" class=""  id="oncpd-html">
+
+            </div>
+        </div>
+
+        <!--////////////////////    oncapdepera-incidencia  ///////////////////////////////-->
+
+        <div data-role="page" class="oncapdepera  pagina info-turisme"  id="oncapdepera-incidencia">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_6">Incidència</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" class=""  id="oncpd-html">
+                <div class="row">
+                    <form id="form-incidenciaOnCap">
+                        <h2><span class="literal" data-literal="msg_on_men_6">Informa de</span> <span class="literal" data-literal="msg_on_men_6b">una incidència</span></h2>
+                        <!--                        <div class="col-xs-12">
+                                                    <label class="literal" data-literal="msg_form_7">Nom</label><input type="text" id="nom" name="nom" value="">
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <label class="literal" data-literal="msg_form_8">Llinatges</label><input type="text" id="llinatges" name="llinatges" value="">
+                                                </div>-->
+                        <div class="col-xs-12">
+                            <label>E-mail</label><input type="email" id="emailOnCap" name="email" value="">
+                        </div>
+                        <div class="col-xs-12">
+                            <label class="literal" data-literal="msg_form_1">Assumpte</label><input type="text" id="assumpteOnCap" name="assumpte" value="">
+                        </div>
+                        <div class="col-xs-12">
+                            <label class="literal" data-literal="msg_form_2">Descripció</label>
+                        </div>
+                        <div class="col-xs-12">
+                            <textarea name="descripcio" id="descripcioOnCap" maxlength="200"></textarea>
+                        </div>
+                        <div class="col-xs-12">
+                            <label class="literal" data-literal="msg_form_3">Imatge</label>
+                        </div>
+                        <div class="col-xs-2 col-xs-offset-8"><div class="getImg" onClick="init.img.getImg();">
+                                <img src="icons/img-camera-blau.png"  alt="CLICKINCIDENCIES" title="Afegir Imatge"/></div>
+                        </div>
+                        <div class="col-xs-2"> <div class="getImg-gallery" onClick="init.img.getImgLibrary();">
+                                <img src="icons/img-gallery-blau.png"  alt="CLICKINCIDENCIES" title="Afegir Imatge"/></div> 
+                        </div>
+                        <div class="col-xs-12">    
+                            <img id="imgIncidenciaOnCap" src="images/no-img-3.jpg">
+                        </div>
+                        <div class="col-xs-12">
+                            <label class="literal" data-literal="msg_form_4">Ubicació</label>
+                            <a href="#" data-role="none" onclick="mapaInc.initMap();init.mapa.mapaUbicacio();" class="literal" data-literal="inc_14">Indicar una altre ubicació al mapa</a><!--init.mapa.mapaUbicacio();-->
+                        </div>
+                        <div class="col-xs-12">
+                            <label class="literal" data-literal="msg_form_5">Adressa</label><input  id="adresaIncidenciaOnCap" name="adresaIncidenciaOnCap" value="">
+                            <label class="literal" data-literal="msg_form_6">Població</label><input  id="poblacioIncidenciaOnCap" name="poblacioIncidenciaOnCap" value="">
+                        </div>
+                        <div class="col-xs-12">
+                            <button id="botoIncidencia" type="button" onclick="init.incidencia.enviaIncidencia();" class="boto literal" data-literal="sug_1">Enviar</button><!--init.incidencia.enviaIncidencia();-->
+                        </div>
+                        <input type="hidden" id="valorCategoria" name="categoria" value="">
+                        <input type="hidden" id="latitutIncidenciaOnCap" name="latitutIncidenciaOnCap" value="">
+                        <input type="hidden" id="longitutIncidenciaOnCap" name="longitutIncidenciaOnCap" value="">
+                        <!--                        <input type="hidden" id="funcio" name="funcio" value="novaIncidenciaOnCap">-->
+                    </form>                   
+                </div>
+            </div>
+        </div>
+
+
+        <!--////////////////////    RESERVA MARINA  ///////////////////////////////-->
+
+        <div data-role="page" class="oncapdepera pagina info-turisme"  id="oncapdepera-reserva">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_10">Reserva marina</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" class=""  id="oncpd-html">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2 class="literal" data-literal="msg_reserva_ttl">EXPLORA LA RESERVA MARINA DE LLEVANT</h2>
+                        <h4 class="literal" data-literal="msg_reserva_subttl">Red ecológica Europea de conservación de la biodiversidad</h4>
+                    </div>
+                    <div class="col-xs-12">
+                        <img id="img-reserva" src="http://www.gestcap.com/App/img/marinare_3.jpg">
+                    </div>
+                    <div class="col-xs-12">
+                        <p class="literal" data-literal="msg_reserva_p1">El municipio, situado al noreste de la isla de Mallorca constituye el auténtico pulmón del Mediterráneo, ya que gran parte de sus aguas se localizan en la Reserva Marina de Llevant.</p>
+                        <p class="literal" data-literal="msg_reserva_p2">En 2007, el Gobierno Balear aprobó mediante decreto, la creación de la Reserva Marítima del Llevant de Mallorca, situada al nordeste de la Isla, entre cala Mata y Cap des Freu.</p>
+                        <p class="literal" data-literal="msg_reserva_p3">Fue elegida este área marina por presentar una gran diversidad de hábitats y de comunidades ícticas y bentónicas. Hasta el momento se han contabilizado 32 comunidades, la mayoría en buen estado de conservación, y más de 900 especies, principalmente algas, peces y moluscos.</p>
+                        <p class="literal" data-literal="msg_reserva_p4">La costa está formada por numerosos acantilados de origen calcáreo caracterizados por la formación de cuevas submarinas. El litoral combina zonas rocosas con playas de arena fina, algunas de ellas consideradas vírgenes.</p>
+                        <p class="literal" data-literal="msg_reserva_p5">Los fondos marinos comprendidos en la reserva son variados y de gran valor ecológico y pesquero. La zona noroccidental de la reserva se caracteriza por la presencia uniforme de una extensa y frondosa pradera de Posidonia oceánica asentada sobre fondo rocoso, sucedida por fondos duros coralígenos y de maërl muy bien estructurados y conservados. La parte nororiental presenta unos fondos más fragmentados alternando fondos blandos con manchas dispersas de pradera de Posidonia oceánica, fondos de arena muy desarrollados frente a las playas, y fondos detríticos costeros y precoralígenos.</p>
+                        <p class="literal" data-literal="msg_reserva_p6">Las principales comunidades biológicas se desarrollan alrededor de las praderas de Posidonia oceánica consideradas como zonas de elevada producción biológica y de refugio y alevinaje de numerosas especies de interés pesquero.</p>
+                        <p class="literal" data-literal="msg_reserva_p7">Otras comunidades muy representadas en la zona son las de fondos rocosos duros que cuentan con la presencia de mero (Epinephelus marginatus), cabracho (Scorpaena scrofa) y corvallo (Sciaena umbra) como especies ícticas destacadas junto con crustáceos como la langosta roja (Palinurus elephas), la cigarra (Scyllarides latus) y el bogavante (Homarus gammarus).Destaca la presencia de fondos coralígenos representados por variedad de algas rodofíceas calcáreas libres (maërl) del tipo Phymatolithon sp., Lithothamnion sp. y Peyssonnelia sp., hábitat donde se refugia el cuerno marino Charonia rubicunda).También son muy singulares las comunidades cavernícolas del Cabo del Freu, únicas en el archipiélago. Además los fondos blandos albergan especies emblemáticas como la nacra (Pinna nobilis) y el galán o raor (Xyrichthys novacula). Dentro de las aguas de la reserva se reúnen además algunas especies de paso como la lampuga (Coryphaena hippurus) y el calamar (Loligo vulgaris) en la época de verano-otoño, ambas especies muy apreciadas comercialmente.</p>
+                    </div>
+                    <div class="col-xs-12">
+                        <img id="img-reserva-mapa" src="http://www.gestcap.com/App/img/mapa.jpg">
+                    </div>
+                    <div class="col-xs-4 col-xs-offset-4">
+                        <div class="link">
+                            <a href="#" onclick="window.open('http://www.gestcap.com/App/img/especies.pdf', 'system'); return false;"><span class="literal" data-literal="msg_des_pdf_esp">DESCARGAR PDF ESPECIES</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--////////////////////    MAPA  ///////////////////////////////-->
+
+        <div data-role="page" class="oncapdepera  pagina info-turisme"  id="oncapdepera-ubicacio">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal"  data-literal="msg_menu_6">Incidència</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" class=""  id="oncpd-html">
+
+                <div id="mapa" class="mapa"></div>
+            </div>       
+        </div>
+
+
+
+
+        <!--////////////////////    SERVEIS  ///////////////////////////////-->
+
+        <div data-role="page" class="oncapdepera pagina info-turisme"  id="oncapdepera-serveis">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8" >Oncapdepera</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-on-serveis" class="" >
+                <ul class="row serveis-menu nav nav-tabs">
+                    <li class="col-xs-4 active">
+                        <a data-toggle="tab" href="#page-transport">
+                            <i class="icon ico-transport"></i>
+                            <span class="literal" data-literal="msg_on_menu1">Transport</span>
+                        </a>
+                    </li>
+                    <li class="col-xs-4">
+                        <a data-toggle="tab" href="#page-salut">
+                            <i class="icon ico-salut"></i>
+                            <span class="literal" data-literal="msg_on_menu2">Health</span>
+                        </a>
+                    </li>
+                    <li class="col-xs-4">
+                        <a data-toggle="tab" href="#page-turistica">
+                            <i class="icon ico-info"></i>
+                            <span class="literal" data-literal="msg_on_menu3">Tourist information</span>
+                        </a>
+                    </li>
+                    <li class="col-xs-4 mercat">
+                        <a data-toggle="tab" href="#page-mercats">
+                            <i class="icon ico-mercats"></i>
+                            <span class="literal" data-literal="msg_on_menu4">Markets</span>
+                        </a>
+                    </li>
+                    <li class="col-xs-4">
+                        <a data-toggle="tab" href="#page-seguretat">
+                            <i class="icon ico-seguretat"></i>
+                            <span class="literal" data-literal="msg_on_menu5">Security</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="row servei-contingut tab-pane fade in active" id="page-transport">
+                        <div class="col-xs-12">
+                            <span class="literal" data-literal="msg_on_servei1">Taxis</span>
+                            <span><a href="tel:971826969">971 82 69 69 </a></span>
+                            <span>Plaça dels Pins, S/N Cala Ratjada</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span class="literal" data-literal="msg_on_servei2">Mini Train</span>
+                            <span data-toggle="modal" data-target="#horarisTren" class="literal" data-literal="msg_on_servei2b">Timetable</span>
+                        </div>
+                    </div>
+
+                    <div class="row servei-contingut tab-pane fade" id="page-salut">
+                        <div class="col-xs-12">
+                            <span>Pac Cala Ratjada</span>
+                            <span><a href="tel:971566550">971 566 550</a></span>
+                            <span>C/Juan Sebastian Elcano 47 - Cala Ratjada</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span>PAC CAPDEPERA</span>
+                            <span><a href="tel:971563006">971 563 006</a></span>
+                            <span>Carrer Nou, 12 - Capdepera</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><span class="literal" data-literal="msg_on_hospital">Hospital</span> de Manacor</span>
+                            <span><a href="tel:971847001">971 847 001</a></span>
+                            <span>Ctra. Manacor - Alcudia S/N - Manacor</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><span class="literal" data-literal="msg_on_hospital">Hospital</span> de llevant</span>
+                            <span><a href="tel:971822401">971 822 401</a></span>
+                            <span>Escamarlà, 6 - Porto Cristo</span>
+                        </div>
+                        <!-- ----->
+                        <div class="col-xs-12">
+                            <span><span class="literal" data-literal="msg_on_farmacia">Pharmacy</span> CARLOS ANTICH</span>
+                            <span><a href="tel:971563396">971 563 396</a></span>
+                            <span>Leonor Servera, 51 - Cala Ratjada</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><span class="literal" data-literal="msg_on_farmacia">Pharmacy</span> CONCHA PARTERA</span>
+                            <span><a href="tel:971563062">971 563 062</a></span>
+                            <span>Via Mallorca, 29 - Cala Ratjada</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><span class="literal" data-literal="msg_on_farmacia">Pharmacy</span> SONIA GARCÍA</span>
+                            <span><a href="tel:971564301">971 564 301</a></span>
+                            <span>Cala Agulla, 96 - Cala Ratjada</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><span class="literal" data-literal="msg_on_farmacia">Pharmacy</span> SIRER</span>
+                            <span><a href="tel:971819914">971 819 914</a></span>
+                            <span>Juan Carlos I, 111 - Cala Ratjada</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><span class="literal" data-literal="msg_on_farmacia">Pharmacy</span> FORNARIS</span>
+                            <span><a href="tel:971 563 135">971 563 135</a></span>
+                            <span>Llum, 18 - Capdepera</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><span class="literal" data-literal="msg_on_farmacia">Pharmacy</span> CRISTINA ANTICH</span>
+                            <span><a href="tel:971841114">971 841 114</a></span>
+                            <span>Nuredduna, 23 - Canyamel</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><span class="literal" data-literal="msg_on_farmacia">Pharmacy</span> CALA MESQUIDA</span>
+                            <span><a href="tel:674882008">674 882 008</a></span>
+                            <span>Cala Mesquida</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><span class="literal" data-literal="msg_on_dentista_1">Dental Practice</span> C LUTZ M.MEYER</span>
+                            <span><a href="tel:971588164">971 588 164</a></span>
+                            <span>Juan Sebastian El Cano, 34 - Cala Ratjada</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><span class="literal" data-literal="msg_on_dentista_2">Dentist</span> CA’S DENTISTA</span>
+                            <span><a href="tel:971564860">971 564 860</a></span>
+                            <span>Nereidas, 30 - Cala Ratjada</span>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="row servei-contingut tab-pane fade" id="page-turistica">
+                        <div class="col-xs-12">
+                            <span class="literal" data-literal="of_pins">OFICINA TURÍSTICA PLAÇA DELS PINS</span>
+                            <span>971819467</span>
+                            <span>Plaça dels pins. S/N - Cala Ratjada</span>
+                            <span>oitcalarajada@ajcapdepera.net</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span class="literal" data-literal="of_cap">OFICINA TURÍSTICA CAPDEPERA</span>
+                            <span>971 556479</span>
+                            <span>C/ Centre, 9 Edifici Can Melis - Capdepera</span>
+                            <span>oitcapdepera@ajcapdepera.net</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span class="literal" data-literal="of_can">OFICINA TURÍSTICA CANYAMEL</span>
+                            <span>971 818467</span>
+                            <span>Via Pins de Ses Vegues s/n - Canyamel</span>
+                            <span>oitcanyamel@ajcapdepera.net</span>
+                        </div>
+<!--                        <div class="col-xs-12">
+                            <span>Inca</span>
+                            <span class="literal" data-literal="msg_cada_dijous">Every Thursday</span>
+                            <span>C/ D'es Born - Inca</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span>Son Servera</span>
+                            <span class="literal" data-literal="msg_cada_divendres">Every Friday</span>
+                            <span>Plaça Sant Joan - Son Servera</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><b>CALA RATJADA</b></span>
+                            <span class="literal" data-literal="msg_cada_dissabte">Every Saturday</span>
+                            <span>Plaça dels pins - Cala Ratjada</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span>Sa Pobla</span>
+                            <span class="literal" data-literal="msg_cada_diumenge">Every Sunday</span>
+                            <span>Plaça Constitució - Sa Pobla</span>
+                        </div>-->
+                    </div>
+
+                    <div class="row servei-contingut tab-pane fade" id="page-mercats">
+                        <div class="col-xs-12">
+                            <span>Manacor</span>
+                            <span class="literal" data-literal="msg_cada_dilluns">Every Monday</span>
+                            <span onclick="init.mapa.puntAlMapa(39.566719, 3.211743, 'Plaça Ramón Llull - Manacor');">Plaça Ramón Llull - Manacor</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span>Artà</span>
+                            <span class="literal" data-literal="msg_cada_dimarts">Every Tuesday</span>
+                            <span onclick="init.mapa.puntAlMapa(39.693224, 3.349408, 'Plaça del conqueridor - Artà');">Plaça del conqueridor - Artà</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><b>CAPDEPERA</b></span>
+                            <span class="literal" data-literal="msg_cada_dimecres">Every wednesday</span>
+                            <span onclick="init.mapa.puntAlMapa(39.702253, 3.433891, 'Plaça de l\'Orient - Capdepera');">Plaça de l'Orient - Capdepera</span>
+                        </div>
+                        <div class="col-xs-12"> 
+                            <span>Inca</span>
+                            <span class="literal" data-literal="msg_cada_dijous">Every Thursday</span>
+                            <span onclick="init.mapa.puntAlMapa(39.720713, 2.910901, 'C/ D\'es Born - Inca');">C/ D'es Born - Inca</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span>Son Servera</span>
+                            <span class="literal" data-literal="msg_cada_divendres">Every Friday</span>
+                            <span onclick="init.mapa.puntAlMapa(39.620522, 3.360138, 'Plaça Sant Joan - Son Servera');">Plaça Sant Joan - Son Servera</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span><b>CALA RATJADA</b></span>
+                            <span class="literal" data-literal="msg_cada_dissabte">Every Saturday</span>
+                            <span onclick="init.mapa.puntAlMapa(39.710727, 3.460120, 'Plaça dels pins - Cala Ratjada');">Plaça dels pins - Cala Ratjada</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span>Sa Pobla</span>
+                            <span class="literal" data-literal="msg_cada_diumenge">Every Sunday</span>
+                            <span onclick="init.mapa.puntAlMapa(39.769855, 3.024938, 'Plaça Constitució - Sa Pobla');">Plaça Constitució - Sa Pobla</span>
+                        </div>
+                    </div>
+
+                    <div class="row servei-contingut tab-pane fade" id="page-seguretat">
+                        <div class="col-xs-12">
+                            <span>GUARDIA CIVIL CALA RATJADA</span>
+                            <span><a href="tel:971565673">971 565 673</a></span>
+                            <span>Explanada des moll - Cala Ratjada</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span>POLICIA LOCAL CAPDEPERA</span>
+                            <span><a href="tel:971565463">971 565 463</a></span>
+                            <span>C/ Roses s/n - Capdepera</span>
+                        </div>
+                        <div class="col-xs-12">
+                            <span>POLICIA LOCAL CALA RATJADA</span>
+                            <span><a href="tel:971818467">971 818 467</a></span>
+                            <span>C/ Agulla, 50 Edificio Cap Vermell - Cala Ratjada</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="horarisTren">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <img src="http://gestcap.com/App/img/horari_tren_turistic.jpg"/>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary literal" data-dismiss="modal" data-literal="msg_close">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--####################################################################################-->
+        <!--###################                 ESPORTS              ###########################-->
+        <!--####################################################################################-->
+
+
+        <!--////////////////////    HOME  ///////////////////////////////-->
+
+        <div data-role="page" class="esports pagina info-turisme"  id="esports-home">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_3">Esports</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-esports-home" class=" " >
+                <div class="row llista-esports" id="llista-esports" ></div>
+            </div>
+        </div>
+
+        <!--////////////////////    fitxa  ///////////////////////////////-->
+
+        <div data-role="page" class="esports pagina info-turisme fitxa"  id="esports-fitxa">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_3">Esports</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-esports-fitxa" class=" " >
+                <div class="row">
+                    <div class="col-xs-12 img" id="img-esport"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12" id="fitxa-esportiva"></div>
+                </div>
+            </div>
+        </div>
+
+        <!--####################################################################################-->
+        <!--###################                 MUSICA              ###########################-->
+        <!--####################################################################################-->
+
+
+        <!--////////////////////    HOME  ///////////////////////////////-->
+
+        <div data-role="page" class="esports pagina info-turisme musica"  id="musica-home">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_3b">Música</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-musica-home" class=" " >
+                <div class="row llista-esports" id="llista-musica"></div>
+            </div>
+        </div>
+
+        <!--////////////////////    fitxa  ///////////////////////////////-->
+
+        <div data-role="page" class="esports pagina info-turisme fitxa musica"  id="musica-fitxa">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_3b">Música</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-musica-fitxa" class=" " >
+                <div class="row">
+                    <div class="col-xs-12 img" id="img-musica"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12" id="fitxa-musica"></div>
+                </div>
+            </div>
+        </div>
+
+        <!--####################################################################################-->
+        <!--###################                 ESDEVENIMENT           #########################-->
+        <!--####################################################################################-->
+
+
+        <!--////////////////////    HOME  ///////////////////////////////-->
+
+        <div data-role="page" class="esdeveniments pagina info-turisme"  id="esdeveniments-home">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_2">Esdeveniments</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-esdeveniments-home" class=" " >
+                <div class="row" id="llista-esdeveniments"></div>
+            </div>
+        </div>
+
+        <!--////////////////////    cine  ///////////////////////////////-->
+
+        <div data-role="page" class="esdeveniments pagina info-turisme"  id="cine-home">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_12">Cine</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-esdeveniments-home" class=" " >
+                <div class="row" id="llista-cine"></div>
+            </div>
+        </div>
+
+        <!--////////////////////    fitxa  ///////////////////////////////-->
+
+        <div data-role="page" class="esdeveniments pagina info-turisme fitxa"  id="esdeveniments-fitxa">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_2">Esdeveniments</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-esdeveniments-fitxa" class=" " >
+                <div class="row">
+                    <div class="col-xs-12 img" id="img_esdev"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12" id="desc_esdev"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+        <!--###################                 NOTICIES             ###########################-->
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+
+
+        <!--////////////////////    HOME  ///////////////////////////////-->
+
+        <div data-role="page" class="noticies pagina info-turisme"  id="noticies-home">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_4">Notícies</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-noticies-home" class=" " >
+                <div class="row" id="llista-noticies"></div>
+            </div>
+        </div>
+
+        <!--////////////////////    fitxa  ///////////////////////////////-->
+
+        <div data-role="page" class="noticies pagina info-turisme fitxa"  id="noticies-fitxa">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_4">Notícies</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-esdeveniments-fitxa" class=" " >
+                <div class="row">
+                    <div class="col-xs-12 img" id="img-noticia"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12" id="desc-noticia"></div>
+                </div>
+            </div>
+        </div>
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+        <!--###################                 SUGERENCIA             ###########################-->
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+
+        <div data-role="page" class="noticies pagina info-turisme fitxa"  id="oncapdepera-sugerencia">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_11">Sugerència</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-sugerencia-fitxa" class=" " >
+                <form id="form-sugerencia">
+                    <div class="row" style="margin-top: 40px;">
+                        <div class="col-xs-12">
+                            <label for="emailSugerencia">E-mail</label>
+                            <input id="emailSugerencia" name="emailSugerencia" type="email">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 20px;">
+                        <div class="col-xs-12">
+                            <label for="sugerencia" class="literal" data-literal="msg_menu_11">Sugerència</label>
+                            <textarea id="sugerencia" maxlength="200" name="sugerencia"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button id="botoSugerencia" type="button" onclick="init.sugerencia.enviaSugerencia();" style="max-width: 160px;" class="boto literal pull-right" data-literal="sug_1">Enviar</button>                        
+                        </div>
+                    </div>
+                    <input type="hidden" id="funcio" name="funcio" value="novaSugerenciaOnCap">
+                </form>
+            </div>
+        </div>
+
+
+
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+        <!--###################                   RADIO              ###########################-->
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+
+
+        <!--////////////////////    HOME  ///////////////////////////////-->
+
+        <div data-role="page" class="radio_ pagina info-turisme"  id="radio-home">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_5">Ràdio</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content">
+                <div class="row">
+                    <div class="img" style="background-image: url('images/logo-radio.png');"></div>
+                </div>
+                <div class="row">
+                    <!--div class="col-xs-12"><i class="icon-tur ico-radio"></i></div-->
+                    <div class="col-xs-12"><h3>Ràdio Capdepera</h3></div>
+                    <div class="col-xs-12">
+                        <audio id="radio_capdepera" src=""></audio>
+                        <button id="playStop" class="radio" onclick="init.radio.playStop()"><i class="icon ico-play"></i></button>
+                        <div id="sound"><img src="icons/sound.gif" title="sound"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--####################################################################################-->
+        <!--###################                   AVISOS              ###########################-->
+        <!--####################################################################################-->
+
+
+        <!--////////////////////    llista  ///////////////////////////////-->
+
+        <div data-role="page" class=" pagina info-turisme avisos-page"  id="avisos">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_7">Avisos</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content">
+                <div class="row" id="avisos-body">
+
+                </div>
+            </div>
+        </div>
+
+        <!--////////////////////    fitxa  ///////////////////////////////-->
+
+        <div data-role="page" class=" pagina info-turisme avisos-page"  id="avisos-fitxa">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_7">Avisos</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content">
+                <div class="row" id="avisos-fitxa-body">
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+        <!--###################                   LOGIN              ###########################-->
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+
+
+        <!--////////////////////    HOME  ///////////////////////////////-->
+
+        <div data-role="page" class="login pagina info-turisme"  id="loggin-home">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_restringit">ACCÉS RESTRINGIT</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content">
+                <div class="row">
+                    <div class="col-xs-12 img" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Capdepera_von_der_Festung.JPG/1200px-Capdepera_von_der_Festung.JPG);"></div>
+                </div>
+                <div class="row">
+                    <div id="login-form">
+                        <label class="literal" data-literal="msg_usuari">Usuari</label>
+                        <input type="text" id="usuari-login" name="usuari-login" maxlength="50">
+                        <label class="literal" data-literal="msg_pass">Contrasenya</label>
+                        <input type="password" id="pass-login" name="pass-login" maxlength="50">
+                    </div>
+                    <button class="literal" onclick="init.session.login();" data-literal="msg_entra">Entra-hi</button>
+                    <div id="login-form-out">
+                        <button onclick="init.session.logOut();">Log-Out</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+
+
+
+        <!--////////////////////    ALERTA  ///////////////////////////////-->
+        <div data-role="dialog" id="sure" data-title="Are you sure?">
+            <div data-role="content">
+                <h3 class="sure-1"><img id="logo-AreYouSure" src="icons/alert2.png" ></h3> 
+                <p class="sure-2"></p>
+                <a href="#" class="sure-do" data-role="button" data-theme="b" >Aceptar</a>
+            </div>
+        </div>
+
+
+        <!--///////////////////    VISITA   //////////////////////////////////-->
+
+        <div data-role="page" class="pagina info-wow"  id="visita">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="cer_4">Visita</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <a href="#categories"><button class="botoCat literal" data-literal="cer_1" onclick="init.wow.getCategories();">Categoria</button></a>
+                </div>
+                <div class="col-xs-6">
+                    <button class="botoCat literal" data-literal="cer_2" onclick="init.wow.getEtnosProxims()">Proximitat</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="mapaWow" class="midaMapa"></div>
+                </div>
+            </div>
+        </div>
+        
+         <!--///////////////////    CATEGORIES   //////////////////////////////////-->
+
+         <div data-role="page" class="pagina info-wow"  id="categories">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide" onclick="init.wow.resetBoto();"></a></div>
+                    <div class="col-xs-8 literal" data-literal="cer_4">Visita</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+             <form id="formCats">
+            <div class="row">
+                <div class="col-xs-6">
+                    <a style="text-decoration:none;color: black;" class="botoCat boto literal" id="botoSelect" data-check="1" data-literal="cer_6" onclick="mapawow.checkCat();">Seleccionar tot</a>
+                </div>
+                <div class="col-xs-6">
+                    <a href="#" data-rel="back" data-transition="slide"><button style="border: 1px solid black;" class="botoCat literal" data-literal="cer_3"  type="submit" onclick="init.wow.getEtnos();init.wow.resetBoto();">Acceptar</button></a>
+                </div>
+            </div>
+             <div class="row">
+                 <div class="col-xs-12" id="llista-categories">
+                     
+                 </div>
+             </div>
+             </form>
+        </div>
+         
+         <!--///////////////////    FITXA-ETNO   //////////////////////////////////-->
+
+         <div data-role="page" class="pagina info-wow"  id="fitxa-etno">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="cer_4">Visita</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div class="row" id="fitxa">
+                
+            </div>          
+        </div>
+         
+        <!-- PHONEGAP AND PLUGINS -->
+        <script src="phonegap.js" charset="utf-8" type="text/javascript"></script>
+        <script src="cordova.js"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova_plugins.js"></script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbCsdbOZ31x79tk8PDVHsW3AL_zgNseGo&libraries=geometry&sensor=false">       
+        </script>
+<!--        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDqxZYIMg9mxg867kh9CQ4zfwsxFUfxg0&libraries=geometry&sensor=false">       
+        </script>-->
+    </body>
+</html>
+
+

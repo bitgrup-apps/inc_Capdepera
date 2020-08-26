@@ -1,0 +1,7 @@
+{
+    "name": "OnCapdepera",
+    "type": "custom",
+    "integrations": {
+      "cordova": {}
+    }
+  }

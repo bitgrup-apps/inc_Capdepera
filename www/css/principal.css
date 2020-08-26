@@ -1,0 +1,687 @@
+/* CSS Document */
+@import url(fonts/roboto/roboto.css);
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+@import url(fonts/montserrat/montserrat.css);
+@import url(fonts/calibri/calibri.css);
+@import url(fonts/helena/helena.css);
+@import url(fonts/material-design/material-design.css);
+
+
+/*### BOOTSTRAP ####*/
+img{width:100%;}
+.container-fluid{padding:0;width:100%}
+.container-marges{padding:0 2%; max-width:1400px;}
+.row{margin:0;}
+.full{margin-left:-2%; margin-right:-2%; width:104%;}
+.col-sm-12, .col-xs-12{padding:0;}
+.vcenter {    display: inline-block;    vertical-align: middle;    float: none; margin-left:-1%; margin-right:-1%;}
+.vcenter-bottom{ display: inline-block;    vertical-align:bottom;    float: none; }
+
+/*###### GENERAL #########*/
+body{height:100%;font-family: 'Quicksand', sans-serif; }
+.header.ui-header{ height:12%; background-image: url('../images/fondo-header.png'); border:none;min-height: 17vw;}
+.ui-content{height:88%;-webkit-overflow-scrolling: touch; }
+.footer.ui-footer{height:12%; border:none; overflow:hidden; background-color:transparent;}
+.ui-page-theme-a .back.ui-btn{background:url('../icons/enrera.png'); background-size:11px auto; background-position:center center; background-repeat:no-repeat; border:none; position:absolute; left:5%; top:70%; margin-top:-8px; box-shadow:none; width:27px; height:18px;}
+.seguent.ui-btn-right{background:url('../icons/endavant-ico.png'); background-size:19px auto; background-position:center center; background-repeat:no-repeat; border:none; position:absolute; right:2em; top:70%; margin-top:-8px; box-shadow:none; width:27px; height:18px;}
+.final.ui-btn-right{  background:url('../icons/endavant-ico.png'); background-size:19px auto; background-position:center center; background-repeat:no-repeat; border:none; position:absolute; right:2em; top:70%; margin-top:-8px; box-shadow:none; width:27px; height:18px;}
+.ui-mobile-viewport{font-family: 'Quicksand', sans-serif; font-weight:300;  background:none !important; background-color:transparent !important;}
+.ui-mobile .ui-page{background:url('../images/fondo.png');background-size:100% 100%; height:100%;}
+.ui-page-theme-a{background:transparent;}
+.text-avis{padding:2em 5px 0; font-style: italic; font-size: 12px; color: RGB(153, 153, 153)}
+
+a{transition:all 0.8s ease-in-out;}
+a:hover,a:active, a:focus{text-decoration:none;opacity:0.7;}
+::-webkit-input-placeholder{color:#999;}:-moz-placeholder{color:#999; opacity: 1;}::-moz-placeholder {color:#999;opacity: 1;}:-ms-input-placeholder { color:#999;}
+
+#loading{position:fixed; z-index:10; display:none; width:100%; height:100%; background-image:url('../icons/loading.gif'); background-color:rgba(256,256,256,0.7); background-size:19vw auto; background-position:center center; background-repeat:no-repeat;}
+
+.iconaPetita {zoom:0.5; -moz-transform:scale(0.5);-moz-transform-origin: 0 0;}
+
+/*######## TITOLS ##########*/
+h1{color:#fff; font-size:48px; text-align:center; font-weight:700; text-shadow:none; margin-top:30px;}
+h2{color:#fff; font-size: 36px; text-align: center; font-weight: 300; text-shadow:none;margin-top: 0;margin-bottom: 10vh;}
+.pagina h4.ui-title{font-size:13px; font-weight:600; color:#fff; text-shadow:none; padding-top:14%; margin:0;}
+h3{font-size:19px; color:#fff; text-align:center; text-shadow:none; margin-top:30px;}
+a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:center; font-weight:300; text-shadow:none;}
+
+/*######## ICONS ##########*/
+.icon{width:25px; height:22px; background-repeat:no-repeat; background-size:20px auto; background-position:center center; position:absolute; top:46%;}
+.ui-header.ui-header .search{background-image:url('../icons/search.png'); right:4%; margin-top:9px;}
+.ui-header.ui-header .plus{background-image:url('../icons/plus.png'); right:20%; margin-top:9px;} 
+.ui-header.ui-header .refresh{background-image:url('../icons/refresh.png'); right:12%; margin-top:9px;}
+.icon.ico-play{width:17vw; height:17vw; background-image: url('../icons/play.svg'); background-size: 15vw;top: 1.4vw;left: 1.4vw;}
+.icon.ico-play.ico-stop{background-image: url('../icons/stop.svg');}
+.icona.sug {background-image:url('../icons/conversation.svg'); background-position: 15px , 0;background-size: 35px 35px;background-repeat: no-repeat;background-color: #789130;}
+.icona.cinema {background-image:url('../icons/clapperboard.svg'); background-position: 15px , 0;background-size: 35px 35px;background-repeat: no-repeat;}
+
+
+/*######## MAPA ###################*/
+.mapa {width:100vw;height: 100%; min-height: 300px;}
+
+/*######## HOME - NOU ###################*/
+#home-nou .ui-content{background-image: url(../images/fondo_home.jpg); background-size: cover; background-position: center; height: 100vh;padding: 1vw 6vw;}
+#home-nou h1{  margin:6vh 0 2vh; text-align: center; font-size: 9vw; font-family: 'Quicksand';}
+#home-nou .logo{margin-bottom: 16vw;}
+#home-nou .pastilla{padding: 20vw 2vw 5vw 0vw; text-align: center; font-size: 3.5vw; color:#fff; font-weight: 500; text-shadow:none;display: inline-block; width: 110%; text-transform: uppercase;background-size: cover; background-position: center; background-repeat: no-repeat;}
+#home-nou .pastilla::before{position:absolute; width:20vw; height: 20vw; background-image: url(../icons/spriteoncdphome.svg); background-size: 200vw; content: " ";top: 2.5vw;left: 9.5vw;}
+#home-nou .pastilla.oncpd{border-style: solid; border-width: 0px 1px 0px 0px;}
+#home-nou .pastilla.oncpd::before{background-position:-18vw -12vw;}
+#home-nou .pastilla.esdevn{border-style: solid; border-width: 0px 1px 1px 0px;}
+#home-nou .pastilla.esdevn::before{background-position:-85vw -12vw;}
+#home-nou .pastilla.sprts{border-style: solid; border-width: 0px 1px 1px 0px;}
+#home-nou .pastilla.sprts::before{background-position:-120vw -12vw;}
+#home-nou .pastilla.notc{border-style: solid; border-width: 0px 1px 1px 0px;}
+#home-nou .pastilla.notc::before{background-position:-49vw -12vw;}
+#home-nou .pastilla.incd{border-style: solid; border-width: 0px 1px 1px 0px;}
+#home-nou .pastilla.incd::before{background-position:-19vw -39vw;}
+#home-nou .pastilla.msca{border-style: solid; border-width: 0px 0px 1px 0px;}
+#home-nou .pastilla.msca::before{background-position:-76vw -39vw;}
+/*#home-nou .pastilla.rdio{background-color: #d4df86;background-color: #d4df86;padding: 15px 20px;border-radius: 10px;margin-top:20px;}
+#home-nou .pastilla.rdio::before{background-position: -88vw -96vw;background-size: 110vw;width: 12vw;height: 12vw;left: 4vw;}
+#home-nou .radio_pastilla{float: right; margin-top: 8vh; width: 24vw;}
+#home-nou .radio_pastilla > a{ font-size: 3.5vw; border-radius: 12vw;padding: 14vw 0 0;height: 23vw; }
+#home-nou .radio_pastilla > a::before{background-size: 130vw;background-position: -104.8vw -114vw;top: 3vw;left: 6.5vw;width: 12vw;height: 12vw;}*/
+#home-nou .pastilla.rdio{border-style: solid; border-width: 0px 0px 1px 0px;}
+#home-nou .pastilla.rdio::before{background-position:-167vw -12vw; }
+#home-nou .pastilla.avisos{border-style: solid; border-width: 0px 1px 1px 0px;}
+#home-nou .pastilla.avisos::before{background-position:-100vw -39vw;}
+#home-nou .pastilla.senderisme{border-style: solid; border-width: 0px 0px 1px 1px;}
+#home-nou .pastilla.senderisme::before{background-position:-48vw -39vw;}
+#home-nou .pastilla.ciclisme{border-style: solid; border-width: 0px 1px 0px 0px;}
+#home-nou .pastilla.ciclisme::before{background-position:-130vw -39vw;}
+#home-nou .pastilla.buida{border-style: solid; border-width: 0px 0px 0px 1px; padding-bottom: 10vw;}
+#home-nou .pastilla.buida::before{background-image: none}
+#home-nou .pastilla.reserva{border-style: solid; border-width: 0px 1px 1px 1px;}
+/*#home-nou .pastilla.reserva::before{background-position:-164vw -40vw;}*/
+#home-nou .past{padding: 20vw 2vw 5vw 0vw; text-align: center; font-size: 3.5vw; color:#fff; font-weight: 500; text-shadow:none;display: inline-block; width: 110%; text-transform: uppercase;background-size: cover; background-position: center; background-repeat: no-repeat;}
+#home-nou .past::before{position:absolute; width:20vw; height: 20vw; background-image: url(../icons/clapperboard.svg); content: " ";top: 8.5vw;left: 10.5vw;background-repeat: no-repeat;background-size: 30px 30px;}
+#home-nou .past.reserva::before{background-position: 0px 0px;}
+#home-nou .past.reserva {border-style: solid; border-width: 0px 1px 1px 0px;}
+#home-nou .pastil{padding: 20vw 2vw 5vw 0vw; text-align: center; font-size: 3.5vw; color:#fff; font-weight: 500; text-shadow:none;display: inline-block; width: 110%; text-transform: uppercase;background-size: cover; background-position: center; background-repeat: no-repeat;}
+#home-nou .pastil::before{position:absolute; width:20vw; height: 20vw; background-image: url(../icons/place.svg); content: " ";top: 8.5vw;left: 10.5vw;background-repeat: no-repeat;background-size: 30px 30px;}
+#home-nou .pastil.visita::before{background-position: 0px 0px;}
+#home-nou .pastil.visita {border-style: solid; border-width: 0px 1px 0px 0px;}
+#home-nou .pas{padding: 20vw 2vw 5vw 0vw; text-align: center; font-size: 3.5vw; color:#fff; font-weight: 500; text-shadow:none;display: inline-block; width: 110%; text-transform: uppercase;background-size: cover; background-position: center; background-repeat: no-repeat;}
+#home-nou .pas::before{position:absolute; width:20vw; height: 20vw; background-image: url(../icons/conversation.svg); content: " ";top: 8.5vw;left: 10.5vw;background-repeat: no-repeat;background-size: 30px 30px;}
+#home-nou .pas.suge::before{background-position: 0px 0px;}
+#home-nou .pas.suge {border-style: solid; border-width: 0px 0px 1px 0px;}
+#home-nou .pasta{padding: 20vw 2vw 5vw 0vw; text-align: center; font-size: 3.5vw; color:#fff; font-weight: 500; text-shadow:none;display: inline-block; width: 110%; text-transform: uppercase;background-size: cover; background-position: center; background-repeat: no-repeat;}
+#home-nou .pasta::before{position:absolute; width:20vw; height: 20vw; background-image: url(../icons/support.svg); content: " ";top: 8.5vw;left: 10.5vw;background-repeat: no-repeat;background-size: 30px 30px;}
+#home-nou .pasta.servi::before{background-position: 0px 0px;}
+#home-nou .pasta.servi {border-style: solid; border-width: 0px 0px 0px 0px;}
+#home-nou .ui-content > a:first-child{position:absolute; right: 10px; top: 10px; width:10vw; height: 10vw; background-image: url(../icons/sprite_info_turisme.svg); background-size: 115vw; background-position: -91vw -115.5vw;z-index: 99;}
+#home-nou .ui-content > .col-xs-6{padding: 0.5vw;}
+#login_home{display:none;} 
+.icon-radio {background-image: url(../icons/spriteoncdphome.svg);position:absolute; width:20vw; height: 20vw;background-size: 200vw; content: " ";top: -1.5vw;left: 4vw;background-position:-167vw -12vw;}
+.radio-text {font-size: 6.5vw;color: #fff !important;text-shadow: none;text-align: left;margin-left: 10px;margin-top: 18px !important;font-weight: normal !important;}
+#home-nou .pasti{padding: 20vw 2vw 5vw 0vw; text-align: center; font-size: 3.5vw; color:#fff; font-weight: 500; text-shadow:none;display: inline-block; width: 110%; text-transform: uppercase;background-size: cover; background-position: center; background-repeat: no-repeat;}
+#home-nou .pasti::before{position:absolute; width:20vw; height: 20vw; background-image: url(../icons/comerc.png); content: " ";top: 8.5vw;left: 10.5vw;background-repeat: no-repeat;background-size: 30px 30px;}
+#home-nou .pasti.rdo::before{background-position: 0px 0px;}
+#home-nou .pasti.rdo {border-style: solid; border-width: 0px 0px 1px 0px;}
+
+
+/*######## HOME #############*/
+.ui-mobile #home.ui-page{/*background-image:url('../images/fondo_home.png');*/}
+#home .logo img{ margin-bottom: 10vh; width: 300px;}
+#home .header{display:none;}
+#home .ui-content{ height:100%; }
+#home .icon-config{width:37px; height:37px; background:transparent url('../icons/config.png') no-repeat center center; background-size:35px auto; margin:1em; float:right; }
+#home .btn-home{width:220px; padding:40px 10px; color:#fff; font-size:12px; font-family: 'Quicksand', sans-serif; text-transform: uppercase; text-align: center; border:3px solid #fff; display: inline-block; text-shadow:none; margin-bottom: 10px; border-radius: 3px; font-weight: 400; background:rgba(256,256,256,0.1);transition:all 0.3s ease-in-out;}
+#home .ui-content .col-xs-12{text-align: center;}
+#home .btn-home:hover, #home .btn-home:focus{background:rgba(256,256,256,0.2);}
+#home .ui-content > div:first-child{background-image: url('../icons/home.png');background-size: 7.5vw;background-position: right center;background-repeat: no-repeat;height: 8.75vw;}
+
+/*######## AFEGIR INCIDENCIA #############*/
+#afegirIncidencia h2{margin-bottom:20px;}
+#afegirIncidencia .header{background:url('../images/logo2.png'); background-position:center 60% ; background-size:40% auto; background-repeat:no-repeat;}
+#afegirIncidencia .ui-content{height:88%;}
+#afegirIncidencia .t-incidencies{margin-top:10%;}
+#afegirIncidencia .t-incidencia{padding:10px; background:rgba(256,256,256,0.5); margin:5px 0; width:100%;height: 135px; transition:all 0.3s ease-in-out; text-align: center;}
+#afegirIncidencia .t-incidencia.xarxa {background:rgba(256,256,256,0.15);}
+#afegirIncidencia .t-incidencia.parcs {background:rgba(256,256,256,0.12);}
+#afegirIncidencia .t-incidencia.neteja {background:rgba(256,256,256,0.1);}
+#afegirIncidencia .t-incidencia.enllumenat {background:rgba(256,256,256,0.08);}
+#afegirIncidencia .t-incidencia.mobiliari {background:rgba(256,256,256,0.05);}
+#afegirIncidencia .t-incidencia.medi {background:rgba(256,256,256,0.03);}
+#afegirIncidencia .t-incidencia.altres {background:rgba(256,256,256,0.02);}
+#afegirIncidencia .t-incidencia:hover, #afegirIncidencia .t-incidencia:focus{background:rgba(256,256,256,0.2);}
+#afegirIncidencia .t-incidencia img{padding:15px 0 0;height: 70px;width: auto;}
+#afegirIncidencia .t-incidencia span.neteja{padding-top: 0;}
+#afegirIncidencia .t-incidencia span{font-size: 12px; padding-top: 15px;line-height: 15px; font-weight: 700;}
+#afegirIncidencia .footer{display:none;}
+#afegirIncidencia .imgIncidencia{height:292px; background:#EBEBEB;}
+#afegirIncidencia .btns-incidencies{max-width: 500px;margin: auto;}
+
+/*######## AFEGIR INCIDENCIA PASO 1  #############*/
+.nova-incidencia .ui-content{margin-left: -1em;margin-right: -1em;width: calc(100% + 2em);background:#fff;}
+#incidenciaPasa1 .fila-img{position:relative;padding: 0px 2em;color:#999;font-size: 15px;margin-top: 12%;}
+#incidenciaPasa1 .imgIncidencia{cursor:pointer; margin-bottom:10px; overflow:hidden; position:relative; }
+#incidenciaPasa1 .imgIncidencia.col-xs-6{  margin-top:0px;}
+#incidenciaPasa1 .imgIncidencia.col-xs-6:first-child{}
+#incidenciaPasa1 .imgIncidencia.col-xs-6:last-child{margin-top:0;}
+#incidenciaPasa1 .imgIncidencia:focus, #incidenciaPasa1 .imgIncidencia:active, #incidenciaPasa1 .getImg:focus, #incidenciaPasa1 .getImg:active{opacity:0.6}
+#incidenciaPasa1 .getImg{width: 50px; cursor:pointer;border-radius: 25px;}
+#incidenciaPasa1 .getImg-gallery{width: 50px;cursor:pointer;border-radius: 25px;}
+#incidenciaPasa1 .removeImg{position: absolute;width: 35px; right:7px;top: 2px; cursor:pointer;z-index:9;border-radius: 25px; display:none;}
+#incidenciaPasa1 .getImg.obligatori{box-shadow:0 0 2px 2px red;}
+#incidenciaPasa1 .info{padding:0 2em 0;font-size:15px; color:#999999;}
+#incidenciaPasa1 .afegeix{padding: 20px 0;display: inline-block;}
+#incidenciaPasa1 .pasa1-img{width:100%; height: 87px; overflow: hidden;float:left;}
+#incidenciaPasa1 .pasa1-img img{width:100%; height: auto;}
+#incidenciaPasa1 .btn-afg-img .getImg, #incidenciaPasa1 .btn-afg-img .getImg-gallery{margin:20px auto 0;}
+#incidenciaPasa1 .btn-afg-img{}
+
+.nova-incidencia input[type="text"], .nova-incidencia input[type="email"], .nova-incidencia input[type="tel"], .nova-incidencia input[type="password"]{padding-left:43px; background:url('../icons/input_text.png'); background-size:30px auto; background-repeat:no-repeat; background-position:6px center; box-shadow:none; padding-bottom:20px; border-bottom:1px solid #999999; padding-top:23px; color:#999; font-family: 'Open Sans', sans-serif;}
+.nova-incidencia textarea.ui-input-text{padding-left:43px; background:url('../icons/textarea.png'); background-size:30px auto; background-repeat:no-repeat; background-position:6px 9px;  padding-top:10px; padding-top:15px; color:#999; resize:none; height:50% !important; overflow: scroll; border:none; }
+.nova-incidencia input[type="text"].obligatori, .nova-incidencia input[type="password"].obligatori, .pagina textarea.obligatori, .nova-incidencia input[type="email"].obligatori,.nova-incidencia input[type="tel"].obligatori{box-shadow:0 0 2px 2px red; border-radius:6px;}
+.nova-incidencia .ui-input-text{border:none; box-shadow:none; border-radius:0;}
+.nova-incidencia .footer{background:#fff; text-align:right; padding:0 1em;}
+.nova-incidencia .footer img{width:60px;margin-top:10px;}
+.nova-incidencia .footer img:focus, #incidenciaPasa1 .footer img:active{opacity:0.6;}
+.nova-incidencia .seguent-bottom{position:fixed; bottom: 2%; right: 2%; width: 80px;}
+.nova-incidencia .seguent-bottom:hover,.nova-incidencia .seguent-bottom:focus{opacity:0.5;}
+
+/*######## AFEGIR INCIDENCIA PASO 1b  #############*/
+
+#incidenciaPasa1b .info{padding:0px 2em;margin-top:10%; height: 90%;}
+#incidenciaPasa1b .ui-content .row{height:100%;}
+#incidenciaPasa1b .info .text-avis{padding-top:0;}
+
+/*######## AFEGIR INCIDENCIA PASO 2   #############*/
+.ui-mobile #incidenciaPasa2.ui-page{background:none !important; background-color:transparent !important;}
+#incidenciaPasa2 .ui-content{padding: 0;}
+#incidenciaPasa2 .info{padding: 20px 5%;}
+#incidenciaPasa2 input[type="text"]{background:none; padding:8px 5px; margin-bottom:15px;padding-left:43px; background:url('../icons/textarea.png'); background-size:30px auto; background-repeat:no-repeat; background-position:6px center; }
+.mapaIncidencia{width:100vw;height: 100%; min-height: 300px; }
+.mapaIncidencia #mapaIncidencia{height:50%;}
+#incidenciaPasa2.nova-incidencia .ui-content{background:none;}
+#incidenciaPasa2 h6{text-align:center; opacity: 0.6; font-family: 'Open Sans', sans-serif; }
+
+/*######## AFEGIR INCIDENCIA PASO 2 B  #############*/
+#incidenciaPasa2B .ui-content{padding:20% 2em 10%;margin:0; width:100%;}
+#incidenciaPasa2B input{background:none; padding:10px 0 3px; margin:-11px 0 35px 0; font-family: 'Quicksand', sans-serif; font-size: 16px; color:#818080; font-weight: 700;}
+.ui-checkbox label.ui-btn{border:none; background:transparent;  color:#a7a7a7; font-weight:normal;font-family: 'Calibri';font-size: 15px; font-weight: 300; margin: 7vh 10% 7vh; padding-left: 47px;}
+.ui-btn.ui-checkbox-off::after {border:2px solid #999; border-radius: 0; background: transparent;}
+.ui-page-theme-a .ui-btn:hover{color:#a7a7a7;}
+#incidenciaPasa2B #llinatges_usuari{margin-bottom:20px;}
+.ui-page-theme-a .ui-checkbox-on::after{background-color:#45a31f;}
+#rebreNotificacioInfo, #rebreNotificacio, #incidenciaNoVisible{display:none;}
+
+
+/*######## AFEGIR INCIDENCIA PASO 3   #############*/
+#incidenciaPasa3{background-image: url('../images/fondo-2.jpg');}
+#incidenciaPasa3 .header.ui-header{background:transparent;}
+#incidenciaPasa3.nova-incidencia .ui-content{background:transparent;}
+#incidenciaPasa3 .quadre{padding:5% 12% 7%;}
+#incidenciaPasa3 b{color:#fff; font-size: 16px;  display:inline-block;font-weight: 400;text-shadow: none;}
+#incidenciaPasa3 p{margin-bottom: 0; color:#fff; text-shadow: none;padding-top: 10px;text-align: left; font-family: 'Quicksand', sans-serif; font-size: 14px; font-weight: 700; padding-bottom: 10px;}
+#incidenciaPasa3 .row-dates{padding:15px; background:#508a87}
+#incidenciaPasa3 .row-dates > p{text-align: center;}
+#incidenciaPasa3 .ui-content{padding:0%;}
+#incidenciaPasa3 .img-petita{padding-bottom: 10px;}
+#incidenciaPasa3 .finalIncid{ width:70px; height:70px; cursor:pointer;float: right;margin-right: 12%;margin-bottom: 5%;margin-top: -100px;}
+#incidenciaPasa3 .finalIncid:hover, #incidenciaPasa3 .finalIncid:focus{opacity:0.6;}
+
+/*######## AFEGIR INCIDENCIA PASO 4   #############*/
+#incidenciaPasa4 .ui-content{height:74%}
+#incidenciaPasa4 .footer{background:#fff; text-align:right; padding:1em 1em; height:14%}
+#incidenciaPasa4 .footer img{width:60px;}
+#incidenciaPasa4 .footer img:focus, #incidenciaPasa4 .footer img:active{opacity:0.6;}
+#incidenciaPasa3 .imgIncidencia{height:auto; overflow:hidden; }
+#incidenciaPasa4 .tornaInici{position:absolute; bottom: 4%; right: 4%; width:70px; height:70px; cursor:pointer;}
+#incidenciaPasa4 .tornaInici:hover, #incidenciaPasa3 .finalIncid:focus{opacity:0.6;}
+#incidenciaPasa4 h1{font-family: 'Quicksand', sans-serif; font-size: 30px; font-weight: 400; margin: 50% 5% 20px;}
+#incidenciaPasa4 h3{font-family: 'Quicksand', sans-serif; font-size: 14px; font-weight: 700; }
+
+
+/*######## LLISTA INCIDENCIES   #############*/
+.llistaIncidencies .header.ui-header{box-shadow: 0px 0px 2px 2px #ccc; }
+.llistaIncidencies .ui-content{background:#fff; height:88%;}
+.llistaIncidencies .footer{display:none;}
+.llistaIncidencies .tipus-llista{box-shadow: 0px 0px 2px 2px #ccc; cursor:pointer;}
+.llistaIncidencies .tipus-llista > div{background-repeat:no-repeat; background-size:45px auto; background-position:center center;margin:0;}
+.llistaIncidencies .location{ height:60px; background-image:url('../icons/location.png'); background-size:33px auto !important;}
+.llistaIncidencies .list{ height:60px; background-image:url('../icons/list.png');}
+.llistaIncidencies .location.actiu{background-image:url('../icons/location2.png');}
+.llistaIncidencies .list.actiu{background-image:url('../icons/list2.png');}
+.llistaIncidencies .location:focus, .llistaIncidencies .list:focus{opacity:0.6;}
+.llistaIncidencies .ui-collapsible-set{margin:0; height: 100%;float:left; width:100%;}
+
+
+.ui-mobile #darreresIncidencies.ui-page{background:none !important; background-color:transparent !important;}
+
+#containerLista2.lista2{display:none; height:100%;}
+#containerLista{margin-top:1px; height: 100%;}
+#containerLista .img{background-size:cover; background-position:center center; background-repeat:no-repeat;height:110px; background-color:#000;}
+#containerLista .ui-collapsible-content:first-child{}
+#containerLista .incidencia .ui-collapsible-content{height:110px; padding:0;  background:rgba(232, 232, 232, 0.4); border:none;}
+#containerLista #collapsiblesetForFilter > div{border-bottom:1px solid rgba(255, 234, 206, 0.4); width:100%; float:left;}
+#containerLista .incidencia a:first-child{padding: 9px 5px 9px 15px;}
+#containerLista b{font-size:14px; color:#000; font-weight: 400;}
+#containerLista p{font-size:12px; color:#000; opacity:0.4; font-weight:400;}
+#containerLista p.desc{font-weight: 300; margin:10px 0 0; height: 14px; overflow: hidden;}
+.estat-inc{width:30%;}
+.estat-inc.assignada{margin-left: -5px;}
+.estat-inc span{border-radius: 10px; box-shadow: 0 0 2px 2px #ccc; background:#fff; font-weight: 300; color:#fff; text-align: center; padding: 1px 3px 0; margin:0px; text-transform: uppercase; font-size: 9px; font-family: 'Calibri'; }
+.estat-inc.assignada.actiu span{background:#fcd175;}
+.estat-inc.tramit.actiu span{background:#fe6464;}
+.estat-inc.finalitzada.actiu span{background:#7abf66;}
+
+#mapaLlista{ height:100%;}
+
+#cercador, #cercadorOperari, #cercadorOperariPerVerificar{display:none;}
+.ui-collapsible-content-collapsed{display:block;}
+
+#veureIncidencia .ui-content{height:88%}
+#veureIncidencia .info{padding:10px 60px;font-size:14px; color:#000;}
+#veureIncidencia b{padding:20px 0 10px; display:inline-block;}
+#veureIncidencia p{opacity:0.4; font-size:13px;margin-bottom:0;}
+#veureIncidencia p:last-child{padding-bottom:40px;}
+#veureIncidencia .info img{margin-top:1em;}
+#veureIncidencia .img-petita{height:20%; overflow:hidden;}
+#veureIncidencia .footer{display:none;}
+#veureIncidencia .boto_verificar{background: #6bab6b;color: #fff;text-shadow: none;font-weight: 400;margin-top: 30px;font-size: 16px; border:1px solid #6bab6b; transition:all 0.8s ease-in-out; display:none;}
+#veureIncidencia .boto_verificar:hover{color:#6bab6b; background: #fff;}
+#estatIncP2{width:180px; border-radius: 10px; padding:3px; text-align: center; margin-top:20px; margin-bottom: 15px; text-transform: uppercase; font-size: 14px; color:#fff;}
+#estatIncP2.assignada{background:#fcd175;}
+#estatIncP2.tramit{background:#fe6464;}
+#estatIncP2.finalitzada{background:#7abf66;}
+#veureIncidencia .info img#imgIncidenciaZ{margin-top:30px;}
+
+/*##### AVIS LEGAL  #####*/
+#avisLegal .ui-content{background:#fff;padding: 8%;}
+#avisLegal .ui-content p{text-align: justify;}
+#avisLegal .footer {    display: none;}
+
+/*########### LOGIN PAGE ##########*/
+#loginPage .footer{ display:none;}
+#loginPage .ui-content{padding:10% 2em;margin:0; width:100%;background:#fff; }
+#loginPage input{background:none; padding:10px 0 3px; margin-bottom:28px;}
+.pagines-operaris.pagina button{float:right; margin-top:20%; width:auto; border-radius:0; color:#fff; font-size:18px;  border:1px solid #408180; padding:9px 30px; text-shadow:none; font-weight:400;}
+.pagines-operaris.pagina button:focus{background:#fff; color:#F0BD0F;}
+.pagines-operaris.pagina button:hover{color:#fff; text-shadow:none;}
+.pagines-operaris.pagina button{background: #408180}
+#loginPage form label{opacity:0.6; margin-bottom:25px;}
+#loginPage .notificacions{background:#F9F9F9;border-bottom:1px solid rgba(255, 177, 69, 0.4); box-shadow:2px 2px 2px 2px #ccc; background:#fff; min-height:9%; display:none;}
+#loginPage .notificacions div:first-child{padding:3% 0 0 30px; font-size:16px; color:#030600; opacity:0.6;}
+#loginPage .notificacions div:first-child label{margin-bottom:0;}
+#loginPage .notificacions div:nth-child(2){padding:2.2% 2em 0 0; text-align:right;}
+#loginPage .swraper.light{border-radius:12px;}
+#loginPage .link-legal{padding: 0 0 3% 30px; display:inline-block;color: rgb(234, 170, 46);}
+#login-form-out{display: none;}
+
+.pagina .swraper.light .stoggler .sblob{width:19px !important; height:19px !important; top:47%; }
+.pagina .swraper .stoggler{height:20px;}
+.pagina .swraper .stoggler.on{transform: translateX(-9px) !important;}
+.pagina .swraper .stoggler.off{transform: translateX(-36px) !important;}
+
+#loginPage .operaris{text-align:center;}
+#loginPage .operaris button{float:none; width:70%; height:auto; display:inline-block; white-space:normal; border-radius:3px;}
+#loginPage .operaris a:last-child > button{margin-top: 20%;background: #ccc;border: 1px solid #ccc;}
+#loginPage #botoVeureIncidenciesPerVerificar{display:none}
+
+/*########### OPERARIS ##########*/
+.operaris{display:none;}
+.operaris.actiu{display:block;}
+
+
+/*######## LLISTA INCIDENCIES OPERARIS   #############*/
+#containerListaOperari{margin-top:1px;}
+#containerListaOperari .img{background-size:cover; background-position:center center; background-repeat:no-repeat;height:110px;}
+#containerListaOperari .ui-collapsible-content:first-child{}
+#containerListaOperari .incidencia .ui-collapsible-content{height:110px; padding:0;  background:#fff; border:none;}
+#containerListaOperari #collapsiblesetForFilterOperari > div{border-bottom:1px solid rgba(255, 177, 69, 0.4);}
+#containerListaOperari #collapsiblesetForFilterOperari > div.prioritat_1{border-bottom:2px solid #fff;}
+#containerListaOperari .incidencia a:first-child{padding:10px 0 3px 1em;}
+#containerListaOperari b{font-size:14px; color:#000; font-weight: 400;}
+#containerListaOperari p{font-size:12px; color:#000; opacity:0.4; font-weight:400;}
+#containerListaOperari p.desc{font-weight: 300; margin:10px 0 0; height: 14px; overflow: hidden;}
+#containerListaOperari .prioritat_1{background:#e7b7b6;}
+#containerListaOperari .prioritat_1 b, #containerListaOperari .prioritat_1 p{color:#fff; text-shadow:none; opacity:1;}
+
+#veureIncidenciaOperari .ui-content{height:88%}
+#veureIncidenciaOperari .info{padding:10px 2em;font-size:14px; color:#000;}
+#veureIncidenciaOperari b{padding:20px 0 10px; display:inline-block; font-weight:400;}
+#veureIncidenciaOperari p{opacity:0.4; font-size:13px;margin-bottom:0;}
+#veureIncidenciaOperari .info img{margin-top:1em;}
+#veureIncidenciaOperari .img-petita{height:20%; overflow:hidden;}
+#veureIncidenciaOperari .footer{display:none;}
+#veureIncidenciaOperari textarea{background:#F0F1F1; border:1px solid rgb(64, 129, 128); padding:10px; }
+#veureIncidenciaOperari.pagina button{margin-top:20px;}
+
+
+
+
+/*######## INFO #############*/
+.info-turisme{font-family: 'Montserrat';}
+.info-turisme .header{background:#66ad28;padding-top: 7vw;}
+.info-turisme .img {background-size: 90% auto;background-position: center;background-repeat: no-repeat;width: 100%;height: 45vw; max-height: 40vh;}
+.info-turisme .header.ui-header > div > div:nth-child(2) {font-size: 5.5vw; text-transform: uppercase;color: #fff;text-align: center;font-weight: 400;padding-top: 0.5vw;}
+.info-turisme .header.ui-header > div > div:last-child { background-image: url('../icons/home.png'); background-size: 7.5vw;background-position: center; background-repeat: no-repeat; height: 8.75vw;}
+.info-turisme .header.ui-header > div > div:first-child > a { background-image: url('../icons/back.png'); width: 5vw; height: 5vw; background-repeat: no-repeat; background-position: center; display: inline-block; background-size: 4.25vw;  margin-top: 2.25vw;}
+.info-turisme .header.ui-header > div > div:first-child { text-align: center;}
+.info-turisme .ui-content{background:#fff;}
+
+/*######## MAPAWOW #############*/
+.info-wow{font-family: 'Montserrat';}
+.info-wow .header{background:#9d8f7b;padding-top: 7vw;}
+.info-wow .img {background-size: 90% auto;background-position: center;background-repeat: no-repeat;width: 100%;height: 45vw; max-height: 40vh;}
+.info-wow .header.ui-header > div > div:nth-child(2) {font-size: 5.5vw; text-transform: uppercase;color: #fff;text-align: center;font-weight: 400;padding-top: 0.5vw;}
+.info-wow .header.ui-header > div > div:last-child { background-image: url('../icons/home.png'); background-size: 7.5vw;background-position: center; background-repeat: no-repeat; height: 8.75vw;}
+.info-wow .header.ui-header > div > div:first-child > a { background-image: url('../icons/back.png'); width: 5vw; height: 5vw; background-repeat: no-repeat; background-position: center; display: inline-block; background-size: 4.25vw;  margin-top: 2.25vw;}
+.info-wow .header.ui-header > div > div:first-child { text-align: center;}
+.info-wow .ui-content{background:#fff;}
+
+/*icons*/
+.icon-tur{width: 10vw;height: 10vw;background-repeat: no-repeat;display: inline-block; background-size: 80vw; background-image: url('../icons/sprite_info_turisme.svg');margin-bottom: -0.8vw;}
+.icon-tur.ico-clock{background-position: -8.5vw -73.6vw; width: 5vw; height: 5vw;}
+.icon-tur.ico-map{background-position: -8.5vw -89.5vw; width: 5vw; height: 5vw;}
+.icon-tur.ico-cine{background-position: -5.5vw -1.5vw;}
+.icon-tur.ico-teatre{background-position: -5.5vw -13.4vw;}
+.icon-tur.ico-radio{background-position: -37.5vw -122vw;background-size: 130vw;width: 16vw;height: 15vw;}
+
+/*######## ONCAPDEPERA #############*/
+.oncapdepera h2{text-align: left;font-size: 5.7vw;text-transform: uppercase;color: #040700;margin: 30px 5% 15px;padding: 0;font-family: 'Lato', sans-serif;font-weight: 300;}
+.oncapdepera p {font-size: 4.5vw;margin: 18px 5%; padding: 0; color: #040700;font-family: 'Lato', sans-serif; font-weight: 300; line-height: 5.75vw;}
+.oncapdepera h1{color: #040700;}
+.oncapdepera .ui-content{padding: 0;}
+
+.oncapdepera .icon{background-image:url('../icons/spriteoncapdepera.svg');background-size: 99.5vw;float:left; top:initial;display: inline-block; position:relative;}
+.oncapdepera .icon-v2{background-image:url('../icons/spriteoncdphome.svg');background-size: auto 50vh;float:left;background-repeat: no-repeat;}
+
+/*home*/
+#oncapdepera-home .ui-content{background:#444242;}
+#oncapdepera-home{background:#444242;}
+#oncapdepera-home .menu{padding:5vw 5vw 5vw 20vw; border-bottom: 1px solid #fff;height: 29vw;transition:all 0.8s ease-in-out; position:relative;}
+#oncapdepera-home .menu.open{height: auto;}
+#oncapdepera-home .icono-menu{position: absolute;left: 3.25vw;top: 4vw; height: 99%; width: 18vw;}
+#oncapdepera-home .menu .sub-menu{display: none;float: left; padding-left: 5.75vw;width: 100%;}
+#oncapdepera-home .menu .icono-menu span{border-radius: 10vw; width: 18vw;height: calc(100% - 10vw);}
+#oncapdepera-home .menu > span:nth-child(2){padding:4vw 0 1.5vw 3vw; float: left;}
+#oncapdepera-home .menu span{font-size: 6.5vw; color:#fff; text-shadow:none;text-align: left;}
+#oncapdepera-home .visites{background-color: #008841; background-position: 2.25px 2.5vw;}
+#oncapdepera-home .res{background-color: #008841; background-position: -161vw -41vw;}
+#oncapdepera-home .festes{background-color: #95a543; background-position: -16vw 2.5vw;}
+#oncapdepera-home .serveis{background-color: #789130; background-position: -31.75vw 2vw;}
+#oncapdepera-home .nuclis{background-color: #ced424; background-position: -48vw 2.5vw;}
+#oncapdepera-home .rutes{background-color: #bcc57d; background-position: -21.5vh -19.25vh;}
+#oncapdepera-home .rutesCic{background-color: #bcc57d; background-position: -62.5vh -19.25vh;}
+#oncapdepera-home .informa{background-color: #6b9572; background-position: -84.25vw 2.5vw;}
+#oncapdepera-home .menu.doble{min-height: 99px;padding: 3vw 5vw 3vw 20vw;}
+#oncapdepera-home .menu.doble > span:nth-child(2){padding-top: 0;padding-bottom: 0;}
+#oncapdepera-home .menu .sub-menu li{list-style: none; text-shadow:none; color:#aeadb3; font-size: 22px; padding:15px 0;font-weight: 400; background-image: url('../icons/li-menu.png'); background-size: 1.75vw auto; background-position: right center; background-repeat: no-repeat;}
+/*#oncapdepera-home .ico{padding: 20vw 2vw 5vw 0vw; text-align: center; font-size: 3.5vw; color:#fff; font-weight: 500; text-shadow:none;display: inline-block; width: 110%; text-transform: uppercase;background-size: cover; background-position: center; background-repeat: no-repeat;}*/
+#oncapdepera-home .ico{width:20vw; height: 20vw; background-image: url(../icons/spriteoncdphome.svg); background-size: 200vw; content: " ";top: 2.5vw;left: 9.5vw;}
+/*#oncapdepera-home .pastilla.reserva{border-style: solid; border-width: 0px 0px 0px 1px;}*/
+#oncapdepera-home .ico .res{background-position:-164vw -40vw;}
+#oncapdepera-home .posidonia {background-image: url(../icons/acuario.svg);width:20vw; height: 20vw;background-position: 2.0vh 1.75vh;background-repeat: no-repeat;}
+#oncapdepera-home .pos {background-color: #008841;}
+.onRadio{background-color: #bcc57d; background-position: -62.5vh -19.25vh;background-size: auto 50vh;float: left;background-repeat: no-repeat;}
+
+/*fitxa*/
+/*#oncapdepera-fitxa{background:#fff;}
+#oncapdepera-fitxa .galeria{margin-top:10vh; margin-bottom: 10vw;}
+#oncapdepera-fitxa .galeria > div{padding:3px;}*/
+#oncapdepera-fitxa {background:#fff;}
+#oncapdepera-fitxa .sec {margin: 0px 5%;}
+#oncapdepera-fitxa .sec img{width: 90%;}
+#oncapdepera-fitxa .sec2 {margin: 0px 0 18px 5px;}
+#oncapdepera-fitxa .sec3 {margin-bottom: 5%;}
+#oncapdepera-fitxa .sec3 .bold {color: #b04960;font-weight: 600;font-size: 18px;}
+#oncapdepera-fitxa .sec3 .bold-c {color: #da7d31;font-weight: 600;font-size: 18px;}
+#oncapdepera-fitxa .sec4 {margin-top: 18px;}
+#oncapdepera-fitxa .sec4 p{font-weight: 600; margin-bottom: 0px; margin-top: 0px;}
+#oncapdepera-fitxa .sec5 {margin: 18px 5%;}
+#oncapdepera-fitxa .sec6 {margin: 20px 0 20px 0;}
+#oncapdepera-fitxa .ini {text-align: left; color: #b04960;}
+#oncapdepera-fitxa .fi {text-align: right; color: #b04960;}
+#oncapdepera-fitxa .ini-c {text-align: left; color: #da7d31;}
+#oncapdepera-fitxa .fi-c {text-align: right; color: #da7d31;}
+#oncapdepera-fitxa .ttl{font-weight:600;}
+#oncapdepera-fitxa .grey{background: #f4f4f4; text-align: center;}
+#oncapdepera-fitxa .grey .dif {background:url('http://www.oncapdepera.com/images/icons/sprite.svg'); height: 40px; background-size: 200%; background-position: 10px -20px; margin: 5% 0 0 0;}
+#oncapdepera-fitxa .grey .dist {background:url('http://www.oncapdepera.com/images/icons/sprite.svg'); height: 40px; background-size: 200%; background-position: 10px -225px; margin: 5% 0 0 0;}
+#oncapdepera-fitxa .grey .dur {background:url('http://www.oncapdepera.com/images/icons/sprite.svg'); height: 40px; background-size: 200%; background-position: 10px -270px; margin: 5% 0 0 0;}
+#oncapdepera-fitxa .img-desnivell img {margin: 2%; width: 96%;}
+#oncapdepera-fitxa .interest{display: inline-block; width: 30%;margin-bottom: 60px;}
+#oncapdepera-fitxa .interest .text_interest_cont {text-align: center;}
+#oncapdepera-fitxa .interest .interest_img{background-image: url('http://www.oncapdepera.com/images/icons/leyenda.png');width: 75px; height: 75px; background-repeat: no-repeat;margin-left:calc((100% - 75px)/2);background-size: 700% auto;float: left;}
+#oncapdepera-fitxa .interest .interest_text {width: 100%;font-size: 14px;height: 50px;padding-top: 10px;margin-top: 80px;}
+#oncapdepera-fitxa #interest_5 .interest_img {background-position-x: 0%;}
+#oncapdepera-fitxa #interest_1 .interest_img {background-position-x: 16.5%;}
+#oncapdepera-fitxa #interest_4 .interest_img {background-position-x: 33.25%;}
+#oncapdepera-fitxa #interest_3 .interest_img {background-position-x: 50%;}
+#oncapdepera-fitxa #interest_6 .interest_img {background-position-x: 66.5%;}
+#oncapdepera-fitxa #interest_2 .interest_img {background-position-x: 83.25%;}
+#oncapdepera-fitxa #interest_7 .interest_img {background-position-x: 99.75%;}
+#oncapdepera-fitxa .link {border-right-style: solid;border-right-width: thin;border-left-style: solid;border-left-width: thin;text-align: center;}
+#oncapdepera-fitxa .link{background: url(../icons/spriteoncdphome.svg) no-repeat scroll 0 0px transparent;background-position:-3vh -37vh;content: " ";display: block;position: absolute;width: 100%;height: 12vh;top: 0vh; left: 0vh; background-size: 100vh; padding: 20px; padding-bottom: 80px;}
+#oncapdepera-fitxa .link span {position: relative;top: 20px;color:#000;}
+#oncapdepera-fitxa .link-c {border-right-style: solid;border-right-width: thin;border-left-style: solid;border-left-width: thin;text-align: center;}
+#oncapdepera-fitxa .link-c{background: url(../icons/spriteoncdphome.svg) no-repeat scroll 0 0px transparent;background-position:2vh -37vh;content: " ";display: block;position: absolute;width: 100%;height: 12vh;top: 0vh; left: 0vh; background-size: 100vh; padding: 50px; padding-bottom: 70px;}
+#oncapdepera-fitxa .link-c span {position: relative;top: 0vh;color:#000;}
+
+/*incidencia*/
+#oncapdepera-incidencia {    background: #f9f9f9;}
+#oncapdepera-incidencia .header, #oncapdepera-ubicacio .header{background:#384981;}
+#mapa{height: 100%; width: 100%; min-height: 200px;}
+#oncapdepera-incidencia .ui-content{padding:4%;}
+#oncapdepera-incidencia h2{color:#333;margin-bottom: 30px;}
+#oncapdepera-incidencia label{margin: 15px 0 0;}
+#oncapdepera-incidencia img{margin-top:10px;}
+#oncapdepera-incidencia textarea{height: 100px !important;}
+#oncapdepera-incidencia .ui-btn{padding: 10px 20px; background:#384981; color:#fff; font-size: 20px; border-color:#49805D;font-family: 'Lato', sans-serif;font-weight: 400;text-shadow: none;margin-top: 30px;}
+#oncapdepera-incidencia .ui-btn:hover{background:#fff; color:#384981; }
+#oncapdepera-incidencia{background-color:#f9f9f9;}
+#oncapdepera-ubicacio.ui-page{background:none;}
+
+/*sugerencia*/
+
+#oncapdepera-sugerencia textarea{height: 100px !important;}
+
+/*serveis*/
+#oncapdepera-serveis .ui-content{background:#fff;}
+#oncapdepera-serveis .serveis-menu{margin:10vw auto; max-width: none; border: none;}
+#oncapdepera-serveis .serveis-menu > div{text-align: center;}
+#oncapdepera-serveis .icon{width: 25vw; margin:0 auto 10px; height: 25vw; border-radius: 15vw; float:none; background-image: url('../icons/spriteserveis.svg'); background-size: 100vw;}
+#oncapdepera-serveis .icon.ico-transport{background-color:#6b9572; background-position: 1.75vw 3.5vw;}
+#oncapdepera-serveis .icon.ico-salut{background-color:#95a543; background-position: -37.5vw 3.5vw;}
+#oncapdepera-serveis .icon.ico-mercats{background-color:#789130; background-position: -78vw 3.5vw;}
+#oncapdepera-serveis .icon.ico-info{background-color:#ced424; background-position: -17.75vw 3.5vw;}
+#oncapdepera-serveis .icon.ico-seguretat{background-color:#bcc57d; background-position: -57.5vw 3.5vw;}
+#oncapdepera-serveis .serveis-menu span{font-size: 4vw; color:#60605d; width: 100%; display: inline-block; text-align: center; margin-bottom: 5vh; text-transform: uppercase;}
+#oncapdepera-serveis .mercat{margin-left: 12.5vw;}
+#oncapdepera-serveis .servei-contingut > div{background:#f1f1f1; padding:5vw 5vw 2.5vw 5vw; border-top:1px solid #ccc; }
+#oncapdepera-serveis .servei-contingut > div:last-child{padding-bottom: 12.5vw;}
+#oncapdepera-serveis .servei-contingut span{padding-bottom: 2.5vw; width: 100%; display: inline-block;}
+#oncapdepera-serveis .servei-contingut span:first-child{font-size:4.5vw; color:#49805d; text-transform: uppercase;}
+#oncapdepera-serveis .servei-contingut span:nth-child(2), #oncapdepera-serveis .servei-contingut span:nth-child(2) > a{font-size:5vw; color:#bcc57d; padding:0;}
+#oncapdepera-serveis .servei-contingut span:nth-child(3){font-size:4vw; color:#727176;padding: 2.5vw 0;/*background-image: url(../icons/marker.svg);*/background-repeat: no-repeat;background-size: 5vw;background-position: right center; padding-right: 5vw;}
+#oncapdepera-serveis #page-mercats.servei-contingut span:nth-child(3){background-image: url(../icons/marker.svg);}
+#oncapdepera-serveis .nav-tabs > li > a{background:transparent; border: none; margin:0; border-radius: 0; padding: 0; text-align: center;opacity: 0.5;}
+#oncapdepera-serveis .nav-tabs > li.active > a{opacity: 1;}
+#oncapdepera-serveis #page-mercats.servei-contingut span{text-transform: none;}
+
+/*######## RESERVA MARINA ################*/
+#oncaddepera-reserva .oncapdepera.header {background: #83a0b0}
+#oncapdepera-reserva{text-shadow:none;}
+#oncapdepera-reserva h2 {font-weight: 100; margin-right: 100px;font-size: 25px;text-transform: uppercase;color: #040700;margin: 30px 5% 15px;padding: 0;font-family: 'Lato', sans-serif;}
+#oncapdepera-reserva h4 {font-weight: 100; margin-right: 100px;font-size: 18px;color: #858585; margin: 0px 5% 15px; padding: 0;}
+#oncapdepera-reserva p {font-size: 18px; margin: 18px 5%; padding: 0; color: #040700; font-family: 'Lato', sans-serif; font-weight: 300; line-height: 23px;}
+#oncapdepera-reserva .link {border-right-style: solid;border-right-width: thin;border-left-style: solid;border-left-width: thin;text-align: center;}
+#oncapdepera-reserva .link{background: url(../icons/spriteoncdphome.svg) no-repeat scroll 0 0px transparent;background-position: -3vh -35vh;content: " "; display: block;position: absolute;width: 18vh;height: 10vh;top: 0vh;left: 0vw; background-size: 100vh; padding: 60px;}
+#oncapdepera-reserva .link span {position: absolute;left: 0px;color:#000;}
+
+/*######## ESPORTS I MUSICA #############*/
+.info-turisme.esports .header{background:#c33538;}
+.info-turisme.esports.musica .header{background:#7b9cc4;}
+.esports.musica .llista-esports > div > div:nth-child(2){background-color: #6f81ab;}
+.info-turisme.esports .ui-content{background:#fff; padding: 0;}
+
+/*home*/
+#llista-esports{background-color: #d9d9d9;}
+.esports .llista-esports > div.canvia_dia{/*margin-top: 4px;*/border-top: 1px solid #fff;}
+.esports .llista-esports > div > div{/*height: 25vw;*/}
+.esports .llista-esports > div > div:first-child{margin-right:2px; padding:5px 5px; color:#e40d0d; text-align:center;  font-weight:700;text-shadow: none; width: calc(25% - 2px);}
+.esports .llista-esports span:first-child{font-size: 5vw; line-height: 5vw;height: 3vw;display: inline-block;width: 100%;}
+.esports .llista-esports span:last-child{font-size: 13vw; line-height: 13vw;}
+.esports .llista-esports > div > div:nth-child(2){border-bottom: 1px solid #fff;background-color: #7f7f7f; padding:10px 10vw 10px 20px; color:#fff; text-align:left; font-size:4vw; line-height: 5vw; font-weight:300;text-shadow: none; }
+.esports .llista-esports > div > div:nth-child(2)::after{content:"+"; position: absolute; right: 4vw; top:calc(50% - 3vw); width:6vw; height: 6vw; color:#fff; font-size: 9vw; text-align: center; font-weight: 700;}
+.esports .llista-esports > div > div:nth-child(2) p{margin: 0;padding: 2px 0;line-height: 6vw;}
+.esports .llista-esports > div > div:nth-child(2) b{font-weight: 400;}
+
+/*fitxa*/
+.info-turisme.fitxa .img{height: 58vw;max-height: 40vh; max-width: none;}
+.info-turisme.fitxa .ui-content > .row:last-child{padding: 30px 20px 40px;}
+.info-turisme.fitxa h4{font-weight: 300; font-size: 6vw; text-transform: uppercase; color:#985d61; text-decoration: underline; margin-bottom: 4vh;}
+.info-turisme.fitxa h3{margin:0; text-align: left; color:#7f7f7f; text-transform: uppercase; font-weight: 300;font-size: 6vw;}
+.info-turisme.fitxa h2{font-weight: 700; font-size: 7vw; color:#5b5b5f;margin-bottom: 5vh;}
+.info-turisme.fitxa p{color:#5b5b5f; font-size: 4vw;padding: 3vh 0;}
+.info-turisme.fitxa .no-padding{margin:0; padding: 0;}
+.info-turisme.fitxa .data-hora{margin:0; padding: 0.5vw 0 1vw 7vw;position: relative;}
+
+
+
+
+/*######## ESDEVENIMENTS #############*/
+.esdeveniments .ui-header{background:#cfa01c;}
+.esdeveniments .ui-content{padding: 0;}
+
+/*llista*/
+#esdeveniments-home .ui-content{background:#3f3f3e}
+#llista-esdeveniments > div{padding:0; color:#fff; font-size:5vw; font-weight: 700; border-bottom: 2px solid #fff; text-shadow:none;height: 24vw;}
+/*#llista-esdeveniments > div::before{position:absolute; left: 2vw; top: 4.5vw; width:14vw; height: 14vw; content: " "; background-image: url(../icons/sprite_info_turisme.svg); background-size: 100vw; }*/
+#llista-esdeveniments > div.cine::before{background-position: -6.5vw -1.5vw;}
+#llista-esdeveniments > div.teatre::before{background-position: -6.5vw -16.4vw;}
+#llista-esdeveniments > div > div:nth-child(2){padding:8vw 5px 8vw 15px;}
+#llista-esdeveniments > div > div:last-child{background:#656565;height: 100%; text-align: center;}
+#llista-esdeveniments .span-esd{width:100%; display: inline-block;}
+#llista-esdeveniments .span-esd.mes-esd{font-weight: 400;font-size: 3.5vw;padding-top: 3vw;}
+#llista-esdeveniments .span-esd.dia-esd{font-weight: 700;font-size: 9vw;line-height: 9vw;}
+#llista-esdeveniments .img_2{background-size: cover;background-position: center;background-repeat: no-repeat;height: 24vw;}
+
+/*Cine*/
+#cine-home .ui-content{background:#3f3f3e}
+#llista-cine > div{padding:0; color:#fff; font-size:5vw; font-weight: 700; border-bottom: 2px solid #fff; text-shadow:none;height: 24vw;}
+#llista-cine > div.cine::before{background-position: -6.5vw -1.5vw;}
+#llista-cine > div.teatre::before{background-position: -6.5vw -16.4vw;}
+#llista-cine > div > div:nth-child(2){padding:8vw 5px 8vw 15px;}
+#llista-cine > div > div:last-child{background:#656565;height: 100%; text-align: center;}
+#llista-cine .span-esd{width:100%; display: inline-block;}
+#llista-cine .span-esd.mes-esd{font-weight: 400;font-size: 3.5vw;padding-top: 3vw;}
+#llista-cine .span-esd.dia-esd{font-weight: 700;font-size: 9vw;line-height: 9vw;}
+#llista-cine .img_2{background-size: cover;background-position: center;background-repeat: no-repeat;height: 24vw;}
+
+/*fitxa*/
+#esdeveniments-fitxa.fitxa h1{font-size: 6vw;}
+#esdeveniments-fitxa.fitxa h4{color:#d1c167;}
+#esdeveniments-fitxa.fitxa h2{text-align: left;margin-bottom: 2vh;}
+#esdeveniments-fitxa.fitxa h3{font-size: 4vw;}
+#esdeveniments-fitxa.fitxa p{padding: 3vh 0 0.5vw;}
+#esdeveniments-fitxa.fitxa p.data-hora{padding: 0.5vw 0px 0.5vw 6vw;position: relative;}
+.fitxa p.data-hora::before{content:" "; position:absolute; left:0; top: 0.7vw; width: 5vw; height: 5vw; background-image: url(../icons/sprite_info_turisme.svg); background-size: 80vw; }
+.fitxa p.data-hora.fecha::before{background-position: -1.4vw -68.3vw; background-size: 29vw;}
+.fitxa p.data-hora.hora::before{background-position: -8vw -58.5vw; background-size: 80vw;}
+
+/*######## NOTICIES #############*/
+.noticies .ui-header{background:#894db0}
+
+/*home*/
+#noticies-home p{font-size: 3.5vw; text-shadow:none; line-height: 3.9vw; padding: 5px 0 20px; font-weight: 400;}
+#noticies-home .ui-content{padding:30px;}
+/*fitxa*/
+#noticies-fitxa .ui-content{padding:0 0 40px;}
+#noticies-fitxa .ui-content > div:last-child{padding:10px 20px 10px;}
+#noticies-fitxa small{float:right; color:#708e9a;}
+#noticies-fitxa h5{font-weight: 400; font-size: 5vw; margin:2vh 0; padding: 5vh 0 1vh;}
+#noticies-fitxa p{margin:0 ; padding: 1vh 0 2vh;}
+
+
+
+/*######## RADIO #############*/
+.radio_ .ui-header{background:#d4df86}
+.radio_ .img{height: 52vh; max-height: none;}
+.radio_ .ui-content{padding: 0;}
+.radio_ .ui-content > .row:last-child{margin-top: -7vw;}
+.radio_ .ui-content > .row:last-child > div{text-align: center;}
+.radio_ h3{color:#5b5b5f;font-size: 6vw;}
+.radio_ .ico-tur.ico-radio{background-position: -40vw -126.8vw;background-size: 135vw;width: 15vw;height: 15vw;}
+.radio_.ui-page-theme-a button{margin: 3vh auto;background-color: #d4df86;color: #5b5b5f;text-shadow: none;font-size: 6vw;}
+.radio_.ui-page-theme-a button.radio{height: 20vw;width: 20vw;border-radius: 20vw;}
+.radio_.ui-page-theme-a button:hover, .radio_.ui-page-theme-a button:active, .radio_.ui-page-theme-a button:focus{opacity:0.7;background-color: #d4df86; }
+#sound{position: absolute;right: 20%;top: 10vw; display: none;}
+#sound img{width:10vw;}
+
+/*######## AVISOS #############*/
+.avisos-page .ui-header{background:#f1de32;}
+#avisos .ui-content {padding:0;background: #3f3f3e;}
+#avisos-body > div{padding:20px; border-bottom: 2px solid #fff; text-shadow:none; color:#fff; } 
+#avisos-body > div:hover, #avisos-body > div:active, #avisos-body > div:focus{opacity:0.7;}
+#avisos-fitxa{text-shadow:none; }
+
+/*######## LOGIN #############*/
+.login .ui-header{background:#a2c037}
+.login .ui-content{padding: 0;}
+.login.info-turisme .img { height: 40vw;}
+.login.ui-page-theme-a button{width: 60vw;margin:7vh auto 3vh;border-radius: 0;border: 1px solid #d4df86;background-color: #a2c037;color: #fff;text-shadow: none;font-size: 6vw;padding: 4vw 1vw;}
+.login.ui-page-theme-a button:hover, .login.ui-page-theme-a button:active, .login.ui-page-theme-a button:focus{background-color: #fff;color: #5b5b5f; }
+.login .img{margin-bottom: 7vh;}
+.login label{margin:1vh 20px; color: #211915; font-size: 6vw; font-weight: 300;}
+.login input{ box-shadow: none; border-radius: 0; border:1px solid #5b5b5f; font-size: 6vw; padding: 2vw 20px;}
+.login.ui-page-theme-a .ui-body-inherit{border:none; box-shadow: none;margin:1vh 20px 0;}
+
+
+
+/*########### DIALOG ##########*/
+#sure{ background-image: url('../images/fondo.png') !important;font-size:15px;}
+#sure .sure-1 img{padding-right:10px; width:87px;}
+#sure .ui-overlay-shadow{box-shadow: 0 5px 3px 0px rgba(0,0,0,.4);}
+#sure .sure-2{padding:20px; text-align:center;  text-shadow:none; color:#000; opacity:0.6;}
+#sure .ui-content{margin-top:10%; color:#fff !important; background:#fff; border-radius:0px; height:auto; text-align:center;}
+#sure .botoLink{ display: inline-block;width: 100%;padding-bottom: 20px;font-weight: 400;text-shadow: none; color:#fff; display:inline-block; width:100%; text-align:center; color:#EDB60B;}
+#sure .sure-do.ui-link{display:inline-block; border:none;border-radius:0; text-shadow:none;font-weight:400;padding:7px 25px; background:#288973; }
+#sure .sure-do.ui-link:focus{box-shadow: 0 0 12px rgba(0,0,0,0.6);}
+
+
+/*########### VISITA ##########*/
+.botoCat {border-radius: 0px;padding: 15px 15px;margin-top: 20px;}
+body.midaMapa{background:transparent;}
+.midaMapa {width: 100vw;height: 80vh; float:right;transition: all 0.4s ease-in-out;min-height: 120px;min-width: 120px;}
+body.mapa{background:transparent;}
+
+
+
+/*########### CATEGORIES ##########*/
+.checkbox-round {
+    width: 1em;
+    height: 1em;
+    background-color: white;
+    border-radius: 50%;
+   vertical-align: top;
+    border: 3px solid #9d8f7b;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 0px;
+}
+
+.checkbox-round:checked {
+    background-color: #9d8f7b;
+}
+.relatiu {position:relative;}
+.absolut {position: absolute;}
+.img-gal{background-size: cover; background-position: center center; height: 30vw;}
+.boto{padding:15px 15px; width: 44vw; text-align: center;display: inherit;margin: 5px auto 5px;background-color: #fff;border:1px solid black;border-radius: 5px;
+      margin-top:20px;font-weight: normal;}
+.boto a:visited {text-decoration: none;background-color: #fff;}
+#categories a:active {text-decoration: none;background-color: #fff;opacity: 0 !important;}
+#categories {background-color: #fff;}
+.ui-mobile #categories.ui-page{background:none !important; background-color:transparent !important;}
+.ui-mobile #visita.ui-page{background:none !important; background-color:transparent !important;}
+.ui-mobile #fitxa-etno.ui-page{background:none !important; background-color:transparent !important;}
+
+.header {
+    padding-top: calc(constant(safe-area-inset-top) + 4px);
+    padding-top: calc(env(safe-area-inset-top) + 4px); 
+}
