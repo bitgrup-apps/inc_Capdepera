@@ -33,7 +33,7 @@
     
 	
     <!-- PREFERENCE -->
-    <preference name="phonegap-version" value="cli-8.1.1" /> 
+    <!-- <preference name="phonegap-version" value="cli-8.1.1" />  -->
     <preference name="orientation" value="portrait" /> 
     <preference name="stay-in-webview" value="false" />
     <preference name="CameraUsesGeolocation" value="false" />
@@ -44,6 +44,8 @@
     <preference name="deployment-target" value="9.0" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="UIWebViewBounce" value="false" />
+    <preference name="PLAY_SERVICES_VERSION" value="17.0.0" />
+    <preference name="ANDROID_SUPPORT_V4_VERSION" value="27.1.1" />
     <preference name="StatusBarOverlaysWebView" value="true" />
     <preference name="StatusBarStyle" value="lightcontent" />
 
@@ -70,7 +72,6 @@
     <plugin name="cordova-plugin-device"  source="npm" />
     <plugin name="cordova-plugin-inappbrowser" source="npm" /> <!--spec="3.0.0"-->
     <plugin name="cordova-plugin-background-audio"  source="npm"/>
-    <preference name="PLAY_SERVICES_VERSION" value="17.0.0" />
     <plugin name="cordova-plugin-foreground-service"  source="npm" />
 <!--    <gap:plugin name="cordova-plugin-networkinterface" source="npm" />-->
     
