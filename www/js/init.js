@@ -204,7 +204,7 @@ var mapaInc = {
     },
 
     getLocation: function () {
-
+        console.log('getLocation');
         var option = {enableHighAccuracy: true};
         plugin.google.maps.LocationService.getMyLocation(option, function (location) {
             //CAMERA POSITION
