@@ -954,6 +954,51 @@ var init = {
                  
         }
 
+    },
+
+     mapaCiclisme :  {
+
+        getFilename: function(id) {
+            var formData = new FormData(); //$('#form-sugerencia')[0]
+            formData.append('id', id);           
+            formData.append('funcio', 'get_ruta_mapa');
+            var resp = init.sendAjax(formData, 'mapa.class.php', true);
+            return resp.str;
+        }
+
+        ,getRutaColor: function(id) {
+            var formData = new FormData(); //$('#form-sugerencia')[0]
+            formData.append('id', id);           
+            formData.append('funcio', 'get_ruta_color');
+            var resp = init.sendAjax(formData, 'mapa.class.php', true);
+            return resp.str;
+        }
+
+        ,loadGPXFileIntoGoogleMap: function(map, filename,color) {//charge gpx, put color and anothers props
+            $.ajax({
+                url: filename,
+                dataType: "xml",
+                success: function (data) {
+                    var parser = new GPXParser(data, map);
+                    parser.setTrackColour(color);
+                    parser.setTrackWidth(2);
+                    parser.setMinTrackPointDelta(0.0001);
+                    parser.centerAndZoom(data);
+                    parser.addTrackpointsToMap();
+                    parser.addWaypointsToMap();
+                }
+            });
+        }
+    
+        ,init: function(id) {
+           var color = init.mapaCiclisme.getRutaColor(id);
+            if (document.getElementById("mapaCiclisme")) {
+                var mapOptions = {zoom: 7, mapTypeId: google.maps.MapTypeId.TERRAIN, scrollwheel: false};
+                var map = new google.maps.Map(document.getElementById("mapaCiclisme"), mapOptions);
+                mapaCiclisme.loadGPXFileIntoGoogleMap(map, init.mapaCiclisme.getFilename(id),color);
+            }
+        }
+    
     }
 };
 

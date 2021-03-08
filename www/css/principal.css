@@ -58,6 +58,7 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 
 /*######## MAPA ###################*/
 .mapa {width:100vw;height: 100%; min-height: 300px;}
+.mapaCiclisme {width:100vw;height: 100%; min-height: 300px;}
 
 /*######## HOME - NOU ###################*/
 #home-nou .ui-content{background-image: url(../images/fondo_home.jpg); background-size: cover; background-position: center; height: 100vh;padding: 1vw 6vw;}
