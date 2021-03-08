@@ -66,11 +66,11 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #home-nou .logo{margin-bottom: 16vw;}
 #home-nou .pastilla{padding: 20vw 2vw 5vw 0vw; text-align: center; font-size: 3.5vw; color:#fff; font-weight: 500; text-shadow:none;display: inline-block; width: 110%; text-transform: uppercase;background-size: cover; background-position: center; background-repeat: no-repeat;}
 #home-nou .pastilla::before{position:absolute; width:20vw; height: 20vw; background-image: url(../icons/spriteoncdphome.svg); background-size: 200vw; content: " ";top: 2.5vw;left: 9.5vw;}
-#home-nou .pastilla.oncpd{border-style: solid; border-width: 0px 1px 0px 0px;}
+#home-nou .pastilla.oncpd{border-style: solid; border-width: 0px 0px 0px 0px;}
 #home-nou .pastilla.oncpd::before{background-position:-18vw -12vw;}
 #home-nou .pastilla.esdevn{border-style: solid; border-width: 0px 1px 1px 0px;}
 #home-nou .pastilla.esdevn::before{background-position:-85vw -12vw;}
-#home-nou .pastilla.sprts{border-style: solid; border-width: 0px 0px 1px 0px;}
+#home-nou .pastilla.sprts{border-style: solid; border-width: 0px 1px 1px 0px;}
 #home-nou .pastilla.sprts::before{background-position:-120vw -12vw;}
 #home-nou .pastilla.notc{border-style: solid; border-width: 0px 1px 1px 0px;}
 #home-nou .pastilla.notc::before{background-position:-49vw -12vw;}
@@ -113,6 +113,8 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #home-nou .pasta.servi {border-style: solid; border-width: 0px 1px 0px 0px;}
 #home-nou .ui-content > a:first-child{position:absolute; right: 10px; top: 10px; width:10vw; height: 10vw; background-image: url(../icons/sprite_info_turisme.svg); background-size: 115vw; background-position: -91vw -115.5vw;z-index: 99;}
 #home-nou .ui-content > .col-xs-6{padding: 0.5vw;}
+#home-nou .senderisme{border-style: solid; border-width: 1px 0px 0px 0px;}
+#home-nou .ciclisme{border-style: solid; border-width: 1px 1px 0px 1px;}
 #login_home{display:none;} 
 .icon-radio {background-image: url(../icons/spriteoncdphome.svg);position:absolute; width:20vw; height: 20vw;background-size: 200vw; content: " ";top: -1.5vw;left: 4vw;background-position:-167vw -12vw;}
 .radio-text {font-size: 6.5vw;color: #fff !important;text-shadow: none;text-align: left;margin-left: 10px;margin-top: 18px !important;font-weight: normal !important;}
