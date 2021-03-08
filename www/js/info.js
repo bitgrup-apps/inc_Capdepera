@@ -1006,6 +1006,7 @@ var init = {
 
   ,senderisme: {
         init: function() {
+            var formData = new FormData();
             formData.append('funcio', 'getRutesSenderisme');
             var resp = init.sendAjax(formData, 'oncapdepera.class.php', true);
             $('#llista-senderisme').html(resp.str);
@@ -1015,6 +1016,7 @@ var init = {
 
   ,ciclisme: {
     init: function() {
+        var formData = new FormData();
         formData.append('funcio', 'getRutesCiclisme');
         var resp = init.sendAjax(formData, 'oncapdepera.class.php', true);
         $('#llista-ciclisme').html(resp.str);
