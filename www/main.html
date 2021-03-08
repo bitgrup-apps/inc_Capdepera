@@ -93,15 +93,15 @@
                     <a href="#oncapdepera-serveis" class="pasta servi literal" data-role="none" data-literal="msg_on_men_3">Serveis</a>
                 </div>
                 <div class="col-xs-4">
-                    <a href="#" class="pastilla oncpd literal" data-role="none" data-literal="msg_menu_13" onclick="">Medi Ambient</a>
+                    <a href="#posidonia-presentacio" data-transition="slide" class="pastil medi literal" data-role="none" data-literal="msg_menu_13" onclick="">Medi Ambient</a>
                 </div>
                 
                 <div class="col-xs-4">
                     <span class="icona cinema"></span>
-                    <a href="#visita" class="pastil senderisme  literal" data-literal="msg_menu_8" data-role="none" onclick="init.wow.getAllEtnos();">Senderisme</a>
+                    <a href="#llista-rutes-senderisme" data-transition="slide" class="pastil senderisme  literal" data-literal="msg_menu_8" data-role="none" onclick="init.wow.getAllEtnos();">Senderisme</a>
                 </div>
                 <div class="col-xs-4">
-                    <a href="#" class="pastil ciclisme literal" data-literal="msg_on_men_7b" data-role="none" onclick="init.onCapdepera.init();mapapos.getLocalPos();">Ciclisme</a>
+                    <a href="#llista-rutes-ciclisme" data-transition="slide" class="pastil ciclisme literal" data-literal="msg_on_men_7b" data-role="none" onclick="init.onCapdepera.init();mapapos.getLocalPos();">Ciclisme</a>
                 </div>
                 <div class="col-xs-4">
                     <a href="#" class="pastilla oncpd" data-role="none" onclick="init.onCapdepera.init();mapapos.getLocalPos();">Capdepera</a>
@@ -1380,6 +1380,45 @@
             </div>
         </div>
 
+        <!--###################                 SENDERISME             ###########################-->
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+
+
+        <!--////////////////////    HOME  ///////////////////////////////-->
+
+        <div data-role="page" class="senderisme-header pagina info-turisme"  id="noticies-home">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_4">Notícies</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-senderisme-home" class=" " >
+                <div class="row" id="llista-senderisme"></div>
+            </div>
+        </div>
+
+         <!--###################                 CICLISME             ###########################-->
+        <!--####################################################################################-->
+        <!--####################################################################################-->
+
+
+        <!--////////////////////    HOME  ///////////////////////////////-->
+
+        <div data-role="page" class="ciclisme-header pagina info-turisme"  id="noticies-home">
+            <div data-role="header" class="header">
+                <div class="row">
+                    <div class="col-xs-2"><a href="#" data-rel="back" data-transition="slide"></a></div>
+                    <div class="col-xs-8 literal" data-literal="msg_menu_4">Notícies</div>
+                    <div class="col-xs-2" onclick="init.home();"></div>
+                </div>
+            </div>
+            <div data-role="content" id="content-ciclisme-home" class=" " >
+                <div class="row" id="llista-ciclisme"></div>
+            </div>
+        </div>
 
         <!--####################################################################################-->
         <!--####################################################################################-->

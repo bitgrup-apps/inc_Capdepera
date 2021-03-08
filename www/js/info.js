@@ -1003,6 +1003,23 @@ var init = {
         }
     
     }
+
+  ,senderisme: {
+        init: function() {
+            formData.append('funcio', 'getRutesSenderisme');
+            var resp = init.sendAjax(formData, 'oncapdepera.class.php', true);
+            $('#llista-senderisme').html(resp.str);
+        }
+  }
+
+  ,ciclisme: {
+    init: function() {
+        formData.append('funcio', 'getRutesCiclisme');
+        var resp = init.sendAjax(formData, 'oncapdepera.class.php', true);
+        $('#llista-ciclisme').html(resp.str);
+    }
+}
+    
 };
 
 
