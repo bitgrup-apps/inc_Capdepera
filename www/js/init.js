@@ -285,6 +285,8 @@ var mapaInc = {
                     //ONCAPDEPERA
                     $('#adresaIncidenciaOnCap').val(result.thoroughfare);
                     $('#poblacioIncidenciaOnCap').val(result.locality);
+                    $('#latitutIncidenciaOnCap').val(location.latLng.lat);
+                    $('#longitutIncidenciaOnCap').val(location.latLng.lng);
 
 
                 } else {
