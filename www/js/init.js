@@ -207,58 +207,25 @@ var mapaInc = {
             mapawow.long = location.latLng.lng;
         });
     },
-    //LOCALITZACIO HTML5
-    getLocation2: function() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-              (position) => {
-                mapaInc.lat = position.coords.latitude;
-                mapaInc.lng = position.coords.longitude;
-                const pos = {
-                  lat: position.coords.latitude,
-                  lng: position.coords.longitude,
-                };
-                // infoWindow.setPosition(pos);
-                // infoWindow.setContent("Location found.");
-                // infoWindow.open(map);
-                // map.setCenter(pos);
-               
-                mapaInc.pos = pos;
-                console.log('Pos html5: '+pos);
-              },
-              () => {
-                handleLocationError(true, infoWindow, map.getCenter());
-              }
-            );
-            console.log('lat: '+ mapaInc.lat);
-            const GOOGLE = new plugin.google.maps.LatLng(mapaInc.lat, mapaInc.lng);
-
-            var request = {
-                position: GOOGLE
-            };
-            plugin.google.maps.Geocoder.geocode(request, function (results) {
-
-                if (results.length) {
-                    var result = results[0];
-                    $('#adresaIncidencia').val(result.thoroughfare);
-                    $('#poblacioIncidencia').val(result.locality);
-                    //ONCAPDEPERA
-                    $('#adresaIncidenciaOnCap').val(result.thoroughfare);
-                    $('#poblacioIncidenciaOnCap').val(result.locality);
-
-
-                } else {
-                    console.log('E-202: NOT LENGHT MAPA');
-                    errorMapa();
-                }
-            });
-          } else {
-            // Browser doesn't support Geolocation
-            handleLocationError(false, infoWindow, map.getCenter());
-          }
+    //LOCALITZACIO GEOLOCATION PLUGUIN
+    getLocation: function() {
+        var options = {
+            enableHighAccuracy: true,
+            maximumAge: 3600000
+         }
+         var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
     },
 
-    getLocation: function () {
+    onSuccess: function(position) {
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+        console.log('lat: '+ lat + '/lng: '+lng);
+    },
+    onError: function(error){
+console.log('Error: '+ error.code);
+    },
+
+    getLocation2: function () {
         console.log('getLocation');
         var option = {enableHighAccuracy: true};
         console.log('after option');
