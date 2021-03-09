@@ -160,11 +160,13 @@ var mapaInc = {
         });
         google.maps.event.addListener(map, 'click', function (event) {
             mapaInc.marcador.setMap(null);
+            console.log('pos click: ' + event.latLng);
             mapaInc.marcador = new google.maps.Marker({
                 position: event.latLng,
                 map: map
+               
             });
-            console.log('pos click: ' + position);
+            
             var request = {
                 position: event.latLng
             };
