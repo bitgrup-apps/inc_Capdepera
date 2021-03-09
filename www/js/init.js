@@ -208,7 +208,7 @@ var mapaInc = {
         });
     },
     //LOCALITZACIO HTML5
-    getLocation: function() {
+    getLocation2: function() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
               (position) => {
@@ -258,7 +258,7 @@ var mapaInc = {
           }
     },
 
-    getLocation2: function () {
+    getLocation: function () {
         console.log('getLocation');
         var option = {enableHighAccuracy: true};
         plugin.google.maps.LocationService.getMyLocation(option, function (location) {
