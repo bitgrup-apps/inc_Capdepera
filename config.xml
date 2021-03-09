@@ -33,7 +33,7 @@
     
 	
     <!-- PREFERENCE -->
-    <!-- <preference name="phonegap-version" value="cli-8.1.1" />  -->
+    <preference name="phonegap-version" value="cli-8.0.0" />  
     <preference name="orientation" value="portrait" /> 
     <preference name="stay-in-webview" value="false" />
     <preference name="CameraUsesGeolocation" value="false" />
@@ -74,7 +74,7 @@
     <plugin name="cordova-plugin-inappbrowser" source="npm" /> <!--spec="3.0.0"-->
     <plugin name="cordova-plugin-background-audio"  source="npm"/>
     <plugin name="cordova-plugin-foreground-service"  source="npm" />
-     <plugin name="cordova-plugin-geolocation" spec="~4">
+     <plugin name="cordova-plugin-geolocation" spec="4.0.2" source="npm">
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="This app uses your location for maps." />
     </plugin>
 <!--    <gap:plugin name="cordova-plugin-networkinterface" source="npm" />-->
