@@ -963,7 +963,6 @@ var init = {
             formData.append('id', id);           
             formData.append('funcio', 'get_ruta_mapa');
             var resp = init.sendAjax(formData, 'mapa.class.php', true);
-            console.log('filename: '+resp.str);
             return resp.str;
         }
 
@@ -972,7 +971,6 @@ var init = {
             formData.append('id', id);           
             formData.append('funcio', 'get_ruta_color');
             var resp = init.sendAjax(formData, 'mapa.class.php', true);
-            console.log('color: '+resp.str);
             return resp.str;
         }
 
@@ -994,11 +992,11 @@ var init = {
     
         ,init: function(id) {
            var color = init.mapaCiclisme.getRutaColor(id);
-           console.log('init');
+           var file = init.mapaCiclisme.getFilename(id);
             if (document.getElementById("mapaCiclisme")) {
                 var mapOptions = {zoom: 7, mapTypeId: google.maps.MapTypeId.TERRAIN, scrollwheel: false};
                 var map = new google.maps.Map(document.getElementById("mapaCiclisme"), mapOptions);
-                init.mapaCiclisme.loadGPXFileIntoGoogleMap(map, init.mapaCiclisme.getFilename(id),color);
+                init.mapaCiclisme.loadGPXFileIntoGoogleMap(map, file ,color);
             }
         }
     

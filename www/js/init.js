@@ -164,6 +164,7 @@ var mapaInc = {
                 position: event.latLng,
                 map: map
             });
+            console.log('pos click: ' + position);
             var request = {
                 position: event.latLng
             };
