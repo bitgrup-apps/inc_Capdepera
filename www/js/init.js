@@ -224,7 +224,7 @@ var mapaInc = {
         //  mapaInc.mapInc.getAdress(NOVAPOSICIO);
         mapaInc.pos = NOVAPOSICIO;
         console.log('Pos:'+NOVAPOSICIO);
-        const GOOGLE = new plugin.google.maps.LatLng(location.latLng.lat, location.latLng.lng);
+        const GOOGLE = new plugin.google.maps.LatLng(lat, lng);
 
         var request = {
             position: GOOGLE
