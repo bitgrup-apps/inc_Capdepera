@@ -205,8 +205,55 @@ var mapaInc = {
             mapawow.long = location.latLng.lng;
         });
     },
+    //LOCALITZACIO HTML5
+    getLocation: function() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+              (position) => {
+                const pos = {
+                  lat: position.coords.latitude,
+                  lng: position.coords.longitude,
+                };
+                // infoWindow.setPosition(pos);
+                // infoWindow.setContent("Location found.");
+                // infoWindow.open(map);
+                // map.setCenter(pos);
+                mapaInc.pos = pos;
+                console.log('Pos html5: '+pos);
+              },
+              () => {
+                handleLocationError(true, infoWindow, map.getCenter());
+              }
+            );
+            console.log('lat: '+position.coords.latitude);
+            const GOOGLE = new plugin.google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
-    getLocation: function () {
+            var request = {
+                position: GOOGLE
+            };
+            plugin.google.maps.Geocoder.geocode(request, function (results) {
+
+                if (results.length) {
+                    var result = results[0];
+                    $('#adresaIncidencia').val(result.thoroughfare);
+                    $('#poblacioIncidencia').val(result.locality);
+                    //ONCAPDEPERA
+                    $('#adresaIncidenciaOnCap').val(result.thoroughfare);
+                    $('#poblacioIncidenciaOnCap').val(result.locality);
+
+
+                } else {
+                    console.log('E-202: NOT LENGHT MAPA');
+                    errorMapa();
+                }
+            });
+          } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+          }
+    },
+
+    getLocation2: function () {
         console.log('getLocation');
         var option = {enableHighAccuracy: true};
         plugin.google.maps.LocationService.getMyLocation(option, function (location) {
