@@ -213,15 +213,15 @@ var mapaInc = {
             enableHighAccuracy: true,
             maximumAge: 3600000
          }
-         var watchID = navigator.geolocation.getCurrentPosition(mapaInc.onSuccess, mapaInc.onError, options);
+         var watchID = navigator.geolocation.getCurrentPosition(mapaInc.onSuccessGeo, mapaInc.onErrorGeo, options);
     },
 
-    onSuccess: function(position) {
+    onSuccessGeo: function(position) {
         var lat = position.coords.latitude;
         var lng = position.coords.longitude;
         console.log('lat: '+ lat + '/lng: '+lng);
     },
-    onError: function(error){
+    onErrorGeo: function(error){
     console.log('Error: '+ error.code);
     },
 
