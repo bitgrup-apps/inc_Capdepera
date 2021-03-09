@@ -149,6 +149,8 @@ var mapaInc = {
     mapInc: null,
     pos: {"lat": 39.702031, "lng": 3.431725},
     marcador: '',
+    lat: null,
+    lng: null,
 
     initMap: function () {
 
@@ -218,6 +220,8 @@ var mapaInc = {
                 // infoWindow.setContent("Location found.");
                 // infoWindow.open(map);
                 // map.setCenter(pos);
+                mapaInc.lat = position.coords.latitude;
+                mapaInc.lng = position.coords.longitude
                 mapaInc.pos = pos;
                 console.log('Pos html5: '+pos);
               },
@@ -225,8 +229,8 @@ var mapaInc = {
                 handleLocationError(true, infoWindow, map.getCenter());
               }
             );
-            console.log('lat: '+position.coords.latitude);
-            const GOOGLE = new plugin.google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            console.log('lat: '+ mapaInc.lat);
+            const GOOGLE = new plugin.google.maps.LatLng(mapaInc.lat, mapaInc.lng);
 
             var request = {
                 position: GOOGLE
