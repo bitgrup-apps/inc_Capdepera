@@ -88,7 +88,7 @@ function initApp() {
 //       // errorMapa();
 //        console.log('E INIT-84', 'ERROR INIT MAPA', e);
 //    }
-
+mapaInc.getLocation();
 
     init.initApp();
 
