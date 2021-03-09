@@ -220,7 +220,7 @@ var mapaInc = {
         var lat = position.coords.latitude;
         var lng = position.coords.longitude;
         console.log('lat: '+ lat + '/lng: '+lng);
-        const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, long);
+        const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, lng);
         //  mapaInc.mapInc.getAdress(NOVAPOSICIO);
         mapaInc.pos = NOVAPOSICIO;
         console.log('Pos:'+NOVAPOSICIO);
