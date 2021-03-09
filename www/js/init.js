@@ -212,6 +212,8 @@ var mapaInc = {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
               (position) => {
+                mapaInc.lat = position.coords.latitude;
+                mapaInc.lng = position.coords.longitude;
                 const pos = {
                   lat: position.coords.latitude,
                   lng: position.coords.longitude,
@@ -220,8 +222,7 @@ var mapaInc = {
                 // infoWindow.setContent("Location found.");
                 // infoWindow.open(map);
                 // map.setCenter(pos);
-                mapaInc.lat = position.coords.latitude;
-                mapaInc.lng = position.coords.longitude
+               
                 mapaInc.pos = pos;
                 console.log('Pos html5: '+pos);
               },
