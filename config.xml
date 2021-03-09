@@ -74,7 +74,7 @@
     <plugin name="cordova-plugin-inappbrowser" source="npm" /> <!--spec="3.0.0"-->
     <plugin name="cordova-plugin-background-audio"  source="npm"/>
     <plugin name="cordova-plugin-foreground-service"  source="npm" />
-    <plugin name="cordova-plugin-geolocation"  source="npm" />
+     <plugin name="cordova-plugin-geolocation" spec="~4" />
 <!--    <gap:plugin name="cordova-plugin-networkinterface" source="npm" />-->
     
     
