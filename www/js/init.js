@@ -88,7 +88,7 @@ function initApp() {
 //       // errorMapa();
 //        console.log('E INIT-84', 'ERROR INIT MAPA', e);
 //    }
-mapaInc.getLocation();
+
 
     init.initApp();
 
@@ -213,7 +213,7 @@ var mapaInc = {
             enableHighAccuracy: true,
             maximumAge: 3600000
          }
-         var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
+         var watchID = navigator.geolocation.getCurrentPosition(mapaInc.onSuccess, mapaInc.onError, options);
     },
 
     onSuccess: function(position) {
@@ -222,7 +222,7 @@ var mapaInc = {
         console.log('lat: '+ lat + '/lng: '+lng);
     },
     onError: function(error){
-console.log('Error: '+ error.code);
+    console.log('Error: '+ error.code);
     },
 
     getLocation2: function () {
