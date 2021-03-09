@@ -220,6 +220,33 @@ var mapaInc = {
         var lat = position.coords.latitude;
         var lng = position.coords.longitude;
         console.log('lat: '+ lat + '/lng: '+lng);
+        const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, long);
+        //  mapaInc.mapInc.getAdress(NOVAPOSICIO);
+        mapaInc.pos = NOVAPOSICIO;
+        console.log('Pos:'+NOVAPOSICIO);
+        const GOOGLE = new plugin.google.maps.LatLng(location.latLng.lat, location.latLng.lng);
+
+        var request = {
+            position: GOOGLE
+        };
+        plugin.google.maps.Geocoder.geocode(request, function (results) {
+
+            if (results.length) {
+                var result = results[0];
+                $('#adresaIncidencia').val(result.thoroughfare);
+                $('#poblacioIncidencia').val(result.locality);
+                //ONCAPDEPERA
+                $('#adresaIncidenciaOnCap').val(result.thoroughfare);
+                $('#poblacioIncidenciaOnCap').val(result.locality);
+                $('#latitutIncidenciaOnCap').val(location.latLng.lat);
+                $('#longitutIncidenciaOnCap').val(location.latLng.lng);
+
+
+            } else {
+                console.log('E-202: NOT LENGHT MAPA');
+                errorMapa();
+            }
+        });
     },
     onErrorGeo: function(error){
     console.log('Error: '+ error.code);
