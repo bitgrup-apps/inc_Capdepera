@@ -44,6 +44,7 @@ h2{color:#fff; font-size: 36px; text-align: center; font-weight: 300; text-shado
 .pagina h4.ui-title{font-size:13px; font-weight:600; color:#fff; text-shadow:none; padding-top:14%; margin:0;}
 h3{font-size:19px; color:#fff; text-align:center; text-shadow:none; margin-top:30px;}
 a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:center; font-weight:300; text-shadow:none;}
+.gestiona_incidencies h4.ui-title{font-size:17px; font-weight:600; color:#fff; text-shadow:none; padding-top:11%; margin:0;}
 
 /*######## ICONS ##########*/
 .icon{width:25px; height:22px; background-repeat:no-repeat; background-size:20px auto; background-position:center center; position:absolute; top:46%;}
