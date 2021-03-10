@@ -427,10 +427,10 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 #oncapdepera-home .pos {background-color: #008841;}
 .onRadio{background-color: #bcc57d; background-position: -62.5vh -19.25vh;background-size: auto 50vh;float: left;background-repeat: no-repeat;}
 
-#home-nou .posidonia {background-image: url(../icons/acuario.svg);width:20vw; height: 20vw;background-position: 2.0vh 1.75vh;background-repeat: no-repeat;}
+#home-nou .posidonia {background-image: url(../icons/acuario.svg);background-position: 6.0vh 4.75vh;background-repeat: no-repeat;background-size: auto 5vh;}
 
-#home-nou .rutes{background-position: -21.5vh -19.25vh;}
-#home-nou .rutesCic{background-position: -62.5vh -19.25vh;}
+#home-nou .rutes{background-position: -18.5vh -18.5vh;}
+#home-nou .rutesCic{background-position: -58.5vh -18.5vh;}
 #home-nou .ico{width:20vw; height: 20vw; background-image: url(../icons/spriteoncdphome.svg); background-size: 200vw; content: " ";top: 2.5vw;left: 9.5vw;}
 #home-nou .icon-v2{background-image:url('../icons/spriteoncdphome.svg');background-size: auto 50vh;float:left;background-repeat: no-repeat;}
 /*fitxa*/
