@@ -24,9 +24,9 @@
         <config-file parent="NSLocationAlwaysUsageDescription" platform="ios" target="*-Info.plist">
             <string>Se necesita acceso a la localización para poder indicar la posición de la incidencia</string>
         </config-file> 
-        <config-file parent="NSLocationWhenInUseUsageDescription" platform="ios" target="*-Info.plist">
+        <edit-config target="NSLocationWhenInUseUsageDescription" platform="ios" target="*-Info.plist" mode="merge">
             <string>Se necesita acceso a la localización para poder indicar la posición de la incidencia</string>
-        </config-file>
+        </edit-config>
     </platform>
 
 
