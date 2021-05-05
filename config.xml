@@ -22,11 +22,11 @@
             <string>Advertisement would like to use bluetooth.</string> 
         </config-file>
         <config-file parent="NSLocationAlwaysUsageDescription" platform="ios" target="*-Info.plist">
-            <string>Se necesita acceso a la localización para poder indicar la posición de la incidencia</string>
+            <string>The location will be used to attach information to the incidents</string>
         </config-file> 
-        <edit-config target="NSLocationWhenInUseUsageDescription" platform="ios" target="*-Info.plist" mode="merge">
-            <string>Se necesita acceso a la localización para poder indicar la posición de la incidencia</string>
-        </edit-config>
+        <config-file parent="NSLocationWhenInUseUsageDescription" platform="ios" target="*-Info.plist">
+            <string>The location will be used to attach information to the incidents</string>
+        </config-file>
     </platform>
 
 
