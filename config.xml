@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:cdv="http://cordova.apache.org/ns/1.0"
         id        = "com.incCapdepera.bitgrup"
-        version   = "3.4.11"
+        version   = "3.4.12"
         xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- com.OnCapdepera.bitgrup	 -->
 
@@ -22,10 +22,10 @@
             <string>Advertisement would like to use bluetooth.</string> 
         </config-file>
         <config-file parent="NSLocationAlwaysUsageDescription" platform="ios" target="*-Info.plist">
-            <string>The location will be used to attach information to the incidents</string>
+            <string>Turning on location services allows us to show the exact location of the incidents that you may insert.</string>
         </config-file> 
         <config-file parent="NSLocationWhenInUseUsageDescription" platform="ios" target="*-Info.plist">
-            <string>The location will be used to attach information to the incidents</string>
+            <string>Turning on location services allows us to show the exact location of the incidents that you may insert.</string>
         </config-file>
     </platform>
 
