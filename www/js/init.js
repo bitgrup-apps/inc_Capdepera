@@ -562,7 +562,7 @@ var mapapos = {
     lat: null,
     long: null,
     marcador: '',
-    pos: {"lat": 39.702031, "lng": 3.431725},
+    pos: {"lat": 39.715290525199016, "lng": 3.3181435793889325},
     dinsPos: false,
     lang: '',
 
