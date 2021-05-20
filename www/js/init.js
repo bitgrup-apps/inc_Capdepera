@@ -562,7 +562,7 @@ var mapapos = {
     lat: null,
     long: null,
     marcador: '',
-    pos: {"lat": 39.715290525199016, "lng": 3.3181435793889325},
+    pos: {"lat": 39.702031, "lng": 3.431725},
     dinsPos: false,
     lang: '',
 
@@ -595,7 +595,7 @@ var mapapos = {
         }
       //  var src = 'http://gestcap.com/App/posidonia/anei.kml';
         var src2 = 'http://gestcap.com/App/posidonia/posTest.kml';
-        var posicio = {"lat": 39.9163321, "lng": 3.5592721};
+        var posicio = {"lat": 39.70518999175571, "lng": 3.429914873681774};
         var map = new google.maps.Map(
                 document.getElementById('mapaPos'), {zoom: 11, center: posicio, disableDefaultUI: true});
 
