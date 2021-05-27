@@ -83,8 +83,60 @@ var init = {
                 window.open(href, '_system');
                 }else {
                 window.open(encodeURI('https://docs.google.com/gview?embedded=true&url='+href), '_blank', 'location=yes,EnableViewPortScale=yes');
-        }
+        }        
     }
+
+    ,guardarPDF: function(file,nom){
+        var storageLocation = "";
+        console.log(device.platform);
+        switch (device.platform) {
+        
+            case "Android":
+                storageLocation = 'file:///storage/emulated/0/';
+                break;
+            case "iOS":
+                storageLocation = cordova.file.documentsDirectory;
+                break;
+        
+        }
+        
+        window.resolveLocalFileSystemURL(storageLocation,
+            function (fileSystem) {
+        
+                fileSystem.getDirectory('Download', {
+                        create: true,
+                        exclusive: false
+                    },
+                    function (directory) {
+        
+                        //You need to put the name you would like to use for the file here.
+                        directory.getFile(nom, {
+                                create: true,
+                                exclusive: false
+                            },
+                            function (fileEntry) {
+        
+        
+                                fileEntry.createWriter(function (writer) {
+                                    writer.onwriteend = function () {
+                                        console.log("File written to downloads")
+                                    };
+        
+                                    writer.seek(0);
+                                    writer.write(file); //You need to put the file, blob or base64 representation here.
+        
+                                }, errorCallback);
+                            }, errorCallback);
+                    }, errorCallback);
+            }, errorCallback);
+        
+        var errorCallback = function(e) {
+            
+            console.log("Error: " + e)
+            
+        }  
+    }
+
     },
     esports: {
         menuOk: false,
