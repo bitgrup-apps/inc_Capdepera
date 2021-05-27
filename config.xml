@@ -2,7 +2,7 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:cdv="http://cordova.apache.org/ns/1.0"
-        id        = "com.incCapdepera.bitgrup"
+        id        = "com.OnCapdepera.bitgrup"
         version   = "3.4.12"
         xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- com.OnCapdepera.bitgrup	 -->
