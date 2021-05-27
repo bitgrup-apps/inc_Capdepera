@@ -138,6 +138,18 @@ var init = {
     }
 
     ,llegirPDF: function(file) {
+        var storageLocation = "";
+        console.log(device.platform);
+        switch (device.platform) {
+        
+            case "Android":
+                storageLocation = 'file:///storage/emulated/0/';
+                break;
+            case "iOS":
+                storageLocation = cordova.file.documentsDirectory;
+                break;
+        
+        }
         window.resolveLocalFileSystemURL(storageLocation,
             function (fileSystem) {
             
