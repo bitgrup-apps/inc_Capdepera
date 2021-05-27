@@ -188,6 +188,9 @@ var mapaInc = {
                     errorMapa();
                 }
             });
+            
+            setTimeout(function(){ $.mobile.changePage("#oncapdepera-incidencia", {transition: "slide", changeHash: true}); }, 1000);
+            
         });
         $('#mapa').on('swipe', function (event) {
             $.event.special.swipe.horizontalDistanceThreshold(300);

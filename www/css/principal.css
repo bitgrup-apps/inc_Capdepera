@@ -425,6 +425,8 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 /*#oncapdepera-home .pastilla.reserva{border-style: solid; border-width: 0px 0px 0px 1px;}*/
 #oncapdepera-home .ico .res{background-position:-164vw -40vw;}
 #oncapdepera-home .posidonia {background-image: url(../icons/acuario.svg);width:20vw; height: 20vw;background-position: 2.0vh 1.75vh;background-repeat: no-repeat;}
+#oncapdepera-home .castell {background-image: url(../images/logo_castell.png);width:20vw; height: 20vw;background-position: 2.0vh 0.5vh;background-repeat: no-repeat;}
+#oncapdepera-home .melis {background-image: url(../images/logo_melis.jpg);width:20vw; height: 20vw;background-position: 1.5vh 0vh;background-repeat: no-repeat;}
 #oncapdepera-home .pos {background-color: #008841;}
 .onRadio{background-color: #bcc57d; background-position: -62.5vh -19.25vh;background-size: auto 50vh;float: left;background-repeat: no-repeat;}
 
