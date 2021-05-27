@@ -168,7 +168,8 @@ var mapaInc = {
                 map: map
                
             });
-            
+            mapaInc.lat = event.latLng.lat;
+            mapaInc.lng = event.latLng.lng;
             var request = {
                 position: event.latLng
             };
@@ -182,7 +183,9 @@ var mapaInc = {
                     //ONCAPDEPERA
                     $('#adresaIncidenciaOnCap').val(result.thoroughfare);
                     $('#poblacioIncidenciaOnCap').val(result.locality);
-                    console.log('dins if: '+result.thoroughfare);
+                    $('#latitutIncidenciaOnCap').val(mapaInc.lat);
+                    $('#longitutIncidenciaOnCap').val(mapaInc.lng);
+                   
 
                 } else {
                     console.log('E-202: NOT LENGHT MAPA');
