@@ -173,7 +173,8 @@ var mapaInc = {
                 position: event.latLng
             };
             plugin.google.maps.Geocoder.geocode(request, function (results) {
-
+                console.log('dins pluguin');
+                console.log('mapaInc.lat' + mapaInc.lat);
                 if (results.length) {
                     var result = results[0];
                     $('#adresaIncidencia').val(result.thoroughfare);
@@ -181,7 +182,7 @@ var mapaInc = {
                     //ONCAPDEPERA
                     $('#adresaIncidenciaOnCap').val(result.thoroughfare);
                     $('#poblacioIncidenciaOnCap').val(result.locality);
-
+                    console.log('dins if: '+result.thoroughfare);
 
                 } else {
                     console.log('E-202: NOT LENGHT MAPA');
@@ -208,6 +209,7 @@ var mapaInc = {
 
             mapawow.lat = location.latLng.lat;
             mapawow.long = location.latLng.lng;
+            console.log('getLocalitzacio: '+location.latLng.lat+'-'+ location.latLng.lng);
         });
     },
     //LOCALITZACIO GEOLOCATION PLUGUIN
@@ -233,7 +235,7 @@ var mapaInc = {
             position: GOOGLE
         };
         plugin.google.maps.Geocoder.geocode(request, function (results) {
-            console.log('dins pluguin');
+           
             if (results.length) {
                 var result = results[0];
                 $('#adresaIncidencia').val(result.thoroughfare);
@@ -243,7 +245,7 @@ var mapaInc = {
                 $('#poblacioIncidenciaOnCap').val(result.locality);
                 $('#latitutIncidenciaOnCap').val(lat);
                 $('#longitutIncidenciaOnCap').val(lng);
-                console.log('dins if: '+result.thoroughfare);
+                
 
             } else {
                 console.log('E-202: NOT LENGHT MAPA');
