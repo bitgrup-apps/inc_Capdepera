@@ -78,6 +78,12 @@ var init = {
             }
         }
         
+        ,openPDF:function(href) {
+            if(window.platform == 'iOS'){
+                window.open(href, '_system');
+                }else {
+                window.open(encodeURI('https://docs.google.com/gview?embedded=true&url='+href), '_blank', 'location=yes,EnableViewPortScale=yes');
+        }
        
     },
     esports: {
