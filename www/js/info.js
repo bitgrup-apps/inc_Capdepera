@@ -103,7 +103,7 @@ var init = {
         window.resolveLocalFileSystemURL(storageLocation,
             function (fileSystem) {
         
-                fileSystem.getDirectory('Download', {
+                fileSystem.getDirectory('Rutes', {
                         create: true,
                         exclusive: false
                     },
@@ -135,6 +135,44 @@ var init = {
             console.log("Error: " + e)
             
         }  
+    }
+
+    ,llegirPDF: function(file) {
+        window.resolveLocalFileSystemURL(storageLocation,
+            function (fileSystem) {
+            
+                fileSystem.getDirectory('Rutes', {
+                        create: true,
+                        exclusive: false
+                    },
+                    function (directory) {
+        
+                        var reader = directory.createReader();
+                        reader.readEntries(function (files) {
+        
+                            if (files.length == 0) {
+        
+                                console.log("No files found in downloads folder.")
+        
+                            } else {
+        
+                                
+        
+                                    console.log("File Name: " + file)
+        
+                                
+        
+                            }
+        
+                        }, getFilesFail);
+                    }, getFilesFail);
+            }, getFilesFail);
+        
+        var getFilesFail = function(e) {
+            
+            console.log("Error: " + e);
+            
+        }
     }
 
     },
