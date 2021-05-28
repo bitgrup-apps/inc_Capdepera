@@ -1037,9 +1037,58 @@ var mapapos = {
             console.log('mapaposLat: '+mapapos.lat);
             console.log('mapaposLng: '+mapapos.long);
         });
+        
     },
+
+    getLocationPos: function() {
+        var options = {
+            enableHighAccuracy: true,
+            maximumAge: 3600000
+         }
+         var watchID = navigator.geolocation.getCurrentPosition(mapapos.onSuccessGeoPos, mapapos.onErrorGeoPos, options);
+         
+    },
+
+    onSuccessGeoPos: function(position) {
+        
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+        mapapos.lat = lat;
+        mapapos.long = lng;
+        console.log('mapaposLat: '+ mapapos.lat)
+        const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, lng);
+        //  mapaInc.mapInc.getAdress(NOVAPOSICIO);
+       // mapaInc.pos = NOVAPOSICIO;
+       
+        // const GOOGLE = new plugin.google.maps.LatLng(lat, lng);
+
+        // var request = {
+        //     position: GOOGLE
+        // };
+        // plugin.google.maps.Geocoder.geocode(request, function (results) {
+           
+        //     if (results.length) {
+        //         var result = results[0];
+        //         $('#adresaIncidencia').val(result.thoroughfare);
+        //         $('#poblacioIncidencia').val(result.locality);
+        //         //ONCAPDEPERA
+        //         $('#adresaIncidenciaOnCap').val(result.thoroughfare);
+        //         $('#poblacioIncidenciaOnCap').val(result.locality);
+        //         $('#latitutIncidenciaOnCap').val(lat);
+        //         $('#longitutIncidenciaOnCap').val(lng);
+                
+
+        //     } else {
+        //         console.log('E-202: NOT LENGHT MAPA');
+        //         errorMapa();
+        //     }
+        // });
+    },
+    onErrorGeoPos: function(error){
+    console.log('Error: '+ error.code);
+    }
     
-    getLang: function () {
+    ,getLang: function () {
         var lang = null;
         if (navigator && navigator.userAgent && (lang = navigator.userAgent.match(/android.*\W(\w\w)-(\w\w)\W/i))) {
             lang = lang[1];
