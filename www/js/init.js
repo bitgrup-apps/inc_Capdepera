@@ -1022,6 +1022,7 @@ var mapapos = {
     },
 
     getLocalPos: function () {
+        console.log('getLocalPos');
         var option = {enableHighAccuracy: true};
         plugin.google.maps.LocationService.getMyLocation(option, function (location) {
             var lat = location.latLng.lat;
