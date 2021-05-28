@@ -1030,9 +1030,11 @@ var mapapos = {
             const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, long);
             //  mapaInc.mapInc.getAdress(NOVAPOSICIO);
             mapapos.pos = NOVAPOSICIO;
-
+            console.log('posicio: ' +location.latLng.lat+ '----' + location.latLng.lng);
             mapapos.lat = location.latLng.lat;
             mapapos.long = location.latLng.lng;
+            console.log('mapaposLat: '+mapapos.lat);
+            console.log('mapaposLng: '+mapapos.long);
         });
     },
     
