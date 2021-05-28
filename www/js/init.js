@@ -162,7 +162,7 @@ var mapaInc = {
         });
         google.maps.event.addListener(map, 'click', function (event) {
             mapaInc.marcador.setMap(null);
-            console.log('pos click: ' + event.latLng);
+            
             mapaInc.marcador = new google.maps.Marker({
                 position: event.latLng,
                 map: map
@@ -174,8 +174,7 @@ var mapaInc = {
                 position: event.latLng
             };
             plugin.google.maps.Geocoder.geocode(request, function (results) {
-                console.log('dins pluguin');
-                console.log('mapaInc.lat' + mapaInc.lat);
+                
                 if (results.length) {
                     var result = results[0];
                     $('#adresaIncidencia').val(result.thoroughfare);
@@ -212,7 +211,7 @@ var mapaInc = {
 
             mapawow.lat = location.latLng.lat;
             mapawow.long = location.latLng.lng;
-            console.log('getLocalitzacio: '+location.latLng.lat+'-'+ location.latLng.lng);
+            
         });
     },
     //LOCALITZACIO GEOLOCATION PLUGUIN
@@ -222,11 +221,11 @@ var mapaInc = {
             maximumAge: 3600000
          }
          var watchID = navigator.geolocation.getCurrentPosition(mapaInc.onSuccessGeo, mapaInc.onErrorGeo, options);
-         console.log('getLocation');
+         
     },
 
     onSuccessGeo: function(position) {
-        console.log('onSuccessGeo');
+        
         var lat = position.coords.latitude;
         var lng = position.coords.longitude;
        
