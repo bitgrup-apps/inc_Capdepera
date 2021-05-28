@@ -222,9 +222,11 @@ var mapaInc = {
             maximumAge: 3600000
          }
          var watchID = navigator.geolocation.getCurrentPosition(mapaInc.onSuccessGeo, mapaInc.onErrorGeo, options);
+         console.log('getLocation');
     },
 
     onSuccessGeo: function(position) {
+        console.log('onSuccessGeo');
         var lat = position.coords.latitude;
         var lng = position.coords.longitude;
        
