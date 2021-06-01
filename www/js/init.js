@@ -258,13 +258,13 @@ var mapaInc = {
     },
     //LOCALITZACIO GEOLOCATION PLUGUIN
     getLocation: function() {
-        console.log('getLocation');
+        console.log('Inici getLocation');
         var options = {
             enableHighAccuracy: true,
             maximumAge: 3600000
          }
         navigator.geolocation.getCurrentPosition(mapaInc.onSuccessGeo, mapaInc.onErrorGeo, options);
-         
+        console.log('Fi getLocation');
     },
 
     onSuccessGeo: function(position) {
