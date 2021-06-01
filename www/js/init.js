@@ -258,17 +258,17 @@ var mapaInc = {
     },
     //LOCALITZACIO GEOLOCATION PLUGUIN
     getLocation: function() {
-        console.log('Inici getLocation');
+      
         var options = {
             enableHighAccuracy: true,
             maximumAge: 3600000
          }
         navigator.geolocation.getCurrentPosition(mapaInc.onSuccessGeo, mapaInc.onErrorGeo, options);
-        console.log('Fi getLocation');
+       
     },
 
     onSuccessGeo: function(position) {
-        console.log('onSuccessGeo');
+       
         var lat = position.coords.latitude;
         var lng = position.coords.longitude;
        // console.log('url: https://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+lng+'&key=AIzaSyAbCsdbOZ31x79tk8PDVHsW3AL_zgNseGo');
