@@ -270,7 +270,7 @@ var mapaInc = {
         
         var lat = position.coords.latitude;
         var lng = position.coords.longitude;
-       
+        console.log('https://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+lng+'&key=AIzaSyAbCsdbOZ31x79tk8PDVHsW3AL_zgNseGo');
         const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, lng);
         //  mapaInc.mapInc.getAdress(NOVAPOSICIO);
         mapaInc.pos = NOVAPOSICIO;
