@@ -137,7 +137,45 @@ function initPushNotification() {
 
 //###################################################################################
 //###################################################################################
+//AJAX GOOGLE
+var ajax = {
+    sendAjax: function (url) {
 
+        var json = false;
+
+        $.ajax({
+            url: url + file, type: 'POST',  cache: false, contentType: false, processData: false, async: false,
+            beforeSend: function () {
+               
+            },
+            complete: function () {
+                setTimeout("$('#loading').css('display', 'none')", 300);
+            },
+            success: function (resposta) {
+                if ((typeof resposta) === 'string') {
+                    resposta = JSON.parse(resposta);
+                }
+                try {
+                    if (resposta.error == 1) {
+                        init.error_('E BIT-80', '', resposta.str);
+                    } else if (resposta.error == 0) {
+                        json = resposta;
+                    } else {
+                        init.error_('E BIT-81', '', resposta);
+                    }
+                } catch (e) {
+                    init.error_('E BIT-80', '', e);
+                }
+            },
+            error: function (e) {
+                $('#loading').css('display', 'none');
+                init.error_('E BIT-251', '', e);
+            },
+            timeout: 60000
+        });
+        return json;
+    },
+};
 
 
 //####################//####################//####################
@@ -173,6 +211,9 @@ var mapaInc = {
             var request = {
                 position: event.latLng
             };
+            ///Google api geocoding
+            let adresa = ajax.sendAjax('https://maps.googleapis.com/maps/api/geocode/json?latlng='+event.latLng.lat+','+event.latLng.lng+'&key=AIzaSyAbCsdbOZ31x79tk8PDVHsW3AL_zgNseGo');
+            console.log('adressa: '+ adresa);
             plugin.google.maps.Geocoder.geocode(request, function (results) {
                 
                 if (results.length) {
