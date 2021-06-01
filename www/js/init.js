@@ -144,7 +144,7 @@ var ajax = {
         var json = false;
 
         $.ajax({
-            url: url + file, type: 'POST',  cache: false, contentType: false, processData: false, async: false,
+            url: url, type: 'POST',  cache: false, contentType: false, processData: false, async: false,
             beforeSend: function () {
                
             },
