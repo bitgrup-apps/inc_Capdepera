@@ -212,7 +212,8 @@ var mapaInc = {
                 position: event.latLng
             };
             ///Google api geocoding
-            let adresa = ajax.sendAjax('https://maps.googleapis.com/maps/api/geocode/json?latlng='+event.latLng.lat+','+event.latLng.lng+'&key=AIzaSyAbCsdbOZ31x79tk8PDVHsW3AL_zgNseGo');
+            console.log('https://maps.googleapis.com/maps/api/geocode/json?latlng='+event.latLng.lat+','+event.latLng.lng+'&key=AIzaSyAbCsdbOZ31x79tk8PDVHsW3AL_zgNseGo');
+           // let adresa = ajax.sendAjax('https://maps.googleapis.com/maps/api/geocode/json?latlng='+event.latLng.lat+','+event.latLng.lng+'&key=AIzaSyAbCsdbOZ31x79tk8PDVHsW3AL_zgNseGo');
             console.log('adressa: '+ adresa);
             plugin.google.maps.Geocoder.geocode(request, function (results) {
                 
