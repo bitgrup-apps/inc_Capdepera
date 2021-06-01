@@ -21,10 +21,10 @@
         <config-file parent="NSBluetoothPeripheralUsageDescription" platform="ios" target="*-Info.plist">
             <string>Advertisement would like to use bluetooth.</string> 
         </config-file>
-        <config-file parent="NSLocationAlwaysUsageDescription" platform="ios" target="*-Info.plist">
+        <config-file parent="NSLocationAlwaysUsageDescription" platform="ios" target="*-Info.plist" mode="merge">
             <string>Turning on location services allows us to show the exact location of the incidents that you may insert.</string>
         </config-file> 
-        <config-file parent="NSLocationWhenInUseUsageDescription" platform="ios" target="*-Info.plist">
+        <config-file parent="NSLocationWhenInUseUsageDescription" platform="ios" target="*-Info.plist" mode="merge">
             <string>Turning on location services allows us to show the exact location of the incidents that you may insert.</string>
         </config-file>
     </platform>
@@ -74,8 +74,8 @@
     <plugin name="cordova-plugin-inappbrowser" source="npm" /> <!--spec="3.0.0"-->
     <plugin name="cordova-plugin-background-audio"  source="npm"/>
     <plugin name="cordova-plugin-foreground-service"  source="npm" />
-     <plugin name="cordova-plugin-geolocation" spec="4.0.2" source="npm">
-        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="This app uses your location for maps." />
+     <plugin name="cordova-plugin-geolocation" spec="4.1.0" source="npm">
+        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="Turning on location services allows us to show the exact location of the incidents that you may insert." />
     </plugin>
 <!--    <gap:plugin name="cordova-plugin-networkinterface" source="npm" />-->
     
