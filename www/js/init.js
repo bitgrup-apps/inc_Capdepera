@@ -258,11 +258,12 @@ var mapaInc = {
     },
     //LOCALITZACIO GEOLOCATION PLUGUIN
     getLocation: function() {
+        console.log('getLocation');
         var options = {
             enableHighAccuracy: true,
             maximumAge: 3600000
          }
-         var watchID = navigator.geolocation.getCurrentPosition(mapaInc.onSuccessGeo, mapaInc.onErrorGeo, options);
+        navigator.geolocation.getCurrentPosition(mapaInc.onSuccessGeo, mapaInc.onErrorGeo, options);
          
     },
 
@@ -270,7 +271,7 @@ var mapaInc = {
         
         var lat = position.coords.latitude;
         var lng = position.coords.longitude;
-        console.log('https://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+lng+'&key=AIzaSyAbCsdbOZ31x79tk8PDVHsW3AL_zgNseGo');
+        console.log('url: https://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+lng+'&key=AIzaSyAbCsdbOZ31x79tk8PDVHsW3AL_zgNseGo');
         const NOVAPOSICIO = new plugin.google.maps.LatLng(lat, lng);
         //  mapaInc.mapInc.getAdress(NOVAPOSICIO);
         mapaInc.pos = NOVAPOSICIO;
