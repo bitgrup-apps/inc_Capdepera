@@ -64,7 +64,7 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 /*######## HOME - NOU ###################*/
 #home-nou .ui-content{background-image: url(../images/fondo_nou.jpg); background-size: cover; background-position: center; height: 100vh;padding: 1vw 6vw;}
 #home-nou h1{  margin:6vh 0 2vh; text-align: center; font-size: 9vw; font-family: 'Quicksand';}
-#home-nou .logo{margin-bottom: 16vw;}
+#home-nou .logo{margin-bottom: 2vw;}
 #home-nou .pastilla{padding: 20vw 2vw 5vw 0vw; text-align: center; font-size: 3.5vw; color:#fff; font-weight: 500; text-shadow:none;display: inline-block; width: 110%; text-transform: uppercase;background-size: cover; background-position: center; background-repeat: no-repeat;}
 #home-nou .pastilla::before{position:absolute; width:20vw; height: 20vw; background-image: url(../icons/spriteoncdphome.svg); background-size: 200vw; content: " ";top: 2.5vw;left: 9.5vw;}
 #home-nou .pastilla.oncpd{border-style: solid; border-width: 0px 0px 0px 0px;}
