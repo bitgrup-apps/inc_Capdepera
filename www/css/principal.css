@@ -62,7 +62,7 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 .mapaCiclisme {width:100vw;height: 100%; min-height: 300px;}
 
 /*######## HOME - NOU ###################*/
-#home-nou .ui-content{background-image: url(../images/fondo_home.jpg); background-size: cover; background-position: center; height: 100vh;padding: 1vw 6vw;}
+#home-nou .ui-content{background-image: url(../images/fondo_nou.jpg); background-size: cover; background-position: center; height: 100vh;padding: 1vw 6vw;}
 #home-nou h1{  margin:6vh 0 2vh; text-align: center; font-size: 9vw; font-family: 'Quicksand';}
 #home-nou .logo{margin-bottom: 16vw;}
 #home-nou .pastilla{padding: 20vw 2vw 5vw 0vw; text-align: center; font-size: 3.5vw; color:#fff; font-weight: 500; text-shadow:none;display: inline-block; width: 110%; text-transform: uppercase;background-size: cover; background-position: center; background-repeat: no-repeat;}
@@ -425,8 +425,8 @@ a span{color:#fff; display:inline-block; width:100%; font-size:14px; text-align:
 /*#oncapdepera-home .pastilla.reserva{border-style: solid; border-width: 0px 0px 0px 1px;}*/
 #oncapdepera-home .ico .res{background-position:-164vw -40vw;}
 #oncapdepera-home .posidonia {background-image: url(../icons/acuario.svg);width:20vw; height: 20vw;background-position: 2.0vh 1.75vh;background-repeat: no-repeat;}
-#oncapdepera-home .castell {background-image: url(../images/logo_castell.png);width:20vw; height: 20vw;background-position: 2.0vh 0.5vh;background-repeat: no-repeat;}
-#oncapdepera-home .melis {background-image: url(../images/logo_melis.jpg);width:20vw; height: 20vw;background-position: 1.5vh 0vh;background-repeat: no-repeat;}
+#oncapdepera-home .castell {background-image: url(../images/icones1.svg);width:20vw; height: 20vw;background-position: 1.0vh 0.5vh;background-repeat: no-repeat;}
+#oncapdepera-home .melis {background-image: url(../images/icones2.svg);width:20vw; height: 20vw;background-position: 1.5vh 0vh;background-repeat: no-repeat;}
 #oncapdepera-home .pos {background-color: #008841;}
 .onRadio{background-color: #bcc57d; background-position: -62.5vh -19.25vh;background-size: auto 50vh;float: left;background-repeat: no-repeat;}
 
