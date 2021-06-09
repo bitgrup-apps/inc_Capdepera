@@ -2,7 +2,7 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:cdv="http://cordova.apache.org/ns/1.0"
-        id        = "com.OnCapdepera.bitgrup"
+        id        = "com.incCapdepera.bitgrup"
         version   = "3.4.9"
         xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- com.OnCapdepera.bitgrup	 -->
@@ -33,7 +33,7 @@
     
 	
     <!-- PREFERENCE -->
-    <preference name="phonegap-version" value="cli-8.0.0" />  
+    <preference name="phonegap-version" value="cli-9.0.0" />  
     <preference name="orientation" value="portrait" /> 
     <preference name="stay-in-webview" value="false" />
     <preference name="CameraUsesGeolocation" value="false" />
@@ -41,7 +41,7 @@
     <preference name="android-build-tool" value="gradle" /> 
     <preference name="android-targetSdkVersion"  value="29" />
     <preference name="android-minSdkVersion" value="22" />
-    <preference name="deployment-target" value="9.0" />
+    <preference name="deployment-target" value="11.0" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="PLAY_SERVICES_VERSION" value="17.0.0" />
