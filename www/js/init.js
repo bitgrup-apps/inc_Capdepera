@@ -253,6 +253,8 @@ var mapaInc = {
 
             mapawow.lat = location.latLng.lat;
             mapawow.long = location.latLng.lng;
+            mapaInc.lat = location.latLng.lat;
+            mapaInc.lng = location.latLng.lng;
             
         });
     },
