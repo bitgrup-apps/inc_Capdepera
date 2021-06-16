@@ -21,12 +21,15 @@
         <config-file parent="NSBluetoothPeripheralUsageDescription" platform="ios" target="*-Info.plist">
             <string>Advertisement would like to use bluetooth.</string> 
         </config-file>
-        <config-file parent="NSLocationAlwaysUsageDescription" platform="ios" target="*-Info.plist" mode="merge">
+       <edit-config target="NSLocationAlwaysUsageDescription" file="*-Info.plist" mode="merge">
             <string>Turning on location services allows us to show the exact location of the incidents that you may insert.</string>
-        </config-file> 
-        <config-file parent="NSLocationWhenInUseUsageDescription" platform="ios" target="*-Info.plist" mode="merge">
+        </edit-config>
+       <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
             <string>Turning on location services allows us to show the exact location of the incidents that you may insert.</string>
-        </config-file>
+        </edit-config>
+        <edit-config target="NSLocationAlwaysAndWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+            <string>Turning on location services allows us to show the exact location of the incidents that you may insert.</string>
+        </edit-config>
     </platform>
 
 
