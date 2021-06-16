@@ -74,9 +74,9 @@
     <plugin name="cordova-plugin-inappbrowser" source="npm" /> <!--spec="3.0.0"-->
     <plugin name="cordova-plugin-background-audio"  source="npm"/>
     <plugin name="cordova-plugin-foreground-service"  source="npm" />
-     <!-- <plugin name="cordova-plugin-geolocation" spec="4.0.2" source="npm">
+     <plugin name="cordova-plugin-geolocation" spec="4.0.2" source="npm">
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="Turning on location services allows us to show the exact location of the incidents that you may insert." />
-    </plugin> -->
+    </plugin>
 <!--    <gap:plugin name="cordova-plugin-networkinterface" source="npm" />-->
     
     
